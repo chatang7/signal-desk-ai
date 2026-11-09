@@ -322,28 +322,43 @@ def build(news: dict, previous: dict | None = None, api_key: str = "", today=Non
     for original in selected:
         fp = fingerprint(original)
         cached = retained.get(original.get("id"))
-        if cached and cached.get("fingerprint") == fp and cached.get("mode") == "ai-assisted":
+        good_cache = bool(cached and cached.get("fingerprint") == fp and
+                          cached.get("mode") == "ai-assisted")
+        if good_cache:
             row = dict(cached)
             row.update({"score": score(original, today), "urls": original.get("urls", [])[:5]})
             reused += 1
         else:
             row = evidence_draft(original)
             row["score"] = score(original, today)
-            if api_key and calls < MAX_AI_CALLS and not quota_stop:
-                calls += 1
-                try:
-                    row.update(_json_request(original, api_key))
-                except urllib.error.HTTPError as exc:
-                    errors += 1
-                    if first_error is None:
-                        first_error = 'HTTP ' + str(exc.code)
-                    # Avoid retrying all entries after account/limit errors.
-                    if exc.code in (400, 401, 402, 403, 404, 429):
-                        quota_stop = True
-                except (OSError, ValueError, KeyError, json.JSONDecodeError) as exc:
-                    errors += 1
-                    if first_error is None:
-                        first_error = type(exc).__name__
+
+        # Retain grounded summaries. Upgrade old cache entries with ONLY the new
+        # host-narrative fields; never overwrite a previously successful analysis.
+        voice_fields = ("voiceMood", "voiceHook", "voiceTake")
+        missing_voice = not all(isinstance(row.get(k), str) and row[k] for k in voice_fields)
+        needs_api = not good_cache or missing_voice
+        if api_key and needs_api and calls < MAX_AI_CALLS and not quota_stop:
+            calls += 1
+            try:
+                answer = _json_request(original, api_key)
+                if good_cache:
+                    personality = {k: answer[k] for k in voice_fields
+                                   if isinstance(answer.get(k), str) and answer[k]}
+                    if len(personality) != len(voice_fields):
+                        raise ValueError("Missing host voice in Gemini reply")
+                    row.update(personality)
+                else:
+                    row.update(answer)
+            except urllib.error.HTTPError as exc:
+                errors += 1
+                if first_error is None:
+                    first_error = "HTTP " + str(exc.code)
+                if exc.code in (400, 401, 402, 403, 404, 429):
+                    quota_stop = True
+            except (OSError, ValueError, KeyError, json.JSONDecodeError) as exc:
+                errors += 1
+                if first_error is None:
+                    first_error = type(exc).__name__
         row["fingerprint"] = fp
         enriched.append(row)
     ai_count = sum(x.get("mode") == "ai-assisted" for x in enriched)
