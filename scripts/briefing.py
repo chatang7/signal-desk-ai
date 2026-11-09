@@ -253,10 +253,18 @@ def _json_request(item: dict, api_key: str) -> dict:
         "evidence는 아래 자료에서 글자까지 동일한 연속 부분 문자열 1~2개(각 20~90글자)로 넣으세요. "
         "이전 기술 대비 차이를 명시하지 않으면 차이 항목을 미확인으로 쓰세요. "
         "필드 summary, difference, why, usage, cost, performance, strengths, limitations는 모두 문자열입니다. "
+        "추가로 Discord용 voiceMood(curious, skeptical, serious 중 하나), voiceHook(한국어 도입 1문장 40~100자), "
+        "voiceTake(해당 뉴스의 핵심 쟁점을 꼬집는 1~2문장 60~150자)를 출력하세요. "
+        "이 두 필드는 자존심 강하고 도도하지만 은근히 다정한 여성 화자의 자연스러운 반말로 작성하세요. "
+        "대단한 발견에는 호기심, 허술한 홍보에는 회의, 보안과 안전 뉴스에는 진지함을 담으세요. "
+        "매 기사마다 같은 감탄사, 츤데레 표현, 검증 필요 같은 상투어를 반복하지 마세요. "
+        "새로운 사실·숫자·가격·발언은 지어내지 말고 기사의 구체적인 쟁점만 언급하세요. "
+        "홍원·홍루·가씨 가문 언급은 넣지 마세요(게시 프로그램에서 매우 드물게 처리). "
+        "게임 원작 대사를 인용하거나 복제하지 마세요. 의견과 사실은 분리하세요. "
         "evidence는 문자열 배열입니다. JSON 객체만 출력하세요.\n\n" + material
     )
     payload = {"contents": [{"role": "user", "parts": [{"text": instruction}]}],
-               "generationConfig": {"temperature": 0.1, "maxOutputTokens": 2048, "responseMimeType": "application/json"}}
+               "generationConfig": {"temperature": 0.45, "maxOutputTokens": 2600, "responseMimeType": "application/json"}}
     req = urllib.request.Request(
         f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent",
         data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
@@ -283,7 +291,18 @@ def _json_request(item: dict, api_key: str) -> dict:
         generated = set(re.findall(r"\d+(?:\.\d+)*", answer[k]))
         if generated - factual_numbers:
             answer[k] = "원문에서 확인 가능한 수치 없음"
-    return {**{k: flat(answer[k], 340) for k in fields},
+    voice = {}
+    mood = answer.get("voiceMood")
+    hook = answer.get("voiceHook")
+    take = answer.get("voiceTake")
+    if (mood in {"curious", "skeptical", "serious"} and isinstance(hook, str)
+            and isinstance(take, str) and 12 <= len(hook) <= 160 and 18 <= len(take) <= 230
+            and not re.search(r"홍루|홍원|가씨|가시춘", hook + take)):
+        # Reject unsupported new numerical assertions in generated narrative.
+        new_numbers = set(re.findall(r"\d+(?:\.\d+)*", hook + take)) - factual_numbers
+        if not new_numbers:
+            voice = {"voiceMood": mood, "voiceHook": flat(hook, 150), "voiceTake": flat(take, 215)}
+    return {**{k: flat(answer[k], 340) for k in fields}, **voice,
             "evidence": [flat(q, 150) for q in evidence if isinstance(q, str) and q.casefold() in material.casefold()][:2],
             "mode": "ai-assisted", "model": MODEL,
             "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요", "confidence": "검토 필요"}
