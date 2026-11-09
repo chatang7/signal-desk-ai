@@ -443,17 +443,50 @@ def deliver(briefing: dict, state: dict, secret: str, when: dt.datetime,
     return {"status": "sent", "count": len(selected)}
 
 
+
+def send_labeled_test(briefing: dict, secret: str, when: dt.datetime,
+                      sender=transmit) -> dict:
+    """One explicit test message; never touches or relies on production delivery ledger.
+
+    Previously posted articles may be reused ONLY in this clearly labeled test.
+    Still honors source/date/quality caps, Discord size limit and safe webhook validation.
+    """
+    sample = pick(briefing.get("items", []), {"posted": {}}, when.date())
+    if not sample:
+        return {"status": "no_test_stories", "count": 0}
+    payload = payload_for(sample, when, state=None)
+    payload["username"] = "SIGNAL DESK TEST"
+    payload["content"] = ("🧪 **[테스트 전송 — 실제 뉴스 알림 아님]**\n"
+                          "이미 게시된 기사가 포함될 수 있어. 이 메시지는 출력 형식만 확인하는 용도야.\n\n"
+                          + payload["content"])
+    # Test and production both use the same real webhook request semantics.
+    endpoint = webhook_endpoint(secret)
+    sender(endpoint, payload)
+    return {"status": "test_sent", "count": len(sample)}
+
 def main(argv=None) -> int:
     args = argv if argv is not None else sys.argv[1:]
     dry_run = "--dry-run" in args
+    test_send = "--test-send" in args
     secret = os.environ.get("DISCORD_WEBHOOK_URL", "").strip()
-    if not dry_run and not secret:
+    if test_send and (dry_run or os.environ.get("SIGNAL_DESK_TEST_SEND") != "1"):
+        print("Discord test blocked: explicit test authorization required")
+        return 1
+    if test_send and not secret:
+        print("Discord test blocked: webhook secret not configured")
+        return 1
+    if not dry_run and not test_send and not secret:
         print("Discord skip: DISCORD_WEBHOOK_URL GitHub secret not configured")
         return 0
     try:
         briefing = json.loads(FEED.read_text(encoding="utf-8"))
         if briefing.get("schema") != "signal-desk-briefing-v1":
             raise ValueError("Invalid briefing format")
+        if test_send:
+            result = send_labeled_test(briefing, secret, now_kst())
+            print("Discord test status: " + result["status"] +
+                  " (" + str(result["count"]) + " stories; production ledger untouched)")
+            return 0 if result["status"] == "test_sent" else 1
         state = load_state()
         if dry_run:
             # Preview the complete current layout without sending, and ignore the
