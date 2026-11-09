@@ -25,7 +25,7 @@ KST = dt.timezone(dt.timedelta(hours=9))
 MAX_STORIES = 5
 MIN_STORIES = 3
 MIN_SCORE = 62
-MAX_NEWS_AGE_DAYS = 4
+MAX_NEWS_AGE_DAYS = 3
 MIN_HOURS_BETWEEN_POSTS = 7
 MAX_SENDS_PER_DAY = 2
 
@@ -107,9 +107,7 @@ def pick(items: list, state: dict, today: dt.date) -> list:
 
     # Prefer verified source metadata and items Gemini actually analysed.
     candidates.sort(key=lambda x: (
-        int(x.get("score", 0) or 0)
-        + (8 if x.get("mode") == "ai-assisted" else 0)
-        + (3 if x.get("sourceType") != "secondary" else -5),
+        editorial_score(x, today),
         x.get("date", ""),
     ), reverse=True)
     selected, used_sources, used_topics, seen = [], {}, {}, set()
@@ -209,47 +207,163 @@ def lore_aside(items: list, state: dict | None) -> tuple[str, int, str] | None:
     return None
 
 
+# Content hierarchy: up to two featured stories and two/three shorter practical briefs.
+# Keep embed totals under Discord's 6,000-character combined budget.
+DISCORD_MAX_EMBED_TEXT = 6000
+DISCORD_EMBED_TEXT_BUDGET = 5650
+
+
+def editorial_score(item: dict, today: dt.date) -> int:
+    """Order by importance and practical use, without treating unknown claims as facts."""
+    value = int(item.get("score", 0) or 0)
+    day = str(item.get("date") or "")
+    try:
+        age = (today - dt.date.fromisoformat(day)).days
+    except ValueError:
+        age = MAX_NEWS_AGE_DAYS + 1
+    value += 7 if age <= 1 else 3 if age <= 2 else 0
+    if item.get("sourceType") != "secondary":
+        value += 3
+    if item.get("mode") == "ai-assisted":
+        value += 6
+    topic = str(item.get("topic") or "")
+    if topic in {"GitHub 오픈소스", "무료 도구"}:
+        value += 7
+    searchable = str(item.get("title") or "") + " " + str(item.get("summary") or "")
+    if re.search(r"오픈소스|open.source|free tier|무료|locally|로컬|Windows", searchable, re.I):
+        value += 4
+    return value
+
+
+def featured_count(count: int) -> int:
+    return 2 if count >= 5 else 1 if count >= 3 else 0
+
+
+def meaningful(value: object) -> bool:
+    if not isinstance(value, str):
+        return False
+    t = value.strip()
+    if not t or t in {"미확인", "원문에 근거 없음", "원문에서 확인 가능한 수치 없음"}:
+        return False
+    if "미확인" in t or "확인되지" in t or "검증 전:" in t:
+        return False
+    return True
+
+
+def fact_line(value: object, limit: int, prefix: str = "") -> str:
+    if not meaningful(value):
+        return ""
+    t = str(value).strip()
+    for fixed in ("원문 언급: ", "확인해야 하는 이유: ", "실무 검증: "):
+        if t.startswith(fixed):
+            t = t[len(fixed):]
+    return safe_text(prefix + t, limit)
+
+
+def technical_limits(item: dict) -> str:
+    cost = fact_line(item.get("cost"), 105)
+    perf = fact_line(item.get("performance"), 120)
+    if cost and perf:
+        return "비용: " + cost + "\n성능: " + perf
+    if cost:
+        return "비용: " + cost + "\n성능: 공개된 수치 미확인"
+    if perf:
+        return "성능: " + perf + "\n비용: 공개된 조건 미확인"
+    return "가격·성능: 확인된 자료 없음"
+
+
+def embed_text_length(embed: dict) -> int:
+    total = sum(len(str(embed.get(k) or "")) for k in ("title", "description"))
+    total += len(str(embed.get("footer", {}).get("text") or ""))
+    return total + sum(len(str(x.get("name", ""))) + len(str(x.get("value", "")))
+                       for x in embed.get("fields", []))
+
+
+def build_story_embed(item: dict, detailed: bool, lore: str | None = None) -> dict:
+    link = next((u for u in item.get("urls", []) if safe_link(u)), "")
+    source = safe_text(item.get("sourceLabel") or "출처 미상", 45)
+    origin = "보도" if item.get("sourceType") == "secondary" else "원문"
+    ai = "Gemini 보조" if item.get("mode") == "ai-assisted" else "자료 정리"
+    date = safe_text(item.get("date") or "날짜 미확인", 12)
+    mood, hook, take = host_lines(item)
+    title = safe_text(item.get("title") or "제목 미확인", 118)
+    summary = safe_text(item.get("summary") or "본문에서 구체적인 내용을 확인할 필요가 있어.", 215 if detailed else 155)
+    hook = safe_text(hook, 110 if detailed else 95)
+    take = safe_text(take, 145 if detailed else 115)
+    label = "🌺 주목할 소식" if detailed else "🛠 제법 쓸 만한 물건"
+    fields = []
+    if detailed:
+        description = ("**" + hook + "**\n\n"
+                       "**🌸 무슨 소란이지?**\n" + summary
+                       + "\n\n**🌺 내 평가**\n" + take)
+        comparison = fact_line(item.get("difference"), 145)
+        if comparison:
+            fields.append({"name": "⚔️ 뭐가 다른데?", "value": comparison, "inline": False})
+        why = fact_line(item.get("why"), 135)
+        if why:
+            fields.append({"name": "💎 눈여겨볼 점", "value": why, "inline": False})
+        usage = fact_line(item.get("usage"), 155)
+        if usage:
+            fields.append({"name": "🛠 쓸모는 있겠지?", "value": usage, "inline": False})
+        fields.append({"name": "💰 실속은?", "value": technical_limits(item), "inline": False})
+    else:
+        description = ("**" + hook + "**\n\n"
+                       "**🌸 핵심**\n" + summary
+                       + "\n\n**🌺 한마디**\n" + take)
+        usage = fact_line(item.get("usage"), 145)
+        if usage:
+            fields.append({"name": "🛠 쓸모는 있겠지?", "value": usage, "inline": False})
+        # Keep medium briefs short, but never drop a significant verified number.
+        if fact_line(item.get("cost"), 60) or fact_line(item.get("performance"), 60):
+            fields.append({"name": "💰 실속은?", "value": safe_text(technical_limits(item), 180), "inline": False})
+
+    if lore:
+        description += "\n\n*" + safe_text(lore, 145) + "*"
+    return {
+        "title": (label + " | " + title)[:150],
+        "url": link,
+        "description": description,
+        "fields": fields,
+        "color": MOOD_COLORS[mood],
+        "footer": {"text": safe_text(date + " · " + source + " · " + origin + " · " + ai, 104)},
+    }
+
+
 def payload_for(items: list, when: dt.datetime, state: dict | None = None) -> dict:
-    lore = lore_aside(items[:MAX_STORIES], state)
+    selected = items[:MAX_STORIES]
+    num_featured = featured_count(len(selected))
+    lore = lore_aside(selected, state)
     embeds = []
-    for index, item in enumerate(items[:MAX_STORIES]):
-        link = next((u for u in item["urls"] if safe_link(u)), "")
-        source = safe_text(item.get("sourceLabel", "출처 미상"), 70)
-        label = "Gemini 보조 분석" if item.get("mode") == "ai-assisted" else "원문 기반 정리"
-        if item.get("sourceType") == "secondary":
-            label += " · 언론 보도"
-        mood, hook, take = host_lines(item)
-        summary = safe_text(item.get("summary") or "자세한 내용은 원문에서 확인할 필요가 있어.", 315)
-        description = "**" + hook + "**\n\n" + summary + "\n\n**🌸 내 생각**  " + take
-        if lore and lore[1] == index:
-            description += "\n\n*" + safe_text(lore[2], 160) + "*"
-        difference = safe_text(item.get("difference"), 180)
-        usage = safe_text(item.get("usage"), 175)
-        fields = [{"name": "🛠 직접 따져볼 점", "value": usage or "실제 사용 조건을 확인해 봐야겠지.", "inline": False}]
-        if difference and not difference.startswith("기존 기술 대비 구체적인 차이는"):
-            fields.insert(0, {"name": "🔎 뭐가 달라졌나", "value": difference, "inline": False})
-        embeds.append({
-            "title": safe_text(item.get("title"), 230),
-            "url": link,
-            "description": description[:1100],
-            "fields": fields,
-            "color": MOOD_COLORS[mood],
-            "footer": {"text": safe_text(source + " | " + label + " · 진행자의 의견과 보도 사실은 구분", 160)},
-        })
+    for index, item in enumerate(selected):
+        aside = lore[2] if lore and lore[1] == index else None
+        embeds.append(build_story_embed(item, detailed=index < num_featured, lore=aside))
+
+    # Last-resort cap for Discord's combined embed character budget.
+    total = sum(embed_text_length(e) for e in embeds)
+    if total > DISCORD_EMBED_TEXT_BUDGET:
+        for e in reversed(embeds):
+            while total > DISCORD_EMBED_TEXT_BUDGET and e["fields"]:
+                e["fields"].pop()
+                total = sum(embed_text_length(x) for x in embeds)
+            if total <= DISCORD_EMBED_TEXT_BUDGET:
+                break
+    if total > DISCORD_MAX_EMBED_TEXT:
+        raise ValueError("Discord embed text exceeds platform limit")
 
     date = when.strftime("%Y-%m-%d %H:%M KST")
-    moods = [mood_for(i) for i in items[:MAX_STORIES]]
+    moods = [mood_for(i) for i in selected]
     if moods.count("serious") >= 2:
-        opening = "오늘은 가볍게 넘기면 안 될 이야기가 있네. 중요한 것부터 살펴보자고."
+        opening = "이번엔 가볍게 넘길 수 없는 이야기가 있어. 중요한 것부터 보자고."
     elif moods.count("skeptical") >= 2:
-        opening = "화려한 발표가 많네. 흥, 어디 실속도 그만한지 확인해 보자고."
+        opening = "다들 거창하게 떠드는군. 흥, 이번에는 실속이 있는지 따져보자고."
     else:
-        opening = "제법 흥미로운 물건도 보여. 실력은 어떤지 한번 살펴보자고."
+        opening = "제법 흥미로운 물건도 보여. 쓸 만한 건지 확인해 보자고."
     return {
         "username": "SIGNAL DESK",
         "content": ("🌸 **SIGNAL DESK | 오늘의 AI 소식**  " + date + "\n"
-                    + str(len(embeds)) + "건을 골라봤어. " + opening + "\n"
-                    "*가상 진행자의 감상과 기술 뉴스의 사실은 구분해서 읽어줘.*"),
+                    + str(len(embeds)) + "건 중 " + str(num_featured)
+                    + "건은 자세히 골랐어. " + opening + "\n"
+                    "*가상 진행자의 평가는 사실과 별개야. 발표사의 주장과 독립 검증도 구분해.*"),
         "embeds": embeds,
         "allowed_mentions": {"parse": []},
         "tts": False,
