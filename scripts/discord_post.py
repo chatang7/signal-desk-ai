@@ -144,7 +144,7 @@ def mood_for(item: dict) -> str:
     if item.get("topic") in {"보안", "정책·규제"}:
         return "serious"
     specified = item.get("voiceMood")
-    if specified in OPENINGS:
+    if isinstance(specified, str) and specified in OPENINGS:
         return specified
     if item.get("topic") == "성능 비교":
         return "skeptical"
@@ -306,10 +306,11 @@ def deliver(briefing: dict, state: dict, secret: str, when: dt.datetime,
         return {"status": "preview", "count": len(selected), "titles": [x["title"] for x in selected]}
     endpoint = webhook_endpoint(secret)
     message_id = sender(endpoint, payload)
+    prior_total = total_posted(state)
     at = when.isoformat()
     state["posted"].update({item_key(item): at for item in selected})
     state["history"].append({"at": at, "count": len(selected), "messageId": message_id})
-    state["totalPosted"] = total_posted(state) + len(selected)
+    state["totalPosted"] = prior_total + len(selected)
     if lore:
         state.setdefault("loreMentions", {})[lore[0] + "At"] = state["totalPosted"]
     # Keep deduplication keys for at least several months; do not store secrets or text.
