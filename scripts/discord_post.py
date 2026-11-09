@@ -156,9 +156,11 @@ def host_lines(item: dict) -> tuple[str, str, str]:
     variant = int.from_bytes(hashlib.sha256(item_key(item).encode()).digest()[:4], "big") % len(OPENINGS[mood])
     hook = item.get("voiceHook")
     take = item.get("voiceTake")
-    if not isinstance(hook, str) or not 12 <= len(hook) <= 160 or re.search(r"홍루|홍원|가씨|가시춘", hook):
+    if (item.get("voiceMood") != mood or not isinstance(hook, str)
+            or not 12 <= len(hook) <= 160 or re.search(r"홍루|홍원|가씨|가시춘", hook)):
         hook = OPENINGS[mood][variant]
-    if not isinstance(take, str) or not 18 <= len(take) <= 230 or re.search(r"홍루|홍원|가씨|가시춘", take):
+    if (item.get("voiceMood") != mood or not isinstance(take, str)
+            or not 18 <= len(take) <= 230 or re.search(r"홍루|홍원|가씨|가시춘", take)):
         why = str(item.get("why") or "").removeprefix("확인해야 하는 이유: ").strip()
         diff = str(item.get("difference") or "")
         if mood == "skeptical":
@@ -236,11 +238,17 @@ def payload_for(items: list, when: dt.datetime, state: dict | None = None) -> di
         })
 
     date = when.strftime("%Y-%m-%d %H:%M KST")
+    moods = [mood_for(i) for i in items[:MAX_STORIES]]
+    if moods.count("serious") >= 2:
+        opening = "오늘은 가볍게 넘기면 안 될 이야기가 있네. 중요한 것부터 살펴보자고."
+    elif moods.count("skeptical") >= 2:
+        opening = "화려한 발표가 많네. 흥, 어디 실속도 그만한지 확인해 보자고."
+    else:
+        opening = "제법 흥미로운 물건도 보여. 실력은 어떤지 한번 살펴보자고."
     return {
         "username": "SIGNAL DESK",
         "content": ("🌸 **SIGNAL DESK | 오늘의 AI 소식**  " + date + "\n"
-                    "오늘은 " + str(len(embeds)) + "건을 골라봤어. "
-                    "제법 흥미로운 물건도 있으니, 어디 한번 제대로 살펴보자고.\n"
+                    + str(len(embeds)) + "건을 골라봤어. " + opening + "\n"
                     "*가상 진행자의 감상과 기술 뉴스의 사실은 구분해서 읽어줘.*"),
         "embeds": embeds,
         "allowed_mentions": {"parse": []},
