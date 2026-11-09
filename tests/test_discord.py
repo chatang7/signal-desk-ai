@@ -132,7 +132,7 @@ class DiscordTests(unittest.TestCase):
         self.assertEqual(discord.mood_for(skeptical), "skeptical")
         self.assertEqual(discord.mood_for(serious), "serious")
         msg = discord.payload_for([curious, skeptical, serious], NOW)
-        self.assertIn("🌸", msg["content"])
+        self.assertIn("SIGNAL DESK", msg["content"])
         self.assertEqual(len({x["color"] for x in msg["embeds"]}), 3)
         self.assertTrue(all("내 평가" in x["description"] or "한마디" in x["description"]
                             for x in msg["embeds"]))
@@ -193,27 +193,27 @@ class DiscordTests(unittest.TestCase):
         items = [story(i) for i in range(5)]
         payload = discord.payload_for(items, NOW)
         self.assertEqual(len(payload["embeds"]), 5)
-        self.assertEqual(sum("주목할 소식" in e["title"] for e in payload["embeds"]), 2)
-        self.assertEqual(sum("제법 쓸 만한 물건" in e["title"] for e in payload["embeds"]), 3)
-        self.assertIn("🌸 무슨 소란이지?", payload["embeds"][0]["description"])
-        self.assertIn("💰 실속은?", [x["name"] for x in payload["embeds"][0]["fields"]])
-        self.assertIn("🌸 핵심", payload["embeds"][4]["description"])
-        self.assertIn("🛠 쓸모는 있겠지?", [x["name"] for x in payload["embeds"][4]["fields"]])
+        self.assertEqual(sum("상세" in e["footer"]["text"] for e in payload["embeds"]), 2)
+        self.assertEqual(sum("간략" in e["footer"]["text"] for e in payload["embeds"]), 3)
+        self.assertIn("무슨 소란이지?", payload["embeds"][0]["description"])
+        self.assertIn("실속은?", [x["name"] for x in payload["embeds"][0]["fields"]])
+        self.assertIn("핵심", payload["embeds"][4]["description"])
+        self.assertIn("쓸모는 있겠지?", [x["name"] for x in payload["embeds"][4]["fields"]])
         self.assertIn("2건은 자세히", payload["content"])
 
     def test_four_and_three_story_hybrid_keep_one_featured(self):
         for size in (3, 4):
             payload = discord.payload_for([story(i) for i in range(size)], NOW)
-            self.assertEqual(sum("주목할 소식" in x["title"] for x in payload["embeds"]), 1)
-            self.assertEqual(sum("제법 쓸 만한 물건" in x["title"] for x in payload["embeds"]), size - 1)
+            self.assertEqual(sum("상세" in x["footer"]["text"] for x in payload["embeds"]), 1)
+            self.assertEqual(sum("간략" in x["footer"]["text"] for x in payload["embeds"]), size - 1)
 
     def test_specific_comparison_only_shown_when_grounded(self):
         items = [story(i) for i in range(5)]
         items[0]["difference"] = "기존 기술 대비 구체적인 차이는 수집된 원문에서 미확인"
         items[1]["difference"] = "기존 대비 공식 시험에서 대기 시간이 줄었다고 발표함."
         payload = discord.payload_for(items, NOW)
-        self.assertNotIn("⚔️ 뭐가 다른데?", [x["name"] for x in payload["embeds"][0]["fields"]])
-        self.assertIn("⚔️ 뭐가 다른데?", [x["name"] for x in payload["embeds"][1]["fields"]])
+        self.assertNotIn("뭐가 다른데?", [x["name"] for x in payload["embeds"][0]["fields"]])
+        self.assertIn("뭐가 다른데?", [x["name"] for x in payload["embeds"][1]["fields"]])
 
     def test_metadata_factual_and_opinion_are_visually_separate(self):
         items = [story(i) for i in range(3)]
@@ -274,8 +274,8 @@ class DiscordTests(unittest.TestCase):
         self.assertEqual(len(outbound), 1)
         self.assertIn("[테스트 전송", outbound[0][1]["content"])
         self.assertEqual(outbound[0][1]["username"], "SIGNAL DESK TEST")
-        self.assertEqual(sum("주목할 소식" in x["title"] for x in outbound[0][1]["embeds"]), 2)
-        self.assertEqual(sum("제법 쓸 만한 물건" in x["title"] for x in outbound[0][1]["embeds"]), 3)
+        self.assertEqual(sum("상세" in x["footer"]["text"] for x in outbound[0][1]["embeds"]), 2)
+        self.assertEqual(sum("간략" in x["footer"]["text"] for x in outbound[0][1]["embeds"]), 3)
         self.assertEqual(outbound[0][1]["allowed_mentions"], {"parse": []})
         self.assertEqual(json.dumps(history, sort_keys=True), before)
 
@@ -299,40 +299,40 @@ class DiscordTests(unittest.TestCase):
 
     def test_headline_content_types_are_distinct_from_importance(self):
         cases = [
-            ("🧩 오픈소스", {
+            ("오픈소스", {
                 "title": "AI 에이전트용 새 모델 오픈소스 공개",
                 "topic": "에이전트", "urls": ["https://tech.kakao.com/posts/example"],
             }),
-            ("🧩 오픈소스", {
+            ("오픈소스", {
                 "title": "SDK release", "topic": "GitHub 오픈소스",
                 "urls": ["https://github.com/example/sdk/releases/tag/v1"],
             }),
-            ("🔄 업데이트", {
+            ("업데이트", {
                 "title": "Copilot review overview updates", "topic": "코딩 도구",
                 "urls": ["https://github.blog/changelog/copilot-update"],
             }),
-            ("🗂 데이터셋", {
+            ("데이터셋", {
                 "title": "Nemotron-Personas-Finance-Japan: A Synthetic Dataset",
                 "topic": "미정", "urls": ["https://huggingface.co/blog/nvidia/example"],
             }),
-            ("📄 논문", {
+            ("논문", {
                 "title": "Efficient Transformer Study", "topic": "연구·논문",
                 "urls": ["https://arxiv.org/abs/2611.00001"],
             }),
-            ("🧪 연구", {
+            ("연구", {
                 "title": "Your Experts Have Partners",
                 "summary": "HOPE is a pruning of experts research technique.",
                 "topic": "미정", "urls": ["https://huggingface.co/blog/amazon/hope"],
             }),
-            ("🛡 보안", {
+            ("보안", {
                 "title": "Partnering with experts for security", "topic": "보안",
                 "urls": ["https://openai.com/index/security-update"],
             }),
-            ("📊 성능 비교", {
+            ("성능 비교", {
                 "title": "새 AI 모델 벤치마크 결과", "topic": "성능 비교",
                 "urls": ["https://www.aitimes.com/news/example"],
             }),
-            ("📰 뉴스", {
+            ("뉴스", {
                 "title": "AI 기업, 협력 관계 발표", "topic": "AI 기업",
                 "urls": ["https://openai.com/index/partnership"],
             }),
@@ -343,7 +343,7 @@ class DiscordTests(unittest.TestCase):
                 item.update(changes)
                 self.assertEqual(discord.story_type(item), expected)
                 self.assertTrue(discord.build_story_embed(item, detailed=True)["title"]
-                                .startswith(expected + " | 🌺 주목할 소식 | "))
+                                .startswith("[" + expected + "] "))
 
     def test_github_news_is_not_automatically_open_source(self):
         item = story(51)
@@ -351,11 +351,11 @@ class DiscordTests(unittest.TestCase):
                      "topic": "코딩 도구",
                      "urls": ["https://github.blog/changelog/copilot"],
                      "summary": "GitHub의 새로운 코드 리뷰 기능"})
-        self.assertEqual(discord.story_type(item), "🔄 업데이트")
+        self.assertEqual(discord.story_type(item), "업데이트")
         item["title"] = "새로운 AI 도구 등장"
         item["summary"] = "GitHub에서 도구를 공개했다고 소개했지만 코드 링크는 없음"
         item["topic"] = "미정"
-        self.assertEqual(discord.story_type(item), "📰 뉴스")
+        self.assertEqual(discord.story_type(item), "뉴스")
 
     def test_content_type_in_medium_and_featured_titles(self):
         items = [story(i) for i in range(5)]
@@ -363,9 +363,24 @@ class DiscordTests(unittest.TestCase):
                          "urls": ["https://arxiv.org/abs/2611.12345"]})
         items[4].update({"title": "Data set for voice agents", "topic": "미정"})
         payload = discord.payload_for(items, NOW)
-        self.assertTrue(payload["embeds"][0]["title"].startswith("📄 논문 | 🌺 주목할 소식 | "))
-        self.assertTrue(payload["embeds"][4]["title"].startswith("🗂 데이터셋 | 🛠 제법 쓸 만한 물건 | "))
+        self.assertTrue(payload["embeds"][0]["title"].startswith("[논문] "))
+        self.assertTrue(payload["embeds"][4]["title"].startswith("[데이터셋] "))
         self.assertEqual(len(payload["embeds"]), 5)
+
+    def test_clean_editorial_style_has_no_emoji_clutter(self):
+        items = [story(i) for i in range(5)]
+        items[0].update({"topic": "연구·논문",
+                         "urls": ["https://arxiv.org/abs/2611.12345"]})
+        payload = discord.payload_for(items, NOW)
+        self.assertTrue(payload["embeds"][0]["title"].startswith("[논문] "))
+        self.assertTrue(all("|" not in e["title"] for e in payload["embeds"]))
+        self.assertTrue(all(not any(icon in e["description"] for icon in
+                     ("🌸", "🌺", "⚔️", "🛠", "💰")) for e in payload["embeds"]))
+        self.assertTrue(all(not any(icon in f["name"] for e in payload["embeds"]
+                     for f in e["fields"] for icon in ("🌸", "🌺", "⚔️", "🛠", "💰"))
+                     for _ in (0,)))
+        self.assertEqual(sum("상세" in e["footer"]["text"] for e in payload["embeds"]), 2)
+        self.assertEqual(sum("간략" in e["footer"]["text"] for e in payload["embeds"]), 3)
 
     def test_invalid_ledger_refuses_reset(self):
         with tempfile.TemporaryDirectory() as tmp:
