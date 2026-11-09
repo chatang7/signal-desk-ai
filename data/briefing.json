@@ -1,7 +1,7 @@
 {
   "schema": "signal-desk-briefing-v1",
-  "generatedAt": "2026-11-09T08:25:18.608993+00:00",
-  "newsGeneratedAt": "2026-11-09T08:25:02.027372+00:00",
+  "generatedAt": "2026-11-09T08:30:10.377190+00:00",
+  "newsGeneratedAt": "2026-11-09T08:29:53.219088+00:00",
   "headline": "AI 변화 브리핑 · 최근 7일",
   "coverage": "최근 7일 중 중요 후보, 뉴스 수집 대상 범위 내에서만 작성",
   "mode": "evidence-only",
@@ -232,7 +232,7 @@
       "why": "확인해야 하는 이유: 자동 실행 기술은 실제 성공률과 통제·보안 수준의 검증이 중요함",
       "usage": "실무 검증: 제한된 샌드박스에서 작업 성공률·실패 복구·권한 범위 확인",
       "cost": "가격·무료 여부 미확인",
-      "performance": "원문 언급: OpenAI introduces BioBasicsBench, a 100-task benchmark measuring how well AI agents interpret raw experimental data and handle everyday wet-lab science.",
+      "performance": "비교 가능한 성능 수치 미확인",
       "strengths": "검증 전: 공식 소개에 실린 장점과 실제 효용을 구분해야 함",
       "limitations": "독립 검증·실측 비교·사용 조건은 수집 요약만으로 확정할 수 없음",
       "mode": "evidence-only",
