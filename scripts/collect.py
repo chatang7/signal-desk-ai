@@ -163,8 +163,12 @@ def fetch(url: str) -> bytes:
 
 
 def collect_releases(repo: str, label: str, topic: str) -> list:
-    u = "https://api.github.com/repos/" + repo + "/releases?per_page=8"
-    data = json.loads(fetch(u))
+    # Codex releases may have very large historical changelogs. Fetch only the latest stable release.
+    if repo == "openai/codex":
+        data = [json.loads(fetch("https://api.github.com/repos/openai/codex/releases/latest"))]
+    else:
+        u = "https://api.github.com/repos/" + repo + "/releases?per_page=8"
+        data = json.loads(fetch(u))
     if not isinstance(data, list):
         raise ValueError("GitHub releases 배열 아님")
     out = []
