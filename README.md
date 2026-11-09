@@ -61,7 +61,7 @@ git push -u origin main
 | 실시간 독립 뉴스 사실검증 | 미구현 |
 | AI가 작성하는 심층 평가·새 기술과의 차이 | **유료 AI API 미사용**이라 자동 생성하지 않음 |
 | ChatGPT 예약 브리핑을 자동 전송 | 미구현. 기존 작업 변경 없음 |
-| Discord 자동 게시 | 미구현 (초안 작성·복사 가능) |
+| Discord 자동 게시 | 구현됨. `DISCORD_WEBHOOK_URL` Secret을 등록한 경우 예약 실행에만 전송. 웹훅 미등록 상태는 전송 없음 |
 | 기기 간 검토 상태 동기화 | 미구현. 기록은 사용 기기에만 저장 |
 | 한국·해외 모든 뉴스 포함 | 미구현. 위 공개 소스 13개만 수집 |
 | 사설로 보호되는 사용자 대시보드 | 미구현. GitHub Pages 사이트와 피드는 공개 |
@@ -72,7 +72,7 @@ GitHub Actions 실행은 가끔 지연·실패할 수 있고, 오래 활동이 �
 
 - `index.html`: 기존 인터랙티브 대시보드(v3 수정)
 - `scripts/collect.py`: API 키 없이 동작하는 서버 수집기
-- `.github/workflows/collect-and-deploy.yml`: 매일 예약 수집 및 GitHub Pages 배포
+- `.github/workflows/collect-and-deploy.yml`: 매일 예약 수집·Gemini 브리핑·선택형 Discord 자동 게시
 - `data/news.json`: 정적 공개 피드 데이터 (첫 실행 이전에는 빈 배열)
 - `tests/test_collect.py`: 단위 테스트
 - `tests/test_browser.py`: 브라우저 모의 테스트(로컬 Playwright 설치된 경우에만 실행)
@@ -83,3 +83,18 @@ GitHub Actions 실행은 가끔 지연·실패할 수 있고, 오래 활동이 �
 - 모든 GitHub Pages 방문자는 **공개 뉴스 데이터**를 읽을 수 있습니다.
 - 웹 브라우저의 로컬 검토 상태·메모는 `data/news.json`에 포함되지 않으며 서버로 올라가지 않습니다.
 - 그러나 공유 PC 또는 브라우저 정리 시 메모가 유실될 수 있으므로 정기 JSON 백업을 권장합니다.
+## Discord 자동 브리핑 설정 (v5)
+
+별도 Discord Bot 토큰이나 호스팅 서버는 필요하지 않습니다. **Discord 채널 관리 권한**으로 발급한 웹훅 URL 하나를 GitHub Secret에 저장합니다.
+
+1. 원하는 Discord 서버/채널에서 **채널 편집 → 연동(Integrations) → 웹훅(Webhooks) → 새 웹훅**을 만들고 해당 채널의 **웹훅 URL 복사**를 누릅니다. 일반 채팅 채널을 추천합니다(포럼·미디어 채널은 추가 thread 설정이 필요하므로 지원하지 않음).
+2. GitHub 저장소 **Settings → Secrets and variables → Actions → New repository secret** 에서 이름 `DISCORD_WEBHOOK_URL`, 값에는 복사한 전체 웹훅 주소를 입력합니다. 이 URL에는 비밀 토큰이 들어 있으므로 채팅, 공개 코드, 이슈에 붙이지 마세요.
+3. 그러면 다음 정기 실행(한국시간 **09:17, 21:17**)부터 자동 전송이 시작됩니다. 무료 GitHub Actions 스케줄은 지연될 수 있습니다.
+4. 테스트로 실제 채널에 보내려면 **Actions → Collect AI news (free) → Run workflow** 메뉴에서 `discord_send` 체크박스를 **직접 켜고** 실행하세요. 체크하지 않은 수동 실행이나 코드 변경(push)만으로는 Discord에 게시하지 않습니다.
+5. 웹훅을 삭제하거나 메시지를 중지하려면 GitHub Secret `DISCORD_WEBHOOK_URL`을 삭제하면 됩니다. Discord 설정에서 웹훅을 삭제해도 됩니다.
+
+**운영 규칙:** 새롭고 중요도가 높은 브리핑 3~5건만 하나의 메시지로 묶습니다. 4일을 초과한 뉴스는 제외합니다. 7시간 이내 재게시 및 같은 한국 날짜 2회 초과 발송을 막습니다. 이미 보낸 아이템 ID는 공개 저장소의 `data/discord_state.json`에 기록합니다. 키, 웹훅 URL, 기사 본문은 해당 파일에 저장하지 않습니다. 정상 메시지 ID를 Discord API(`wait=true`)로 확인한 후에만 기록하고, 429 제한에는 짧게 대기 후 재시도합니다. 포맷 오류와 인증 오류는 안전하게 실패합니다.
+
+**한계:** 채널의 메시지 전송 성공 직후 GitHub 상태 저장까지 실패하거나 네트워크 응답이 유실되는 경우 동일 내용을 다시 보낼 가능성은 0으로 보장할 수 없습니다. 웹훅 전송은 '최선의 중복 방지(best effort)'입니다. Gemini의 내용 역시 독립 사실 검증을 대체하지 않습니다. GitHub Actions 무료 쿼터와 Google API 무료 할당량은 계정/정책에 따라 달라집니다.
+
+**코드 검증:** `python -m unittest discover -s tests -p 'test_*.py' -q` 로 전송 선택, 중복 기록, 시간 제한, 멘션 방지 등을 네트워크 연결 없이 테스트합니다.
