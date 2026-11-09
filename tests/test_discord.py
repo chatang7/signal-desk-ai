@@ -175,7 +175,7 @@ class DiscordTests(unittest.TestCase):
     def test_success_records_lore_frequency(self):
         state = fresh_state()
         state["totalPosted"] = 17
-        items = [story(i, topic="보안") for i in range(3)]
+        items = [story(0, topic="보안"), story(1, topic="정책·규제"), story(2, topic="AI 기업")]
         sent = []
         result = discord.deliver({"items": items}, state,
             "https://discord.com/api/webhooks/12345/valid_token", NOW,
