@@ -7,6 +7,7 @@ No secret URL, response body, or webhook token is ever logged or saved.
 from __future__ import annotations
 
 import datetime as dt
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -125,6 +126,85 @@ def pick(items: list, state: dict, today: dt.date) -> list:
         if len(selected) >= MAX_STORIES:
             break
     return selected if len(selected) >= MIN_STORIES else []
+
+
+# A distinctive fictional host voice, not a copy of original game dialogue.
+OPENINGS = {
+    "curious": ("흐응, 이건 제법 흥미로운데?", "이번 건 그냥 지나치긴 아깝겠어.",
+                "뭐야, 이런 변화가 있었다고? 한번 들여다보자고.", "흥, 어디 얼마나 쓸 만한지 보자고."),
+    "skeptical": ("발표는 화려하네. 그런데 근거는?", "감탄하기엔 일러. 먼저 따져봐야지.",
+                  "자신감은 넘쳐 보이네. 실력도 그럴까?", "흥, 구호보다 중요한 건 실제 결과야."),
+    "serious": ("……이번 일은 가볍게 넘길 수 없어.", "잠깐, 이런 문제에는 책임이 따르지.",
+                "안전과 신뢰에 관한 일이야. 차분하게 보자고.", "여기서는 농담할 생각 없어."),
+}
+MOOD_COLORS = {"curious": 0xD080A2, "skeptical": 0xCD935A, "serious": 0x718CB7}
+
+
+def mood_for(item: dict) -> str:
+    if item.get("topic") in {"보안", "정책·규제"}:
+        return "serious"
+    specified = item.get("voiceMood")
+    if specified in OPENINGS:
+        return specified
+    if item.get("topic") == "성능 비교":
+        return "skeptical"
+    return "curious"
+
+
+def host_lines(item: dict) -> tuple[str, str, str]:
+    mood = mood_for(item)
+    variant = int.from_bytes(hashlib.sha256(item_key(item).encode()).digest()[:4], "big") % len(OPENINGS[mood])
+    hook = item.get("voiceHook")
+    take = item.get("voiceTake")
+    if not isinstance(hook, str) or not 12 <= len(hook) <= 160 or re.search(r"홍루|홍원|가씨|가시춘", hook):
+        hook = OPENINGS[mood][variant]
+    if not isinstance(take, str) or not 18 <= len(take) <= 230 or re.search(r"홍루|홍원|가씨|가시춘", take):
+        why = str(item.get("why") or "").removeprefix("확인해야 하는 이유: ").strip()
+        diff = str(item.get("difference") or "")
+        if mood == "skeptical":
+            take = ("그럴듯한 변화라는 건 인정하지. 하지만 " + diff[:140]
+                    if diff and "미확인" not in diff else
+                    "발표의 자신감과 실제 실력은 다른 문제야. 비교 조건을 따져봐야겠지.")
+        elif mood == "serious":
+            take = ("핵심은 바로 이거야. " + why[:140] if why and "발표의 구체적인" not in why
+                    else "문제의 영향 범위부터 분명히 확인해야겠어.")
+        else:
+            take = ("내가 주목한 건 이 부분이야. " + why[:140] if why and "발표의 구체적인" not in why
+                    else "흥미롭긴 하네. 그래도 실전에 통하는지는 따져볼 일이야.")
+    return mood, safe_text(hook, 155), safe_text(take, 215)
+
+
+def total_posted(state: dict) -> int:
+    try:
+        previous = int(state.get("totalPosted", 0) or 0)
+        saved = sum(max(0, int(x.get("count", 0))) for x in state.get("history", []))
+        return max(0, previous, saved)
+    except (ValueError, TypeError, AttributeError):
+        return 0
+
+
+def lore_aside(items: list, state: dict | None) -> tuple[str, int, str] | None:
+    """No lore on first few editions; only one relevant aside per ~18/36 articles."""
+    if not state:
+        return None
+    total = total_posted(state)
+    upcoming = total + len(items)
+    previous = state.get("loreMentions") or {}
+    if not isinstance(previous, dict):
+        previous = {}
+    if upcoming >= 36 and upcoming - int(previous.get("hongluAt", 0) or 0) >= 36:
+        for index, item in enumerate(items):
+            words = str(item.get("title") or "") + " " + str(item.get("summary") or "")
+            if item.get("topic") in {"에이전트", "음성 생성"} and re.search(
+                    r"대화|감정|사람|인간|음성|목소리|emotion|voice|conversation|social", words, re.I):
+                return "honglu", index, ("홍루 오라버니라면 이런 대화를 어떻게 볼까… "
+                                         "아니, 쓸데없는 생각이야. 뉴스나 마저 보자고.")
+    if upcoming >= 18 and upcoming - int(previous.get("hongwonAt", 0) or 0) >= 18:
+        for index, item in enumerate(items):
+            if item.get("topic") in {"정책·규제", "보안", "AI 기업", "에이전트"}:
+                return "hongwon", index, ("홍원을 맡은 입장에서 책임 문제를 가볍게 볼 순 없지. "
+                                          "……흥, 다시 본론으로 돌아가자고.")
+    return None
 
 
 def payload_for(items: list, when: dt.datetime) -> dict:
