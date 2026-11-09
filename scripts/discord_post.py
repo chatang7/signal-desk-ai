@@ -28,6 +28,7 @@ MIN_SCORE = 62
 MAX_NEWS_AGE_DAYS = 3
 MIN_HOURS_BETWEEN_POSTS = 7
 MAX_SENDS_PER_DAY = 2
+WEBHOOK_USERNAME = "[가시춘의 홍원 가십]"
 
 
 def now_kst() -> dt.datetime:
@@ -439,7 +440,7 @@ def payload_for(items: list, when: dt.datetime, state: dict | None = None) -> di
     else:
         opening = "제법 흥미로운 물건도 보여. 쓸 만한 건지 확인해 보자고."
     return {
-        "username": "SIGNAL DESK",
+        "username": WEBHOOK_USERNAME,
         "content": ("🌸 **SIGNAL DESK | 오늘의 AI 소식**  " + date + "\n"
                     + str(len(embeds)) + "건 중 " + str(num_featured)
                     + "건은 자세히 골랐어. " + opening + "\n"
@@ -535,7 +536,6 @@ def send_labeled_test(briefing: dict, secret: str, when: dt.datetime,
     if not sample:
         return {"status": "no_test_stories", "count": 0}
     payload = payload_for(sample, when, state=None)
-    payload["username"] = "SIGNAL DESK TEST"
     payload["content"] = ("🧪 **[테스트 전송 — 실제 뉴스 알림 아님]**\n"
                           "이미 게시된 기사가 포함될 수 있어. 이 메시지는 출력 형식만 확인하는 용도야.\n\n"
                           + payload["content"])
