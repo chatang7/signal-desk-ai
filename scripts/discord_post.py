@@ -207,33 +207,41 @@ def lore_aside(items: list, state: dict | None) -> tuple[str, int, str] | None:
     return None
 
 
-def payload_for(items: list, when: dt.datetime) -> dict:
+def payload_for(items: list, when: dt.datetime, state: dict | None = None) -> dict:
+    lore = lore_aside(items[:MAX_STORIES], state)
     embeds = []
-    for item in items[:MAX_STORIES]:
+    for index, item in enumerate(items[:MAX_STORIES]):
         link = next((u for u in item["urls"] if safe_link(u)), "")
         source = safe_text(item.get("sourceLabel", "출처 미상"), 70)
         label = "Gemini 보조 분석" if item.get("mode") == "ai-assisted" else "원문 기반 정리"
         if item.get("sourceType") == "secondary":
             label += " · 언론 보도"
-        desc = safe_text(item.get("summary") or "세부 내용은 원문 확인", 315)
-        difference = safe_text(item.get("difference"), 170)
-        usage = safe_text(item.get("usage"), 170)
-        fields = [{"name": "실무 확인", "value": usage or "원문에서 확인 필요", "inline": False}]
+        mood, hook, take = host_lines(item)
+        summary = safe_text(item.get("summary") or "자세한 내용은 원문에서 확인할 필요가 있어.", 315)
+        description = "**" + hook + "**\n\n" + summary + "\n\n**🌸 내 생각**  " + take
+        if lore and lore[1] == index:
+            description += "\n\n*" + safe_text(lore[2], 160) + "*"
+        difference = safe_text(item.get("difference"), 180)
+        usage = safe_text(item.get("usage"), 175)
+        fields = [{"name": "🛠 직접 따져볼 점", "value": usage or "실제 사용 조건을 확인해 봐야겠지.", "inline": False}]
         if difference and not difference.startswith("기존 기술 대비 구체적인 차이는"):
-            fields.insert(0, {"name": "기존 대비 변화", "value": difference, "inline": False})
+            fields.insert(0, {"name": "🔎 뭐가 달라졌나", "value": difference, "inline": False})
         embeds.append({
             "title": safe_text(item.get("title"), 230),
             "url": link,
-            "description": desc,
+            "description": description[:1100],
             "fields": fields,
-            "footer": {"text": safe_text(source + " | " + label + " · 독립 검증 필요", 130)},
+            "color": MOOD_COLORS[mood],
+            "footer": {"text": safe_text(source + " | " + label + " · 진행자의 의견과 보도 사실은 구분", 160)},
         })
 
     date = when.strftime("%Y-%m-%d %H:%M KST")
     return {
         "username": "SIGNAL DESK",
-        "content": "📰 **AI 핵심 브리핑** | " + date + "\n중요한 소식 " + str(len(embeds))
-                   + "건만 전송합니다. 성능·가격·주장의 독립 검증은 별도입니다.",
+        "content": ("🌸 **SIGNAL DESK | 오늘의 AI 소식**  " + date + "\n"
+                    "오늘은 " + str(len(embeds)) + "건을 골라봤어. "
+                    "제법 흥미로운 물건도 있으니, 어디 한번 제대로 살펴보자고.\n"
+                    "*가상 진행자의 감상과 기술 뉴스의 사실은 구분해서 읽어줘.*"),
         "embeds": embeds,
         "allowed_mentions": {"parse": []},
         "tts": False,
@@ -292,7 +300,8 @@ def deliver(briefing: dict, state: dict, secret: str, when: dt.datetime,
     selected = pick(briefing.get("items", []), state, when.date())
     if not selected:
         return {"status": "no_new_stories", "count": 0}
-    payload = payload_for(selected, when)
+    lore = lore_aside(selected, state)
+    payload = payload_for(selected, when, state)
     if dry_run:
         return {"status": "preview", "count": len(selected), "titles": [x["title"] for x in selected]}
     endpoint = webhook_endpoint(secret)
@@ -300,6 +309,9 @@ def deliver(briefing: dict, state: dict, secret: str, when: dt.datetime,
     at = when.isoformat()
     state["posted"].update({item_key(item): at for item in selected})
     state["history"].append({"at": at, "count": len(selected), "messageId": message_id})
+    state["totalPosted"] = total_posted(state) + len(selected)
+    if lore:
+        state.setdefault("loreMentions", {})[lore[0] + "At"] = state["totalPosted"]
     # Keep deduplication keys for at least several months; do not store secrets or text.
     state["history"] = state["history"][-90:]
     if len(state["posted"]) > 1500:
