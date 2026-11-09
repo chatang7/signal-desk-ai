@@ -24,7 +24,7 @@ OUT = ROOT / "data" / "briefing.json"
 NOW = dt.datetime.now(dt.timezone.utc)
 MAX_STORIES = 8
 MAX_AI_CALLS = 4  # per run; unchanged stories are cached
-MODEL = "gemini-2.5-flash-lite"  # free-tier availability and quota can change
+MODEL = "gemini-3.1-flash-lite"  # current documented free-tier model; subject to quota and account eligibility
 ALLOWED_DOMAINS = {"github.com", "openai.com", "blog.google", "deepmind.google", "research.google",
                    "huggingface.co", "arxiv.org", "mistral.ai", "developer.nvidia.com",
                    "microsoft.com", "tech.kakao.com", "d2.naver.com", "msit.go.kr"}
@@ -256,7 +256,7 @@ def _json_request(item: dict, api_key: str) -> dict:
         "evidence는 문자열 배열입니다. JSON 객체만 출력하세요.\n\n" + material
     )
     payload = {"contents": [{"role": "user", "parts": [{"text": instruction}]}],
-               "generationConfig": {"temperature": 0.1, "maxOutputTokens": 900, "responseMimeType": "application/json"}}
+               "generationConfig": {"temperature": 0.1, "maxOutputTokens": 2048, "responseMimeType": "application/json"}}
     req = urllib.request.Request(
         f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent",
         data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
