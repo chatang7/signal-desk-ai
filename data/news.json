@@ -1,13 +1,13 @@
 {
   "schema": "signal-desk-public-feed-v1",
-  "generatedAt": "2026-11-09T07:50:08.247344+00:00",
-  "successfulSources": 13,
-  "failedSources": 0,
+  "generatedAt": "2026-11-09T08:06:23.397167+00:00",
+  "successfulSources": 21,
+  "failedSources": 1,
   "sources": [
     {
       "source": "Codex 릴리스",
-      "ok": true,
-      "count": 1
+      "ok": false,
+      "error": "응답 용량 2.5MB 초과"
     },
     {
       "source": "Gemini CLI 릴리스",
@@ -22,22 +22,22 @@
     {
       "source": "Transformers 릴리스",
       "ok": true,
-      "count": 3
+      "count": 1
     },
     {
       "source": "vLLM 릴리스",
       "ok": true,
-      "count": 3
+      "count": 1
     },
     {
       "source": "Ollama 릴리스",
       "ok": true,
-      "count": 3
+      "count": 2
     },
     {
       "source": "ComfyUI 릴리스",
       "ok": true,
-      "count": 3
+      "count": 1
     },
     {
       "source": "llama.cpp 릴리스",
@@ -47,20 +47,65 @@
     {
       "source": "OpenAI 공식 발표",
       "ok": true,
-      "count": 12
+      "count": 10
     },
     {
       "source": "Google AI 블로그",
       "ok": true,
-      "count": 12
+      "count": 2
     },
     {
       "source": "카카오테크",
       "ok": true,
-      "count": 6
+      "count": 1
     },
     {
       "source": "네이버 D2",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "source": "Google DeepMind",
+      "ok": true,
+      "count": 2
+    },
+    {
+      "source": "Google Research",
+      "ok": true,
+      "count": 2
+    },
+    {
+      "source": "Hugging Face 블로그",
+      "ok": true,
+      "count": 8
+    },
+    {
+      "source": "Mistral AI",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "source": "NVIDIA 개발자",
+      "ok": true,
+      "count": 9
+    },
+    {
+      "source": "Microsoft Research",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "source": "GitHub Copilot",
+      "ok": true,
+      "count": 9
+    },
+    {
+      "source": "과학기술정보통신부",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "source": "AI타임스 (보도)",
       "ok": true,
       "count": 6
     },
@@ -71,6 +116,222 @@
     }
   ],
   "items": [
+    {
+      "id": "feed-b944d83bfa16df7dfe54a4",
+      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217166",
+      "title": "엔비디아 \"LLM에 긴 문맥 꼭 필요하지 않아\"…압축해도 성능 유지",
+      "topic": "반도체",
+      "region": "한국",
+      "date": "2026-11-09",
+      "summary": "엔비디아 연구진이 대형언어모델(LLM)에 무조건 긴 컨텍스트 창이 필요한 것은 아니라는 연구 결과를 발표했다. 대화 기록을 압축하거나 대용량 문서에서 필요한 부분만 읽도록 하면 짧은 문맥에서도 상당수 작업의 성능을 유지할 수 있으며, 추론 처리량도 크게 높일 수 있다는 것이다.엔비디아 연구진은 지난 3일(현지시간) 아카이브에 '긴 문맥은 필요 없다(You don't need long context)'라는 제목의 연구 결과를 공개했다. AI 모델의 컨텍스트 창을 계속 확대하기보다 필요한 정보만 유지하고 활용하는 방식으로 효율성을 높일",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217166"
+      ],
+      "importance": 3,
+      "reliability": 2,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "sourceType": "secondary",
+      "relatedSources": [
+        "AI타임스 (보도)"
+      ]
+    },
+    {
+      "id": "feed-9b15ad13c1bae6f0efe96b",
+      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217157",
+      "title": "트럼프 \"민주당과 AI 규제 협력할 의사 있어\"…중간선거 패배 후 변화",
+      "topic": "정책·규제",
+      "region": "한국",
+      "date": "2026-11-09",
+      "summary": "도널드 트럼프 미국 대통령이 중간선거에서 공화당이 패배한 이후 AI 안전 규제를 놓고 민주당과 협력할 의사가 있다고 밝혔다. 중국과의 기술 경쟁에서 미국이 뒤처지지 않는다는 조건을 달았지만, 그동안 AI 기업의 자율 규제를 선호해 온 트럼프 대통령이 정부 차원의 안전장치 마련에 긍정적인 태도를 보인 것이다.트럼프 대통령은 8일(현지시간) 방송된 CBS 시사 프로그램 '60분' 인터뷰에서 민주당과 AI 안전 규제에 협력할 의사가 있느냐는 질문에 \"물론이다\"라고 답했다. 이어 \"안전장치를 두는 것에 반대하지 않는다\"라고 말했다.이번 인",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217157"
+      ],
+      "importance": 3,
+      "reliability": 2,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "sourceType": "secondary",
+      "relatedSources": [
+        "AI타임스 (보도)"
+      ]
+    },
+    {
+      "id": "feed-803c51d171ef86e5f925ea",
+      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217167",
+      "title": "오픈AI, 생명과학 AI 벤치마크 공개…GPT-6 아스트라 성능 23%P 향상",
+      "topic": "성능 비교",
+      "region": "한국",
+      "date": "2026-11-09",
+      "summary": "오픈AI가 실제 생명과학 실험실에서 AI 에이전트의 데이터 분석과 오류 탐지 능력을 측정하는 새로운 벤치마크를 공개했다. 최신 모델인 'GPT-6 아스트라'는 이전 모델보다 22.9%포인트 높은 점수를 기록했으며, 이번 연구는 오픈AI가 확대하고 있는 제약·바이오 기업용 AI 사업과도 연결된다.오픈AI는 6일(현지시간) 공식 블로그를 통해 생명과학 실험 분석용 벤치마크 '바이오베이직스벤치(BioBasicsBench)'를 발표했다. 효소 설계 전문 생명공학 기업 리고(Ligo)와 공동 개발했으며, 실제 실험실에서 수행하는 업무를 반영",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217167"
+      ],
+      "importance": 3,
+      "reliability": 2,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "sourceType": "secondary",
+      "relatedSources": [
+        "AI타임스 (보도)"
+      ]
+    },
+    {
+      "id": "feed-56228bfd3257f568f133ca",
+      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217170",
+      "title": "엔비디아·SK텔레콤·리벨리온, 이기종 AI 컴퓨팅 겨냥 3각 동맹",
+      "topic": "반도체",
+      "region": "한국",
+      "date": "2026-11-09",
+      "summary": "엔비디아·SK텔레콤·리벨리온이 국산 신경망처리장치(NPU)와 엔비디아 GPU를 연계한 융합 AI 컴퓨팅 시스템 구현에 손을 모은다.이들 3사는 9일 서울 코엑스에서 열린 엔비디아 'AI 데이' 행사에서 'NV 링크 퓨전(Link Fusion) 협력 업무협약(MOU)'을 체결했다. 이번 협약은 과학기술정보통신부와 엔비디아가 협의해 온 NV 링크 퓨전 기반 국산 NPU 연계 협력사업의 일환으로 추진됐다.이에 따라 향후 SK텔레콤이 AI 데이터센터(AIDC)를 구축하면서 리벨리온의 NPU와 엔비디아 GPU를 결합한 이기종 컴퓨팅 시스템",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217170"
+      ],
+      "importance": 3,
+      "reliability": 2,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "sourceType": "secondary",
+      "relatedSources": [
+        "AI타임스 (보도)"
+      ]
+    },
+    {
+      "id": "feed-4d55b65d8b2917f34a446b",
+      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217165",
+      "title": "\"말로 설명하면 영상 완성\"…딥브레인AI, 에이전트 탑재 AI스튜디오 5.0 공개",
+      "topic": "에이전트",
+      "region": "한국",
+      "date": "2026-11-09",
+      "summary": "딥브레인AI(대표 장세영)는 영상 기획에서 편집까지 대화만으로 수행할 수 있는 '비디오 에이전트'가 적용된 올인원 AI 영상 제작 플랫폼 'AI스튜디오 5.0'을 출시했다고 9일 밝혔다.비디오 에이전트는 사용자가 원하는 영상 내용을 대화 형식으로 설명하거나 문서를 올리면 구성안을 먼저 제안한다. 이어 대본·이미지·생성 영상·음성·AI 아바타를 결합해 영상을 자동으로 완성한다.회사 측은 기획·대본·디자인·내레이션·편집을 한 플랫폼에서 처리할 수 있어 제작 시간과 비용, 전문 인력 의존도를 줄일 수 있다고 설명했다.대화형 AI 아바타의",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217165"
+      ],
+      "importance": 3,
+      "reliability": 2,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "sourceType": "secondary",
+      "relatedSources": [
+        "AI타임스 (보도)"
+      ]
+    },
+    {
+      "id": "feed-223aacbc5b120e6f3c26d7",
+      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217158",
+      "title": "딥시크 하네스, 일일 사용자 154만명…미국 주도 AI 에이전트 시장 도전",
+      "topic": "에이전트",
+      "region": "한국",
+      "date": "2026-11-09",
+      "summary": "딥시크의 AI 에이전트 플랫폼 '딥시크 하네스(DeepSeek Harness)'가 출시 3개월 만에 일일 사용자 154만명을 돌파했다. 외부 개발자가 제작한 플러그인도 3만5000개에 달하면서, 딥시크는 공식 마켓플레이스를 구축하고 개발자 지원에 나서기로 했다.딥시크는 8일 공식 X 게시물을 통해 하네스의 이용 현황과 플러그인 생태계 확대 계획을 발표했다.이에 따르면 11월4일 기준 하네스의 일일 활성 사용자(DAU)는 154만명으로, 9월 말 약 27만1000명에서 한 달여 만에 5배 이상 증가했다. 이는 딥시크 공식 API 사용",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217158"
+      ],
+      "importance": 3,
+      "reliability": 2,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "sourceType": "secondary",
+      "relatedSources": [
+        "AI타임스 (보도)"
+      ]
+    },
+    {
+      "id": "feed-cc9249299f5d778e839bcc",
+      "externalId": "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates",
+      "title": "Copilot code review: API management and review overview updates",
+      "topic": "코딩 도구",
+      "region": "해외",
+      "date": "2026-11-07",
+      "summary": "You can now manage GitHub Copilot code review settings through the REST and GraphQL APIs, from enterprise policy down to individual repositories. Copilot’s review overview comment is now more compact,… The post Copilot code review: API management and review overview updates appeared first on The GitHub Blog .",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "GitHub Copilot",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "GitHub Copilot"
+      ]
+    },
     {
       "id": "feed-f1c3c59925f451e95f641e",
       "externalId": "arxiv:2611.09894",
@@ -90,13 +351,16 @@
       "importance": 3,
       "reliability": 3,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
     },
     {
       "id": "feed-e0e75c1bea37c48533340c",
@@ -123,7 +387,10 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "네이버 D2",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00",
+      "relatedSources": [
+        "네이버 D2"
+      ]
     },
     {
       "id": "feed-b4b6705315cd545a3c6fe3",
@@ -144,13 +411,46 @@
       "importance": 3,
       "reliability": 3,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
+    },
+    {
+      "id": "feed-a5fcc1255202f357d72164",
+      "externalId": "https://github.blog/changelog/2026-11-06-copilot-impact-dashboard-adds-chat-and-vs-code-agent-usage",
+      "title": "Copilot impact dashboard adds chat and VS Code agent usage",
+      "topic": "에이전트",
+      "region": "해외",
+      "date": "2026-11-06",
+      "summary": "The Agent adoption chart in the Copilot impact dashboard now includes Copilot Chat and the VS Code Agents window, so you can see engagement across nine Copilot experiences. The adoption… The post Copilot impact dashboard adds chat and VS Code agent usage appeared first on The GitHub Blog .",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://github.blog/changelog/2026-11-06-copilot-impact-dashboard-adds-chat-and-vs-code-agent-usage"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "GitHub Copilot",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "GitHub Copilot"
+      ]
     },
     {
       "id": "feed-a0a44ed09dc9a1089b4e09",
@@ -171,13 +471,16 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "OpenAI 공식 발표"
+      ]
     },
     {
       "id": "feed-92aa847e71eb86f4a5433e",
@@ -198,13 +501,16 @@
       "importance": 3,
       "reliability": 3,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
     },
     {
       "id": "feed-8ff18db0de3e1c9b73ea2a",
@@ -225,13 +531,16 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Transformers",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "GitHub · Transformers"
+      ]
     },
     {
       "id": "feed-6966e852da5d6215922cf6",
@@ -252,13 +561,16 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Claude Code",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "GitHub · Claude Code"
+      ]
     },
     {
       "id": "feed-5f721228af3682c2417b41",
@@ -279,13 +591,76 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "OpenAI 공식 발표"
+      ]
+    },
+    {
+      "id": "feed-5a90caffb2c87d2e6e8eb5",
+      "externalId": "https://huggingface.co/blog/allenai/toyblocks",
+      "title": "ToyBlocks: A controlled world for robot learning and evaluation",
+      "topic": "성능 비교",
+      "region": "해외",
+      "date": "2026-11-06",
+      "summary": "",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://huggingface.co/blog/allenai/toyblocks"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face 블로그",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Hugging Face 블로그"
+      ]
+    },
+    {
+      "id": "feed-525555dfe497cbaa420f0c",
+      "externalId": "https://github.blog/changelog/2026-11-05-usage-metrics-api-adds-code-review-details-and-addressed-rate",
+      "title": "Usage metrics API adds code review details and addressed rate",
+      "topic": "코딩 도구",
+      "region": "해외",
+      "date": "2026-11-06",
+      "summary": "The enterprise and organization repository-level Copilot usage metrics reports now show what happens to Copilot code review feedback. A new copilot_code_review object on each repos-1-day row reports how many Copilot-reviewed… The post Usage metrics API adds code review details and addressed rate appeared first on The GitHub Blog .",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://github.blog/changelog/2026-11-05-usage-metrics-api-adds-code-review-details-and-addressed-rate"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "GitHub Copilot",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "GitHub Copilot"
+      ]
     },
     {
       "id": "feed-4171d6dc37d9b36a79d720",
@@ -306,13 +681,76 @@
       "importance": 3,
       "reliability": 3,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
+    },
+    {
+      "id": "feed-353c4d26111c8c919ddfe4",
+      "externalId": "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2",
+      "title": "GitHub Copilot weekly releases — November 2",
+      "topic": "GitHub 오픈소스",
+      "region": "해외",
+      "date": "2026-11-06",
+      "summary": "This week, Copilot comes to JetBrains Air and Xcode’s coding assistant, with updates to help you manage pull requests, settings, and agent sessions. GitHub Copilot app Set up Agent Merge… The post GitHub Copilot weekly releases — November 2 appeared first on The GitHub Blog .",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "GitHub Copilot",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "GitHub Copilot"
+      ]
+    },
+    {
+      "id": "feed-2b1caf305a698efd8ff3b0",
+      "externalId": "https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available",
+      "title": "@GitHub in Slack and Teams is generally available and more",
+      "topic": "GitHub 오픈소스",
+      "region": "해외",
+      "date": "2026-11-06",
+      "summary": "Turn conversations into code with @GitHub in Slack and Teams! Investigate bugs, create issues, implement changes, and open pull requests—all without leaving your conversation. What’s new Build and review together… The post @GitHub in Slack and Teams is generally available and more appeared first on The GitHub Blog .",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "GitHub Copilot",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "GitHub Copilot"
+      ]
     },
     {
       "id": "feed-24d305c9a008cb5f0bfcbc",
@@ -339,7 +777,130 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Codex",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00",
+      "relatedSources": [
+        "GitHub · Codex"
+      ]
+    },
+    {
+      "id": "feed-13e4c95dcbaa6d34090ed2",
+      "externalId": "https://huggingface.co/blog/open-asr-leaderboard-liva",
+      "title": "Egyptian and Nigerian English join the Open ASR Leaderboard",
+      "topic": "성능 비교",
+      "region": "해외",
+      "date": "2026-11-06",
+      "summary": "",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://huggingface.co/blog/open-asr-leaderboard-liva"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face 블로그",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Hugging Face 블로그"
+      ]
+    },
+    {
+      "id": "feed-0778fb85d9153ba6e8af78",
+      "externalId": "https://github.blog/changelog/2026-11-05-usage-metrics-api-flags-telemetry-and-version-gaps",
+      "title": "Usage metrics API flags telemetry and version gaps",
+      "topic": "미정",
+      "region": "해외",
+      "date": "2026-11-06",
+      "summary": "The Copilot usage metrics API now shows which users are missing client telemetry or are running IDE or extension versions below the usage metrics minimums. New per-user fields appear in… The post Usage metrics API flags telemetry and version gaps appeared first on The GitHub Blog .",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://github.blog/changelog/2026-11-05-usage-metrics-api-flags-telemetry-and-version-gaps"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "GitHub Copilot",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "GitHub Copilot"
+      ]
+    },
+    {
+      "id": "feed-f65775ad44370722f39929",
+      "externalId": "https://research.google/blog/detecting-signs-of-hypertension-using-wearable-sensors",
+      "title": "Detecting signs of hypertension using wearable sensors",
+      "topic": "미정",
+      "region": "해외",
+      "date": "2026-11-05",
+      "summary": "Health & Bioscience",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://research.google/blog/detecting-signs-of-hypertension-using-wearable-sensors"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Google Research",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Google Research"
+      ]
+    },
+    {
+      "id": "feed-f25b9201ad6bdcc6fc966e",
+      "externalId": "https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation",
+      "title": "New NVIDIA Cosmos 3 Open Models for Interactive World Simulation",
+      "topic": "반도체",
+      "region": "해외",
+      "date": "2026-11-05",
+      "summary": "",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face 블로그",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Hugging Face 블로그"
+      ]
     },
     {
       "id": "feed-db9792e954d447010915e6",
@@ -360,13 +921,46 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "OpenAI 공식 발표"
+      ]
+    },
+    {
+      "id": "feed-c65c7708e93995ca45416c",
+      "externalId": "https://huggingface.co/blog/phonon-tts",
+      "title": "A Closer Look at Phonon TTS. Launching High-Quality On-Device Speech That Tops the Benchmarks.",
+      "topic": "음성 생성",
+      "region": "해외",
+      "date": "2026-11-05",
+      "summary": "",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://huggingface.co/blog/phonon-tts"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face 블로그",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Hugging Face 블로그"
+      ]
     },
     {
       "id": "feed-bf35e59cfc36dbfeae1483",
@@ -393,7 +987,40 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "네이버 D2",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00",
+      "relatedSources": [
+        "네이버 D2"
+      ]
+    },
+    {
+      "id": "feed-bbd492caba72ca544b8bac",
+      "externalId": "https://openai.com/index/cultfit-builds-with-codex",
+      "title": "Cult.fit builds operational muscle with Codex",
+      "topic": "코딩 도구",
+      "region": "해외",
+      "date": "2026-11-05",
+      "summary": "Cult.fit is using Codex to help teams across functions build tools, move faster, and change how work gets done.",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://openai.com/index/cultfit-builds-with-codex"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "OpenAI 공식 발표",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "OpenAI 공식 발표"
+      ]
     },
     {
       "id": "feed-a8e215d1c3fca63aee0ffd",
@@ -414,13 +1041,46 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "OpenAI 공식 발표"
+      ]
+    },
+    {
+      "id": "feed-a808bb65b9ed68b37c5a90",
+      "externalId": "arxiv:2611.07461",
+      "title": "The Last Mile to the Real World: Agent-Native Primitives as Reusable Building Blocks for Solving Real-World Tasks",
+      "topic": "연구·논문",
+      "region": "해외",
+      "date": "2026-11-05",
+      "summary": "How can an agent handle a real-world task end to end? Frontier models with their own harnesses still fall short on real-world benchmarks: on Terminal-Bench 4.0, GPT-5.6 Sol with Codex resolves 37.3% of the tasks and Claude Opus 5 with Claude Code 51.8%. These tasks fail at the step from reaching a resource to applying it, which we call the last mile to the real world. Existing approaches put the resource within reach but leave the competence to apply it with the caller, so each harness rebuilds ",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://arxiv.org/abs/2611.07461"
+      ],
+      "importance": 3,
+      "reliability": 3,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face Daily Papers",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
     },
     {
       "id": "feed-9f8fd01169c2aead59882a",
@@ -441,13 +1101,46 @@
       "importance": 3,
       "reliability": 3,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
+    },
+    {
+      "id": "feed-7a4fd1de9b53747b5e4cc1",
+      "externalId": "https://developer.nvidia.com/blog/five-ways-nvidia-co-design-maximizes-the-value-of-every-byte-in-the-ai-factory",
+      "title": "Five Ways NVIDIA Co-Design Maximizes the Value of Every Byte in the AI Factory",
+      "topic": "반도체",
+      "region": "해외",
+      "date": "2026-11-05",
+      "summary": "In an AI factory, high bandwidth memory (HBM)is the fastest, most expensive, and most contested memory tier. Every byte spent on a redundant weight copy, an...",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://developer.nvidia.com/blog/five-ways-nvidia-co-design-maximizes-the-value-of-every-byte-in-the-ai-factory"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "NVIDIA 개발자",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "NVIDIA 개발자"
+      ]
     },
     {
       "id": "feed-616c68177b707eae60eb2b",
@@ -468,13 +1161,76 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "OpenAI 공식 발표"
+      ]
+    },
+    {
+      "id": "feed-5ef5685b9690ae6c5fed69",
+      "externalId": "https://developer.nvidia.com/blog/configure-certify-and-operate-kubernetes-gpu-clusters-with-nvidia-dsx-os",
+      "title": "Configure, Certify, and Operate Kubernetes GPU Clusters with NVIDIA DSX OS",
+      "topic": "반도체",
+      "region": "해외",
+      "date": "2026-11-05",
+      "summary": "One underperforming GPU can slow an entire distributed training job. The node may pass basic health checks and show normal utilization, leaving operators to...",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://developer.nvidia.com/blog/configure-certify-and-operate-kubernetes-gpu-clusters-with-nvidia-dsx-os"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "NVIDIA 개발자",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "NVIDIA 개발자"
+      ]
+    },
+    {
+      "id": "feed-5bd02a39074589ea287cbb",
+      "externalId": "https://mistral.ai/news/build-with-studio",
+      "title": "Le Chonk brings the brains. Studio puts it to work.",
+      "topic": "미정",
+      "region": "해외",
+      "date": "2026-11-05",
+      "summary": "Build and deploy enterprise agents, workflows and apps faster with Mistral Studio and Le Chonk full control over your models, data and infrastructure.",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://mistral.ai/news/build-with-studio"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Mistral AI",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Mistral AI"
+      ]
     },
     {
       "id": "feed-52663831996b320a23ff83",
@@ -495,13 +1251,16 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "카카오테크",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "카카오테크"
+      ]
     },
     {
       "id": "feed-485654c1f98a7cdcb6064f",
@@ -517,18 +1276,84 @@
       "cost": "",
       "performance": "",
       "urls": [
-        "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash"
+        "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash",
+        "https://deepmind.google/blog/gemini-omni-12-flash-fast-and-cost-effective-with-longer-clips"
       ],
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Google AI 블로그",
+        "Google DeepMind"
+      ],
+      "duplicateCount": 2
+    },
+    {
+      "id": "feed-3a45181f6d992343d41b74",
+      "externalId": "https://www.microsoft.com/en-us/research/blog/formally-verifying-agent-written-full-stack-web-apps-with-pdd-kit",
+      "title": "Formally verifying agent-written full-stack web apps with PDD Kit",
+      "topic": "에이전트",
+      "region": "해외",
+      "date": "2026-11-05",
+      "summary": "AI agents can generate code at a scale that’s hard for humans to review line-by-line. PDD Kit helps ensure the code is doing what the developer intended by creating formal specifications and testing against them. It converts developer intent into a Verus specification, proves AI-generated code meets it for every input, and uses tests where proofs aren't practical. Developers review intent, not every line. The post Formally verifying agent-written full-stack web apps with PDD Kit appeared first o",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://www.microsoft.com/en-us/research/blog/formally-verifying-agent-written-full-stack-web-apps-with-pdd-kit"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Microsoft Research",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Microsoft Research"
+      ]
+    },
+    {
+      "id": "feed-2d1d326185a62641bed05b",
+      "externalId": "https://openai.com/ads/customers/flipsnack",
+      "title": "Flipsnack grows product signups with conversion optimization",
+      "topic": "미정",
+      "region": "해외",
+      "date": "2026-11-05",
+      "summary": "Flipsnack focused its ChatGPT Ads campaigns on getting people to try its product, growing registrations while lowering the cost per signup.",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://openai.com/ads/customers/flipsnack"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "OpenAI 공식 발표",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "OpenAI 공식 발표"
+      ]
     },
     {
       "id": "feed-25fa4dd18ec78a48a9233c",
@@ -549,13 +1374,16 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "OpenAI 공식 발표"
+      ]
     },
     {
       "id": "feed-2392080298d03849540f89",
@@ -576,13 +1404,16 @@
       "importance": 3,
       "reliability": 3,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
     },
     {
       "id": "feed-14e90e72d3401ddf817f64",
@@ -603,13 +1434,16 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "OpenAI 공식 발표"
+      ]
     },
     {
       "id": "feed-fbaa86a829ad59fd10c58d",
@@ -636,7 +1470,10 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00",
+      "relatedSources": [
+        "OpenAI 공식 발표"
+      ]
     },
     {
       "id": "feed-e6261d78f81902fd52ca51",
@@ -657,13 +1494,16 @@
       "importance": 3,
       "reliability": 3,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
     },
     {
       "id": "feed-e3f47be188dc96623547e8",
@@ -684,13 +1524,46 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · ComfyUI",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "GitHub · ComfyUI"
+      ]
+    },
+    {
+      "id": "feed-d53634b505a78ccb6c4a76",
+      "externalId": "https://github.blog/changelog/2026-11-04-github-copilot-is-now-available-in-xcodes-coding-assistant",
+      "title": "GitHub Copilot is now available in Xcode’s coding assistant",
+      "topic": "코딩 도구",
+      "region": "해외",
+      "date": "2026-11-04",
+      "summary": "You can now work with GitHub Copilot directly in Xcode’s built-in coding assistant, bringing Copilot into your native Xcode workflow. The integration is now in public preview, available starting with… The post GitHub Copilot is now available in Xcode’s coding assistant appeared first on The GitHub Blog .",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://github.blog/changelog/2026-11-04-github-copilot-is-now-available-in-xcodes-coding-assistant"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "GitHub Copilot",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "GitHub Copilot"
+      ]
     },
     {
       "id": "feed-bfa6f579e4e172891edb59",
@@ -711,13 +1584,16 @@
       "importance": 3,
       "reliability": 3,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
     },
     {
       "id": "feed-a3433e936d2c04bfa7722c",
@@ -744,7 +1620,10 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00",
+      "relatedSources": [
+        "OpenAI 공식 발표"
+      ]
     },
     {
       "id": "feed-981785a01550309d0739d8",
@@ -771,7 +1650,160 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00",
+      "relatedSources": [
+        "OpenAI 공식 발표"
+      ]
+    },
+    {
+      "id": "feed-73bbcb2d707df5a349975b",
+      "externalId": "https://developer.nvidia.com/blog/how-nvidia-factory-operations-blueprint-coordinates-ai-agents-to-investigate-production-issues",
+      "title": "How NVIDIA Factory Operations Blueprint Coordinates AI Agents to Investigate Production Issues",
+      "topic": "반도체",
+      "region": "해외",
+      "date": "2026-11-04",
+      "summary": "A Siemens report estimates that unplanned downtime costs an average large plant in the surveyed sectors $253 million per year. Whether investigating a failed...",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://developer.nvidia.com/blog/how-nvidia-factory-operations-blueprint-coordinates-ai-agents-to-investigate-production-issues"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "NVIDIA 개발자",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "NVIDIA 개발자"
+      ]
+    },
+    {
+      "id": "feed-5acd07c875ea982ee4419a",
+      "externalId": "https://developer.nvidia.com/blog/nvidia-cuda-13-5-brings-nvidia-vera-rubin-ga-support",
+      "title": "NVIDIA CUDA 13.5 Brings NVIDIA Vera Rubin GA Support",
+      "topic": "반도체",
+      "region": "해외",
+      "date": "2026-11-04",
+      "summary": "As artificial intelligence and accelerated computing continue to push the boundaries of what's possible, the latest NVIDIA CUDA release arrives to unlock...",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://developer.nvidia.com/blog/nvidia-cuda-13-5-brings-nvidia-vera-rubin-ga-support"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "NVIDIA 개발자",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "NVIDIA 개발자"
+      ]
+    },
+    {
+      "id": "feed-4376fc05a5786b49752e4f",
+      "externalId": "https://developer.nvidia.com/blog/how-nvidia-uses-ai-agents-to-streamline-ai-factory-operations",
+      "title": "How NVIDIA Uses AI Agents to Streamline AI Factory Operations",
+      "topic": "반도체",
+      "region": "해외",
+      "date": "2026-11-04",
+      "summary": "As GPU clusters scale, operations span compute, network, hardware, and scheduling. Site reliability engineers (SREs) often have to examine multiple dashboards...",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://developer.nvidia.com/blog/how-nvidia-uses-ai-agents-to-streamline-ai-factory-operations"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "NVIDIA 개발자",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "NVIDIA 개발자"
+      ]
+    },
+    {
+      "id": "feed-32d4e91d243ef07f079537",
+      "externalId": "https://huggingface.co/blog/Dharma-AI/dharma-field-extractor",
+      "title": "Dharma Field Extractor: Any Document In, Structured Fields in JSON Out",
+      "topic": "미정",
+      "region": "해외",
+      "date": "2026-11-04",
+      "summary": "",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://huggingface.co/blog/Dharma-AI/dharma-field-extractor"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face 블로그",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Hugging Face 블로그"
+      ]
+    },
+    {
+      "id": "feed-3120cb53fbc5954ecff051",
+      "externalId": "https://github.blog/changelog/2026-11-03-byok-and-enterprise-custom-models-in-the-copilot-usage-api",
+      "title": "BYOK and enterprise custom models in the Copilot usage API",
+      "topic": "모델 출시",
+      "region": "해외",
+      "date": "2026-11-04",
+      "summary": "The Copilot usage metrics API now shows bring your own key (BYOK) usage across GitHub Copilot, so you can separate it from Copilot-hosted model usage. Reports cover two kinds of… The post BYOK and enterprise custom models in the Copilot usage API appeared first on The GitHub Blog .",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://github.blog/changelog/2026-11-03-byok-and-enterprise-custom-models-in-the-copilot-usage-api"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "GitHub Copilot",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "GitHub Copilot"
+      ]
     },
     {
       "id": "feed-2b8df21d0b5d37d66da3f5",
@@ -792,13 +1824,46 @@
       "importance": 3,
       "reliability": 3,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
+    },
+    {
+      "id": "feed-1f522e8436ab4f4eb31b9e",
+      "externalId": "https://developer.nvidia.com/blog/use-nvidia-nemo-to-turn-agent-failures-into-tests-and-harness-fixes",
+      "title": "Use NVIDIA NeMo to Turn Agent Failures into Tests and Harness Fixes",
+      "topic": "반도체",
+      "region": "해외",
+      "date": "2026-11-04",
+      "summary": "Turn production evidence into prioritized issues and custom evaluations that help you improve prompts, tools, models, memory, skills, and harness code. When you...",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://developer.nvidia.com/blog/use-nvidia-nemo-to-turn-agent-failures-into-tests-and-harness-fixes"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "NVIDIA 개발자",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "NVIDIA 개발자"
+      ]
     },
     {
       "id": "feed-1be4fdd8e6ca80f0ec0127",
@@ -819,13 +1884,46 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "OpenAI 공식 발표"
+      ]
+    },
+    {
+      "id": "feed-18868753b53dd265cf2cc8",
+      "externalId": "https://research.google/blog/agile-deliberation-how-ai-helps-humans-define-the-gray-areas",
+      "title": "Agile Deliberation: How AI helps humans define the gray areas",
+      "topic": "미정",
+      "region": "해외",
+      "date": "2026-11-04",
+      "summary": "Data Mining & Modeling",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://research.google/blog/agile-deliberation-how-ai-helps-humans-define-the-gray-areas"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Google Research",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Google Research"
+      ]
     },
     {
       "id": "feed-064860c5d8c03d85ac0d55",
@@ -846,13 +1944,16 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Claude Code",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "GitHub · Claude Code"
+      ]
     },
     {
       "id": "feed-03d60d060d0c31c8a6907e",
@@ -873,13 +1974,16 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Gemini CLI",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "GitHub · Gemini CLI"
+      ]
     },
     {
       "id": "feed-e4c78dc6c3acf31d0b59b6",
@@ -900,13 +2004,76 @@
       "importance": 3,
       "reliability": 3,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
+    },
+    {
+      "id": "feed-a6f54d325d31634f891659",
+      "externalId": "https://huggingface.co/blog/transformers-mic",
+      "title": "Transformers Model Integration Contracts",
+      "topic": "모델 출시",
+      "region": "해외",
+      "date": "2026-11-03",
+      "summary": "",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://huggingface.co/blog/transformers-mic"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face 블로그",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Hugging Face 블로그"
+      ]
+    },
+    {
+      "id": "feed-63945bc794809749828fed",
+      "externalId": "https://huggingface.co/blog/cwe-bench",
+      "title": "CWE-bench v2: More coverage, quality, and transparency",
+      "topic": "미정",
+      "region": "해외",
+      "date": "2026-11-03",
+      "summary": "",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://huggingface.co/blog/cwe-bench"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face 블로그",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Hugging Face 블로그"
+      ]
     },
     {
       "id": "feed-6094c526913e4945cb8741",
@@ -927,13 +2094,16 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Ollama",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "GitHub · Ollama"
+      ]
     },
     {
       "id": "feed-4d668de0ed4ad0a43d856a",
@@ -954,13 +2124,46 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Claude Code",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "GitHub · Claude Code"
+      ]
+    },
+    {
+      "id": "feed-4d3938441f216409a8f1b9",
+      "externalId": "https://huggingface.co/blog/ibm-research/palette-deck-building",
+      "title": "Palette: teaching a small model to build decks in your design language",
+      "topic": "모델 출시",
+      "region": "해외",
+      "date": "2026-11-03",
+      "summary": "",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://huggingface.co/blog/ibm-research/palette-deck-building"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face 블로그",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Hugging Face 블로그"
+      ]
     },
     {
       "id": "feed-34e7d62615202d0de65fe8",
@@ -987,7 +2190,40 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00",
+      "relatedSources": [
+        "OpenAI 공식 발표"
+      ]
+    },
+    {
+      "id": "feed-2b4786f99076579d8179f1",
+      "externalId": "https://github.blog/changelog/2026-11-03-github-copilot-is-now-available-in-jetbrains-air",
+      "title": "GitHub Copilot is now available in JetBrains Air",
+      "topic": "GitHub 오픈소스",
+      "region": "해외",
+      "date": "2026-11-03",
+      "summary": "You can now delegate coding tasks, guide execution, and review results with GitHub Copilot in JetBrains Air. The integration uses the Agent Client Protocol (ACP) and supports tasks in your… The post GitHub Copilot is now available in JetBrains Air appeared first on The GitHub Blog .",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://github.blog/changelog/2026-11-03-github-copilot-is-now-available-in-jetbrains-air"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "GitHub Copilot",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "GitHub Copilot"
+      ]
     },
     {
       "id": "feed-271cfd1a1d2bf8370ffacb",
@@ -1008,13 +2244,76 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Ollama",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "GitHub · Ollama"
+      ]
+    },
+    {
+      "id": "feed-23c4f130369cb97228de41",
+      "externalId": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity",
+      "title": "Agentic cheminformatics with Google Antigravity",
+      "topic": "에이전트",
+      "region": "해외",
+      "date": "2026-11-03",
+      "summary": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Google DeepMind",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Google DeepMind"
+      ]
+    },
+    {
+      "id": "feed-fb338bda1aab8560d19147",
+      "externalId": "https://developer.nvidia.com/blog/support-new-ai-frameworks-faster-using-nvidia-workload-map",
+      "title": "Support New AI Frameworks Faster Using NVIDIA Workload Map",
+      "topic": "반도체",
+      "region": "해외",
+      "date": "2026-11-02",
+      "summary": "NVIDIA DSX AI Factory Platform brings together technologies to help the ecosystem design, build, and operate more efficient AI factories, including open source,...",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://developer.nvidia.com/blog/support-new-ai-frameworks-faster-using-nvidia-workload-map"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "NVIDIA 개발자",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "NVIDIA 개발자"
+      ]
     },
     {
       "id": "feed-996c88dfa31d64c0a9d691",
@@ -1035,13 +2334,16 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Google AI 블로그"
+      ]
     },
     {
       "id": "feed-7f6f449f0fe5d3d382928c",
@@ -1068,7 +2370,10 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "네이버 D2",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00",
+      "relatedSources": [
+        "네이버 D2"
+      ]
     },
     {
       "id": "feed-7bcfe1ffe58bfb8f9ab2da",
@@ -1089,13 +2394,16 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · vLLM",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "GitHub · vLLM"
+      ]
     },
     {
       "id": "feed-69c6d80b08e6a97b63b75c",
@@ -1116,13 +2424,76 @@
       "importance": 3,
       "reliability": 3,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
+    },
+    {
+      "id": "feed-6663ba9af98ba4a1d59dbf",
+      "externalId": "https://developer.nvidia.com/blog/making-kubernetes-ai-ready-for-nvidia-vera-rubin-on-day-one",
+      "title": "Making Kubernetes AI-Ready for NVIDIA Vera Rubin on Day One",
+      "topic": "반도체",
+      "region": "해외",
+      "date": "2026-11-02",
+      "summary": "Configuring and optimizing Kubernetes for new GPU hardware such as NVIDIA Vera Rubin is complex and error-prone. Drivers, kernels, runtimes, networking,...",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://developer.nvidia.com/blog/making-kubernetes-ai-ready-for-nvidia-vera-rubin-on-day-one"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "NVIDIA 개발자",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "NVIDIA 개발자"
+      ]
+    },
+    {
+      "id": "feed-0dde73a752eec2652b7435",
+      "externalId": "https://developer.nvidia.com/blog/diagnose-distributed-ai-workload-failures-with-nvidia-attribution",
+      "title": "Diagnose Distributed AI Workload Failures with NVIDIA Attribution",
+      "topic": "반도체",
+      "region": "해외",
+      "date": "2026-11-02",
+      "summary": "In distributed AI workloads, a single error can produce a cascade of symptoms. A GPU or fabric event may surface as NCCL errors on other ranks, scheduler state...",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://developer.nvidia.com/blog/diagnose-distributed-ai-workload-failures-with-nvidia-attribution"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "NVIDIA 개발자",
+      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
+      "relatedSources": [
+        "NVIDIA 개발자"
+      ]
     },
     {
       "id": "feed-9a57f8348870fba3b31640",
@@ -1149,7 +2520,10 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
     },
     {
       "id": "feed-475523553660f144bc27fd",
@@ -1176,7 +2550,10 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Transformers",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00",
+      "relatedSources": [
+        "GitHub · Transformers"
+      ]
     },
     {
       "id": "feed-f126426b3b20b994ca9ba9",
@@ -1203,7 +2580,10 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Transformers",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00",
+      "relatedSources": [
+        "GitHub · Transformers"
+      ]
     },
     {
       "id": "feed-e9eaa059c358e81f23df4b",
@@ -1230,7 +2610,10 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "네이버 D2",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00",
+      "relatedSources": [
+        "네이버 D2"
+      ]
     },
     {
       "id": "feed-d1bebc9219987628484b6f",
@@ -1257,7 +2640,10 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Ollama",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00",
+      "relatedSources": [
+        "GitHub · Ollama"
+      ]
     },
     {
       "id": "feed-b4f3207a2bd6aa514a8b56",
@@ -1284,7 +2670,10 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "카카오테크",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00",
+      "relatedSources": [
+        "카카오테크"
+      ]
     },
     {
       "id": "feed-a2ef0a9268e285d4edc29b",
@@ -1311,7 +2700,10 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · ComfyUI",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00",
+      "relatedSources": [
+        "GitHub · ComfyUI"
+      ]
     },
     {
       "id": "feed-36262702febbea5061700d",
@@ -1338,7 +2730,10 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
     },
     {
       "id": "feed-9a15b40232fdbf825a34f1",
@@ -1365,7 +2760,10 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00",
+      "relatedSources": [
+        "Google AI 블로그"
+      ]
     },
     {
       "id": "feed-861b9fbb49074504397c85",
@@ -1392,7 +2790,10 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
     },
     {
       "id": "feed-78cebe09803b57417ff218",
@@ -1419,7 +2820,10 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00",
+      "relatedSources": [
+        "Google AI 블로그"
+      ]
     },
     {
       "id": "feed-5c5a1a59f2ede8694d3687",
@@ -1446,7 +2850,10 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "카카오테크",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00",
+      "relatedSources": [
+        "카카오테크"
+      ]
     },
     {
       "id": "feed-0c558893870acefe2246bb",
@@ -1473,7 +2880,10 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "카카오테크",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00",
+      "relatedSources": [
+        "카카오테크"
+      ]
     },
     {
       "id": "feed-01afa511761673bf6cd8a8",
@@ -1500,7 +2910,10 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · ComfyUI",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00",
+      "relatedSources": [
+        "GitHub · ComfyUI"
+      ]
     },
     {
       "id": "feed-bb4f528d069ebe55099cbe",
@@ -1527,7 +2940,10 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · vLLM",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00",
+      "relatedSources": [
+        "GitHub · vLLM"
+      ]
     },
     {
       "id": "feed-ed1be8ea5f53c7373a9c44",
@@ -1554,7 +2970,10 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00",
+      "relatedSources": [
+        "Google AI 블로그"
+      ]
     },
     {
       "id": "feed-561a9c30558db996ce04c1",
@@ -1581,304 +3000,18 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · vLLM",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
-    },
-    {
-      "id": "feed-aacb8ca8a4a96bc0cfecf6",
-      "externalId": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026",
-      "title": "The latest AI news we announced in September 2026",
-      "topic": "미정",
-      "region": "해외",
-      "date": "2026-10-02",
-      "summary": "Here are Google’s latest AI updates from September 2026",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026"
-      ],
-      "importance": 3,
-      "reliability": 4,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
-    },
-    {
-      "id": "feed-f9635a4fda1e41a7984315",
-      "externalId": "https://tech.kakao.com/posts/838",
-      "title": "데이터 분석 에이전트를 만들며 배운 컨텍스트 설계",
-      "topic": "에이전트",
-      "region": "한국",
-      "date": "2026-10-01",
-      "summary": "LLM 에이전트는 목표를 받으면 필요한 정보를 찾고 적절한 도구를 선택해 실행하며, 그 결과를 관찰한 뒤 다음 행동을 결정합니다. Anthropic은 에이전트를 활용한 여러 실험을 공개했습니다. Claude Sonnet 4.5로 Claude.ai를 재현하는 실험 과 Claude Opus 4.6 기반 에이전트가 Rust로 Linux 6.9 커널을 빌드할 수 있는 C 컴파일러를 개발한 사례를 소개했습니다. 이처럼 모델의 성능이 높아지면서 에이전트가 자율적으...",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://tech.kakao.com/posts/838"
-      ],
-      "importance": 3,
-      "reliability": 4,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "카카오테크",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
-    },
-    {
-      "id": "feed-40de2077ded12536dea747",
-      "externalId": "https://d2.naver.com/helloworld/8118359",
-      "title": "에이전트, 개념부터 같이 정리해봐요 - 워크플로우 · 하네스 · Context/Memory · MCP/A2A",
-      "topic": "에이전트",
-      "region": "한국",
-      "date": "2026-10-01",
-      "summary": "네이버 사내 Tech Meetup에서 발표되었던 인기 세션을 공유합니다. ​ 에이전트를 개발하다 보면 같은 개념을 서로 다른 뜻으로 쓰고 있어서 논의가 겉도는 경험, 한 번쯤 해보셨을 것 같습니다. ​ \"이거 에이전트인가요?\" \"하네스를 만들어야죠\" — 그런데 하네스가 정확히 무엇인가요? \"Context 에 넣어두면 되죠\" \"그건 Memory 아닌가요?\" \"그건 MCP 인가요 A2A 인가요? 기존 REST API 랑 뭐가 다른가요?\" ​ 사실 이 개념들은 사외에서도 정리가 덜 된 것들입니다. 그래서 원문(Anthropic · OpenAI · MCP · A2A 스펙 등)을 다시 읽고, 실제로 실물들을 확인해보며 정리해본 내용을 공유합니다. ​ 에이전트, 개념부터 같이 정리해봐요 - 워크플로우 · 하네스 · Context/Memory · MCP/A2A devreld2 | 에이전트, 개념부터 같이 정리해봐요 - 워크플로우 · 하네스 · Context/Memory · MCP/A2A nave",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://d2.naver.com/helloworld/8118359"
-      ],
-      "importance": 3,
-      "reliability": 4,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "네이버 D2",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
-    },
-    {
-      "id": "feed-2ad49dd9b65fe3aef9a784",
-      "externalId": "https://blog.google/innovation-and-ai/technology/ai/expanding-ai-economy-research-bench",
-      "title": "New experts join Google’s AI & Economy team",
-      "topic": "미정",
-      "region": "해외",
-      "date": "2026-09-18",
-      "summary": "We are expanding our AI & Economy team with world-class academic advisors, fellows, and core internal researchers.",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://blog.google/innovation-and-ai/technology/ai/expanding-ai-economy-research-bench"
-      ],
-      "importance": 3,
-      "reliability": 4,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
-    },
-    {
-      "id": "feed-dfe2f7f06070ffbc61225b",
-      "externalId": "https://blog.google/innovation-and-ai/technology/ai/ai-for-societal-impact",
-      "title": "AI for Societal Impact",
-      "topic": "미정",
-      "region": "해외",
-      "date": "2026-09-15",
-      "summary": "Explore this collection to see how experts and local leaders are using AI breakthroughs to ensure everyone can share the opportunity of AI.",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://blog.google/innovation-and-ai/technology/ai/ai-for-societal-impact"
-      ],
-      "importance": 3,
-      "reliability": 4,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
-    },
-    {
-      "id": "feed-7a00acf92df0c96e97506b",
-      "externalId": "https://blog.google/innovation-and-ai/technology/ai/ai-for-every-language",
-      "title": "AI for everyone in every language",
-      "topic": "미정",
-      "region": "해외",
-      "date": "2026-09-15",
-      "summary": "We’re moving beyond traditional text translation to build models that understand the world’s rich, living languages exactly as they are expressed.",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://blog.google/innovation-and-ai/technology/ai/ai-for-every-language"
-      ],
-      "importance": 3,
-      "reliability": 4,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
-    },
-    {
-      "id": "feed-64730bcdfc3a35229b481a",
-      "externalId": "https://blog.google/innovation-and-ai/technology/ai/ai-economy-atlas-september-2026",
-      "title": "New insights from Google’s AI & Economy ATLAS",
-      "topic": "미정",
-      "region": "해외",
-      "date": "2026-09-15",
-      "summary": "We’ve translated ATLAS’s millions of global data points into an interactive, open-access experience.",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://blog.google/innovation-and-ai/technology/ai/ai-economy-atlas-september-2026"
-      ],
-      "importance": 3,
-      "reliability": 4,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
-    },
-    {
-      "id": "feed-419a0d7bd8653188b6f438",
-      "externalId": "https://blog.google/innovation-and-ai/technology/ai/ai-applications-science-people",
-      "title": "Building AI to accelerate science and improve lives",
-      "topic": "미정",
-      "region": "해외",
-      "date": "2026-09-15",
-      "summary": "The true measure of AI is who it helps. Here’s how it’s impacting lives today. We're focused on key areas where advanced technology can help make extraordinary progress …",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://blog.google/innovation-and-ai/technology/ai/ai-applications-science-people"
-      ],
-      "importance": 3,
-      "reliability": 4,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
-    },
-    {
-      "id": "feed-fd1baec08311b505543d5a",
-      "externalId": "https://blog.google/innovation-and-ai/technology/developers-tools/devfest2026",
-      "title": "DevFest is back",
-      "topic": "미정",
-      "region": "해외",
-      "date": "2026-09-14",
-      "summary": "DevFest 2026 is back and here’s how you can connect with one of the more than 800 global events to build, secure, and scale in the agentic AI era.",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://blog.google/innovation-and-ai/technology/developers-tools/devfest2026"
-      ],
-      "importance": 3,
-      "reliability": 4,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
-    },
-    {
-      "id": "feed-4a9fe781b917f15066649a",
-      "externalId": "https://tech.kakao.com/posts/835",
-      "title": "if(kakao)26 둘째 날, 기술 세션 소개",
-      "topic": "미정",
-      "region": "한국",
-      "date": "2026-09-07",
-      "summary": "if(kakao)26 둘째 날은 안정성과 인프라, 거버넌스, AI-DLC, Model & Agent에 대해 이야기합니다. 키노트를 제외한 총 30개의 기술 세션들이 아래와 같이 진행됩니다. [안전성과 인프라] 1. 유휴 서버를 찾다가 Hybrid Cloud까지 갔습니다: 비용 가시화에서 Unit Economics를 향해가는 카카오의 FinOps 여정 (백정태, 정원천) “서버가 놀고 있네? 그럼 빼면 되겠네!”…그렇게 간단하지 않았습니다. 사용률이 낮...",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://tech.kakao.com/posts/835"
-      ],
-      "importance": 3,
-      "reliability": 4,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "카카오테크",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
-    },
-    {
-      "id": "feed-a10488e286c699c4a20f84",
-      "externalId": "https://d2.naver.com/news/7360495",
-      "title": "FE News 26년 9월 소식을 전해드립니다.",
-      "topic": "미정",
-      "region": "한국",
-      "date": "2026-09-03",
-      "summary": "26년 9월 소식에서는 다음과 같은 유용한 정보들을 만나보실 수 있습니다. 주요소식 ​ ​ The AI Engineering Skills Map Andrew Ng이 DeepLearning.AI 팀과 함께 1만 건이 넘는 채용 공고 분석과 전문가 인터뷰, 설문을 종합해 정리한 AI 엔지니어링 역량 지도다. AI 애플리케이션 구축·배포, 소프트웨어 엔지니어링 기본기, 코딩 에이전트 활용, 그리고 무엇을 만들지 정하는 일(shaping the build) 네 가지를 지금 익힐 가치가 큰 역량으로 꼽는다. 저자는 이 역량들이 \"AI 엔지니어\"라는 직함에 한정되지 않고 풀스택, 데이터, DevOps를 포함한 모든 개발자에게 필요해진다고 보며, 앞으로 무엇을 학습 우선순위에 둘지 고민하는 개발자에게 참고할 만한 정리다. ​ How We Migrated lovable.dev Away from Next.js 월 4,200만 방문 규모의 lovable.dev를 Next.js에서 Cloudflare ",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://d2.naver.com/news/7360495"
-      ],
-      "importance": 3,
-      "reliability": 4,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "네이버 D2",
-      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00"
+      "sourceCheckedAt": "2026-11-09T07:50:08.247344+00:00",
+      "relatedSources": [
+        "GitHub · vLLM"
+      ]
     }
-  ]
+  ],
+  "quality": {
+    "freshIntakeDays": 7,
+    "archiveDays": 35,
+    "nearDuplicateRule": "strict-title-and-number",
+    "incoming": 72,
+    "unique": 96,
+    "previous": 67
+  }
 }
