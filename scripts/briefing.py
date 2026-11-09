@@ -156,12 +156,12 @@ def evidence_draft(item: dict) -> dict:
     diff = _evidence_sentence(summary, r"compared (with|to)|previous|versus|\bvs\.?\b|faster than|better than|improv|reduc|대비|기존|향상|개선|증가|감소")
     price = _evidence_sentence(summary, r"(\$|€|₩|\bpricing\b|\bfree tier\b|\bcosts?\b|가격|비용|무료|구독료|유료)")
     perf = _evidence_sentence(summary, r"(benchmark|latency|throughput|accuracy|fps|tokens?/s|tokens? per second|faster|speedup|[0-9]+%|벤치마크|처리량|정확도|지연시간|속도)")
-    if price and re.search(r"without (?:any |a |specified )?(?:price|pricing|cost)|(?:price|cost|pricing) (?:was |is )?(?:not disclosed|unknown|not available)|미공개|비공개|알려지지 않은", price, re.I):
+    if price and re.search(r"without (?:any |a |specified )?(?:price|pricing|cost)|(?:price|cost|pricing) (?:was |were |is |are )?(?:not disclosed|unknown|not available)|미공개|비공개|알려지지 않은", price, re.I):
         price = ""
     if perf and re.search(r"without (?:any |a |specified )?(?:benchmark|accuracy|performance)|(?:performance|accuracy|benchmark) (?:was |is )?(?:not disclosed|unknown|not available)|미공개|비공개", perf, re.I):
         perf = ""
     # A numeric or quantified performance statement is required; never promote an adjective alone.
-    if perf and not re.search(r"\d+(?:\.\d+)?\s*(?:%|x\b|배\b|ms\b|s\b|fps\b|tok|req|점\b|초\b)|\b\d+(?:\.\d+)?\b", perf, re.I):
+    if perf and not re.search(r"\d+(?:\.\d+)?\s*(?:%p?|x\b|배\b|ms\b|fps\b|tok(?:ens)?/s\b|req(?:uests)?/s\b|점\b)|(?:accuracy|throughput|latency|score|speedup|정확도|처리량|지연시간|속도)\D{0,30}\d+(?:\.\d+)?", perf, re.I):
         perf = ""
     return {
         "id": item.get("id"), "title": title, "date": item.get("date"),

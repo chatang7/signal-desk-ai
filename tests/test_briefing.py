@@ -84,6 +84,16 @@ class BriefingTests(unittest.TestCase):
         d=b.evidence_draft(story(summary='The new model supports multimodal input and agents.'))
         self.assertNotIn('200%',d['performance'])
 
+    def test_benchmark_task_count_not_a_performance_gain(self):
+        x=story(summary="We released a 100-task benchmark for AI agents.")
+        d=b.evidence_draft(x)
+        self.assertIn("미확인",d["performance"])
+
+    def test_unpublished_pricing_is_not_a_price(self):
+        x=story(summary="The pricing were not published for the model.")
+        d=b.evidence_draft(x)
+        self.assertIn("미확인",d["cost"])
+
     def test_no_public_api_secret_in_output(self):
         s=story()
         with patch.object(b,'_json_request',side_effect=ValueError):
