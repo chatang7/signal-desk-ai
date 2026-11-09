@@ -343,7 +343,7 @@ class DiscordTests(unittest.TestCase):
                 item.update(changes)
                 self.assertEqual(discord.story_type(item), expected)
                 self.assertTrue(discord.build_story_embed(item, detailed=True)["title"]
-                                .startswith("[" + expected + "] "))
+                                .startswith(discord.STORY_TYPE_ICON[expected] + " [" + expected + "] "))
 
     def test_github_news_is_not_automatically_open_source(self):
         item = story(51)
@@ -363,8 +363,8 @@ class DiscordTests(unittest.TestCase):
                          "urls": ["https://arxiv.org/abs/2611.12345"]})
         items[4].update({"title": "Data set for voice agents", "topic": "미정"})
         payload = discord.payload_for(items, NOW)
-        self.assertTrue(payload["embeds"][0]["title"].startswith("[논문] "))
-        self.assertTrue(payload["embeds"][4]["title"].startswith("[데이터셋] "))
+        self.assertTrue(payload["embeds"][0]["title"].startswith("📄 [논문] "))
+        self.assertTrue(payload["embeds"][4]["title"].startswith("🗂 [데이터셋] "))
         self.assertEqual(len(payload["embeds"]), 5)
 
     def test_clean_editorial_style_has_no_emoji_clutter(self):
@@ -372,7 +372,7 @@ class DiscordTests(unittest.TestCase):
         items[0].update({"topic": "연구·논문",
                          "urls": ["https://arxiv.org/abs/2611.12345"]})
         payload = discord.payload_for(items, NOW)
-        self.assertTrue(payload["embeds"][0]["title"].startswith("[논문] "))
+        self.assertTrue(payload["embeds"][0]["title"].startswith("📄 [논문] "))
         self.assertTrue(all("|" not in e["title"] for e in payload["embeds"]))
         self.assertTrue(all(not any(icon in e["description"] for icon in
                      ("🌸", "🌺", "⚔️", "🛠", "💰")) for e in payload["embeds"]))
@@ -381,6 +381,41 @@ class DiscordTests(unittest.TestCase):
                      for _ in (0,)))
         self.assertEqual(sum("상세" in e["footer"]["text"] for e in payload["embeds"]), 2)
         self.assertEqual(sum("간략" in e["footer"]["text"] for e in payload["embeds"]), 3)
+
+    def test_exactly_one_type_icon_in_each_headline_and_banner_flower(self):
+        cases = [
+            ("오픈소스", "🧩"), ("논문", "📄"), ("데이터셋", "🗂"),
+            ("연구", "🔬"), ("AI 모델", "🤖"), ("업데이트", "🔄"),
+            ("도구", "🛠"), ("무료 도구", "🛠"), ("보안", "🛡"),
+            ("정책", "⚖️"), ("성능 비교", "📊"), ("뉴스", "📰"),
+        ]
+        self.assertEqual(discord.STORY_TYPE_ICON, dict(cases))
+        items = [story(i) for i in range(5)]
+        items[0].update({"title": "AI 도구 오픈소스 공개", "topic": "에이전트"})
+        items[1].update({"title": "새 모델 연구 발표", "topic": "연구·논문",
+                         "urls": ["https://arxiv.org/abs/2611.12345"]})
+        items[2].update({"title": "새로운 합성 데이터셋", "topic": "미정"})
+        items[3].update({"topic": "보안"})
+        items[4].update({"title": "Copilot 기능 업데이트", "topic": "코딩 도구",
+                         "urls": ["https://github.blog/changelog/copilot"]})
+        payload = discord.payload_for(items, NOW)
+        self.assertTrue(payload["content"].startswith("🌸 **SIGNAL DESK"))
+        self.assertEqual(payload["content"].count("🌸"), 1)
+        for item, embed in zip(items, payload["embeds"]):
+            category = discord.story_type(item)
+            icon = discord.STORY_TYPE_ICON[category]
+            self.assertTrue(embed["title"].startswith(icon + " [" + category + "] "))
+            self.assertEqual(sum(embed["title"].count(mark) for mark in
+                                 set(discord.STORY_TYPE_ICON.values())), 1)
+            self.assertFalse(any(mark in embed["description"]
+                                 for mark in discord.STORY_TYPE_ICON.values()))
+            self.assertFalse(any(mark in field["name"]
+                                 for field in embed["fields"]
+                                 for mark in discord.STORY_TYPE_ICON.values()))
+        self.assertEqual(sum("상세" in e["footer"]["text"]
+                             for e in payload["embeds"]), 2)
+        self.assertEqual(sum("간략" in e["footer"]["text"]
+                             for e in payload["embeds"]), 3)
 
     def test_invalid_ledger_refuses_reset(self):
         with tempfile.TemporaryDirectory() as tmp:
