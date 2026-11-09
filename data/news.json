@@ -1,13 +1,13 @@
 {
   "schema": "signal-desk-public-feed-v1",
-  "generatedAt": "2026-11-09T07:26:03.968209+00:00",
-  "successfulSources": 12,
-  "failedSources": 1,
+  "generatedAt": "2026-11-09T07:32:21.673543+00:00",
+  "successfulSources": 13,
+  "failedSources": 0,
   "sources": [
     {
       "source": "Codex 릴리스",
-      "ok": false,
-      "error": "응답 용량 2.5MB 초과"
+      "ok": true,
+      "count": 1
     },
     {
       "source": "Gemini CLI 릴리스",
@@ -96,7 +96,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-e0e75c1bea37c48533340c",
@@ -123,7 +123,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "네이버 D2",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-b4b6705315cd545a3c6fe3",
@@ -150,7 +150,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-a0a44ed09dc9a1089b4e09",
@@ -177,7 +177,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-92aa847e71eb86f4a5433e",
@@ -204,7 +204,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-8ff18db0de3e1c9b73ea2a",
@@ -231,7 +231,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Transformers",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-6966e852da5d6215922cf6",
@@ -258,7 +258,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Claude Code",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-5f721228af3682c2417b41",
@@ -285,7 +285,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-4171d6dc37d9b36a79d720",
@@ -312,7 +312,34 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
+    },
+    {
+      "id": "feed-24d305c9a008cb5f0bfcbc",
+      "externalId": "github:openai/codex:435979892",
+      "title": "Codex · 0.167.0",
+      "topic": "코딩 도구",
+      "region": "해외",
+      "date": "2026-11-06",
+      "summary": "## New Features - Open the agent command center with `codex agents --no-daemon`. The command center and session picker now mark unread results (#58238, #58239, #58263, #58264). - Switch between connected backends from the terminal session picker and keep your drafts when switching (#58280, #58457). - Preview local image attachments while composing on supported terminals, and open viewed local images from clickable transcript paths (#58261, #58446). - Find API key and cloud provider options under",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://github.com/openai/codex/releases/tag/rust-v0.167.0"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "GitHub · Codex",
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-db9792e954d447010915e6",
@@ -339,7 +366,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-bf35e59cfc36dbfeae1483",
@@ -366,7 +393,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "네이버 D2",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-a8e215d1c3fca63aee0ffd",
@@ -393,7 +420,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-9f8fd01169c2aead59882a",
@@ -420,7 +447,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-616c68177b707eae60eb2b",
@@ -447,7 +474,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-52663831996b320a23ff83",
@@ -474,7 +501,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "카카오테크",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-485654c1f98a7cdcb6064f",
@@ -501,7 +528,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-25fa4dd18ec78a48a9233c",
@@ -528,7 +555,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-14e90e72d3401ddf817f64",
@@ -555,7 +582,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-fbaa86a829ad59fd10c58d",
@@ -582,7 +609,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-e6261d78f81902fd52ca51",
@@ -609,7 +636,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-e3f47be188dc96623547e8",
@@ -636,7 +663,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · ComfyUI",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-bfa6f579e4e172891edb59",
@@ -663,7 +690,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-a3433e936d2c04bfa7722c",
@@ -690,7 +717,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-981785a01550309d0739d8",
@@ -717,7 +744,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-1be4fdd8e6ca80f0ec0127",
@@ -744,7 +771,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-064860c5d8c03d85ac0d55",
@@ -771,7 +798,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Claude Code",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-03d60d060d0c31c8a6907e",
@@ -798,7 +825,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Gemini CLI",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-e4c78dc6c3acf31d0b59b6",
@@ -825,7 +852,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-6094c526913e4945cb8741",
@@ -852,7 +879,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Ollama",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-4d668de0ed4ad0a43d856a",
@@ -879,7 +906,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Claude Code",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-34e7d62615202d0de65fe8",
@@ -906,7 +933,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-271cfd1a1d2bf8370ffacb",
@@ -933,7 +960,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Ollama",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-996c88dfa31d64c0a9d691",
@@ -960,7 +987,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-7f6f449f0fe5d3d382928c",
@@ -987,7 +1014,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "네이버 D2",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-7bcfe1ffe58bfb8f9ab2da",
@@ -1014,7 +1041,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · vLLM",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-69c6d80b08e6a97b63b75c",
@@ -1041,7 +1068,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-9a57f8348870fba3b31640",
@@ -1068,7 +1095,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-475523553660f144bc27fd",
@@ -1095,7 +1122,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Transformers",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-f126426b3b20b994ca9ba9",
@@ -1122,7 +1149,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Transformers",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-e9eaa059c358e81f23df4b",
@@ -1149,7 +1176,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "네이버 D2",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-d1bebc9219987628484b6f",
@@ -1176,7 +1203,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Ollama",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-b4f3207a2bd6aa514a8b56",
@@ -1203,7 +1230,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "카카오테크",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-a2ef0a9268e285d4edc29b",
@@ -1230,7 +1257,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · ComfyUI",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-36262702febbea5061700d",
@@ -1257,7 +1284,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-9a15b40232fdbf825a34f1",
@@ -1284,7 +1311,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-861b9fbb49074504397c85",
@@ -1311,7 +1338,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-78cebe09803b57417ff218",
@@ -1338,7 +1365,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-5c5a1a59f2ede8694d3687",
@@ -1365,7 +1392,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "카카오테크",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-0c558893870acefe2246bb",
@@ -1392,7 +1419,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "카카오테크",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-01afa511761673bf6cd8a8",
@@ -1419,7 +1446,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · ComfyUI",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-bb4f528d069ebe55099cbe",
@@ -1446,7 +1473,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · vLLM",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-ed1be8ea5f53c7373a9c44",
@@ -1473,7 +1500,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-561a9c30558db996ce04c1",
@@ -1500,7 +1527,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · vLLM",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-aacb8ca8a4a96bc0cfecf6",
@@ -1527,7 +1554,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-f9635a4fda1e41a7984315",
@@ -1554,7 +1581,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "카카오테크",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-40de2077ded12536dea747",
@@ -1581,7 +1608,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "네이버 D2",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-2ad49dd9b65fe3aef9a784",
@@ -1608,7 +1635,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-dfe2f7f06070ffbc61225b",
@@ -1635,7 +1662,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-7a00acf92df0c96e97506b",
@@ -1662,7 +1689,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-64730bcdfc3a35229b481a",
@@ -1689,7 +1716,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-419a0d7bd8653188b6f438",
@@ -1716,7 +1743,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-fd1baec08311b505543d5a",
@@ -1743,7 +1770,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-4a9fe781b917f15066649a",
@@ -1770,7 +1797,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "카카오테크",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     },
     {
       "id": "feed-a10488e286c699c4a20f84",
@@ -1797,7 +1824,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "네이버 D2",
-      "sourceCheckedAt": "2026-11-09T07:26:03.968209+00:00"
+      "sourceCheckedAt": "2026-11-09T07:32:21.673543+00:00"
     }
   ]
 }
