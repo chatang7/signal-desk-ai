@@ -299,41 +299,41 @@ def story_type(item: dict) -> str:
     # Dataset releases are a distinct, reusable artifact.
     if (host == "huggingface.co" and path.startswith("/datasets/")) or re.search(
             r"\bdata[ -]?set\b|데이터셋|데이터 세트", title, re.I):
-        return "🗂 데이터셋"
+        return "데이터셋"
     # A paper link is stronger evidence than a source blog merely discussing research.
     if (host in {"arxiv.org", "paperswithcode.com"}
             or (host == "huggingface.co" and path.startswith("/papers/"))
             or topic == "연구·논문" and re.search(r"논문|paper|preprint", words, re.I)):
-        return "📄 논문"
+        return "논문"
     # A public code repository/release, or an unambiguous open-source release statement.
     if (host == "github.com" and path.count("/") >= 2) or (
             topic == "GitHub 오픈소스" and host != "github.blog"
     ) or re.search(r"오픈소스(?:로)?\s*(?:정식\s*)?공개|소스코드\s*공개|"
                     r"open[ -]?sourc(?:ed|e)\s+(?:release|released|published|launch)|"
                     r"released\s+as\s+open[ -]?source", words, re.I):
-        return "🧩 오픈소스"
+        return "오픈소스"
 
     if topic == "보안":
-        return "🛡 보안"
+        return "보안"
     if topic == "정책·규제":
-        return "⚖️ 정책"
+        return "정책"
     if topic == "성능 비교":
-        return "📊 성능 비교"
+        return "성능 비교"
     if topic == "모델 출시":
-        return "🤖 AI 모델"
+        return "AI 모델"
     if topic == "무료 도구":
-        return "🛠 무료 도구"
+        return "무료 도구"
     if topic == "연구·논문" or re.search(r"연구(?:진|팀|결과)|연구\s*발표|research(?:ers)?\s+(?:paper|study)|pruning of experts", words, re.I):
-        return "🧪 연구"
+        return "연구"
     if topic == "코딩 도구":
         if host == "github.blog" or re.search(r"업데이트|추가|개선|update|adds?\b|changelog", title, re.I):
-            return "🔄 업데이트"
-        return "🛠 도구"
+            return "업데이트"
+        return "도구"
     if topic in {"영상 생성", "이미지 생성", "음성 생성"} and re.search(r"모델\s*출시|모델\s*공개|model\s*(release|launch)", words, re.I):
-        return "🤖 AI 모델"
+        return "AI 모델"
     if topic in {"GitHub 오픈소스"}:
-        return "🛠 도구"
-    return "📰 뉴스"
+        return "도구"
+    return "뉴스"
 
 
 def build_story_embed(item: dict, detailed: bool, lore: str | None = None) -> dict:
@@ -347,42 +347,41 @@ def build_story_embed(item: dict, detailed: bool, lore: str | None = None) -> di
     summary = safe_text(item.get("summary") or "본문에서 구체적인 내용을 확인할 필요가 있어.", 215 if detailed else 155)
     hook = safe_text(hook, 110 if detailed else 95)
     take = safe_text(take, 145 if detailed else 115)
-    label = "🌺 주목할 소식" if detailed else "🛠 제법 쓸 만한 물건"
     fields = []
     if detailed:
         description = ("**" + hook + "**\n\n"
-                       "**🌸 무슨 소란이지?**\n" + summary
-                       + "\n\n**🌺 내 평가**\n" + take)
+                       "**무슨 소란이지?**\n" + summary
+                       + "\n\n**내 평가**\n" + take)
         comparison = fact_line(item.get("difference"), 145)
         if comparison:
-            fields.append({"name": "⚔️ 뭐가 다른데?", "value": comparison, "inline": False})
+            fields.append({"name": "뭐가 다른데?", "value": comparison, "inline": False})
         why = fact_line(item.get("why"), 135)
         if why:
-            fields.append({"name": "💎 눈여겨볼 점", "value": why, "inline": False})
+            fields.append({"name": "눈여겨볼 점", "value": why, "inline": False})
         usage = fact_line(item.get("usage"), 155)
         if usage:
-            fields.append({"name": "🛠 쓸모는 있겠지?", "value": usage, "inline": False})
-        fields.append({"name": "💰 실속은?", "value": technical_limits(item), "inline": False})
+            fields.append({"name": "쓸모는 있겠지?", "value": usage, "inline": False})
+        fields.append({"name": "실속은?", "value": technical_limits(item), "inline": False})
     else:
         description = ("**" + hook + "**\n\n"
-                       "**🌸 핵심**\n" + summary
-                       + "\n\n**🌺 한마디**\n" + take)
+                       "**핵심**\n" + summary
+                       + "\n\n**한마디**\n" + take)
         usage = fact_line(item.get("usage"), 145)
         if usage:
-            fields.append({"name": "🛠 쓸모는 있겠지?", "value": usage, "inline": False})
+            fields.append({"name": "쓸모는 있겠지?", "value": usage, "inline": False})
         # Keep medium briefs short, but never drop a significant verified number.
         if fact_line(item.get("cost"), 60) or fact_line(item.get("performance"), 60):
-            fields.append({"name": "💰 실속은?", "value": safe_text(technical_limits(item), 180), "inline": False})
+            fields.append({"name": "실속은?", "value": safe_text(technical_limits(item), 180), "inline": False})
 
     if lore:
         description += "\n\n*" + safe_text(lore, 145) + "*"
     return {
-        "title": (story_type(item) + " | " + label + " | " + title)[:150],
+        "title": ("[" + story_type(item) + "] " + title)[:150],
         "url": link,
         "description": description,
         "fields": fields,
         "color": MOOD_COLORS[mood],
-        "footer": {"text": safe_text(date + " · " + source + " · " + origin + " · " + ai, 104)},
+        "footer": {"text": safe_text(date + " · " + source + " · " + origin + " · " + ("상세" if detailed else "간략") + " · " + ai, 104)},
     }
 
 
@@ -417,7 +416,7 @@ def payload_for(items: list, when: dt.datetime, state: dict | None = None) -> di
         opening = "제법 흥미로운 물건도 보여. 쓸 만한 건지 확인해 보자고."
     return {
         "username": "SIGNAL DESK",
-        "content": ("🌸 **SIGNAL DESK | 오늘의 AI 소식**  " + date + "\n"
+        "content": ("**SIGNAL DESK | 오늘의 AI 소식**  " + date + "\n"
                     + str(len(embeds)) + "건 중 " + str(num_featured)
                     + "건은 자세히 골랐어. " + opening + "\n"
                     "*가상 진행자의 평가는 사실과 별개야. 발표사의 주장과 독립 검증도 구분해.*"),
