@@ -88,6 +88,7 @@ class DiscordTests(unittest.TestCase):
         items = [story(i) for i in range(5)]
         items[0]["summary"] = "@everyone @here " + "X" * 4000
         payload = discord.payload_for(items, NOW)
+        self.assertEqual(payload["username"], "[가시춘의 홍원 가십]")
         self.assertEqual(payload["allowed_mentions"], {"parse": []})
         self.assertLessEqual(len(payload["content"]), 2000)
         self.assertEqual(len(payload["embeds"]), 3)
@@ -286,7 +287,7 @@ class DiscordTests(unittest.TestCase):
         self.assertEqual(report, {"status": "test_sent", "count": 3})
         self.assertEqual(len(outbound), 1)
         self.assertIn("[테스트 전송", outbound[0][1]["content"])
-        self.assertEqual(outbound[0][1]["username"], "SIGNAL DESK TEST")
+        self.assertEqual(outbound[0][1]["username"], discord.WEBHOOK_USERNAME)
         self.assertEqual(sum("상세" in x["footer"]["text"] for x in outbound[0][1]["embeds"]), 1)
         self.assertEqual(sum("간략" in x["footer"]["text"] for x in outbound[0][1]["embeds"]), 2)
         self.assertEqual(outbound[0][1]["allowed_mentions"], {"parse": []})
