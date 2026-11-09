@@ -5,6 +5,12 @@ on:
     # 09:17 / 21:17 Korea Standard Time (UTC+9); schedules may be delayed.
     - cron: '17 0,12 * * *'
   workflow_dispatch:
+    inputs:
+      discord_send:
+        description: 'Post Discord digest now (requires DISCORD_WEBHOOK_URL; sends 3-5 unseen stories)'
+        type: boolean
+        required: false
+        default: false
   push:
     branches: [main]
     paths:
@@ -74,4 +80,41 @@ jobs:
             sleep "$attempt"
           done
           rm -rf "$snapshot"
+          exit 1
+
+      - name: Post Discord digest (scheduled or manually enabled only)
+        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.discord_send) }}
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python scripts/discord_post.py
+      - name: Persist Discord delivered-item ledger
+        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.discord_send) }}
+        run: |
+          if git diff --quiet -- data/discord_state.json; then
+            echo "No Discord message sent; ledger unchanged"
+            exit 0
+          fi
+          git config user.name "signal-desk-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          snapshot="$(mktemp)"
+          cp data/discord_state.json "$snapshot"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp "$snapshot" data/discord_state.json
+            if git diff --quiet -- data/discord_state.json; then
+              echo "Ledger already saved"
+              rm -f "$snapshot"
+              exit 0
+            fi
+            git add data/discord_state.json
+            git commit -m "chore: record sent Discord stories [skip ci]"
+            if git push origin main; then
+              rm -f "$snapshot"
+              exit 0
+            fi
+            echo "Concurrent update; retrying Discord ledger ($attempt/3)"
+            sleep "$attempt"
+          done
+          rm -f "$snapshot"
           exit 1
