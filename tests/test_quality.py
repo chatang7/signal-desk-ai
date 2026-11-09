@@ -17,6 +17,16 @@ class QualityTests(unittest.TestCase):
         if x and kind:x['sourceType']=kind
         return x
 
+    def test_codex_latest_payload_cap(self):
+        release={'id':9,'draft':False,'prerelease':False,
+                 'published_at':c.NOW.isoformat(), 'html_url':'https://github.com/openai/codex/releases/tag/v2',
+                 'name':'v2','body':'notes'}
+        with patch.object(c,'fetch',return_value=json.dumps(release).encode()) as f:
+            rows=c.collect_releases('openai/codex','Codex','코딩 도구')
+        self.assertEqual(len(rows),1)
+        self.assertEqual(f.call_args.kwargs.get('max_bytes'), 12_000_000)
+        self.assertIn('/releases/latest',f.call_args.args[0])
+
     def test_new_window(self):
         fresh=(c.NOW.date()-dt.timedelta(days=3)).isoformat()
         stale=(c.NOW.date()-dt.timedelta(days=8)).isoformat()
