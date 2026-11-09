@@ -53,11 +53,12 @@ class DiscordTests(unittest.TestCase):
         self.assertTrue(discord.can_send(s, NOW))
         s["history"].append({"at": (NOW-dt.timedelta(hours=2)).isoformat(), "count": 3})
         self.assertFalse(discord.can_send(s, NOW))
+        evening = NOW.replace(hour=23)
         s["history"] = [
-            {"at": (NOW-dt.timedelta(hours=18)).isoformat(), "count": 3},
-            {"at": (NOW-dt.timedelta(hours=9)).isoformat(), "count": 3},
+            {"at": (evening-dt.timedelta(hours=18)).isoformat(), "count": 3},
+            {"at": (evening-dt.timedelta(hours=9)).isoformat(), "count": 3},
         ]
-        self.assertFalse(discord.can_send(s, NOW))
+        self.assertFalse(discord.can_send(s, evening))
 
     def test_unknown_history_fails_closed(self):
         s = fresh_state()
