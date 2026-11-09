@@ -51,12 +51,38 @@ class BriefingTests(unittest.TestCase):
 
     def test_cached_assistance_reused(self):
         s=story()
-        prev={'items':[{**b.evidence_draft(s),'fingerprint':b.fingerprint(s),'mode':'ai-assisted','summary':'검증된 요약'}]}
+        prev={'items':[{**b.evidence_draft(s),'fingerprint':b.fingerprint(s),'mode':'ai-assisted','summary':'검증된 요약',
+                        'voiceMood':'curious','voiceHook':'흥미로운 새 움직임이야.','voiceTake':'원문에서 확인해야 할 구체적인 쟁점이 있네.'}]}
         with patch.object(b,'_json_request',side_effect=AssertionError('cache should be used')):
             res=b.build({'items':[s]},prev,api_key='dummy')
         self.assertEqual(res['aiAnalyzed'],1)
         self.assertEqual(res['cacheHits'],1)
         self.assertEqual(res['items'][0]['summary'],'검증된 요약')
+
+    def test_cached_summary_unchanged_when_voice_is_upgraded(self):
+        sample=story()
+        prev={'items':[{**b.evidence_draft(sample), 'fingerprint':b.fingerprint(sample),
+                        'mode':'ai-assisted', 'summary':'이미 검증한 요약'}]}
+        enhancement={'voiceMood':'curious',
+                     'voiceHook':'흐응, 이번 소식은 흥미로운걸?',
+                     'voiceTake':'새 도구가 정확히 무엇을 개선했는지 원문부터 보자고.',
+                     'summary':'덮어쓰면 안 되는 신규 요약'}
+        with patch.object(b,'_json_request',return_value=enhancement):
+            result=b.build({'items':[sample]},prev,api_key='dummy')
+        self.assertEqual(result['items'][0]['summary'],'이미 검증한 요약')
+        self.assertEqual(result['items'][0]['voiceHook'],enhancement['voiceHook'])
+        self.assertEqual(result['aiAnalyzed'],1)
+        self.assertEqual(result['aiCalls'],1)
+
+    def test_voice_backfill_failure_preserves_prior_analysis(self):
+        sample=story()
+        prev={'items':[{**b.evidence_draft(sample), 'fingerprint':b.fingerprint(sample),
+                        'mode':'ai-assisted', 'summary':'기존 요약'}]}
+        with patch.object(b,'_json_request',side_effect=ValueError('no voice')):
+            result=b.build({'items':[sample]},prev,api_key='dummy')
+        self.assertEqual(result['items'][0]['summary'],'기존 요약')
+        self.assertEqual(result['aiAnalyzed'],1)
+        self.assertEqual(result['aiErrors'],1)
 
     def test_optional_api_recovery(self):
         s=story()
