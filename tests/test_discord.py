@@ -297,6 +297,76 @@ class DiscordTests(unittest.TestCase):
         with patch.dict(os.environ, {"SIGNAL_DESK_TEST_SEND": "", "DISCORD_WEBHOOK_URL": ""}):
             self.assertEqual(discord.main(["--test-send"]), 1)
 
+    def test_headline_content_types_are_distinct_from_importance(self):
+        cases = [
+            ("🧩 오픈소스", {
+                "title": "AI 에이전트용 새 모델 오픈소스 공개",
+                "topic": "에이전트", "urls": ["https://tech.kakao.com/posts/example"],
+            }),
+            ("🧩 오픈소스", {
+                "title": "SDK release", "topic": "GitHub 오픈소스",
+                "urls": ["https://github.com/example/sdk/releases/tag/v1"],
+            }),
+            ("🔄 업데이트", {
+                "title": "Copilot review overview updates", "topic": "코딩 도구",
+                "urls": ["https://github.blog/changelog/copilot-update"],
+            }),
+            ("🗂 데이터셋", {
+                "title": "Nemotron-Personas-Finance-Japan: A Synthetic Dataset",
+                "topic": "미정", "urls": ["https://huggingface.co/blog/nvidia/example"],
+            }),
+            ("📄 논문", {
+                "title": "Efficient Transformer Study", "topic": "연구·논문",
+                "urls": ["https://arxiv.org/abs/2611.00001"],
+            }),
+            ("🧪 연구", {
+                "title": "Your Experts Have Partners",
+                "summary": "HOPE is a pruning of experts research technique.",
+                "topic": "미정", "urls": ["https://huggingface.co/blog/amazon/hope"],
+            }),
+            ("🛡 보안", {
+                "title": "Partnering with experts for security", "topic": "보안",
+                "urls": ["https://openai.com/index/security-update"],
+            }),
+            ("📊 성능 비교", {
+                "title": "새 AI 모델 벤치마크 결과", "topic": "성능 비교",
+                "urls": ["https://www.aitimes.com/news/example"],
+            }),
+            ("📰 뉴스", {
+                "title": "AI 기업, 협력 관계 발표", "topic": "AI 기업",
+                "urls": ["https://openai.com/index/partnership"],
+            }),
+        ]
+        for expected, changes in cases:
+            with self.subTest(expected=expected, title=changes["title"]):
+                item = story(50)
+                item.update(changes)
+                self.assertEqual(discord.story_type(item), expected)
+                self.assertTrue(discord.build_story_embed(item, detailed=True)["title"]
+                                .startswith(expected + " | 🌺 주목할 소식 | "))
+
+    def test_github_news_is_not_automatically_open_source(self):
+        item = story(51)
+        item.update({"title": "GitHub Copilot changelog update",
+                     "topic": "코딩 도구",
+                     "urls": ["https://github.blog/changelog/copilot"],
+                     "summary": "GitHub의 새로운 코드 리뷰 기능"})
+        self.assertEqual(discord.story_type(item), "🔄 업데이트")
+        item["title"] = "새로운 AI 도구 등장"
+        item["summary"] = "GitHub에서 도구를 공개했다고 소개했지만 코드 링크는 없음"
+        item["topic"] = "미정"
+        self.assertEqual(discord.story_type(item), "📰 뉴스")
+
+    def test_content_type_in_medium_and_featured_titles(self):
+        items = [story(i) for i in range(5)]
+        items[0].update({"topic": "연구·논문",
+                         "urls": ["https://arxiv.org/abs/2611.12345"]})
+        items[4].update({"title": "Data set for voice agents", "topic": "미정"})
+        payload = discord.payload_for(items, NOW)
+        self.assertTrue(payload["embeds"][0]["title"].startswith("📄 논문 | 🌺 주목할 소식 | "))
+        self.assertTrue(payload["embeds"][4]["title"].startswith("🗂 데이터셋 | 🛠 제법 쓸 만한 물건 | "))
+        self.assertEqual(len(payload["embeds"]), 5)
+
     def test_invalid_ledger_refuses_reset(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "state.json"
