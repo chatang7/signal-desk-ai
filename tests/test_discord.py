@@ -223,7 +223,10 @@ class DiscordTests(unittest.TestCase):
         items[1]["difference"] = "기존 대비 공식 시험에서 대기 시간이 줄었다고 발표함."
         payload = discord.payload_for(items, NOW)
         self.assertNotIn("뭐가 다른데?", [x["name"] for x in payload["embeds"][0]["fields"]])
-        self.assertIn("뭐가 다른데?", [x["name"] for x in payload["embeds"][1]["fields"]])
+        self.assertNotIn("뭐가 다른데?", [x["name"] for x in payload["embeds"][1]["fields"]])
+        items[0]["difference"] = "공식 시험에서 기존 대비 대기 시간이 줄었다고 발표함."
+        amended = discord.payload_for(items, NOW)
+        self.assertIn("뭐가 다른데?", [x["name"] for x in amended["embeds"][0]["fields"]])
 
     def test_metadata_factual_and_opinion_are_visually_separate(self):
         items = [story(i) for i in range(3)]
@@ -424,9 +427,9 @@ class DiscordTests(unittest.TestCase):
                                  for field in embed["fields"]
                                  for mark in discord.STORY_TYPE_ICON.values()))
         self.assertEqual(sum("상세" in e["footer"]["text"]
-                             for e in payload["embeds"]), 2)
+                             for e in payload["embeds"]), 1)
         self.assertEqual(sum("간략" in e["footer"]["text"]
-                             for e in payload["embeds"]), 3)
+                             for e in payload["embeds"]), 2)
 
     def test_invalid_ledger_refuses_reset(self):
         with tempfile.TemporaryDirectory() as tmp:
