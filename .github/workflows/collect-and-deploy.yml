@@ -16,6 +16,7 @@ on:
     paths:
       - 'index.html'
       - 'scripts/**'
+      - 'tests/**'
       - '.github/workflows/**'
 
 permissions:
@@ -49,6 +50,8 @@ jobs:
         run: python scripts/briefing.py
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      - name: Preview Discord digest safely (never sends)
+        run: python scripts/discord_post.py --dry-run
       - name: Save feed when changed (retry on concurrent code commits)
         run: |
           if git diff --quiet -- data/news.json data/briefing.json; then
