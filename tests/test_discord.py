@@ -132,7 +132,8 @@ class DiscordTests(unittest.TestCase):
         msg = discord.payload_for([curious, skeptical, serious], NOW)
         self.assertIn("🌸", msg["content"])
         self.assertEqual(len({x["color"] for x in msg["embeds"]}), 3)
-        self.assertTrue(all("내 생각" in x["description"] for x in msg["embeds"]))
+        self.assertTrue(all("내 평가" in x["description"] or "한마디" in x["description"]
+                            for x in msg["embeds"]))
         self.assertTrue(all(x["url"].startswith("https://") for x in msg["embeds"]))
 
     def test_gemini_editorial_voice_and_sensitive_override(self):
@@ -185,6 +186,77 @@ class DiscordTests(unittest.TestCase):
         self.assertEqual(state["loreMentions"]["hongwonAt"], 20)
         self.assertEqual(len(state["posted"]), 3)
         self.assertEqual(len(sent), 1)
+
+    def test_five_story_hybrid_is_two_featured_three_medium(self):
+        items = [story(i) for i in range(5)]
+        payload = discord.payload_for(items, NOW)
+        self.assertEqual(len(payload["embeds"]), 5)
+        self.assertEqual(sum("주목할 소식" in e["title"] for e in payload["embeds"]), 2)
+        self.assertEqual(sum("제법 쓸 만한 물건" in e["title"] for e in payload["embeds"]), 3)
+        self.assertIn("🌸 무슨 소란이지?", payload["embeds"][0]["description"])
+        self.assertIn("💰 실속은?", [x["name"] for x in payload["embeds"][0]["fields"]])
+        self.assertIn("🌸 핵심", payload["embeds"][4]["description"])
+        self.assertIn("🛠 쓸모는 있겠지?", [x["name"] for x in payload["embeds"][4]["fields"]])
+        self.assertIn("2건은 자세히", payload["content"])
+
+    def test_four_and_three_story_hybrid_keep_one_featured(self):
+        for size in (3, 4):
+            payload = discord.payload_for([story(i) for i in range(size)], NOW)
+            self.assertEqual(sum("주목할 소식" in x["title"] for x in payload["embeds"]), 1)
+            self.assertEqual(sum("제법 쓸 만한 물건" in x["title"] for x in payload["embeds"]), size - 1)
+
+    def test_specific_comparison_only_shown_when_grounded(self):
+        items = [story(i) for i in range(5)]
+        items[0]["difference"] = "기존 기술 대비 구체적인 차이는 수집된 원문에서 미확인"
+        items[1]["difference"] = "기존 대비 공식 시험에서 대기 시간이 줄었다고 발표함."
+        payload = discord.payload_for(items, NOW)
+        self.assertNotIn("⚔️ 뭐가 다른데?", [x["name"] for x in payload["embeds"][0]["fields"]])
+        self.assertIn("⚔️ 뭐가 다른데?", [x["name"] for x in payload["embeds"][1]["fields"]])
+
+    def test_metadata_factual_and_opinion_are_visually_separate(self):
+        items = [story(i) for i in range(3)]
+        items[0].update({"sourceLabel": "공식 발표", "sourceType": "primary",
+                         "cost": "원문 언급: 무료 공개", "performance": "미확인",
+                         "why": "확인해야 하는 이유: 모델 배포 비용 절감",
+                         "date": "2026-11-10"})
+        items[1]["sourceType"] = "secondary"
+        payload = discord.payload_for(items, NOW)
+        first = payload["embeds"][0]
+        self.assertIn("2026-11-10 · 공식 발표 · 원문", first["footer"]["text"])
+        self.assertIn("내 평가", first["description"])
+        self.assertIn("무슨 소란이지?", first["description"])
+        self.assertIn("무료 공개", str(first["fields"]))
+        self.assertIn("보도", payload["embeds"][1]["footer"]["text"])
+        self.assertEqual(first["url"], "https://example.com/article/0")
+
+    def test_discord_total_embed_limit_five_long_stories(self):
+        items = [story(i) for i in range(5)]
+        for item in items:
+            item["title"] = "화제의 기술 " * 70
+            for key in ("summary", "difference", "why", "usage", "cost", "performance",
+                        "voiceHook", "voiceTake"):
+                item[key] = "긴 설명 " * 300
+            item["voiceMood"] = "curious"
+        payload = discord.payload_for(items, NOW)
+        self.assertLessEqual(sum(discord.embed_text_length(e) for e in payload["embeds"]), 6000)
+        self.assertLessEqual(len(payload["embeds"]), 10)
+        self.assertLessEqual(len(payload["content"]), 2000)
+        self.assertTrue(all(len(e["fields"]) <= 25 for e in payload["embeds"]))
+
+    def test_prioritizes_fresh_free_open_source_without_fabricated_claim(self):
+        items = [story(1, "2026-11-07", score=70, topic="모델 출시"),
+                 story(2, "2026-11-10", score=70, topic="GitHub 오픈소스"),
+                 story(3, "2026-11-10", score=70, topic="에이전트"),
+                 story(4, "2026-11-10", score=70, topic="코딩 도구")]
+        items[1]["title"] = "무료 오픈소스 Windows 로컬 AI 도구"
+        selected = discord.pick(items, fresh_state(), NOW.date())
+        self.assertEqual(selected[0]["id"], "feed-2")
+        self.assertEqual(len(selected), 4)
+
+    def test_old_or_future_news_not_sent(self):
+        items = [story(1, "2026-11-06"), story(2, "2026-11-11"),
+                 story(3, "2026-11-10"), story(4, "2026-11-10")]
+        self.assertEqual(discord.pick(items, fresh_state(), NOW.date()), [])
 
     def test_invalid_ledger_refuses_reset(self):
         with tempfile.TemporaryDirectory() as tmp:
