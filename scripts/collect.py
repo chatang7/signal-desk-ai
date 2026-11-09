@@ -160,15 +160,15 @@ def create_item(title: str, link: str, date: str, summary: str, source: str, reg
     }
 
 
-def fetch(url: str) -> bytes:
+def fetch(url: str, max_bytes: int = 2_500_000) -> bytes:
     req = urllib.request.Request(url, headers=HEADERS)
     last = None
     for attempt in range(2):
         try:
             with urllib.request.urlopen(req, timeout=18) as response:
-                data = response.read(2_500_001)
-                if len(data) > 2_500_000:
-                    raise ValueError("응답 용량 2.5MB 초과")
+                data = response.read(max_bytes + 1)
+                if len(data) > max_bytes:
+                    raise ValueError(f"응답 용량 {max_bytes / 1_000_000:.1f}MB 초과")
                 return data
         except (urllib.error.URLError, TimeoutError, ValueError) as e:
             last = e
@@ -178,8 +178,12 @@ def fetch(url: str) -> bytes:
 
 
 def collect_releases(repo: str, label: str, topic: str) -> list:
-    u = "https://api.github.com/repos/" + repo + "/releases?per_page=8"
-    data = json.loads(fetch(u))
+    # The Codex release body can exceed the default response cap.
+    if repo == "openai/codex":
+        data = [json.loads(fetch("https://api.github.com/repos/openai/codex/releases/latest", max_bytes=12_000_000))]
+    else:
+        u = "https://api.github.com/repos/" + repo + "/releases?per_page=8"
+        data = json.loads(fetch(u))
     if not isinstance(data, list):
         raise ValueError("GitHub releases 배열 아님")
     out = []
