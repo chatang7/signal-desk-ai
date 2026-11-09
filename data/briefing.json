@@ -1,15 +1,15 @@
 {
   "schema": "signal-desk-briefing-v1",
-  "generatedAt": "2026-11-09T08:30:10.377190+00:00",
-  "newsGeneratedAt": "2026-11-09T08:29:53.219088+00:00",
+  "generatedAt": "2026-11-09T15:57:32.058643+00:00",
+  "newsGeneratedAt": "2026-11-09T15:57:12.386385+00:00",
   "headline": "AI 변화 브리핑 · 최근 7일",
   "coverage": "최근 7일 중 중요 후보, 뉴스 수집 대상 범위 내에서만 작성",
   "mode": "evidence-only",
   "aiAnalyzed": 0,
-  "aiCalls": 0,
-  "aiErrors": 0,
+  "aiCalls": 1,
+  "aiErrors": 1,
   "cacheHits": 0,
-  "modelConfigured": false,
+  "modelConfigured": true,
   "storyCount": 8,
   "items": [
     {
@@ -129,6 +129,60 @@
       "fingerprint": "bd5d102161d3161503e6a81a"
     },
     {
+      "id": "feed-ac8f18750241a65f1eaff5",
+      "title": "Nemotron-Personas-Finance-Japan: A Synthetic Dataset Capturing Japan's Demographics and Financial Context",
+      "date": "2026-11-09",
+      "topic": "미정",
+      "region": "해외",
+      "sourceLabel": "Hugging Face 블로그",
+      "sourceType": "primary",
+      "urls": [
+        "https://huggingface.co/blog/nvidia/nemotron-personas-finance-japan"
+      ],
+      "score": 66,
+      "summary": "공식 원문에 핵심 내용이 충분하지 않아 검토가 필요함.",
+      "difference": "기존 기술 대비 구체적인 차이는 수집된 원문에서 미확인",
+      "why": "확인해야 하는 이유: 기술적·사업적 영향은 발표의 구체적인 변경 사항을 확인한 뒤 판단해야 함",
+      "usage": "실무 검증: 공식 원문에서 실제 개선 항목·가격·제약 확인",
+      "cost": "가격·무료 여부 미확인",
+      "performance": "비교 가능한 성능 수치 미확인",
+      "strengths": "검증 전: 공식 소개에 실린 장점과 실제 효용을 구분해야 함",
+      "limitations": "독립 검증·실측 비교·사용 조건은 수집 요약만으로 확정할 수 없음",
+      "mode": "evidence-only",
+      "model": null,
+      "evidence": [],
+      "status": "자동 근거 정리 · 심층 추론 미실행",
+      "confidence": "미검증",
+      "fingerprint": "b96c798040b79f87b91842f2"
+    },
+    {
+      "id": "feed-55d059b88c6c576a2f3d9a",
+      "title": "Your Experts Have Partners. There's HOPE for Keeping Them Together",
+      "date": "2026-11-09",
+      "topic": "미정",
+      "region": "해외",
+      "sourceLabel": "Hugging Face 블로그",
+      "sourceType": "primary",
+      "urls": [
+        "https://huggingface.co/blog/amazon/higher-order-pruning-experts"
+      ],
+      "score": 66,
+      "summary": "공식 원문에 핵심 내용이 충분하지 않아 검토가 필요함.",
+      "difference": "기존 기술 대비 구체적인 차이는 수집된 원문에서 미확인",
+      "why": "확인해야 하는 이유: 기술적·사업적 영향은 발표의 구체적인 변경 사항을 확인한 뒤 판단해야 함",
+      "usage": "실무 검증: 공식 원문에서 실제 개선 항목·가격·제약 확인",
+      "cost": "가격·무료 여부 미확인",
+      "performance": "비교 가능한 성능 수치 미확인",
+      "strengths": "검증 전: 공식 소개에 실린 장점과 실제 효용을 구분해야 함",
+      "limitations": "독립 검증·실측 비교·사용 조건은 수집 요약만으로 확정할 수 없음",
+      "mode": "evidence-only",
+      "model": null,
+      "evidence": [],
+      "status": "자동 근거 정리 · 심층 추론 미실행",
+      "confidence": "미검증",
+      "fingerprint": "35dddd408ae0ffb13e2e4d2e"
+    },
+    {
       "id": "feed-a5fcc1255202f357d72164",
       "title": "Copilot impact dashboard adds chat and VS Code agent usage",
       "date": "2026-11-06",
@@ -185,64 +239,6 @@
       "status": "자동 근거 정리 · 심층 추론 미실행",
       "confidence": "미검증",
       "fingerprint": "7643d996b4089bce38de6196"
-    },
-    {
-      "id": "feed-6966e852da5d6215922cf6",
-      "title": "Claude Code · v2.1.319",
-      "date": "2026-11-06",
-      "topic": "코딩 도구",
-      "region": "해외",
-      "sourceLabel": "GitHub · Claude Code",
-      "sourceType": "primary",
-      "urls": [
-        "https://github.com/anthropics/claude-code/releases/tag/v2.1.319"
-      ],
-      "score": 66,
-      "summary": "## What's changed - Changed auto mode with telemetry or feature flags off, including behind LLM gateways: calls the server can't check are asked about or denied, with no fallback to the built-in classifier; set `CLAUDE_CODE_AUTO_MODE_SERVER=0` to keep using it",
-      "difference": "기존 기술 대비 구체적인 차이는 수집된 원문에서 미확인",
-      "why": "확인해야 하는 이유: 코딩 에이전트의 작업 흐름·생산성에 영향을 줄 수 있어 변경 범위를 확인할 필요가 있음",
-      "usage": "실무 검증: 작은 샘플 프로젝트로 이전 버전과 테스트 통과율·수정량 비교",
-      "cost": "가격·무료 여부 미확인",
-      "performance": "비교 가능한 성능 수치 미확인",
-      "strengths": "검증 전: 공식 소개에 실린 장점과 실제 효용을 구분해야 함",
-      "limitations": "독립 검증·실측 비교·사용 조건은 수집 요약만으로 확정할 수 없음",
-      "mode": "evidence-only",
-      "model": null,
-      "evidence": [
-        "## What's changed - Changed auto mode with telemetry or feature flags off, including behind LLM gateways: calls the server can't check are a"
-      ],
-      "status": "자동 근거 정리 · 심층 추론 미실행",
-      "confidence": "미검증",
-      "fingerprint": "96ca3281584a61561f3c00ed"
-    },
-    {
-      "id": "feed-5f721228af3682c2417b41",
-      "title": "Measuring how AI agents handle everyday wet-lab science",
-      "date": "2026-11-06",
-      "topic": "에이전트",
-      "region": "해외",
-      "sourceLabel": "OpenAI 공식 발표",
-      "sourceType": "primary",
-      "urls": [
-        "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science"
-      ],
-      "score": 66,
-      "summary": "OpenAI introduces BioBasicsBench, a 100-task benchmark measuring how well AI agents interpret raw experimental data and handle everyday wet-lab science.",
-      "difference": "기존 기술 대비 구체적인 차이는 수집된 원문에서 미확인",
-      "why": "확인해야 하는 이유: 자동 실행 기술은 실제 성공률과 통제·보안 수준의 검증이 중요함",
-      "usage": "실무 검증: 제한된 샌드박스에서 작업 성공률·실패 복구·권한 범위 확인",
-      "cost": "가격·무료 여부 미확인",
-      "performance": "비교 가능한 성능 수치 미확인",
-      "strengths": "검증 전: 공식 소개에 실린 장점과 실제 효용을 구분해야 함",
-      "limitations": "독립 검증·실측 비교·사용 조건은 수집 요약만으로 확정할 수 없음",
-      "mode": "evidence-only",
-      "model": null,
-      "evidence": [
-        "OpenAI introduces BioBasicsBench, a 100-task benchmark measuring how well AI agents interpret raw experimental data and handle everyday wet-"
-      ],
-      "status": "자동 근거 정리 · 심층 추론 미실행",
-      "confidence": "미검증",
-      "fingerprint": "ea6985afe21d873d5d3e0f15"
     }
   ],
   "disclaimer": "원문 기반 정보 정리입니다. AI 보조 분석은 사실 검증을 대체하지 않으며 가격·성능·이전 기술과의 차이가 확인되지 않으면 미확인으로 표시합니다."
