@@ -130,7 +130,8 @@ if(syncCfg.feedUrl){try{const data=await getJson(syncCfg.feedUrl);const rows=Arr
 const merge=mergeAutoItems(additions);const ok=log.some(l=>l.ok);if(ok)syncCfg.lastSuccess=Date.now();syncCfg.lastResult={found,added:merge.added,skipped:merge.skipped,ok:log.filter(x=>x.ok).length,failed:log.filter(x=>!x.ok).length,at:Date.now(),log};syncCfg.history.unshift(syncCfg.lastResult);syncCfg.history=syncCfg.history.slice(0,8);persistSync();syncBusy=false;render();if(manual)toast(`수집 완료: 신규 ${merge.added}건 · 중복 ${merge.skipped}건 · 실패 출처 ${syncCfg.lastResult.failed}개`)}
 async function runHostedSync(manual=false){
  try{
-  const r=await fetch('data/news.json?v='+Date.now(),{cache:'no-store',credentials:'omit'});
+  // The JSON is served from the repository's latest main branch so Pages does not need to rebuild after each scheduled collection.
+  const r=await fetch('https://raw.githubusercontent.com/chatang7/signal-desk-ai/main/data/news.json?v='+Date.now(),{cache:'no-store',credentials:'omit'});
   if(!r.ok)throw Error('HTTP '+r.status);
   const len=Number(r.headers.get('content-length')||0);
   if(len>3500000)throw Error('피드 용량 제한');
