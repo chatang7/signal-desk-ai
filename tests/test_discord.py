@@ -122,6 +122,70 @@ class DiscordTests(unittest.TestCase):
         self.assertEqual(state["posted"], {})
         self.assertEqual(state["history"], [])
 
+    def test_host_moods_and_news_style(self):
+        curious = story(1, topic="에이전트")
+        skeptical = story(2, topic="성능 비교")
+        serious = story(3, topic="보안")
+        self.assertEqual(discord.mood_for(curious), "curious")
+        self.assertEqual(discord.mood_for(skeptical), "skeptical")
+        self.assertEqual(discord.mood_for(serious), "serious")
+        msg = discord.payload_for([curious, skeptical, serious], NOW)
+        self.assertIn("🌸", msg["content"])
+        self.assertEqual(len({x["color"] for x in msg["embeds"]}), 3)
+        self.assertTrue(all("내 생각" in x["description"] for x in msg["embeds"]))
+        self.assertTrue(all(x["url"].startswith("https://") for x in msg["embeds"]))
+
+    def test_gemini_editorial_voice_and_sensitive_override(self):
+        item = story(10, topic="에이전트")
+        item.update({"voiceMood": "skeptical",
+                     "voiceHook": "흥, 주장만 그럴듯한 건 아니겠지? 직접 뜯어보자고.",
+                     "voiceTake": "이번 발표에서는 비교 기준이 명확하지 않아. 그거부터 따져야겠어."})
+        mood, hook, take = discord.host_lines(item)
+        self.assertEqual(mood, "skeptical")
+        self.assertIn("직접 뜯어보자고", hook)
+        self.assertIn("비교 기준", take)
+        item["topic"] = "보안"
+        self.assertEqual(discord.host_lines(item)[0], "serious")
+
+    def test_lore_is_rare_and_contextual(self):
+        items = [story(i, topic="보안") for i in range(3)]
+        state = fresh_state()
+        self.assertIsNone(discord.lore_aside(items, state))
+        state["totalPosted"] = 17
+        chosen = discord.lore_aside(items, state)
+        self.assertEqual(chosen[0], "hongwon")
+        state["loreMentions"] = {"hongwonAt": 20}
+        state["totalPosted"] = 22
+        self.assertIsNone(discord.lore_aside(items, state))
+        state["totalPosted"] = 35
+        speech = story(23, topic="음성 생성")
+        speech["title"] = "대화형 음성 AI 모델"
+        chosen = discord.lore_aside([speech], state)
+        self.assertEqual(chosen[0], "honglu")
+        payload = discord.payload_for([speech], NOW, state)
+        self.assertIn("홍루", payload["embeds"][0]["description"])
+        self.assertNotIn("홍루", discord.payload_for([speech], NOW)["embeds"][0]["description"])
+
+    def test_lore_not_inserted_into_unrelated_news(self):
+        state = fresh_state()
+        state["totalPosted"] = 200
+        items = [story(1, topic="반도체"), story(2, topic="연구·논문")]
+        self.assertIsNone(discord.lore_aside(items, state))
+
+    def test_success_records_lore_frequency(self):
+        state = fresh_state()
+        state["totalPosted"] = 17
+        items = [story(i, topic="보안") for i in range(3)]
+        sent = []
+        result = discord.deliver({"items": items}, state,
+            "https://discord.com/api/webhooks/12345/valid_token", NOW,
+            sender=lambda url, payload: sent.append(payload) or "123456789012345678")
+        self.assertEqual(result["status"], "sent")
+        self.assertEqual(state["totalPosted"], 20)
+        self.assertEqual(state["loreMentions"]["hongwonAt"], 20)
+        self.assertEqual(len(state["posted"]), 3)
+        self.assertEqual(len(sent), 1)
+
     def test_invalid_ledger_refuses_reset(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "state.json"
