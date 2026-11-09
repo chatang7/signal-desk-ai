@@ -11,6 +11,11 @@ on:
         type: boolean
         required: false
         default: false
+      discord_test_send:
+        description: 'Send ONE labeled test digest (can reuse posted articles; keeps normal ledger intact)'
+        type: boolean
+        required: false
+        default: false
   push:
     branches: [main]
     paths:
@@ -85,13 +90,19 @@ jobs:
           rm -rf "$snapshot"
           exit 1
 
+      - name: Send clearly labeled Discord test (never changes delivery ledger)
+        if: ${{ (github.event_name == 'workflow_dispatch' && inputs.discord_test_send) || (github.event_name == 'push' && github.event.head_commit.message == 'test: send one labeled Discord format preview 20261110-kst') }}
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          SIGNAL_DESK_TEST_SEND: '1'
+        run: python scripts/discord_post.py --test-send
       - name: Post Discord digest (scheduled or manually enabled only)
-        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.discord_send) }}
+        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.discord_send && !inputs.discord_test_send) }}
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: python scripts/discord_post.py
       - name: Persist Discord delivered-item ledger
-        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.discord_send) }}
+        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.discord_send && !inputs.discord_test_send) }}
         run: |
           if git diff --quiet -- data/discord_state.json; then
             echo "No Discord message sent; ledger unchanged"
