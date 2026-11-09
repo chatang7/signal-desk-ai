@@ -336,6 +336,30 @@ def story_type(item: dict) -> str:
     return "뉴스"
 
 
+
+# Exactly one visual category marker per article; the article's own heading
+# remains plain text. Keep the classification logic independent of decoration.
+STORY_TYPE_ICON = {
+    "오픈소스": "🧩",
+    "논문": "📄",
+    "데이터셋": "🗂",
+    "연구": "🔬",
+    "AI 모델": "🤖",
+    "업데이트": "🔄",
+    "도구": "🛠",
+    "무료 도구": "🛠",
+    "보안": "🛡",
+    "정책": "⚖️",
+    "성능 비교": "📊",
+    "뉴스": "📰",
+}
+
+
+def type_prefix(item: dict) -> str:
+    category = story_type(item)
+    return STORY_TYPE_ICON.get(category, "📰") + " [" + category + "] "
+
+
 def build_story_embed(item: dict, detailed: bool, lore: str | None = None) -> dict:
     link = next((u for u in item.get("urls", []) if safe_link(u)), "")
     source = safe_text(item.get("sourceLabel") or "출처 미상", 45)
@@ -376,7 +400,7 @@ def build_story_embed(item: dict, detailed: bool, lore: str | None = None) -> di
     if lore:
         description += "\n\n*" + safe_text(lore, 145) + "*"
     return {
-        "title": ("[" + story_type(item) + "] " + title)[:150],
+        "title": (type_prefix(item) + title)[:150],
         "url": link,
         "description": description,
         "fields": fields,
@@ -416,7 +440,7 @@ def payload_for(items: list, when: dt.datetime, state: dict | None = None) -> di
         opening = "제법 흥미로운 물건도 보여. 쓸 만한 건지 확인해 보자고."
     return {
         "username": "SIGNAL DESK",
-        "content": ("**SIGNAL DESK | 오늘의 AI 소식**  " + date + "\n"
+        "content": ("🌸 **SIGNAL DESK | 오늘의 AI 소식**  " + date + "\n"
                     + str(len(embeds)) + "건 중 " + str(num_featured)
                     + "건은 자세히 골랐어. " + opening + "\n"
                     "*가상 진행자의 평가는 사실과 별개야. 발표사의 주장과 독립 검증도 구분해.*"),
