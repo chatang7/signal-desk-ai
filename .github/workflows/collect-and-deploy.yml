@@ -37,12 +37,33 @@ jobs:
           git checkout -B main origin/main
       - name: Collect official public feeds
         run: python scripts/collect.py
-      - name: Save feed when changed
+      - name: Save feed when changed (retry on concurrent code commits)
         run: |
-          if ! git diff --quiet -- data/news.json; then
-            git config user.name "signal-desk-bot"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- data/news.json; then
+            echo "No changes to the public news feed"
+            exit 0
+          fi
+          git config user.name "signal-desk-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          snapshot="$(mktemp)"
+          cp data/news.json "$snapshot"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp "$snapshot" data/news.json
+            if git diff --quiet -- data/news.json; then
+              echo "Feed already up to date"
+              rm -f "$snapshot"
+              exit 0
+            fi
             git add data/news.json
             git commit -m "chore: refresh AI news feed [skip ci]"
-            git push origin main
-          fi
+            if git push origin main; then
+              rm -f "$snapshot"
+              exit 0
+            fi
+            echo "Concurrent update; retrying ($attempt/3)"
+            sleep "$attempt"
+          done
+          rm -f "$snapshot"
+          exit 1
