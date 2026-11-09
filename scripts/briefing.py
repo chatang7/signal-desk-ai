@@ -156,7 +156,7 @@ def evidence_draft(item: dict) -> dict:
     diff = _evidence_sentence(summary, r"compared (with|to)|previous|versus|\bvs\.?\b|faster than|better than|improv|reduc|대비|기존|향상|개선|증가|감소")
     price = _evidence_sentence(summary, r"(\$|€|₩|\bpricing\b|\bfree tier\b|\bcosts?\b|가격|비용|무료|구독료|유료)")
     perf = _evidence_sentence(summary, r"(benchmark|latency|throughput|accuracy|fps|tokens?/s|tokens? per second|faster|speedup|[0-9]+%|벤치마크|처리량|정확도|지연시간|속도)")
-    if price and re.search(r"without (?:any |a |specified )?(?:price|pricing|cost)|(?:price|cost|pricing) (?:was |were |is |are )?(?:not disclosed|unknown|not available)|미공개|비공개|알려지지 않은", price, re.I):
+    if price and re.search(r"without (?:any |a |specified )?(?:price|pricing|cost)|(?:price|cost|pricing) (?:was |were |is |are )?(?:not disclosed|not published|undisclosed|unknown|not available)|미공개|비공개|알려지지 않은", price, re.I):
         price = ""
     if perf and re.search(r"without (?:any |a |specified )?(?:benchmark|accuracy|performance)|(?:performance|accuracy|benchmark) (?:was |is )?(?:not disclosed|unknown|not available)|미공개|비공개", perf, re.I):
         perf = ""
