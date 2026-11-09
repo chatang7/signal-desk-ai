@@ -1,8 +1,249 @@
 {
   "schema": "signal-desk-briefing-v1",
-  "generatedAt": null,
-  "storyCount": 0,
+  "generatedAt": "2026-11-09T08:25:18.608993+00:00",
+  "newsGeneratedAt": "2026-11-09T08:25:02.027372+00:00",
+  "headline": "AI 변화 브리핑 · 최근 7일",
+  "coverage": "최근 7일 중 중요 후보, 뉴스 수집 대상 범위 내에서만 작성",
+  "mode": "evidence-only",
   "aiAnalyzed": 0,
-  "items": [],
-  "disclaimer": "첫 자동 브리핑 실행 전입니다."
+  "aiCalls": 0,
+  "aiErrors": 0,
+  "cacheHits": 0,
+  "modelConfigured": false,
+  "storyCount": 8,
+  "items": [
+    {
+      "id": "feed-cc9249299f5d778e839bcc",
+      "title": "Copilot code review: API management and review overview updates",
+      "date": "2026-11-07",
+      "topic": "코딩 도구",
+      "region": "해외",
+      "sourceLabel": "GitHub Copilot",
+      "sourceType": "primary",
+      "urls": [
+        "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates"
+      ],
+      "score": 71,
+      "summary": "You can now manage GitHub Copilot code review settings through the REST and GraphQL APIs, from enterprise policy down to individual repositories. Copilot’s review overview comment is now more compact,… The post Copilot code review: API management and review ov",
+      "difference": "기존 기술 대비 구체적인 차이는 수집된 원문에서 미확인",
+      "why": "확인해야 하는 이유: 코딩 에이전트의 작업 흐름·생산성에 영향을 줄 수 있어 변경 범위를 확인할 필요가 있음",
+      "usage": "실무 검증: 작은 샘플 프로젝트로 이전 버전과 테스트 통과율·수정량 비교",
+      "cost": "가격·무료 여부 미확인",
+      "performance": "비교 가능한 성능 수치 미확인",
+      "strengths": "검증 전: 공식 소개에 실린 장점과 실제 효용을 구분해야 함",
+      "limitations": "독립 검증·실측 비교·사용 조건은 수집 요약만으로 확정할 수 없음",
+      "mode": "evidence-only",
+      "model": null,
+      "evidence": [
+        "You can now manage GitHub Copilot code review settings through the REST and GraphQL APIs, from enterprise policy down to individual reposito"
+      ],
+      "status": "자동 근거 정리 · 심층 추론 미실행",
+      "confidence": "미검증",
+      "fingerprint": "03ad47dbf2141019445d51ba"
+    },
+    {
+      "id": "feed-52663831996b320a23ff83",
+      "title": "AI 에이전트를 위한 멀티모달 의사결정 모델 ‘Kanana-2-v-decide’ 오픈소스 공개",
+      "date": "2026-11-05",
+      "topic": "에이전트",
+      "region": "한국",
+      "sourceLabel": "카카오테크",
+      "sourceType": "primary",
+      "urls": [
+        "https://tech.kakao.com/posts/846"
+      ],
+      "score": 68,
+      "summary": "안녕하세요, 카카오 Applied AI Model팀의 Shawn(정성효), Michael(이주영)입니다. 고객 문의를 분류하고, 상품 사진을 확인하고, 에이전트가 다음 작업에 사용할 도구를 고르는 일. 서비스에는 긴 답변보다 명확한 판단이 필요한 순간이 많습니다. 특히 AI 에이전트는 하나의 요청을 처리하는 동안 이러한 판단을 여러 차례 반복합니다. Agentic AI 시대에 각 단계에서 필요한 판단 결과를 빠르게 얻고, 이를 서비스의 다음 동작으로 ...",
+      "difference": "기존 기술 대비 구체적인 차이는 수집된 원문에서 미확인",
+      "why": "확인해야 하는 이유: 자동 실행 기술은 실제 성공률과 통제·보안 수준의 검증이 중요함",
+      "usage": "실무 검증: 제한된 샌드박스에서 작업 성공률·실패 복구·권한 범위 확인",
+      "cost": "가격·무료 여부 미확인",
+      "performance": "비교 가능한 성능 수치 미확인",
+      "strengths": "검증 전: 공식 소개에 실린 장점과 실제 효용을 구분해야 함",
+      "limitations": "독립 검증·실측 비교·사용 조건은 수집 요약만으로 확정할 수 없음",
+      "mode": "evidence-only",
+      "model": null,
+      "evidence": [
+        "안녕하세요, 카카오 Applied AI Model팀의 Shawn(정성효), Michael(이주영)입니다. 고객 문의를 분류하고, 상품 사진을 확인하고, 에이전트가 다음 작업에 사용할 도구를 고르는 일. 서비스에는 긴 답변보다 명확한 판단이 필요한 순간"
+      ],
+      "status": "자동 근거 정리 · 심층 추론 미실행",
+      "confidence": "미검증",
+      "fingerprint": "9b1574935a4fc8437a303192"
+    },
+    {
+      "id": "feed-b944d83bfa16df7dfe54a4",
+      "title": "엔비디아 \"LLM에 긴 문맥 꼭 필요하지 않아\"…압축해도 성능 유지",
+      "date": "2026-11-09",
+      "topic": "반도체",
+      "region": "한국",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceType": "secondary",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217166"
+      ],
+      "score": 67,
+      "summary": "엔비디아 연구진이 대형언어모델(LLM)에 무조건 긴 컨텍스트 창이 필요한 것은 아니라는 연구 결과를 발표했다. 대화 기록을 압축하거나 대용량 문서에서 필요한 부분만 읽도록 하면 짧은 문맥에서도 상당수 작업의 성능을 유지할 수 있으며, 추론 처리량도 크게 높일 수 있다는 것이다.엔비디아 연구진은 지난 3일(현지시간) 아카이브에 '긴 문맥은 필요 없다(You don't need long context)'라는 제목의 연구 결과를 공개했다. AI 모델의 컨텍스트 창을 ",
+      "difference": "기존 기술 대비 구체적인 차이는 수집된 원문에서 미확인",
+      "why": "확인해야 하는 이유: 실제 효용은 구매 가능성·전력·소프트웨어 생태계에 따라 달라짐",
+      "usage": "실무 검증: 실측 성능·전력·가격·소프트웨어 지원 확인",
+      "cost": "가격·무료 여부 미확인",
+      "performance": "비교 가능한 성능 수치 미확인",
+      "strengths": "검증 전: 공식 소개에 실린 장점과 실제 효용을 구분해야 함",
+      "limitations": "독립 검증·실측 비교·사용 조건은 수집 요약만으로 확정할 수 없음",
+      "mode": "evidence-only",
+      "model": null,
+      "evidence": [
+        "엔비디아 연구진이 대형언어모델(LLM)에 무조건 긴 컨텍스트 창이 필요한 것은 아니라는 연구 결과를 발표했다. 대화 기록을 압축하거나 대용량 문서에서 필요한 부분만 읽도록 하면 짧은 문맥에서도 상당수 작업의 성능을 유지할 수 있으며, 추론 처리량도 크"
+      ],
+      "status": "자동 근거 정리 · 심층 추론 미실행",
+      "confidence": "미검증",
+      "fingerprint": "5e5328799e5fab2ba36a1945"
+    },
+    {
+      "id": "feed-803c51d171ef86e5f925ea",
+      "title": "오픈AI, 생명과학 AI 벤치마크 공개…GPT-6 아스트라 성능 23%P 향상",
+      "date": "2026-11-09",
+      "topic": "성능 비교",
+      "region": "한국",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceType": "secondary",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217167"
+      ],
+      "score": 67,
+      "summary": "오픈AI가 실제 생명과학 실험실에서 AI 에이전트의 데이터 분석과 오류 탐지 능력을 측정하는 새로운 벤치마크를 공개했다. 최신 모델인 'GPT-6 아스트라'는 이전 모델보다 22.9%포인트 높은 점수를 기록했으며, 이번 연구는 오픈AI가 확대하고 있는 제약·바이오 기업용 AI 사업과도 연결된다.오픈AI는 6일(현지시간) 공식 블로그를 통해 생명과학 실험 분석용 벤치마크 '바이오베이직스벤치(BioBasicsBench)'를 발표했다. 효소 설계 전문 생명공학 기업 ",
+      "difference": "기존 기술 대비 구체적인 차이는 수집된 원문에서 미확인",
+      "why": "확인해야 하는 이유: 비교 결과는 평가셋과 실험 조건에 따라 달라지므로 독립 재현이 필요함",
+      "usage": "실무 검증: 평가 데이터·하드웨어·측정 설정을 원문에서 확인",
+      "cost": "가격·무료 여부 미확인",
+      "performance": "비교 가능한 성능 수치 미확인",
+      "strengths": "검증 전: 공식 소개에 실린 장점과 실제 효용을 구분해야 함",
+      "limitations": "독립 검증·실측 비교·사용 조건은 수집 요약만으로 확정할 수 없음",
+      "mode": "evidence-only",
+      "model": null,
+      "evidence": [
+        "오픈AI가 실제 생명과학 실험실에서 AI 에이전트의 데이터 분석과 오류 탐지 능력을 측정하는 새로운 벤치마크를 공개했다. 최신 모델인 'GPT-6 아스트라'는 이전 모델보다 22.9%포인트 높은 점수를 기록했으며, 이번 연구는 오픈AI가 확대하고 있는"
+      ],
+      "status": "자동 근거 정리 · 심층 추론 미실행",
+      "confidence": "미검증",
+      "fingerprint": "bd5d102161d3161503e6a81a"
+    },
+    {
+      "id": "feed-a5fcc1255202f357d72164",
+      "title": "Copilot impact dashboard adds chat and VS Code agent usage",
+      "date": "2026-11-06",
+      "topic": "에이전트",
+      "region": "해외",
+      "sourceLabel": "GitHub Copilot",
+      "sourceType": "primary",
+      "urls": [
+        "https://github.blog/changelog/2026-11-06-copilot-impact-dashboard-adds-chat-and-vs-code-agent-usage"
+      ],
+      "score": 66,
+      "summary": "The Agent adoption chart in the Copilot impact dashboard now includes Copilot Chat and the VS Code Agents window, so you can see engagement across nine Copilot experiences. The adoption… The post Copilot impact dashboard adds chat and VS Code agent usage appea",
+      "difference": "원문 표현: The Agent adoption chart in the Copilot impact dashboard now includes Copilot Chat and the VS Code Agents window, so you can see engagement across nine Copilot experiences.",
+      "why": "확인해야 하는 이유: 자동 실행 기술은 실제 성공률과 통제·보안 수준의 검증이 중요함",
+      "usage": "실무 검증: 제한된 샌드박스에서 작업 성공률·실패 복구·권한 범위 확인",
+      "cost": "가격·무료 여부 미확인",
+      "performance": "비교 가능한 성능 수치 미확인",
+      "strengths": "검증 전: 공식 소개에 실린 장점과 실제 효용을 구분해야 함",
+      "limitations": "독립 검증·실측 비교·사용 조건은 수집 요약만으로 확정할 수 없음",
+      "mode": "evidence-only",
+      "model": null,
+      "evidence": [
+        "The Agent adoption chart in the Copilot impact dashboard now includes Copilot Chat and the VS Code Agents window, so you can see engagement "
+      ],
+      "status": "자동 근거 정리 · 심층 추론 미실행",
+      "confidence": "미검증",
+      "fingerprint": "8aa9016101a8626cbac0a58b"
+    },
+    {
+      "id": "feed-a0a44ed09dc9a1089b4e09",
+      "title": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
+      "date": "2026-11-06",
+      "topic": "보안",
+      "region": "해외",
+      "sourceLabel": "OpenAI 공식 발표",
+      "sourceType": "primary",
+      "urls": [
+        "https://openai.com/index/partnering-with-hacktron"
+      ],
+      "score": 66,
+      "summary": "OpenAI is partnering with Hacktron to find vulnerabilities, test connections with third-party services, and strengthen defenses with frontier AI.",
+      "difference": "기존 기술 대비 구체적인 차이는 수집된 원문에서 미확인",
+      "why": "확인해야 하는 이유: 실제 위협 범위와 패치 상태를 확인하는 것이 우선임",
+      "usage": "실무 검증: 공식 보안 권고·영향 버전·대응 절차 확인",
+      "cost": "가격·무료 여부 미확인",
+      "performance": "비교 가능한 성능 수치 미확인",
+      "strengths": "검증 전: 공식 소개에 실린 장점과 실제 효용을 구분해야 함",
+      "limitations": "독립 검증·실측 비교·사용 조건은 수집 요약만으로 확정할 수 없음",
+      "mode": "evidence-only",
+      "model": null,
+      "evidence": [
+        "OpenAI is partnering with Hacktron to find vulnerabilities, test connections with third-party services, and strengthen defenses with frontie"
+      ],
+      "status": "자동 근거 정리 · 심층 추론 미실행",
+      "confidence": "미검증",
+      "fingerprint": "7643d996b4089bce38de6196"
+    },
+    {
+      "id": "feed-6966e852da5d6215922cf6",
+      "title": "Claude Code · v2.1.319",
+      "date": "2026-11-06",
+      "topic": "코딩 도구",
+      "region": "해외",
+      "sourceLabel": "GitHub · Claude Code",
+      "sourceType": "primary",
+      "urls": [
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.319"
+      ],
+      "score": 66,
+      "summary": "## What's changed - Changed auto mode with telemetry or feature flags off, including behind LLM gateways: calls the server can't check are asked about or denied, with no fallback to the built-in classifier; set `CLAUDE_CODE_AUTO_MODE_SERVER=0` to keep using it",
+      "difference": "기존 기술 대비 구체적인 차이는 수집된 원문에서 미확인",
+      "why": "확인해야 하는 이유: 코딩 에이전트의 작업 흐름·생산성에 영향을 줄 수 있어 변경 범위를 확인할 필요가 있음",
+      "usage": "실무 검증: 작은 샘플 프로젝트로 이전 버전과 테스트 통과율·수정량 비교",
+      "cost": "가격·무료 여부 미확인",
+      "performance": "비교 가능한 성능 수치 미확인",
+      "strengths": "검증 전: 공식 소개에 실린 장점과 실제 효용을 구분해야 함",
+      "limitations": "독립 검증·실측 비교·사용 조건은 수집 요약만으로 확정할 수 없음",
+      "mode": "evidence-only",
+      "model": null,
+      "evidence": [
+        "## What's changed - Changed auto mode with telemetry or feature flags off, including behind LLM gateways: calls the server can't check are a"
+      ],
+      "status": "자동 근거 정리 · 심층 추론 미실행",
+      "confidence": "미검증",
+      "fingerprint": "96ca3281584a61561f3c00ed"
+    },
+    {
+      "id": "feed-5f721228af3682c2417b41",
+      "title": "Measuring how AI agents handle everyday wet-lab science",
+      "date": "2026-11-06",
+      "topic": "에이전트",
+      "region": "해외",
+      "sourceLabel": "OpenAI 공식 발표",
+      "sourceType": "primary",
+      "urls": [
+        "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science"
+      ],
+      "score": 66,
+      "summary": "OpenAI introduces BioBasicsBench, a 100-task benchmark measuring how well AI agents interpret raw experimental data and handle everyday wet-lab science.",
+      "difference": "기존 기술 대비 구체적인 차이는 수집된 원문에서 미확인",
+      "why": "확인해야 하는 이유: 자동 실행 기술은 실제 성공률과 통제·보안 수준의 검증이 중요함",
+      "usage": "실무 검증: 제한된 샌드박스에서 작업 성공률·실패 복구·권한 범위 확인",
+      "cost": "가격·무료 여부 미확인",
+      "performance": "원문 언급: OpenAI introduces BioBasicsBench, a 100-task benchmark measuring how well AI agents interpret raw experimental data and handle everyday wet-lab science.",
+      "strengths": "검증 전: 공식 소개에 실린 장점과 실제 효용을 구분해야 함",
+      "limitations": "독립 검증·실측 비교·사용 조건은 수집 요약만으로 확정할 수 없음",
+      "mode": "evidence-only",
+      "model": null,
+      "evidence": [
+        "OpenAI introduces BioBasicsBench, a 100-task benchmark measuring how well AI agents interpret raw experimental data and handle everyday wet-"
+      ],
+      "status": "자동 근거 정리 · 심층 추론 미실행",
+      "confidence": "미검증",
+      "fingerprint": "ea6985afe21d873d5d3e0f15"
+    }
+  ],
+  "disclaimer": "원문 기반 정보 정리입니다. AI 보조 분석은 사실 검증을 대체하지 않으며 가격·성능·이전 기술과의 차이가 확인되지 않으면 미확인으로 표시합니다."
 }
