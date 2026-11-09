@@ -27,6 +27,17 @@ class QualityTests(unittest.TestCase):
         self.assertEqual(f.call_args.kwargs.get('max_bytes'), 12_000_000)
         self.assertIn('/releases/latest',f.call_args.args[0])
 
+    def test_related_links_survive_recollection(self):
+        primary=self.make('Claude Code adds parallel subagents for coding tasks',
+                          'https://official.ai/claude-parallel',source='Official')
+        secondary=self.make('Claude Code adds parallel subagents for coding tasks',
+                            'https://news.kr/story',source='AI타임스 (보도)',kind='secondary')
+        first=c.dedup_merge([secondary],[primary])
+        second=c.dedup_merge(first,[primary])
+        self.assertEqual(len(second),1)
+        self.assertEqual(len(second[0]['urls']),2)
+        self.assertEqual(len(second[0]['relatedSources']),2)
+
     def test_new_window(self):
         fresh=(c.NOW.date()-dt.timedelta(days=3)).isoformat()
         stale=(c.NOW.date()-dt.timedelta(days=8)).isoformat()

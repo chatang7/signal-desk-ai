@@ -9,13 +9,13 @@
 - GitHub Pages에 대시보드와 데이터가 자동 게시됨. 브라우저를 꺼두어도 수집은 계속됩니다.
 - 대시보드는 방문 시 게시된 JSON을 읽고 기존 검토 상태, 수동 메모, Discord 초안을 **그 브라우저의 로컬 저장소에서** 유지합니다.
 
-### 데이터 소스 22개
+### 데이터 소스 21개
 
 - 공식 GitHub 릴리스 8개: OpenAI Codex, Gemini CLI, Claude Code, Transformers, vLLM, Ollama, ComfyUI, llama.cpp
 - 공식 블로그 RSS/Atom 4개: OpenAI, Google AI, Kakao Tech, NAVER D2 (관련 AI 키워드로 필터)
 - 연구: Hugging Face Daily Papers (논문 본문은 arXiv 원문 링크)
 
-추가 출처: Google DeepMind·Google Research·Hugging Face 블로그·Mistral AI·NVIDIA 개발자 블로그·Microsoft Research·GitHub Copilot 공식 변경사항·과학기술정보통신부 보도자료·AI타임스(2차 보도).
+추가 출처 (Google DeepMind RSS는 GitHub 서버의 XML 응답 오류로 보류): Google Research·Hugging Face 블로그·Mistral AI·NVIDIA 개발자 블로그·Microsoft Research·GitHub Copilot 공식 변경사항·과학기술정보통신부 보도자료·AI타임스(2차 보도).
 
 **뉴스 품질 규칙(v4)**: 발표일이 없는 글이나 7일이 지난 글은 신규 유입에서 제외합니다. 35일 이상 지난 공개 피드 데이터는 보관 목록에서 제외하고, URL·발표일·제목 유사도 및 버전 번호를 비교해 확실히 겹치는 기사만 묶습니다. 원문의 URL은 함께 보관합니다. 제목의 의미를 AI 모델로 분석하지 않으므로 같은 사건의 다른 표현은 여전히 일부 남을 수 있습니다. AI타임스는 원 발표가 아닌 **언론 보도**로 표시하며, 원문 1차 출처 검증은 별도입니다. 국내 기사 건수의 50% 비율은 강제하지 않으며 소스 실가용성에 따라 달라집니다.
 

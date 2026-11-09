@@ -35,6 +35,8 @@ jobs:
         run: |
           git fetch origin main
           git checkout -B main origin/main
+      - name: Run freshness and deduplication tests
+        run: python -m unittest discover -s tests -p 'test_*.py' -q
       - name: Collect official public feeds
         run: python scripts/collect.py
       - name: Save feed when changed (retry on concurrent code commits)

@@ -43,7 +43,6 @@ RSS = [
     ("Google AI 블로그", "https://blog.google/technology/ai/rss/", "해외"),
     ("카카오테크", "https://tech.kakao.com/feed/", "한국"),
     ("네이버 D2", "https://d2.naver.com/d2.atom", "한국"),
-    ("Google DeepMind", "https://deepmind.google/blog/rss.xml", "해외"),
     ("Google Research", "https://research.google/blog/rss/", "해외"),
     ("Hugging Face 블로그", "https://huggingface.co/blog/feed.xml", "해외"),
     ("Mistral AI", "https://mistral.ai/news/rss", "해외"),
@@ -334,7 +333,24 @@ def dedup_merge(old: list, new: list) -> list:
         key = raw.get("externalId") or url
         if not url or not key or not in_window(str(raw.get("date", ""))):
             continue
-        by_id[key] = dict(raw)
+        item = dict(raw)
+        if key in by_id:
+            # Keep earlier cross-source links and references across fresh API polls.
+            prior = by_id[key]
+            links = []
+            for u in item.get("urls", []) + prior.get("urls", []):
+                c = canonical_url(u)
+                if c and c not in links and len(links) < 12:
+                    links.append(c)
+            item["urls"] = links
+            sources = []
+            for label in [item.get("sourceLabel"), *prior.get("relatedSources", []),
+                          prior.get("sourceLabel"), *item.get("relatedSources", [])]:
+                if label and label not in sources and len(sources) < 12:
+                    sources.append(label)
+            item["relatedSources"] = sources
+            item["duplicateCount"] = max(len(sources), int(prior.get("duplicateCount") or 1))
+        by_id[key] = item
     ranked = sorted(by_id.values(), key=lambda x: (
         # Prefer authoritative official sources to third-party reporting when both match.
         x.get("sourceType") != "secondary", x.get("date") or "", x.get("id") or ""), reverse=True)
@@ -363,7 +379,10 @@ def dedup_merge(old: list, new: list) -> list:
             continue
         item.setdefault("relatedSources", [item.get("sourceLabel", "")])
         filtered.append(item)
-        url_map[url] = item
+        for link in item.get("urls", []):
+            key_link = canonical_url(link)
+            if key_link:
+                url_map[key_link] = item
     # Show newest event first; keep no more than a month of records in the server feed.
     return sorted(filtered, key=lambda x: (x.get("date") or "", x.get("id") or ""), reverse=True)[:MAX_ITEMS]
 
