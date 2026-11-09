@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import datetime as dt
+import difflib
+import unicodedata
 import email.utils
 import hashlib
 import html
@@ -20,10 +22,11 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "data" / "news.json"
 NOW = dt.datetime.now(dt.timezone.utc)
-MAX_AGE_DAYS = 90
+MAX_AGE_DAYS = 35  # Keep a month of history; not a 90-day backlog.
+NEW_AGE_DAYS = 7  # Incoming feed items must be published within the last week.
 MAX_ITEMS = 500
 HEADERS = {"User-Agent": "SignalDeskNewsCollector/3.0 (+GitHub-Actions; public-feed-reader)", "Accept": "application/json, application/xml, application/rss+xml, text/xml, */*"}
-AI_TERMS = re.compile(r"\b(ai|llm|gpt|language model|foundation model|transformer|diffusion|agent|mcp|chatbot|openai|gemini|claude|deepseek|generative|reasoning|inference|prompt|machine learning|neural|cuda|gpu|npu|robotics|multimodal|tokeniz|retrieval|rag|computer vision|speech synth|text.to.image|text.to.video)\b|인공지능|생성형|언어\s?모델|머신러닝|에이전트|딥러닝|모델\s?학습|추론|멀티모달|챗봇|음성\s?생성|영상\s?생성", re.I)
+AI_TERMS = re.compile(r"\b(ai|llm|gpt|language model|foundation model|transformer|diffusion|agent|mcp|chatbot|openai|gemini|claude|deepseek|generative|reasoning|inference|prompt|machine learning|neural|cuda|gpu|npu|robotics|multimodal|tokeniz|retrieval|rag|computer vision|speech synth|text.to.image|text.to.video)\b|인공지능|생성형|언어\s?모델|머신러닝|에이전트|딥러닝|모델\s?학습|추론|멀티모달|챗봇|음성\s?생성|영상\s?생성|챗\s?지피티|챗gpt|클로드|제미나이|코덱스|딥시크|엔비디아|오픈소스", re.I)
 
 REPOS = [
     ("openai/codex", "Codex", "코딩 도구"),
@@ -40,7 +43,19 @@ RSS = [
     ("Google AI 블로그", "https://blog.google/technology/ai/rss/", "해외"),
     ("카카오테크", "https://tech.kakao.com/feed/", "한국"),
     ("네이버 D2", "https://d2.naver.com/d2.atom", "한국"),
+    ("Google DeepMind", "https://deepmind.google/blog/rss.xml", "해외"),
+    ("Google Research", "https://research.google/blog/rss/", "해외"),
+    ("Hugging Face 블로그", "https://huggingface.co/blog/feed.xml", "해외"),
+    ("Mistral AI", "https://mistral.ai/news/rss", "해외"),
+    ("NVIDIA 개발자", "https://developer.nvidia.com/blog/feed/", "해외"),
+    ("Microsoft Research", "https://www.microsoft.com/en-us/research/blog/feed/", "해외"),
+    ("GitHub Copilot", "https://github.blog/changelog/label/copilot/feed/", "해외"),
+    ("과학기술정보통신부", "https://www.msit.go.kr/user/rss/rss.do?bbsSeqNo=94", "한국"),
+    ("AI타임스 (보도)", "https://www.aitimes.com/rss/allArticle.xml", "한국"),
 ]
+FOCUSED_SOURCES = {"OpenAI 공식 발표", "Google AI 블로그", "Google DeepMind", "Google Research", "Hugging Face 블로그", "Mistral AI", "GitHub Copilot"}
+SECONDARY_SOURCES = {"AI타임스 (보도)"}
+
 
 
 def strip_markup(raw: str, size: int = 500) -> str:
@@ -79,10 +94,10 @@ def date_str(raw: str | None) -> str:
     return d.astimezone(dt.timezone.utc).date().isoformat()
 
 
-def in_window(date: str) -> bool:
+def in_window(date: str, max_age_days: int = MAX_AGE_DAYS) -> bool:
     try:
         age = (NOW.date() - dt.date.fromisoformat(date)).days
-        return -1 <= age <= MAX_AGE_DAYS
+        return -1 <= age <= max_age_days
     except ValueError:
         return False
 
@@ -114,7 +129,7 @@ def classify(text: str, fallback: str = "미정") -> str:
 def create_item(title: str, link: str, date: str, summary: str, source: str, region: str, topic: str = "미정", reliability: int = 3, external_id: str = "") -> dict | None:
     link = canonical_url(link)
     title = strip_markup(title, 260)
-    if not link or not title or not in_window(date):
+    if not link or not title or not in_window(date, NEW_AGE_DAYS):
         return None
     key = external_id or link
     sid = hashlib.sha256(key.encode()).hexdigest()[:22]
@@ -135,7 +150,7 @@ def create_item(title: str, link: str, date: str, summary: str, source: str, reg
         "importance": 3,
         "reliability": reliability,
         "pricing": "미정",
-        "status": "오늘 읽을 것",
+        "status": "오늘 읽을 것" if (NOW.date() - dt.date.fromisoformat(date)).days <= 2 else "나중에 검토",
         "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
         "selected": False,
         "groupKey": "",
@@ -163,12 +178,8 @@ def fetch(url: str) -> bytes:
 
 
 def collect_releases(repo: str, label: str, topic: str) -> list:
-    # Codex releases may have very large historical changelogs. Fetch only the latest stable release.
-    if repo == "openai/codex":
-        data = [json.loads(fetch("https://api.github.com/repos/openai/codex/releases/latest"))]
-    else:
-        u = "https://api.github.com/repos/" + repo + "/releases?per_page=8"
-        data = json.loads(fetch(u))
+    u = "https://api.github.com/repos/" + repo + "/releases?per_page=8"
+    data = json.loads(fetch(u))
     if not isinstance(data, list):
         raise ValueError("GitHub releases 배열 아님")
     out = []
@@ -213,7 +224,7 @@ def collect_rss(name: str, url: str, region: str) -> list:
     if not rows:
         raise ValueError("RSS/Atom 항목 없음")
     result = []
-    for el in rows[:28]:
+    for el in rows[:65]:
         if is_atom:
             title = xml_value(el, ["{http://www.w3.org/2005/Atom}title"])
             link = xml_value(el, ["{http://www.w3.org/2005/Atom}link"])
@@ -224,13 +235,19 @@ def collect_rss(name: str, url: str, region: str) -> list:
             link = xml_value(el, ["link"])
             when = xml_value(el, ["pubDate", "{http://purl.org/dc/elements/1.1/}date"])
             desc = xml_value(el, ["description", "{http://purl.org/rss/1.0/modules/content/}encoded"])
-        if not AI_TERMS.search(title + " " + strip_markup(desc, 250)):
+        # Broad company/policy feeds must mention an AI-specific term in the title.
+        # Do not import generic programming, event or corporate news just because a footer says AI.
+        if name not in FOCUSED_SOURCES and not AI_TERMS.search(title):
             continue
         day = date_str(when)
-        item = create_item(title, link, day, desc, name, region, classify(title, "미정"), 4)
+        item = create_item(title, link, day, desc, name, region, classify(title, "미정"),
+                           2 if name in SECONDARY_SOURCES else 4)
+        if item and name in SECONDARY_SOURCES:
+            item["notes"] = "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요."
+            item["sourceType"] = "secondary"
         if item:
             result.append(item)
-        if len(result) >= 12:
+        if len(result) >= (6 if name in SECONDARY_SOURCES else 10):
             break
     return result
 
@@ -270,30 +287,81 @@ def load_previous() -> tuple[list, dict]:
     return [], {}
 
 
+# A conservative rules-only duplicate detector. It is not semantic AI clustering.
+_TITLE_STOP = {"the", "a", "an", "and", "for", "with", "in", "on", "of", "to", "by",
+               "official", "update", "new", "latest", "release", "발표", "소식", "공개", "업데이트", "새로운"}
+
+
+def title_tokens(title: str) -> list[str]:
+    normalized = unicodedata.normalize("NFKC", title or "").casefold()
+    return [t for t in re.findall(r"[a-z0-9가-힣]+(?:[.][0-9]+)*", normalized)
+            if len(t) > 1 and t not in _TITLE_STOP]
+
+
+def near_duplicate(a: dict, b: dict) -> bool:
+    """Group near-identical announcements only, never differing version numbers."""
+    try:
+        if abs((dt.date.fromisoformat(a["date"]) - dt.date.fromisoformat(b["date"])).days) > 3:
+            return False
+    except (ValueError, KeyError, TypeError):
+        return False
+    ta, tb = title_tokens(str(a.get("title", ""))), title_tokens(str(b.get("title", "")))
+    if len(ta) < 3 or len(tb) < 3:
+        return False
+    # A near-match with different versions or benchmark numbers isn't the same event.
+    nums_a = set(re.findall(r"\d+(?:\.\d+)+|\b\d+\b", " ".join(ta)))
+    nums_b = set(re.findall(r"\d+(?:\.\d+)+|\b\d+\b", " ".join(tb)))
+    if nums_a != nums_b:
+        return False
+    sa, sb = set(ta), set(tb)
+    overlap = len(sa & sb)
+    jac = overlap / len(sa | sb)
+    ratio = difflib.SequenceMatcher(None, " ".join(ta), " ".join(tb)).ratio()
+    return overlap >= 3 and (jac >= .82 or (jac >= .68 and ratio >= .92))
+
+
 def dedup_merge(old: list, new: list) -> list:
-    result = {}
-    urls = set()
-    # Newest event wins, old records remain when their source errors or vanishes.
+    # First preserve canonical IDs for exact URL / article ID matches.
+    by_id = {}
     for raw in old + new:
         if not isinstance(raw, dict) or not raw.get("title") or not raw.get("urls"):
             continue
-        link = canonical_url(raw["urls"][0])
-        key = raw.get("externalId") or link
-        if not link or not key or not in_window(str(raw.get("date", ""))):
+        url = canonical_url(raw["urls"][0])
+        key = raw.get("externalId") or url
+        if not url or not key or not in_window(str(raw.get("date", ""))):
             continue
-        # Keep update metadata while preserving canonical identity.
-        result[key] = raw
-    ranked = sorted(result.values(), key=lambda x: (x.get("date") or "", x.get("id") or ""), reverse=True)
+        by_id[key] = dict(raw)
+    ranked = sorted(by_id.values(), key=lambda x: (
+        # Prefer authoritative official sources to third-party reporting when both match.
+        x.get("sourceType") != "secondary", x.get("date") or "", x.get("id") or ""), reverse=True)
     filtered = []
+    url_map = {}
     for item in ranked:
-        canonical = canonical_url(item["urls"][0])
-        if canonical in urls:
+        url = canonical_url(item["urls"][0])
+        canonical = url_map.get(url)
+        if canonical is None:
+            canonical = next((x for x in filtered if near_duplicate(x, item)), None)
+        if canonical is not None:
+            # Include links from secondary coverage without discarding the primary story.
+            urls = canonical.setdefault("urls", [])
+            for u in item.get("urls", []):
+                c = canonical_url(u)
+                if c and c not in {canonical_url(q) for q in urls} and len(urls) < 12:
+                    urls.append(c)
+                    url_map[c] = canonical
+            sources = canonical.setdefault("relatedSources", [])
+            if not sources and canonical.get("sourceLabel"):
+                sources.append(canonical["sourceLabel"])
+            for src in [item.get("sourceLabel"), *item.get("relatedSources", [])]:
+                if src and src not in sources and len(sources) < 12:
+                    sources.append(src)
+            canonical["duplicateCount"] = max(len(sources), int(canonical.get("duplicateCount") or 1))
             continue
-        urls.add(canonical)
+        item.setdefault("relatedSources", [item.get("sourceLabel", "")])
         filtered.append(item)
-        if len(filtered) >= MAX_ITEMS:
-            break
-    return filtered
+        url_map[url] = item
+    # Show newest event first; keep no more than a month of records in the server feed.
+    return sorted(filtered, key=lambda x: (x.get("date") or "", x.get("id") or ""), reverse=True)[:MAX_ITEMS]
 
 
 def main() -> int:
@@ -330,6 +398,9 @@ def main() -> int:
         "failedSources": sum(not s["ok"] for s in sources),
         "sources": sources,
         "items": merged,
+        "quality": {"freshIntakeDays": NEW_AGE_DAYS, "archiveDays": MAX_AGE_DAYS,
+                    "nearDuplicateRule": "strict-title-and-number", "incoming": len(incoming),
+                    "unique": len(merged), "previous": len(old)},
     }
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
