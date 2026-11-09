@@ -295,6 +295,7 @@ def build(news: dict, previous: dict | None = None, api_key: str = "", today=Non
     retained = {x.get("id"): x for x in previous.get("items", []) if isinstance(x, dict)}
     enriched = []
     errors = 0
+    first_error = None  # HTTP status or sanitized exception class; never include API keys or response bodies.
     calls = 0
     reused = 0
     selected = choose(news.get("items") or [], today=today)
@@ -315,11 +316,15 @@ def build(news: dict, previous: dict | None = None, api_key: str = "", today=Non
                     row.update(_json_request(original, api_key))
                 except urllib.error.HTTPError as exc:
                     errors += 1
+                    if first_error is None:
+                        first_error = 'HTTP ' + str(exc.code)
                     # Avoid retrying all entries after account/limit errors.
                     if exc.code in (400, 401, 402, 403, 404, 429):
                         quota_stop = True
-                except (OSError, ValueError, KeyError, json.JSONDecodeError):
+                except (OSError, ValueError, KeyError, json.JSONDecodeError) as exc:
                     errors += 1
+                    if first_error is None:
+                        first_error = type(exc).__name__
         row["fingerprint"] = fp
         enriched.append(row)
     ai_count = sum(x.get("mode") == "ai-assisted" for x in enriched)
@@ -328,7 +333,7 @@ def build(news: dict, previous: dict | None = None, api_key: str = "", today=Non
             "headline": "AI 변화 브리핑 · 최근 7일",
             "coverage": "최근 7일 중 중요 후보, 뉴스 수집 대상 범위 내에서만 작성",
             "mode": "ai-assisted" if ai_count else "evidence-only", "aiAnalyzed": ai_count,
-            "aiCalls": calls, "aiErrors": errors, "cacheHits": reused,
+            "aiCalls": calls, "aiErrors": errors, "aiFailureCode": first_error, "cacheHits": reused,
             "modelConfigured": bool(api_key), "storyCount": len(enriched), "items": enriched,
             "disclaimer": "원문 기반 정보 정리입니다. AI 보조 분석은 사실 검증을 대체하지 않으며 가격·성능·이전 기술과의 차이가 확인되지 않으면 미확인으로 표시합니다."}
 
@@ -344,7 +349,7 @@ def main() -> int:
         OUT.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"브리핑 {result['storyCount']}건 · AI 보조 {result['aiAnalyzed']}건 · 캐시 {result['cacheHits']}건 · AI 호출 오류 {result['aiErrors']}건")
         if api_key and result["aiErrors"]:
-            print("AI 연결 실패: 해당 뉴스는 원문 기반 요약으로 대체 (API 키/개인정보는 로그에 표시하지 않음)")
+            print("AI 연결 실패 분류: " + str(result.get('aiFailureCode') or 'Unknown') + " (응답 내용과 API 키는 기록하지 않음)")
         return 0
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         print("브리핑 생성 실패: " + type(exc).__name__)
