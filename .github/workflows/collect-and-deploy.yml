@@ -91,7 +91,7 @@ jobs:
           exit 1
 
       - name: Send clearly labeled Discord test (never changes delivery ledger)
-        if: ${{ (github.event_name == 'workflow_dispatch' && inputs.discord_test_send) || (github.event_name == 'push' && github.event.head_commit.message == 'test: send one labeled Discord format preview 20261110-kst') }}
+        if: ${{ (github.event_name == 'workflow_dispatch' && inputs.discord_test_send) || (github.event_name == 'push' && github.event.head_commit.message == 'test-send-one-labeled-discord-preview-20261110-kst') }}
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           SIGNAL_DESK_TEST_SEND: '1'
