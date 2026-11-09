@@ -2,9 +2,11 @@
 import datetime as dt
 import importlib.util
 import json
+import os
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 MOD_PATH = Path(__file__).resolve().parents[1] / "scripts" / "discord_post.py"
 SPEC = importlib.util.spec_from_file_location("discord_post", MOD_PATH)
@@ -257,6 +259,43 @@ class DiscordTests(unittest.TestCase):
         items = [story(1, "2026-11-06"), story(2, "2026-11-11"),
                  story(3, "2026-11-10"), story(4, "2026-11-10")]
         self.assertEqual(discord.pick(items, fresh_state(), NOW.date()), [])
+
+    def test_explicit_labeled_test_sends_without_touching_delivery_ledger(self):
+        rows = [story(i) for i in range(5)]
+        history = fresh_state()
+        history["posted"] = {x["id"]: NOW.isoformat() for x in rows}
+        history["history"] = [{"at": NOW.isoformat(), "count": 5}]
+        before = json.dumps(history, sort_keys=True)
+        outbound = []
+        report = discord.send_labeled_test(
+            {"items": rows}, "https://discord.com/api/webhooks/12345/valid_token", NOW,
+            sender=lambda url, payload: outbound.append((url, payload)) or "123456789012345678")
+        self.assertEqual(report, {"status": "test_sent", "count": 5})
+        self.assertEqual(len(outbound), 1)
+        self.assertIn("[테스트 전송", outbound[0][1]["content"])
+        self.assertEqual(outbound[0][1]["username"], "SIGNAL DESK TEST")
+        self.assertEqual(sum("주목할 소식" in x["title"] for x in outbound[0][1]["embeds"]), 2)
+        self.assertEqual(sum("제법 쓸 만한 물건" in x["title"] for x in outbound[0][1]["embeds"]), 3)
+        self.assertEqual(outbound[0][1]["allowed_mentions"], {"parse": []})
+        self.assertEqual(json.dumps(history, sort_keys=True), before)
+
+    def test_test_send_does_not_send_when_insufficient_news(self):
+        sent = []
+        report = discord.send_labeled_test(
+            {"items": [story(1)]}, "https://discord.com/api/webhooks/12345/valid_token",
+            NOW, sender=lambda *args: sent.append(args))
+        self.assertEqual(report["status"], "no_test_stories")
+        self.assertEqual(sent, [])
+
+    def test_test_send_rejects_unapproved_webhook(self):
+        with self.assertRaises(ValueError):
+            discord.send_labeled_test({"items": [story(i) for i in range(4)]},
+                                      "https://discord.com.attacker.example/api/webhooks/5/token",
+                                      NOW, sender=lambda *args: "123456789012345678")
+
+    def test_cli_test_requires_explicit_authorization(self):
+        with patch.dict(os.environ, {"SIGNAL_DESK_TEST_SEND": "", "DISCORD_WEBHOOK_URL": ""}):
+            self.assertEqual(discord.main(["--test-send"]), 1)
 
     def test_invalid_ledger_refuses_reset(self):
         with tempfile.TemporaryDirectory() as tmp:
