@@ -22,8 +22,8 @@ ROOT = Path(__file__).resolve().parents[1]
 FEED = ROOT / "data" / "briefing.json"
 STATE = ROOT / "data" / "discord_state.json"
 KST = dt.timezone(dt.timedelta(hours=9))
-MAX_STORIES = 5
-MIN_STORIES = 3
+MAX_STORIES = 3
+MIN_STORIES = 1
 MIN_SCORE = 62
 MAX_NEWS_AGE_DAYS = 3
 MIN_HOURS_BETWEEN_POSTS = 7
@@ -207,7 +207,7 @@ def lore_aside(items: list, state: dict | None) -> tuple[str, int, str] | None:
     return None
 
 
-# Content hierarchy: up to two featured stories and two/three shorter practical briefs.
+# Content hierarchy: one featured story and up to two concise practical briefs.
 # Keep embed totals under Discord's 6,000-character combined budget.
 DISCORD_MAX_EMBED_TEXT = 6000
 DISCORD_EMBED_TEXT_BUDGET = 5650
@@ -236,7 +236,7 @@ def editorial_score(item: dict, today: dt.date) -> int:
 
 
 def featured_count(count: int) -> int:
-    return 2 if count >= 5 else 1 if count >= 3 else 0
+    return 1 if count >= 1 else 0
 
 
 def meaningful(value: object) -> bool:
@@ -573,7 +573,7 @@ def main(argv=None) -> int:
             # posted-item ledger ONLY for this local/CI inspection mode.
             sample = pick(briefing.get("items", []), {"posted": {}}, now_kst().date())
             if not sample:
-                print("Discord layout preview: fewer than 3 fresh items, no message composed")
+                print("Discord layout preview: no fresh items, no message composed")
                 return 0
             draft = payload_for(sample, now_kst(), state)
             detailed = featured_count(len(sample))
