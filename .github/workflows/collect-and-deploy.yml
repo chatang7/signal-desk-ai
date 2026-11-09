@@ -39,33 +39,39 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_*.py' -q
       - name: Collect official public feeds
         run: python scripts/collect.py
+      - name: Generate evidence-based briefing (optional Gemini free tier)
+        run: python scripts/briefing.py
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       - name: Save feed when changed (retry on concurrent code commits)
         run: |
-          if git diff --quiet -- data/news.json; then
+          if git diff --quiet -- data/news.json data/briefing.json; then
             echo "No changes to the public news feed"
             exit 0
           fi
           git config user.name "signal-desk-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          snapshot="$(mktemp)"
-          cp data/news.json "$snapshot"
+          snapshot="$(mktemp -d)"
+          cp data/news.json "$snapshot/news.json"
+          cp data/briefing.json "$snapshot/briefing.json"
           for attempt in 1 2 3; do
             git fetch origin main
             git reset --hard origin/main
-            cp "$snapshot" data/news.json
-            if git diff --quiet -- data/news.json; then
+            cp "$snapshot/news.json" data/news.json
+            cp "$snapshot/briefing.json" data/briefing.json
+            if git diff --quiet -- data/news.json data/briefing.json; then
               echo "Feed already up to date"
-              rm -f "$snapshot"
+              rm -rf "$snapshot"
               exit 0
             fi
-            git add data/news.json
+            git add data/news.json data/briefing.json
             git commit -m "chore: refresh AI news feed [skip ci]"
             if git push origin main; then
-              rm -f "$snapshot"
+              rm -rf "$snapshot"
               exit 0
             fi
             echo "Concurrent update; retrying ($attempt/3)"
             sleep "$attempt"
           done
-          rm -f "$snapshot"
+          rm -rf "$snapshot"
           exit 1
