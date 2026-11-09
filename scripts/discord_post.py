@@ -455,7 +455,20 @@ def main(argv=None) -> int:
         if briefing.get("schema") != "signal-desk-briefing-v1":
             raise ValueError("Invalid briefing format")
         state = load_state()
-        result = deliver(briefing, state, secret, now_kst(), dry_run=dry_run)
+        if dry_run:
+            # Preview the complete current layout without sending, and ignore the
+            # posted-item ledger ONLY for this local/CI inspection mode.
+            sample = pick(briefing.get("items", []), {"posted": {}}, now_kst().date())
+            if not sample:
+                print("Discord layout preview: fewer than 3 fresh items, no message composed")
+                return 0
+            draft = payload_for(sample, now_kst(), state)
+            detailed = featured_count(len(sample))
+            length = sum(embed_text_length(x) for x in draft["embeds"])
+            print(f"Discord layout preview: {detailed} detailed + {len(sample)-detailed} medium"
+                  f"; {length}/{DISCORD_MAX_EMBED_TEXT} embed characters; no message sent")
+            return 0
+        result = deliver(briefing, state, secret, now_kst(), dry_run=False)
         if result["status"] == "sent":
             STATE.write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print("Discord status: " + result["status"] + " (" + str(result["count"]) + " stories)")
