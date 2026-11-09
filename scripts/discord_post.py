@@ -279,6 +279,63 @@ def embed_text_length(embed: dict) -> int:
                        for x in embed.get("fields", []))
 
 
+def story_type(item: dict) -> str:
+    """What the item *is*, not how important it is or who published it.
+
+    Prefer explicit source/topic evidence to speculative keyword classification.
+    A GitHub-owned news site or changelog is not automatically open-source software.
+    """
+    topic = str(item.get("topic") or "").strip()
+    title = str(item.get("title") or "")
+    summary = str(item.get("summary") or "")
+    urls = item.get("urls") or []
+    urls = urls if isinstance(urls, list) else []
+    link = next((u for u in urls if isinstance(u, str) and safe_link(u)), "")
+    parsed = urllib.parse.urlsplit(link)
+    host = (parsed.hostname or "").lower()
+    path = parsed.path.lower()
+    words = title + " " + summary
+
+    # Dataset releases are a distinct, reusable artifact.
+    if (host == "huggingface.co" and path.startswith("/datasets/")) or re.search(
+            r"\bdata[ -]?set\b|데이터셋|데이터 세트", title, re.I):
+        return "🗂 데이터셋"
+    # A paper link is stronger evidence than a source blog merely discussing research.
+    if (host in {"arxiv.org", "paperswithcode.com"}
+            or (host == "huggingface.co" and path.startswith("/papers/"))
+            or topic == "연구·논문" and re.search(r"논문|paper|preprint", words, re.I)):
+        return "📄 논문"
+    # A public code repository/release, or an unambiguous open-source release statement.
+    if (host == "github.com" and path.count("/") >= 2) or (
+            topic == "GitHub 오픈소스" and host != "github.blog"
+    ) or re.search(r"오픈소스(?:로)?\s*(?:정식\s*)?공개|소스코드\s*공개|"
+                    r"open[ -]?sourc(?:ed|e)\s+(?:release|released|published|launch)|"
+                    r"released\s+as\s+open[ -]?source", words, re.I):
+        return "🧩 오픈소스"
+
+    if topic == "보안":
+        return "🛡 보안"
+    if topic == "정책·규제":
+        return "⚖️ 정책"
+    if topic == "성능 비교":
+        return "📊 성능 비교"
+    if topic == "모델 출시":
+        return "🤖 AI 모델"
+    if topic == "무료 도구":
+        return "🛠 무료 도구"
+    if topic == "연구·논문" or re.search(r"연구(?:진|팀|결과)|연구\s*발표|research(?:ers)?\s+(?:paper|study)|pruning of experts", words, re.I):
+        return "🧪 연구"
+    if topic == "코딩 도구":
+        if host == "github.blog" or re.search(r"업데이트|추가|개선|update|adds?\b|changelog", title, re.I):
+            return "🔄 업데이트"
+        return "🛠 도구"
+    if topic in {"영상 생성", "이미지 생성", "음성 생성"} and re.search(r"모델\s*출시|모델\s*공개|model\s*(release|launch)", words, re.I):
+        return "🤖 AI 모델"
+    if topic in {"GitHub 오픈소스"}:
+        return "🛠 도구"
+    return "📰 뉴스"
+
+
 def build_story_embed(item: dict, detailed: bool, lore: str | None = None) -> dict:
     link = next((u for u in item.get("urls", []) if safe_link(u)), "")
     source = safe_text(item.get("sourceLabel") or "출처 미상", 45)
@@ -320,7 +377,7 @@ def build_story_embed(item: dict, detailed: bool, lore: str | None = None) -> di
     if lore:
         description += "\n\n*" + safe_text(lore, 145) + "*"
     return {
-        "title": (label + " | " + title)[:150],
+        "title": (story_type(item) + " | " + label + " | " + title)[:150],
         "url": link,
         "description": description,
         "fields": fields,
