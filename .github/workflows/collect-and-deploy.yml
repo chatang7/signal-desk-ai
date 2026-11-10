@@ -4,6 +4,9 @@ on:
   schedule:
     # 09:17 / 21:17 Korea Standard Time (UTC+9); schedules may be delayed.
     - cron: '17 0,12 * * *'
+    # Backup 30 minutes later, if GitHub drops a scheduled event.
+    # Normal delivery ledger and 7-hour cooldown prevent extra Discord posts.
+    - cron: '47 0,12 * * *'
   workflow_dispatch:
     inputs:
       discord_send:
@@ -97,12 +100,12 @@ jobs:
           SIGNAL_DESK_TEST_SEND: '1'
         run: python scripts/discord_post.py --test-send
       - name: Post Discord digest (scheduled or manually enabled only)
-        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.discord_send && !inputs.discord_test_send) }}
+        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.discord_send && !inputs.discord_test_send) || (github.event_name == 'push' && github.event.head_commit.message == 'fix-missed-discord-briefing-20261110-once') }}
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: python scripts/discord_post.py
       - name: Persist Discord delivered-item ledger
-        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.discord_send && !inputs.discord_test_send) }}
+        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.discord_send && !inputs.discord_test_send) || (github.event_name == 'push' && github.event.head_commit.message == 'fix-missed-discord-briefing-20261110-once') }}
         run: |
           if git diff --quiet -- data/discord_state.json; then
             echo "No Discord message sent; ledger unchanged"
