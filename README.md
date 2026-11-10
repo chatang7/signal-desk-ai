@@ -89,7 +89,7 @@ GitHub Actions 실행은 가끔 지연·실패할 수 있고, 오래 활동이 �
 
 1. 원하는 Discord 서버/채널에서 **채널 편집 → 연동(Integrations) → 웹훅(Webhooks) → 새 웹훅**을 만들고 해당 채널의 **웹훅 URL 복사**를 누릅니다. 일반 채팅 채널을 추천합니다(포럼·미디어 채널은 추가 thread 설정이 필요하므로 지원하지 않음).
 2. GitHub 저장소 **Settings → Secrets and variables → Actions → New repository secret** 에서 이름 `DISCORD_WEBHOOK_URL`, 값에는 복사한 전체 웹훅 주소를 입력합니다. 이 URL에는 비밀 토큰이 들어 있으므로 채팅, 공개 코드, 이슈에 붙이지 마세요.
-3. 그러면 다음 정기 실행(한국시간 **09:17, 21:17**)부터 자동 전송이 시작됩니다. 무료 GitHub Actions 스케줄은 지연될 수 있습니다.
+3. 그러면 다음 정기 실행(한국시간 **09:17, 21:17**)부터 자동 전송이 시작됩니다. GitHub 예약 실행 누락에 대비해 **09:47, 21:47**에도 보조 실행합니다. GitHub Actions 스케줄은 지연되거나 누락될 수 있으며, 보조 실행 역시 완전한 보장은 아닙니다. 실제 중복 게시를 막기 위해 기존 7시간 간격·하루 2회 제한 및 발송 이력을 그대로 적용합니다.
 4. 테스트로 실제 채널에 보내려면 **Actions → Collect AI news (free) → Run workflow** 메뉴에서 `discord_send` 체크박스를 **직접 켜고** 실행하세요. 체크하지 않은 수동 실행이나 코드 변경(push)만으로는 Discord에 게시하지 않습니다.
 5. 웹훅을 삭제하거나 메시지를 중지하려면 GitHub Secret `DISCORD_WEBHOOK_URL`을 삭제하면 됩니다. Discord 설정에서 웹훅을 삭제해도 됩니다.
 
