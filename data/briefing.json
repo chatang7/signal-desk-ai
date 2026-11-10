@@ -1,15 +1,15 @@
 {
   "schema": "signal-desk-briefing-v1",
-  "generatedAt": "2026-11-10T03:08:19.837988+00:00",
-  "newsGeneratedAt": "2026-11-10T03:08:03.602578+00:00",
+  "generatedAt": "2026-11-10T07:23:33.980918+00:00",
+  "newsGeneratedAt": "2026-11-10T07:23:14.864585+00:00",
   "headline": "AI 변화 브리핑 · 최근 7일",
   "coverage": "최근 7일 중 중요 후보, 뉴스 수집 대상 범위 내에서만 작성",
   "mode": "ai-assisted",
-  "aiAnalyzed": 7,
-  "aiCalls": 4,
-  "aiErrors": 1,
-  "aiFailureCode": "TimeoutError",
-  "cacheHits": 4,
+  "aiAnalyzed": 8,
+  "aiCalls": 3,
+  "aiErrors": 0,
+  "aiFailureCode": null,
+  "cacheHits": 5,
   "modelConfigured": true,
   "storyCount": 8,
   "items": [
@@ -144,6 +144,72 @@
       "fingerprint": "9d6da1e39fae836a787b5159"
     },
     {
+      "id": "feed-e566a2114448230812530a",
+      "title": "구글, AI 에이전트·보안 특화 TPU 2종 공개…엔비디아 추격",
+      "date": "2026-11-10",
+      "topic": "보안",
+      "region": "한국",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceType": "secondary",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217211"
+      ],
+      "score": 67,
+      "summary": "구글이 AI 에이전트 및 기업 보안 시스템에 특화된 8세대 TPU 신제품 2종인 'TPU 8i Max'와 'TPU 8tx'를 공개하며 인프라 라인업을 확장했습니다.",
+      "difference": "미확인",
+      "why": "AI 에이전트의 대규모 정보 처리와 기업용 민감 데이터 보안 강화를 위해 전용 칩셋을 도입했습니다.",
+      "usage": "AI 에이전트 구동 및 기업 보안 시스템 인프라 구축",
+      "cost": "미확인",
+      "performance": "미확인",
+      "strengths": "AI 에이전트 및 보안 특화 설계로 기업용 인프라 시장 공략 가속화",
+      "limitations": "구체적인 기술 사양 및 성능 지표 미공개",
+      "mode": "ai-assisted",
+      "model": "gemini-3.1-flash-lite",
+      "evidence": [
+        "대규모 정보를 처리하는 AI 에이전트와 민감한 데이터를 다루는 기업용 보안 시스템에 특화한 신제품 2종을 추가하며",
+        "8세대 TPU 제품군에 'TPU 8i Max'와 'TPU 8tx'를 추가했다고 발표했다"
+      ],
+      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
+      "confidence": "검토 필요",
+      "voiceMood": "skeptical",
+      "voiceHook": "구글이 또 새로운 TPU를 들고 나왔는데, 이번엔 에이전트랑 보안이라니 말은 참 그럴듯하게 포장했네.",
+      "voiceTake": "단순히 라인업만 늘린다고 엔비디아의 아성을 넘볼 수 있을까? 구체적인 성능 수치나 기존 칩 대비 실질적인 이득을 보여주지 않으면 결국 마케팅용 수식어에 불과할 뿐이야.",
+      "fingerprint": "3a7f4f77c041bae3f2fccd3b"
+    },
+    {
+      "id": "feed-db0dfb929326485aaadf15",
+      "title": "'하이쿠' 성능에 비용은 3분의 1…메타, 에이전트용 '뮤즈 엠버' 출시",
+      "date": "2026-11-10",
+      "topic": "에이전트",
+      "region": "한국",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceType": "secondary",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217209"
+      ],
+      "score": 67,
+      "summary": "메타가 AI 에이전트의 반복적인 작업 처리에 최적화된 경량 모델 '뮤즈 엠버'를 출시함.",
+      "difference": "원문에 근거 없음",
+      "why": "AI 에이전트가 반복적으로 수행하는 작업의 효율성을 높이기 위해 개발됨.",
+      "usage": "대규모 문서 분석, 코드 수정, 도구 호출 및 애플리케이션 간 업무 자동화.",
+      "cost": "미확인",
+      "performance": "미확인",
+      "strengths": "복잡한 추론 실행 및 반복 작업 최적화, 성능 대비 비용 경쟁력.",
+      "limitations": "원문에 근거 없음",
+      "mode": "ai-assisted",
+      "model": "gemini-3.1-flash-lite",
+      "evidence": [
+        "AI 에이전트의 반복적인 작업을 빠르고 저렴하게 처리하도록 설계한 경량 AI 모델 '뮤즈 엠버(Muse Ember)'를 공개했다.",
+        "복잡한 추론을 실행하고 도구 호출, 코딩 하위 작업, 정보 추출, 문서 분석 등 AI 에이전트가 반복적으로 수행하는 작업에 최적화한 모델"
+      ],
+      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
+      "confidence": "검토 필요",
+      "voiceMood": "skeptical",
+      "voiceHook": "메타가 또 새로운 모델을 들고 나왔는데, 이번엔 '뮤즈 엠버'라는 이름의 경량 에이전트용 모델이야. 성능 대비 비용이 좋다고는 하는데, 구체적인 수치가 없으니 일단은 좀 더 지켜봐야겠지?",
+      "voiceTake": "비용 절감을 내세우는 건 좋지만, 정작 중요한 벤치마크 데이터는 쏙 빠져 있네. 에이전트 작업의 핵심인 도구 호출 정확도가 어느 정도인지, 실무 환경에서 얼마나 안정적으로 돌아갈지 직접 검증해 보기 전까진 섣불리 판단하지 않는 게 좋을 거야.",
+      "fingerprint": "16a0567ff4cae521eb88107e"
+    },
+    {
       "id": "feed-f51ea085bf67c73b50aeca",
       "title": "Ollama · v0.40.16",
       "date": "2026-11-09",
@@ -187,88 +253,26 @@
         "https://github.blog/changelog/2026-11-09-claude-fable-5-2-in-github-copilot"
       ],
       "score": 66,
-      "summary": "Claude Fable 5.2, Anthropic’s newest Fable model, is now generally available in GitHub Copilot. You can use it for complex, multistep coding tasks across large codebases. In early testing, Fable… The post Claude Fable 5.2 in GitHub Copilot appeared first on Th",
-      "difference": "기존 기술 대비 구체적인 차이는 수집된 원문에서 미확인",
-      "why": "확인해야 하는 이유: 재사용 가치가 있어도 라이선스·유지보수·환경 호환성을 먼저 살펴야 함",
-      "usage": "실무 검증: 라이선스·최근 커밋·설치 절차 확인 후 작은 입력으로 테스트",
-      "cost": "가격·무료 여부 미확인",
-      "performance": "비교 가능한 성능 수치 미확인",
-      "strengths": "검증 전: 공식 소개에 실린 장점과 실제 효용을 구분해야 함",
-      "limitations": "독립 검증·실측 비교·사용 조건은 수집 요약만으로 확정할 수 없음",
-      "mode": "evidence-only",
-      "model": null,
-      "evidence": [
-        "Claude Fable 5.2, Anthropic’s newest Fable model, is now generally available in GitHub Copilot. You can use it for complex, multistep coding"
-      ],
-      "status": "자동 근거 정리 · 심층 추론 미실행",
-      "confidence": "미검증",
-      "fingerprint": "835af1f02d39fa1ed017dc03"
-    },
-    {
-      "id": "feed-52663831996b320a23ff83",
-      "title": "AI 에이전트를 위한 멀티모달 의사결정 모델 ‘Kanana-2-v-decide’ 오픈소스 공개",
-      "date": "2026-11-05",
-      "topic": "에이전트",
-      "region": "한국",
-      "sourceLabel": "카카오테크",
-      "sourceType": "primary",
-      "urls": [
-        "https://tech.kakao.com/posts/846"
-      ],
-      "score": 63,
-      "summary": "카카오 Applied AI Model팀이 AI 에이전트의 의사결정 과정을 지원하는 멀티모달 모델 'Kanana-2-v-decide'를 오픈소스로 공개함.",
+      "summary": "GitHub Copilot에 Anthropic의 최신 모델인 Claude Fable 5.2가 정식 통합되어 복잡한 다단계 코딩 작업을 지원합니다.",
       "difference": "미확인",
-      "why": "AI 에이전트가 서비스 운영 중 반복적으로 수행하는 분류, 확인, 도구 선택 등 명확한 판단 작업의 효율성을 높이기 위함.",
-      "usage": "고객 문의 분류, 상품 이미지 확인, 에이전트의 도구 선택 등 서비스 내 의사결정 단계에 활용.",
+      "why": "대규모 코드베이스 내에서 수행되는 복잡하고 다단계적인 코딩 작업의 효율성을 높이기 위해 도입되었습니다.",
+      "usage": "GitHub Copilot 환경 내에서 대규모 프로젝트의 코드 작성 및 분석 작업에 활용 가능합니다.",
       "cost": "미확인",
       "performance": "미확인",
-      "strengths": "AI 에이전트의 작업 단계별 판단 결과를 빠르게 도출할 수 있음.",
+      "strengths": "대규모 코드베이스를 다루는 복잡한 다단계 코딩 작업에 적합합니다.",
       "limitations": "원문에 근거 없음",
       "mode": "ai-assisted",
       "model": "gemini-3.1-flash-lite",
       "evidence": [
-        "고객 문의를 분류하고, 상품 사진을 확인하고, 에이전트가 다음 작업에 사용할 도구를 고르는 일.",
-        "Agentic AI 시대에 각 단계에서 필요한 판단 결과를 빠르게 얻고, 이를 서비스의 다음 동작으로"
-      ],
-      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
-      "confidence": "검토 필요",
-      "fingerprint": "9b1574935a4fc8437a303192",
-      "voiceMood": "curious",
-      "voiceHook": "카카오에서 AI 에이전트의 판단력을 높여줄 새로운 멀티모달 모델을 공개했어. 에이전트가 스스로 도구를 고르고 상황을 판단하는 과정이 얼마나 정교해질지 궁금하지 않아?",
-      "voiceTake": "단순히 긴 답변을 내놓는 모델이 아니라, 에이전트의 매 단계마다 필요한 '판단'에 집중했다는 점이 흥미로워. 실제 서비스 환경에서 에이전트가 얼마나 똑똑하게 도구를 선택하고 다음 동작을 결정할 수 있을지 그 실효성을 지켜볼 필요가 있겠어."
-    },
-    {
-      "id": "feed-c36c5ec7e14a0953b742f5",
-      "title": "딥엑스, 초저전력 AI 반도체 'DX-M2' 설계 완료...내년 하반기 양산 채비",
-      "date": "2026-11-10",
-      "topic": "반도체",
-      "region": "한국",
-      "sourceLabel": "AI타임스 (보도)",
-      "sourceType": "secondary",
-      "urls": [
-        "https://www.aitimes.com/news/articleView.html?idxno=217204"
-      ],
-      "score": 62,
-      "summary": "딥엑스가 삼성전자 2나노 공정을 적용한 생성형 AI 반도체 'DX-M2'의 설계를 완료하고 마스크 테이프아웃을 마쳤습니다.",
-      "difference": "미확인",
-      "why": "생성형 AI 모델 구동을 위한 초저전력 반도체 시장 대응을 목적으로 합니다.",
-      "usage": "실제 양산 샘플 확보 후 고객사 평가를 통해 성능 및 전력 효율성을 검증할 필요가 있습니다.",
-      "cost": "미확인",
-      "performance": "미확인",
-      "strengths": "삼성전자 2나노 공정을 기반으로 설계되어 최신 미세 공정 기술을 적용했습니다.",
-      "limitations": "현재 시제품 제작 단계로 실제 양산 및 상용화까지는 실리콘 확보와 고객사 검증 과정이 남아있습니다.",
-      "mode": "ai-assisted",
-      "model": "gemini-3.1-flash-lite",
-      "evidence": [
-        "삼성전자 2나노 공정 기반 차세대 생성 AI 반도체 ‘DX-M2’의 칩 설계를 마치고",
-        "딥엑스는 이달 초 DX-M2 시제품 제작을 위한 마스크 테이프아웃(MTO·Mask Tape-Out)를 완료했다고"
+        "Claude Fable 5.2, Anthropic’s newest Fable model, is now generally available in GitHub Copilot.",
+        "You can use it for complex, multistep coding tasks across large codebases."
       ],
       "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
       "confidence": "검토 필요",
       "voiceMood": "curious",
-      "voiceHook": "딥엑스가 삼성 2나노 공정으로 생성형 AI 반도체를 설계했다는데, 말뿐인 설계인지 실질적인 효율을 뽑아낼 수 있을지 궁금하네.",
-      "voiceTake": "설계 완료와 테이프아웃은 시작일 뿐이야. 내년 3월 실리콘이 나오면 실제 생성형 AI 워크로드에서 전력 대비 성능이 얼마나 나올지가 이 칩의 진짜 가치를 결정하겠지.",
-      "fingerprint": "012ed1d12714680b68aaf3b0"
+      "voiceHook": "GitHub Copilot에 앤스로픽의 새로운 모델인 Claude Fable 5.2가 들어왔다는데, 대규모 코드베이스를 얼마나 똑똑하게 다룰지 궁금하지 않아?",
+      "voiceTake": "단순히 모델이 추가된 것인지, 기존 모델과 비교해 어떤 구조적 차별점이 있는지에 대한 구체적인 데이터가 부족해. 실무에 도입하기 전에 대규모 프로젝트의 특정 모듈을 맡겨서 실제 코드 생성의 정합성과 문맥 유지 능력을 먼저 테스트해 보는 게 좋겠어.",
+      "fingerprint": "835af1f02d39fa1ed017dc03"
     }
   ],
   "disclaimer": "원문 기반 정보 정리입니다. AI 보조 분석은 사실 검증을 대체하지 않으며 가격·성능·이전 기술과의 차이가 확인되지 않으면 미확인으로 표시합니다."
