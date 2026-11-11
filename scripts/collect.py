@@ -112,10 +112,11 @@ def classify(text: str, fallback: str = "미정") -> str:
         (r"image generat|text.to.image|diffusion|flux\b|이미지 생성|이미지 모델", "이미지 생성"),
         (r"video generat|text.to.video|영상 생성|비디오 생성", "영상 생성"),
         (r"speech|voice|audio|tts|음성 생성|음성 인식|오디오", "음성 생성"),
+        # Explicit code release is stronger evidence than incidental 'agent' or 'code'.
+        (r"open.source|\boss\b|오픈소스|소스 공개", "GitHub 오픈소스"),
         (r"agent|mcp|tool use|에이전트|자동화", "에이전트"),
         (r"code|coding|codex|copilot|developer tool|코딩|개발 도구|cli\b", "코딩 도구"),
         (r"benchmark|eval|leaderboard|성능 비교|벤치마크", "성능 비교"),
-        (r"open.source|\boss\b|오픈소스|소스 공개", "GitHub 오픈소스"),
         (r"paper|research|논문|연구", "연구·논문"),
         (r"model|gpt|gemini|claude|llm|언어 모델|모델 출시", "모델 출시"),
         (r"funding|investment|acquisition|투자|인수|기업", "AI 기업"),
