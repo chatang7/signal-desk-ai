@@ -1,15 +1,15 @@
 {
   "schema": "signal-desk-briefing-v1",
-  "generatedAt": "2026-11-11T06:29:28.090160+00:00",
-  "newsGeneratedAt": "2026-11-11T06:29:08.281411+00:00",
+  "generatedAt": "2026-11-11T07:12:02.806334+00:00",
+  "newsGeneratedAt": "2026-11-11T07:11:42.754845+00:00",
   "headline": "AI 변화 브리핑 · 최근 7일",
   "coverage": "최근 7일 중 중요 후보, 뉴스 수집 대상 범위 내에서만 작성",
   "mode": "ai-assisted",
   "aiAnalyzed": 8,
-  "aiCalls": 3,
+  "aiCalls": 2,
   "aiErrors": 0,
   "aiFailureCode": null,
-  "cacheHits": 5,
+  "cacheHits": 7,
   "modelConfigured": true,
   "storyCount": 8,
   "items": [
@@ -109,7 +109,10 @@
       ],
       "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
       "confidence": "검토 필요",
-      "fingerprint": "9805bf9f51674d3e575c34d5"
+      "fingerprint": "9805bf9f51674d3e575c34d5",
+      "voiceMood": "curious",
+      "voiceHook": "세상에, 군 복무를 마친 분들에게 이런 혜택이 돌아갔다니 흥미롭네. 과연 이 도구가 그들의 새로운 사회 진출에 얼마나 실질적인 힘이 되어줄지 궁금하지 않아?",
+      "voiceTake": "단순히 무료 이용권을 나눠주는 것만으로는 부족해. 이들이 실제로 어떤 직무 역량을 보완하고 있는지, 그 과정에서 AI가 얼마나 유의미한 가이드를 제공하는지 확인하는 게 핵심이야. 홍보성 수치에 가려진 실질적인 성과를 들여다볼 필요가 있어."
     },
     {
       "id": "feed-19b4fcb1faac9c9bdbccd3",
@@ -248,38 +251,38 @@
       "majorLaunch": false
     },
     {
-      "id": "feed-c4234994e026eb27031050",
-      "title": "엔비디아, 젠슨 황 사건 조사 위해 뉴욕 유명 로펌 고용",
+      "id": "feed-fdb6a82863ec052d3dd56b",
+      "title": "AI 산출물이 프로덕션이 되기까지-AI와 디자인시스템이 함께 일하는 법",
       "date": "2026-11-11",
-      "topic": "반도체",
+      "topic": "미정",
       "region": "한국",
-      "sourceLabel": "AI타임스 (보도)",
-      "sourceType": "secondary",
+      "sourceLabel": "네이버 D2",
+      "sourceType": "primary",
       "urls": [
-        "https://www.aitimes.com/news/articleView.html?idxno=217259"
+        "https://d2.naver.com/helloworld/2568242"
       ],
-      "score": 62,
+      "score": 73,
       "majorLaunch": false,
-      "summary": "엔비디아 이사회가 젠슨 황 CEO와 중국 정보기관 연루 의혹 인물 간의 관계를 조사하기 위해 외부 로펌을 선임함.",
+      "summary": "네이버 엔지니어링 데이에서 발표된 AI 산출물을 실제 프로덕션 환경으로 연결하기 위한 디자인 시스템 구축 전략을 다룸.",
       "difference": "미확인",
-      "why": "CEO와 관련된 안보 및 기밀 유출 가능성을 독립적으로 확인하기 위함.",
-      "usage": "내부 통제 및 리스크 관리 차원의 법적 조사 절차.",
+      "why": "AI가 생성한 결과물이 실제 서비스 구현으로 이어지지 못하는 기술적, 운영적 단절을 해결하기 위함.",
+      "usage": "Figma를 중앙 허브로 활용하고 컴포넌트, 디자인 토큰, design.md를 통해 AI와 설계자 간의 설계 의도를 동기화함.",
       "cost": "미확인",
       "performance": "미확인",
-      "strengths": "전직 연방 검사 출신 변호사를 주축으로 한 독립적인 조사 체계 구축.",
-      "limitations": "조사 결과에 따라 기업 경영 및 보안 정책에 미칠 파급력은 아직 알 수 없음.",
+      "strengths": "Figma를 중심으로 다양한 입력을 통합하고 설계 의도를 명확히 전달하는 체계적인 가이드라인 제시.",
+      "limitations": "원문에 근거 없음",
       "mode": "ai-assisted",
       "model": "gemini-3.1-flash-lite",
       "evidence": [
-        "엔비디아가 젠슨 황 CEO와 중국 정보기관 연루 의혹을 받는 여성의 관계를 둘러싼 논란을 조사하기 위해 뉴욕의 유명 로펌을 선임했다.",
-        "황 CEO가 외국 정보기관의 표적이 됐는지와 국가 안보 또는 회사 기밀이 유출됐는지 등을 살펴볼 예정이다."
+        "AI 산출물이 프로덕션으로 이어지지 못하는 5가지 이유",
+        "Figma를 중심에 둔 이유 AI와 설계자가 같은 블록으로 조립하도록 컴포넌트·디자인 토큰·design.md로 설계 의도를 표현하는 방법"
       ],
       "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
       "confidence": "검토 필요",
-      "voiceMood": "serious",
-      "voiceHook": "엔비디아의 수장이 정보기관과 엮였다는 루머가 돌더니, 결국 이사회가 칼을 빼 들었네. 이게 단순한 해프닝일지 아니면 거대한 스캔들의 서막일지 지켜볼 필요가 있겠어.",
-      "voiceTake": "기업의 핵심 인사가 외국 정보기관의 표적이 되었는지 확인하는 건 단순한 루머 대응을 넘어선 국가 안보급 사안이야. 로펌의 조사 결과가 나오기 전까지는 섣부른 추측보다는 이사회의 독립적인 검증 과정을 차분히 지켜보는 게 좋겠어.",
-      "fingerprint": "8479ef2b9400b3c9e3d0523d"
+      "voiceMood": "curious",
+      "voiceHook": "AI가 뱉어낸 결과물을 그냥 방치하지 않고 어떻게 실무 프로덕션으로 연결할지 고민 중이라면 이 발표를 한번 훑어보는 게 어때?",
+      "voiceTake": "단순히 AI를 쓰는 걸 넘어 디자인 시스템이라는 규격 안에 가두려는 시도가 흥미롭네. 실제 서비스 적용 과정에서 발생하는 엣지 케이스를 어떻게 코드로 완벽하게 제어할지가 이 전략의 성패를 가르겠어.",
+      "fingerprint": "0088aa4b5a241d669a5c7dcd"
     }
   ],
   "disclaimer": "원문 기반 정보 정리입니다. AI 보조 분석은 사실 검증을 대체하지 않으며 가격·성능·이전 기술과의 차이가 확인되지 않으면 미확인으로 표시합니다."
