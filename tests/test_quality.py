@@ -82,6 +82,16 @@ class QualityTests(unittest.TestCase):
         self.assertEqual(rows[0]['sourceType'],'secondary')
         self.assertEqual(rows[0]['reliability'],2)
 
+    def test_deepmind_official_feed_is_monitored(self):
+        urls = {name: url for name, url, region in c.RSS}
+        self.assertEqual(urls.get("Google DeepMind"), "https://deepmind.google/blog/rss.xml")
+        self.assertIn("Google DeepMind", c.FOCUSED_SOURCES)
+
+    def test_github_copilot_is_not_open_source_just_because_github(self):
+        self.assertEqual(c.classify("Gemini 4 Carbon in GitHub Copilot"), "코딩 도구")
+        self.assertEqual(c.classify("Gemini 4 Carbon is now available"), "모델 출시")
+        self.assertEqual(c.classify("New model source code open-sourced"), "GitHub 오픈소스")
+
     def test_retains_old_while_source_failure(self):
         day=(c.NOW.date()-dt.timedelta(days=20)).isoformat()
         old={'id':'old','title':'Old AI item','date':day,'urls':['https://example.org/old'],'externalId':'old'}
