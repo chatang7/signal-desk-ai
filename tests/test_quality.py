@@ -92,6 +92,20 @@ class QualityTests(unittest.TestCase):
         self.assertEqual(c.classify("Gemini 4 Carbon is now available"), "모델 출시")
         self.assertEqual(c.classify("New model source code open-sourced"), "GitHub 오픈소스")
 
+    def test_deepmind_rss_fallback_after_xml_error(self):
+        day = c.NOW.strftime('%a, %d %b %Y %H:%M:%S +0000')
+        xml = (f'<rss><channel><item><title>Gemini 4 Carbon is now available</title>'
+               f'<link>https://deepmind.google/blog/gemini-4-carbon-is-now-available</link>'
+               f'<pubDate>{day}</pubDate></item></channel></rss>').encode()
+        primary = c.RSS_ALTERNATES["Google DeepMind"]
+        with patch.object(c, "fetch", side_effect=[b"not xml", xml]) as mocked:
+            rows = c.collect_rss_with_fallback(
+                "Google DeepMind", "https://deepmind.google/blog/rss.xml", "해외")
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["sourceLabel"], "Google DeepMind")
+        self.assertEqual(mocked.call_args.args[0], primary)
+        self.assertEqual(rows[0]["title"], "Gemini 4 Carbon is now available")
+
     def test_retains_old_while_source_failure(self):
         day=(c.NOW.date()-dt.timedelta(days=20)).isoformat()
         old={'id':'old','title':'Old AI item','date':day,'urls':['https://example.org/old'],'externalId':'old'}
