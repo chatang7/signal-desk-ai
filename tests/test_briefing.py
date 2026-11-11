@@ -150,6 +150,14 @@ class BriefingTests(unittest.TestCase):
         d=b.evidence_draft(x)
         self.assertIn("미확인",d["performance"])
 
+    def test_price_unit_guard_catches_per_million_to_per_token_error(self):
+        source = "Gemini Carbon costs $2 per million input tokens and $10 per million output tokens."
+        wrong = "입력 토큰당 2달러, 출력 토큰당 10달러"
+        correct = "입력 100만 토큰당 2달러, 출력 100만 토큰당 10달러"
+        self.assertIn("미확인", b.safe_generated_price_unit(wrong, source))
+        self.assertEqual(b.safe_generated_price_unit(correct, source), correct)
+        self.assertEqual(b.safe_generated_price_unit("무료 공개", source), "무료 공개")
+
     def test_unpublished_pricing_is_not_a_price(self):
         x=story(summary="The pricing were not published for the model.")
         d=b.evidence_draft(x)
