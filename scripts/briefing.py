@@ -84,6 +84,17 @@ MODEL_RELEASE_WORDS = re.compile(
     r"|정식\s*출시|출시|공개|발표", re.I)
 
 
+def safe_generated_price_unit(text: str, evidence: str) -> str:
+    """Reject changing a per-million-token price into a per-token price."""
+    source_million = re.search(r"\\bper\\s+(?:million|1m)\\s+(?:input|output)?\\s*tokens\\b"
+                               r"|(?:100만|백만|1,000,000)\\s*토큰", evidence, re.I)
+    answer_token = re.search(r"토큰당|\\bper\\s+token\\b", text, re.I)
+    answer_million = re.search(r"100만|백만|1,000,000|\\bmillion\\b|\\b1m\\b", text, re.I)
+    if source_million and answer_token and not answer_million:
+        return "원문 가격 단위 미확인"
+    return text
+
+
 def major_model_launch(item: dict) -> bool:
     if item.get("sourceType") == "secondary" or item.get("sourceLabel") not in MAJOR_MODEL_SOURCES:
         return False
@@ -320,6 +331,7 @@ def _json_request(item: dict, api_key: str) -> dict:
     for name in fields:
         if not isinstance(answer.get(name), str) or len(answer[name]) > 340:
             raise ValueError("Invalid field: " + name)
+    answer["cost"] = safe_generated_price_unit(answer["cost"], material)
     # Do not accept new unsupported numbers in claims; model/version numbers in prompt remain allowed if cited.
     factual_numbers = set(re.findall(r"\d+(?:\.\d+)*", material))
     for k in ["cost", "performance"]:
