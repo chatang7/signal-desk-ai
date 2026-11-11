@@ -65,6 +65,32 @@ DEFAULT = ("기술적·사업적 영향은 발표의 구체적인 변경 사항�
            "공식 원문에서 실제 개선 항목·가격·제약 확인")
 
 
+# First-party frontier-model launches deserve coverage ahead of routine updates.
+# Requiring an explicit versioned model name + launch statement avoids promoting
+# Gemini feature rollouts or third-party integrations as new model releases.
+MAJOR_MODEL_SOURCES = {
+    "Google DeepMind", "Google AI 블로그", "OpenAI 공식 발표",
+    "Mistral AI", "Anthropic 공식 발표",
+}
+FRONTIER_MODEL_NAME = re.compile(
+    r"\\b(?:gemini(?:\\s+(?:omni|robotics))?\\s+[3-9](?:\\.\\d+)?"
+    r"|gpt[-\\s]?[3-9](?:\\.\\d+)?"
+    r"|claude\\s+(?:opus|sonnet|haiku)(?:\\s+\\d+(?:\\.\\d+)?)?"
+    r"|gemma\\s+[3-9](?:\\.\\d+)?"
+    r"|mistral\\s+(?:large|medium|small)\\s+[3-9](?:\\.\\d+)?)\\b", re.I)
+MODEL_RELEASE_WORDS = re.compile(
+    r"\\b(?:now available|available now|launch(?:es|ed|ing)?|releas(?:e|es|ed|ing)|"
+    r"introduc(?:e|es|ed|ing)|announc(?:e|es|ed|ing)|debut(?:s|ed)?)\\b"
+    r"|정식\\s*출시|출시|공개|발표", re.I)
+
+
+def major_model_launch(item: dict) -> bool:
+    if item.get("sourceType") == "secondary" or item.get("sourceLabel") not in MAJOR_MODEL_SOURCES:
+        return False
+    title = str(item.get("title") or "")
+    return bool(FRONTIER_MODEL_NAME.search(title) and MODEL_RELEASE_WORDS.search(title))
+
+
 def flat(text: str, limit=800) -> str:
     return re.sub(r"\s+", " ", re.sub(r"<[^>]*>", " ", str(text or ""))).strip()[:limit]
 
@@ -92,6 +118,8 @@ def score(item: dict, today=None) -> int:
         s += 6
     if topic in {"모델 출시", "성능 비교", "보안", "에이전트", "코딩 도구", "AI 인프라", "반도체"}:
         s += 10
+    if major_model_launch(item):
+        s += 35
     title = str(item.get("title", "")).lower()
     if re.search(r"\b(release|launch|announc|introduc|security|benchmark|model|new)\b|출시|공개|발표|취약점|성능", title):
         s += 5
@@ -119,6 +147,12 @@ def choose(items: list[dict], today=None, limit=MAX_STORIES) -> list[dict]:
         used_sources[x.get("sourceLabel")] = used_sources.get(x.get("sourceLabel"), 0) + 1
         used_topics[x.get("topic")] = used_topics.get(x.get("topic"), 0) + 1
         return True
+
+    # Reserve space for official frontier launches before filling local and topical slots.
+    for item in candidates:
+        if not major_model_launch(item) or len(chosen) >= limit:
+            continue
+        add(item)
 
     korean = [i for i in candidates if i.get("region") == "한국"]
     for i in korean:
@@ -169,6 +203,7 @@ def evidence_draft(item: dict) -> dict:
         "sourceType": item.get("sourceType", "primary"),
         "urls": [u for u in item.get("urls", [])[:5] if isinstance(u, str) and u.startswith("https://")],
         "score": score(item),
+        "majorLaunch": major_model_launch(item),
         "summary": summary[:260] if summary else "공식 원문에 핵심 내용이 충분하지 않아 검토가 필요함.",
         "difference": ("원문 표현: " + diff) if diff else "기존 기술 대비 구체적인 차이는 수집된 원문에서 미확인",
         "why": "확인해야 하는 이유: " + why,
@@ -326,7 +361,8 @@ def build(news: dict, previous: dict | None = None, api_key: str = "", today=Non
                           cached.get("mode") == "ai-assisted")
         if good_cache:
             row = dict(cached)
-            row.update({"score": score(original, today), "urls": original.get("urls", [])[:5]})
+            row.update({"score": score(original, today), "majorLaunch": major_model_launch(original),
+                        "urls": original.get("urls", [])[:5]})
             reused += 1
         else:
             row = evidence_draft(original)
