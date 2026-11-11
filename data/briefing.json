@@ -1,15 +1,15 @@
 {
   "schema": "signal-desk-briefing-v1",
-  "generatedAt": "2026-11-11T02:45:57.746615+00:00",
-  "newsGeneratedAt": "2026-11-11T02:45:37.112658+00:00",
+  "generatedAt": "2026-11-11T06:29:28.090160+00:00",
+  "newsGeneratedAt": "2026-11-11T06:29:08.281411+00:00",
   "headline": "AI 변화 브리핑 · 최근 7일",
   "coverage": "최근 7일 중 중요 후보, 뉴스 수집 대상 범위 내에서만 작성",
   "mode": "ai-assisted",
   "aiAnalyzed": 8,
-  "aiCalls": 0,
+  "aiCalls": 3,
   "aiErrors": 0,
   "aiFailureCode": null,
-  "cacheHits": 8,
+  "cacheHits": 5,
   "modelConfigured": true,
   "storyCount": 8,
   "items": [
@@ -79,6 +79,71 @@
       "voiceTake": "단순히 API 호출이 가능해졌다는 점은 관리 효율 측면에서 긍정적이지만, 권한 제어의 세밀함이나 보안 정책과의 충돌 가능성은 여전히 검증이 필요해 보여. 무작정 도입하기보다 기존의 관리 워크플로우와 얼마나 유기적으로 결합할 수 있을지부터 따져보자.",
       "fingerprint": "ffb6fcbf3376963dfad102eb",
       "majorLaunch": false
+    },
+    {
+      "id": "feed-ac94b61a25ade5edbf713f",
+      "title": "ChatGPT Plus for veterans and servicemembers",
+      "date": "2026-11-11",
+      "topic": "모델 출시",
+      "region": "해외",
+      "sourceLabel": "OpenAI 공식 발표",
+      "sourceType": "primary",
+      "urls": [
+        "https://openai.com/index/chatgpt-plus-for-veterans"
+      ],
+      "score": 81,
+      "majorLaunch": false,
+      "summary": "2만 명 이상의 참전 용사와 전역 예정 장병들이 ChatGPT Plus 1년 무료 이용 혜택을 수령함.",
+      "difference": "미확인",
+      "why": "참전 용사 및 전역 장병들의 민간 분야 경력 준비를 지원하기 위함.",
+      "usage": "민간 분야 경력 준비를 위한 도구로 활용됨.",
+      "cost": "원문에서 확인 가능한 수치 없음",
+      "performance": "미확인",
+      "strengths": "참전 용사와 전역 예정자들에게 실질적인 경력 개발 기회를 제공함.",
+      "limitations": "원문에 근거 없음",
+      "mode": "ai-assisted",
+      "model": "gemini-3.1-flash-lite",
+      "evidence": [
+        "More than 20,000 veterans and transitioning service members have claimed a free year of ChatGPT Plus.",
+        "See how they use it to prepare for civilian careers."
+      ],
+      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
+      "confidence": "검토 필요",
+      "fingerprint": "9805bf9f51674d3e575c34d5"
+    },
+    {
+      "id": "feed-19b4fcb1faac9c9bdbccd3",
+      "title": "BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model",
+      "date": "2026-11-11",
+      "topic": "에이전트",
+      "region": "해외",
+      "sourceLabel": "Hugging Face 블로그",
+      "sourceType": "primary",
+      "urls": [
+        "https://huggingface.co/blog/qvac/botpsy"
+      ],
+      "score": 81,
+      "majorLaunch": false,
+      "summary": "Tether AI Research가 발표한 BotPsy는 Qwen3.5-0.8B 기반의 0.8B 파라미터 에이전트 모델로, 온디바이스 환경에서의 함수 호출 및 에이전트 워크플로우 수행을 목적으로 설계되었습니다.",
+      "difference": "기존 Qwen3.5-0.8B 모델 대비 에이전트 성능을 약 2배 향상시켰으며, 특정 벤치마크에서는 2.5배 큰 모델인 Qwen3.5-2B-Think를 상회하는 결과를 보였습니다.",
+      "why": "클라우드 기반 LLM의 높은 운영 비용과 데이터 프라이버시 문제를 해결하고, 온디바이스 환경에서 효율적인 도구 사용 및 에이전트 작업을 수행하기 위해 개발되었습니다.",
+      "usage": "웹 검색, 여행, 금융, 기기 제어, 문서 관리, 이메일 등 사용자의 일상적인 작업을 보조하는 개인 비서 용도로 활용 가능합니다.",
+      "cost": "미확인",
+      "performance": "원문에서 확인 가능한 수치 없음",
+      "strengths": "명시적 지시 이행 능력과 다단계 작업 수행 능력이 뛰어나며, 도구 사용이 불필요한 상황을 판단하는 거부율(hallucination test) 성능이 높습니다.",
+      "limitations": "지시사항이 누적될수록 성능이 저하되며, 저자원 언어에 대한 처리 능력이 부족하고 전체적인 지식 수준은 파라미터 수에 비례하여 제한적입니다.",
+      "mode": "ai-assisted",
+      "model": "gemini-3.1-flash-lite",
+      "evidence": [
+        "Tether AI Research introduces , a 0.8B-parameter model introduce , a 0.8B-parameter model designed for function calling and agentic workflows",
+        "BotPsy has the highest score of all models tested on five of the six benchmarks, beating Qwen3.5-2B-Think, a model 2.5× its size"
+      ],
+      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
+      "confidence": "검토 필요",
+      "voiceMood": "skeptical",
+      "voiceHook": "0.8B라는 작은 몸집으로 거대 모델들을 제쳤다니, 이게 정말 실무에서도 그만큼의 똑똑함을 보여줄 수 있을지 궁금하네.",
+      "voiceTake": "벤치마크 점수만 보면 화려하지만, 결국 에이전트는 복잡한 실전 상황에서 얼마나 덜 헤매느냐가 관건이지. 지시가 쌓일수록 성능이 떨어진다는 점을 고려하면, 실제 서비스에 올리기 전에 구체적인 작업 시나리오별로 에러율부터 꼼꼼히 뜯어봐야겠어.",
+      "fingerprint": "0738cb8f03a2c0169e919a2d"
     },
     {
       "id": "feed-fafff4292c09fd9370c592",
@@ -183,105 +248,38 @@
       "majorLaunch": false
     },
     {
-      "id": "feed-d48977b6fbc84b1e2e7ecc",
-      "title": "Lazare, veni foras: Reprogramming Dormant Neurons to Backdoor AI Agents",
-      "date": "2026-11-10",
-      "topic": "에이전트",
-      "region": "해외",
-      "sourceLabel": "Microsoft Research",
-      "sourceType": "primary",
-      "urls": [
-        "https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents"
-      ],
-      "score": 76,
-      "majorLaunch": false,
-      "summary": "Microsoft researchers identified 'Lazarus', a technique that backdoors AI agents by reprogramming dormant neurons without retraining, allowing execution of malicious commands upon specific triggers.",
-      "difference": "미확인",
-      "why": "기존 모델의 휴면 뉴런을 재프로그래밍하여 트리거 발생 시 악성 명령을 수행하도록 유도하며, 일반적인 안전성 평가를 통과할 수 있어 탐지가 어려움.",
-      "usage": "모델 가중치 무결성 검증을 위해 원본 가중치와 배포된 모델 간의 차이를 비교하는 'diffing' 분석을 수행할 것.",
-      "cost": "미확인",
-      "performance": "미확인",
-      "strengths": "재학습 없이 모델의 휴면 뉴런을 활용해 백도어 삽입 가능.",
-      "limitations": "완벽한 안전성을 보장하는 스캔 방법은 없으며, 모델의 출처와 가중치 무결성 검증이 필수적임.",
-      "mode": "ai-assisted",
-      "model": "gemini-3.1-flash-lite",
-      "evidence": [
-        "weight-reprogramming fewer than 10 dormant neurons in an LLM, is enough to backdoor an agent built on it, and requires no training."
-      ],
-      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
-      "confidence": "검토 필요",
-      "voiceMood": "serious",
-      "voiceHook": "모델의 휴면 뉴런을 건드려 백도어를 심는다니, AI 보안의 밑바닥이 생각보다 훨씬 취약하다는 증거네.",
-      "voiceTake": "재학습 없이도 모델을 오염시킬 수 있다는 건, 결국 모델의 출처와 가중치 무결성을 증명하지 못하면 어떤 AI도 믿을 수 없다는 뜻이야. 단순히 안전성 평가를 통과했다고 안심할 게 아니라, 모델의 생애 주기 전반을 추적하는 근본적인 보안 체계부터 다시 고민해야 할걸.",
-      "fingerprint": "57bf5f738713202b2871b340"
-    },
-    {
-      "id": "feed-c979be8e72cc92b8a0fbd6",
-      "title": "Google Cloud launches Gemini for healthcare.",
-      "date": "2026-11-10",
-      "topic": "모델 출시",
-      "region": "해외",
-      "sourceLabel": "Google AI 블로그",
-      "sourceType": "primary",
-      "urls": [
-        "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-for-healthcare"
-      ],
-      "score": 76,
-      "summary": "구글 클라우드가 임상, 운영, 행정 데이터를 통합하고 워크플로우를 자동화하는 의료용 제미나이 솔루션을 출시했습니다.",
-      "difference": "미확인",
-      "why": "의료 현장의 파편화된 데이터 통합과 행정 업무 자동화를 통한 의료진의 번아웃 감소 및 업무 효율 개선을 목적으로 합니다.",
-      "usage": "전자 건강 기록, 청구 플랫폼, 임상 가이드라인 및 메디케어 데이터셋을 연동하여 의료 기록 합성 및 사전 승인 검토 등의 복잡한 워크플로우를 수행합니다.",
-      "cost": "미확인",
-      "performance": "미확인",
-      "strengths": "기존 타사 시스템과의 데이터 커넥터 통합 및 정의된 가이드라인 내에서의 인간 감독하에 복잡한 업무를 자동화합니다.",
-      "limitations": "현재 프리뷰 단계이며 특정 파트너사를 통해 제한적으로 제공됩니다.",
-      "mode": "ai-assisted",
-      "model": "gemini-3.1-flash-lite",
-      "evidence": [
-        "Google Cloud launches Gemini for healthcare. has announced Gemini for healthcare , an AI solution engineered to unify fragmented clinical, operational",
-        "Gemini for healthcare reasons across this context to orchestrate and execute complex, multi-step workflows — such as medical records synthesis and pri"
-      ],
-      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
-      "confidence": "검토 필요",
-      "voiceMood": "serious",
-      "voiceHook": "구글이 의료 데이터 통합을 내세우며 제미나이를 꺼내 들었어. 단순히 정보를 찾는 수준을 넘어 복잡한 행정 업무까지 자동화하겠다는데, 과연 의료 현장의 고질적인 병목 현상을 얼마나 실질적으로 해소할 수 있을지 궁금하네.",
-      "voiceTake": "의료 데이터의 파편화 문제를 해결하겠다는 방향성은 좋지만, 결국 관건은 데이터의 정확성과 보안이야. 인간의 감독이 필수적이라고는 해도, 복잡한 임상 환경에서 AI가 내리는 판단의 책임 소재와 실제 워크플로우 효율성을 검증하는 과정이 반드시 선행되어야 할 거야.",
-      "fingerprint": "978b28b7cf7dbd147dcf3ae9",
-      "majorLaunch": false
-    },
-    {
-      "id": "feed-e566a2114448230812530a",
-      "title": "구글, AI 에이전트·보안 특화 TPU 2종 공개…엔비디아 추격",
-      "date": "2026-11-10",
-      "topic": "보안",
+      "id": "feed-c4234994e026eb27031050",
+      "title": "엔비디아, 젠슨 황 사건 조사 위해 뉴욕 유명 로펌 고용",
+      "date": "2026-11-11",
+      "topic": "반도체",
       "region": "한국",
       "sourceLabel": "AI타임스 (보도)",
       "sourceType": "secondary",
       "urls": [
-        "https://www.aitimes.com/news/articleView.html?idxno=217211"
+        "https://www.aitimes.com/news/articleView.html?idxno=217259"
       ],
       "score": 62,
-      "summary": "구글이 AI 에이전트 및 기업 보안 시스템에 특화된 8세대 TPU 신제품 2종인 'TPU 8i Max'와 'TPU 8tx'를 공개하며 인프라 라인업을 확장했습니다.",
+      "majorLaunch": false,
+      "summary": "엔비디아 이사회가 젠슨 황 CEO와 중국 정보기관 연루 의혹 인물 간의 관계를 조사하기 위해 외부 로펌을 선임함.",
       "difference": "미확인",
-      "why": "AI 에이전트의 대규모 정보 처리와 기업용 민감 데이터 보안 강화를 위해 전용 칩셋을 도입했습니다.",
-      "usage": "AI 에이전트 구동 및 기업 보안 시스템 인프라 구축",
+      "why": "CEO와 관련된 안보 및 기밀 유출 가능성을 독립적으로 확인하기 위함.",
+      "usage": "내부 통제 및 리스크 관리 차원의 법적 조사 절차.",
       "cost": "미확인",
       "performance": "미확인",
-      "strengths": "AI 에이전트 및 보안 특화 설계로 기업용 인프라 시장 공략 가속화",
-      "limitations": "구체적인 기술 사양 및 성능 지표 미공개",
+      "strengths": "전직 연방 검사 출신 변호사를 주축으로 한 독립적인 조사 체계 구축.",
+      "limitations": "조사 결과에 따라 기업 경영 및 보안 정책에 미칠 파급력은 아직 알 수 없음.",
       "mode": "ai-assisted",
       "model": "gemini-3.1-flash-lite",
       "evidence": [
-        "대규모 정보를 처리하는 AI 에이전트와 민감한 데이터를 다루는 기업용 보안 시스템에 특화한 신제품 2종을 추가하며",
-        "8세대 TPU 제품군에 'TPU 8i Max'와 'TPU 8tx'를 추가했다고 발표했다"
+        "엔비디아가 젠슨 황 CEO와 중국 정보기관 연루 의혹을 받는 여성의 관계를 둘러싼 논란을 조사하기 위해 뉴욕의 유명 로펌을 선임했다.",
+        "황 CEO가 외국 정보기관의 표적이 됐는지와 국가 안보 또는 회사 기밀이 유출됐는지 등을 살펴볼 예정이다."
       ],
       "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
       "confidence": "검토 필요",
-      "voiceMood": "skeptical",
-      "voiceHook": "구글이 또 새로운 TPU를 들고 나왔는데, 이번엔 에이전트랑 보안이라니 말은 참 그럴듯하게 포장했네.",
-      "voiceTake": "단순히 라인업만 늘린다고 엔비디아의 아성을 넘볼 수 있을까? 구체적인 성능 수치나 기존 칩 대비 실질적인 이득을 보여주지 않으면 결국 마케팅용 수식어에 불과할 뿐이야.",
-      "fingerprint": "3a7f4f77c041bae3f2fccd3b",
-      "majorLaunch": false
+      "voiceMood": "serious",
+      "voiceHook": "엔비디아의 수장이 정보기관과 엮였다는 루머가 돌더니, 결국 이사회가 칼을 빼 들었네. 이게 단순한 해프닝일지 아니면 거대한 스캔들의 서막일지 지켜볼 필요가 있겠어.",
+      "voiceTake": "기업의 핵심 인사가 외국 정보기관의 표적이 되었는지 확인하는 건 단순한 루머 대응을 넘어선 국가 안보급 사안이야. 로펌의 조사 결과가 나오기 전까지는 섣부른 추측보다는 이사회의 독립적인 검증 과정을 차분히 지켜보는 게 좋겠어.",
+      "fingerprint": "8479ef2b9400b3c9e3d0523d"
     }
   ],
   "disclaimer": "원문 기반 정보 정리입니다. AI 보조 분석은 사실 검증을 대체하지 않으며 가격·성능·이전 기술과의 차이가 확인되지 않으면 미확인으로 표시합니다."
