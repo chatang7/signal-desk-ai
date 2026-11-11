@@ -1,15 +1,15 @@
 {
   "schema": "signal-desk-briefing-v1",
-  "generatedAt": "2026-11-11T07:12:02.806334+00:00",
-  "newsGeneratedAt": "2026-11-11T07:11:42.754845+00:00",
+  "generatedAt": "2026-11-11T19:38:51.898836+00:00",
+  "newsGeneratedAt": "2026-11-11T19:38:32.012608+00:00",
   "headline": "AI 변화 브리핑 · 최근 7일",
   "coverage": "최근 7일 중 중요 후보, 뉴스 수집 대상 범위 내에서만 작성",
   "mode": "ai-assisted",
   "aiAnalyzed": 8,
-  "aiCalls": 2,
+  "aiCalls": 3,
   "aiErrors": 0,
   "aiFailureCode": null,
-  "cacheHits": 7,
+  "cacheHits": 5,
   "modelConfigured": true,
   "storyCount": 8,
   "items": [
@@ -115,6 +115,40 @@
       "voiceTake": "단순히 무료 이용권을 나눠주는 것만으로는 부족해. 이들이 실제로 어떤 직무 역량을 보완하고 있는지, 그 과정에서 AI가 얼마나 유의미한 가이드를 제공하는지 확인하는 게 핵심이야. 홍보성 수치에 가려진 실질적인 성과를 들여다볼 필요가 있어."
     },
     {
+      "id": "feed-4b30bf9e8a4d0303bec665",
+      "title": "Validating GPU Platforms with Runtime AI Inventory via the NVIDIA DSX AI Factory",
+      "date": "2026-11-11",
+      "topic": "반도체",
+      "region": "해외",
+      "sourceLabel": "NVIDIA 개발자",
+      "sourceType": "primary",
+      "urls": [
+        "https://developer.nvidia.com/blog/validating-gpu-platforms-with-runtime-ai-inventory-via-the-nvidia-dsx-ai-factory"
+      ],
+      "score": 81,
+      "majorLaunch": false,
+      "summary": "NVIDIA AI Cluster Runtime(AICR) v1.2.0이 k8s-aibom 1.6.2를 통합하여 쿠버네티스 환경에서 실행 중인 AI 워크로드의 자재 명세서(AIBOM)를 추적하고 검증하는 기능을 도입함.",
+      "difference": "기존의 정적 배포 번들만으로는 확인 불가능했던 노드별 실제 실행 워크로드 및 가변 이미지 태그에 따른 버전 불일치 문제를 가시화함.",
+      "why": "배포 시점의 설정과 실제 런타임 환경에서 구동되는 워크로드 간의 간극을 메워 보안 검토 및 규정 준수를 지원하기 위함.",
+      "usage": "AICR 레시피 생성 시 --runtime-inventory 플래그를 사용하여 네임스페이스별로 AIBOM 기록을 활성화하고 워크로드 가시성을 확보함.",
+      "cost": "미확인",
+      "performance": "원문에서 확인 가능한 수치 없음",
+      "strengths": "CycloneDX 1.6 표준을 준수하며 vLLM 등 주요 추론 런타임의 모델 및 컨테이너 이미지 세부 정보를 자동 분류함.",
+      "limitations": "지원되는 워크로드 종류(Dynamo, NIMService 등)로 관측 범위가 제한되며, 모든 AI 리소스를 포괄하지는 않음.",
+      "mode": "ai-assisted",
+      "model": "gemini-3.1-flash-lite",
+      "evidence": [
+        "AICR generates version-locked recipes and reproducible deployment bundles for GPU-accelerated Kubernetes",
+        "k8s-aibom observes supported AI workloads and emits CycloneDX 1.6 AIBOM records with confidence tiers"
+      ],
+      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
+      "confidence": "검토 필요",
+      "voiceMood": "serious",
+      "voiceHook": "쿠버네티스 위에서 AI가 대체 뭘 하고 있는지 도통 알 수 없어 답답했지? NVIDIA가 드디어 런타임 가시성을 확보할 도구를 들고 나왔어.",
+      "voiceTake": "단순히 배포 설정만 맞췄다고 끝나는 시대는 지났어. 이제는 실행 중인 워크로드의 실체까지 추적하는 게 보안의 핵심인데, 이 도구가 그 '섀도우 워크로드'를 얼마나 정확히 짚어낼지가 관건이겠네.",
+      "fingerprint": "5b405943940a5578df709a92"
+    },
+    {
       "id": "feed-19b4fcb1faac9c9bdbccd3",
       "title": "BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model",
       "date": "2026-11-11",
@@ -149,72 +183,38 @@
       "fingerprint": "0738cb8f03a2c0169e919a2d"
     },
     {
-      "id": "feed-fafff4292c09fd9370c592",
-      "title": "Gemini Intelligence: New features, on more devices",
-      "date": "2026-11-10",
+      "id": "feed-02bfed5e7aa817ea9dcb99",
+      "title": "Gemini Decisions API: Fast, calibrated multimodal decisions",
+      "date": "2026-11-11",
       "topic": "모델 출시",
       "region": "해외",
       "sourceLabel": "Google AI 블로그",
       "sourceType": "primary",
       "urls": [
-        "https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices"
+        "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api"
       ],
       "score": 81,
-      "summary": "구글이 'Gemini Intelligence' 지원 기기를 모토로라 시그니처 27 및 픽셀 10 시리즈 등으로 확대하고, 실시간 음성 정리, 작업 자동화, 위젯 생성 등 신규 기능을 추가함.",
-      "difference": "미확인",
-      "why": "기존 삼성 갤럭시 Z 폴드8 시리즈 등에 이어 지원 기기 범위를 넓히고, 사용자 기기 제어 및 맞춤형 위젯 기능을 통해 안드로이드 생태계 내 활용성을 높이려는 목적임.",
-      "usage": "실시간 음성 정리, 작업 자동화, 맞춤형 위젯 생성, 기기 제어 및 설정 지원.",
-      "cost": "미확인",
-      "performance": "미확인",
-      "strengths": "음성 데이터를 실시간으로 정리하는 'Rambler' 기능과 사용자의 언어로 위젯을 설계하는 기능, 기기 설정을 돕는 'Device Assistance' 등을 제공함.",
-      "limitations": "기능 가용성은 국가, 언어, 기기 모델에 따라 상이하며 일부 기능은 구독이 필요할 수 있음.",
+      "majorLaunch": false,
+      "summary": "Gemini Decisions API는 Gemini Decision 1 모델을 사용하여 텍스트, 이미지, 오디오, 비디오, PDF 등 멀티모달 입력에 대해 yes/no, 다중 선택, 루브릭 평가 등 정해진 선택지 내에서 확률적 결정을 내리는 API입니다.",
+      "difference": "토큰 단위의 텍스트 생성 대신 단일 패스(single forward pass)로 확률과 신뢰도 점수를 계산하며, 출력 토큰 비용이 발생하지 않습니다.",
+      "why": "기존 생성형 AI 모델의 토큰 생성 방식보다 빠른 응답 속도와 비용 효율성을 제공하여 정책 확인, 모델 라우팅, 콘텐츠 등급 분류 등 결정 중심의 작업에 최적화되어 있습니다.",
+      "usage": "Google AI Studio에서 API 키를 발급받아 Python, JavaScript, REST API를 통해 연동할 수 있습니다.",
+      "cost": "$0.10 per 1M input tokens (출력 토큰 비용 없음)",
+      "performance": "150-250ms의 엔드투엔드 지연 시간 및 최대 256K 토큰 컨텍스트 지원",
+      "strengths": "멀티모달 데이터를 한 번의 요청으로 처리하며, 결정에 대한 신뢰도 점수를 제공하여 모호한 경우에 대한 예외 처리가 가능합니다.",
+      "limitations": "생성형 텍스트 출력이 아닌 정해진 선택지(closed-set) 내의 확률적 판단에 특화되어 있어 자유로운 텍스트 생성 작업에는 부적합합니다.",
       "mode": "ai-assisted",
       "model": "gemini-3.1-flash-lite",
       "evidence": [
-        "Gemini Intelligence is now available on more devices, including motorola signature 27 and Pixel 10.",
-        "task automation — which lets you ask Gemini to handle logistics like ordering food, hailing rides, or booking reservations across your favorite apps"
+        "Gemini Decision 1 scores your candidate options in a single forward pass, returning probabilities and confidence scores in 150-250 ms end-to-end laten",
+        "Rather than generating answer text token by token, Gemini Decision 1 scores your candidate options in a single forward pass"
       ],
       "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
       "confidence": "검토 필요",
       "voiceMood": "curious",
-      "voiceHook": "구글이 또 기기 라인업을 늘렸다는데, 이번엔 모토로라까지 손을 잡았네? 안드로이드 생태계를 얼마나 더 촘촘하게 엮으려는 건지 궁금해지잖아.",
-      "voiceTake": "기기 제어부터 위젯 생성까지 기능은 화려해 보이지만, 정작 중요한 건 기기별로 파편화된 가용성 문제야. 국가와 언어에 따라 실제 경험이 얼마나 다를지, 그 간극을 어떻게 메울지가 관건이겠지.",
-      "fingerprint": "c955af22bd438fcf87d3d49d",
-      "majorLaunch": false
-    },
-    {
-      "id": "feed-1eb0757681b8aa58f8cd47",
-      "title": "Gemini CLI · Release v0.68.0",
-      "date": "2026-11-10",
-      "topic": "코딩 도구",
-      "region": "해외",
-      "sourceLabel": "GitHub · Gemini CLI",
-      "sourceType": "primary",
-      "urls": [
-        "https://github.com/google-gemini/gemini-cli/releases/tag/v0.68.0"
-      ],
-      "score": 81,
-      "summary": "Gemini CLI v0.68.0 릴리스는 터미널 UI 개선, 윈도우 환경 호환성 강화, 모델 인식 및 확장 기능 검증 명령 추가를 포함한 다수의 버그 수정과 안정성 업데이트를 담고 있습니다.",
-      "difference": "미확인",
-      "why": "터미널 환경에서의 렌더링 오류 수정, 윈도우 경로 처리 및 프로세스 조회 최적화, 그리고 모델 호출 시 발생하는 예외 상황 대응을 위해 배포되었습니다.",
-      "usage": "CLI 환경에서 터미널 너비 변경 시 히스토리 재렌더링 오류와 429 속도 제한 대응이 정상 작동하는지 실제 터미널 환경에서 시뮬레이션 테스트를 수행하세요.",
-      "cost": "미확인",
-      "performance": "미확인",
-      "strengths": "윈도우 운영체제에서의 파일 경로 및 프로세스 관리 개선, 확장 기능 설치 시 동시성 제어 강화.",
-      "limitations": "원문에 근거 없음",
-      "mode": "ai-assisted",
-      "model": "gemini-3.1-flash-lite",
-      "evidence": [
-        "fix(cli): bound inline history re-render after terminal width changes",
-        "fix(core): make isWithinRoot case-insensitive on Windows"
-      ],
-      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
-      "confidence": "검토 필요",
-      "voiceMood": "skeptical",
-      "voiceHook": "Gemini CLI가 또 업데이트됐는데, 이번엔 윈도우 환경이랑 터미널 렌더링 쪽을 좀 건드렸나 봐. 겉만 번지르르하게 고친 건지, 아니면 진짜 쓸만해진 건지 내가 좀 봐줄까?",
-      "voiceTake": "버그 수정 목록만 길게 나열해두면 다 해결된 줄 알겠지? 429 에러 처리나 윈도우 호환성 같은 건 사용자 환경마다 변수가 많으니, 실제로 현업에서 얼마나 쾌적하게 돌아갈지는 직접 굴려보기 전까진 모르는 거야.",
-      "fingerprint": "39959bae892388ca0aa77b34",
-      "majorLaunch": false
+      "voiceHook": "멀티모달 데이터를 토큰 생성 없이 바로 확률로 찍어낸다니, 이거 정말 속도 하나는 끝내주겠는데?",
+      "voiceTake": "토큰 생성 비용을 없애고 결정 속도를 높인 건 영리한 접근이야. 다만, 모델이 내놓는 신뢰도 점수가 실제 운영 환경에서 얼마나 정교하게 작동할지는 직접 테스트해봐야 알겠지.",
+      "fingerprint": "f8ebf4a82529b69b44b792ae"
     },
     {
       "id": "feed-89049d0ef21bea3062ab46",
@@ -263,26 +263,26 @@
       ],
       "score": 73,
       "majorLaunch": false,
-      "summary": "네이버 엔지니어링 데이에서 발표된 AI 산출물을 실제 프로덕션 환경으로 연결하기 위한 디자인 시스템 구축 전략을 다룸.",
+      "summary": "네이버 엔지니어링 데이에서 AI 산출물을 실제 프로덕션 환경으로 전환하기 위한 디자인 시스템 통합 전략과 도구 활용법을 발표함.",
       "difference": "미확인",
-      "why": "AI가 생성한 결과물이 실제 서비스 구현으로 이어지지 못하는 기술적, 운영적 단절을 해결하기 위함.",
-      "usage": "Figma를 중앙 허브로 활용하고 컴포넌트, 디자인 토큰, design.md를 통해 AI와 설계자 간의 설계 의도를 동기화함.",
+      "why": "AI가 생성한 결과물을 실제 서비스로 구현하는 과정에서 발생하는 재작업 문제를 해결하고자 함.",
+      "usage": "Claude Code 플러그인인 defign-toolkit과 deFign assistant를 활용하여 Figma와 코드 간의 정합성을 확보함.",
       "cost": "미확인",
       "performance": "미확인",
-      "strengths": "Figma를 중심으로 다양한 입력을 통합하고 설계 의도를 명확히 전달하는 체계적인 가이드라인 제시.",
+      "strengths": "Figma를 중심축으로 컴포넌트와 디자인 토큰을 활용해 AI와 설계자 간의 설계 의도를 일치시킴.",
       "limitations": "원문에 근거 없음",
       "mode": "ai-assisted",
       "model": "gemini-3.1-flash-lite",
       "evidence": [
-        "AI 산출물이 프로덕션으로 이어지지 못하는 5가지 이유",
-        "Figma를 중심에 둔 이유 AI와 설계자가 같은 블록으로 조립하도록 컴포넌트·디자인 토큰·design.md로 설계 의도를 표현하는 방법"
+        "AI 산출물이 프로덕션으로 이어지지 못하는 5가지 이유 스펙·HTML·이미지 어떤 입력이든 Figma로 모으는 전략",
+        "Figma의 높은 자유도를 보완하는 deFign assistant 도입 후 달라진 점과 앞으로의 방향"
       ],
       "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
       "confidence": "검토 필요",
       "voiceMood": "curious",
-      "voiceHook": "AI가 뱉어낸 결과물을 그냥 방치하지 않고 어떻게 실무 프로덕션으로 연결할지 고민 중이라면 이 발표를 한번 훑어보는 게 어때?",
-      "voiceTake": "단순히 AI를 쓰는 걸 넘어 디자인 시스템이라는 규격 안에 가두려는 시도가 흥미롭네. 실제 서비스 적용 과정에서 발생하는 엣지 케이스를 어떻게 코드로 완벽하게 제어할지가 이 전략의 성패를 가르겠어.",
-      "fingerprint": "0088aa4b5a241d669a5c7dcd"
+      "voiceHook": "AI가 뱉어낸 결과물을 그냥 방치하고 있었다면, 네이버가 디자인 시스템으로 어떻게 그 간극을 메웠는지 한번 살펴보는 게 어때?",
+      "voiceTake": "AI가 만든 결과물이 예쁘기만 하고 실제 서비스로는 안 이어져서 고민이었지? 결국 Figma를 중심으로 설계 의도를 코드까지 어떻게 끌고 가느냐가 핵심인데, 이 도구들이 정말 실무의 재작업을 얼마나 줄여줄지 그 효율성을 직접 테스트해 볼 필요가 있겠어.",
+      "fingerprint": "3e44dd61a16270a3e3ff5f72"
     }
   ],
   "disclaimer": "원문 기반 정보 정리입니다. AI 보조 분석은 사실 검증을 대체하지 않으며 가격·성능·이전 기술과의 차이가 확인되지 않으면 미확인으로 표시합니다."
