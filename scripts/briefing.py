@@ -86,10 +86,10 @@ MODEL_RELEASE_WORDS = re.compile(
 
 def safe_generated_price_unit(text: str, evidence: str) -> str:
     """Reject changing a per-million-token price into a per-token price."""
-    source_million = re.search(r"\\bper\\s+(?:million|1m)\\s+(?:input|output)?\\s*tokens\\b"
-                               r"|(?:100만|백만|1,000,000)\\s*토큰", evidence, re.I)
-    answer_token = re.search(r"토큰당|\\bper\\s+token\\b", text, re.I)
-    answer_million = re.search(r"100만|백만|1,000,000|\\bmillion\\b|\\b1m\\b", text, re.I)
+    source_million = re.search(r"\bper\s+(?:million|1m)\s+(?:input|output)?\s*tokens\b"
+                               r"|(?:100만|백만|1,000,000)\s*토큰", evidence, re.I)
+    answer_token = re.search(r"토큰당|\bper\s+token\b", text, re.I)
+    answer_million = re.search(r"100만|백만|1,000,000|\bmillion\b|\b1m\b", text, re.I)
     if source_million and answer_token and not answer_million:
         return "원문 가격 단위 미확인"
     return text
