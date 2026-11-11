@@ -26,6 +26,41 @@ class BriefingTests(unittest.TestCase):
         self.assertEqual(len(selected),8)
         self.assertEqual(sum(x['region']=='한국' for x in selected),2)
 
+    def test_major_frontier_launch_beats_routine_features(self):
+        carbon = story("Gemini 4 Carbon is now available", source="Google DeepMind",
+                       summary="Google is making its strongest model available to developers and consumers.")
+        feature = story("Gemini Intelligence: New features, on more devices",
+                        source="Google AI 블로그",
+                        summary="Gemini app includes new Android intelligence features and settings.")
+        integration = story("Gemini 4 Carbon in GitHub Copilot",
+                            topic="코딩 도구", source="GitHub Copilot",
+                            summary="Google model available inside the coding assistant.")
+        generic = story("Google Cloud launches Gemini for healthcare",
+                        source="Google AI 블로그",
+                        summary="Gemini-powered healthcare services are expanding for businesses.")
+        self.assertTrue(b.major_model_launch(carbon))
+        self.assertFalse(b.major_model_launch(feature))
+        self.assertFalse(b.major_model_launch(integration))
+        self.assertFalse(b.major_model_launch(generic))
+        self.assertGreater(b.score(carbon), b.score(feature))
+        self.assertEqual(b.evidence_draft(carbon)["majorLaunch"], True)
+
+        others = [story("Other AI update " + str(i), topic="코딩 도구",
+                        source="Company " + str(i),
+                        summary="This is a routine update for software teams and developers.")
+                  for i in range(12)]
+        selected = b.choose(others + [carbon], limit=8)
+        self.assertIn(carbon, selected)
+        self.assertEqual(selected[0], carbon)
+
+    def test_major_launch_rejects_secondary_news_without_official_confirmation(self):
+        a = story("Gemini 4 Carbon is now available", source="Google DeepMind")
+        a["sourceType"] = "secondary"
+        self.assertFalse(b.major_model_launch(a))
+        a["sourceType"] = "primary"
+        a["sourceLabel"] = "AI타임스 (보도)"
+        self.assertFalse(b.major_model_launch(a))
+
     def test_no_fake_prices_or_performance(self):
         d=b.evidence_draft(story(summary='AI model launched without specified cost or accuracy.'))
         self.assertIn('미확인',d['cost'])
