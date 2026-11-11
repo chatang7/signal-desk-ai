@@ -55,6 +55,8 @@ RSS = [
 ]
 FOCUSED_SOURCES = {"OpenAI 공식 발표", "Google AI 블로그", "Google DeepMind", "Google Research", "Hugging Face 블로그", "Mistral AI", "GitHub Copilot"}
 SECONDARY_SOURCES = {"AI타임스 (보도)"}
+# Official alternate endpoint for transient RSS/XML errors on DeepMind's main host.
+RSS_ALTERNATES = {"Google DeepMind": "https://deepmind.com/blog/feed/basic/"}
 
 
 
@@ -257,6 +259,16 @@ def collect_rss(name: str, url: str, region: str) -> list:
     return result
 
 
+def collect_rss_with_fallback(name: str, url: str, region: str) -> list:
+    try:
+        return collect_rss(name, url, region)
+    except (ET.ParseError, RuntimeError, urllib.error.URLError, ValueError):
+        alternate = RSS_ALTERNATES.get(name)
+        if not alternate:
+            raise
+        return collect_rss(name, alternate, region)
+
+
 def collect_papers() -> list:
     data = json.loads(fetch("https://huggingface.co/api/daily_papers?limit=25"))
     if not isinstance(data, list):
@@ -402,7 +414,7 @@ def main() -> int:
             sources.append({"source": label + " 릴리스", "ok": False, "error": str(e)[:180]})
     for name, url, region in RSS:
         try:
-            rows = collect_rss(name, url, region)
+            rows = collect_rss_with_fallback(name, url, region)
             incoming.extend(rows)
             sources.append({"source": name, "ok": True, "count": len(rows)})
         except Exception as e:
