@@ -432,6 +432,19 @@ class DiscordTests(unittest.TestCase):
         self.assertEqual(sum("간략" in e["footer"]["text"]
                              for e in payload["embeds"]), 2)
 
+    def test_official_model_launch_is_first_even_above_routine_updates(self):
+        routine = story(1, score=96, topic="코딩 도구")
+        routine["title"] = "New useful coding features for developers"
+        carbon = story(2, score=88, topic="모델 출시")
+        carbon.update({"title": "Gemini 4 Carbon is now available",
+                       "sourceLabel": "Google DeepMind", "majorLaunch": True})
+        second = story(3, score=82, topic="반도체")
+        picked = discord.pick([routine, carbon, second], fresh_state(), NOW.date())
+        self.assertEqual(len(picked), 3)
+        self.assertEqual(picked[0]["id"], carbon["id"])
+        self.assertTrue(discord.payload_for(picked, NOW)["embeds"][0]["title"]
+                        .startswith("🤖 [AI 모델] Gemini 4 Carbon"))
+
     def test_invalid_ledger_refuses_reset(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "state.json"
