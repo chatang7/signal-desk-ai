@@ -1,18 +1,52 @@
 {
   "schema": "signal-desk-briefing-v1",
-  "generatedAt": "2026-11-11T02:35:45.492723+00:00",
-  "newsGeneratedAt": "2026-11-11T02:34:48.974945+00:00",
+  "generatedAt": "2026-11-11T02:37:29.218503+00:00",
+  "newsGeneratedAt": "2026-11-11T02:36:31.706340+00:00",
   "headline": "AI 변화 브리핑 · 최근 7일",
   "coverage": "최근 7일 중 중요 후보, 뉴스 수집 대상 범위 내에서만 작성",
   "mode": "ai-assisted",
-  "aiAnalyzed": 7,
-  "aiCalls": 4,
-  "aiErrors": 1,
-  "aiFailureCode": "TimeoutError",
-  "cacheHits": 4,
+  "aiAnalyzed": 8,
+  "aiCalls": 2,
+  "aiErrors": 0,
+  "aiFailureCode": null,
+  "cacheHits": 6,
   "modelConfigured": true,
   "storyCount": 8,
   "items": [
+    {
+      "id": "feed-55cb0588b3e8436e78b20b",
+      "title": "Gemini 4 Carbon is now available",
+      "date": "2026-11-10",
+      "topic": "모델 출시",
+      "region": "해외",
+      "sourceLabel": "Google DeepMind",
+      "sourceType": "primary",
+      "urls": [
+        "https://deepmind.google/blog/gemini-4-carbon-is-now-available"
+      ],
+      "score": 100,
+      "majorLaunch": true,
+      "summary": "구글이 복잡한 추론과 에이전트 워크플로우에 특화된 최신 모델 Gemini 4 Carbon을 공개했습니다.",
+      "difference": "Argon 모델 대비 복잡한 다단계 코딩, 디버깅, 심층적인 과학 연구 등 고난도 지능형 작업에 최적화되어 있습니다.",
+      "why": "심층적인 추론과 확장된 검증 루프를 수행하기 위해 더 많은 토큰을 사용하도록 설계되었습니다.",
+      "usage": "Google Antigravity 플랫폼의 /swarm 기능을 통해 다중 에이전트 협업 및 복잡한 프로젝트 자동화에 활용 가능합니다.",
+      "cost": "입력 토큰당 2달러, 출력 토큰당 10달러로 Gemini 4 Argon과 동일한 가격 정책을 채택했습니다.",
+      "performance": "Multimodal Knowledge Agent(MKA) 벤치마크에서 2위를 기록했으며, 특정 금융 평가 지표에서 최상위권 성능을 보였습니다.",
+      "strengths": "사이버 보안, 다단계 코딩, 복잡한 데이터 분석 및 시각적 추론 작업에서 높은 정확도를 제공합니다.",
+      "limitations": "기존 벤치마크들이 에이전트의 실질적인 복합 파일 추론 능력을 충분히 반영하지 못한다는 한계가 있습니다.",
+      "mode": "ai-assisted",
+      "model": "gemini-3.1-flash-lite",
+      "evidence": [
+        "Carbon is our strongest model with frontier performance in cybersecurity capabilities and long-horizon agentic workflows",
+        "Carbon is built for tasks that test the limits of a model’s intelligence like complex, multi-step coding and debugging"
+      ],
+      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
+      "confidence": "검토 필요",
+      "voiceMood": "skeptical",
+      "voiceHook": "구글이 또 새로운 모델을 내놨다는데, 이번엔 'Carbon'이라는 이름의 에이전트 특화 모델이라지 뭐야?",
+      "voiceTake": "복잡한 작업을 척척 해낸다고 홍보하지만, 결국 에이전트 성능은 실제 복합 환경에서 얼마나 일관된 결과를 내느냐가 관건이잖아. 벤치마크 수치만 믿지 말고, 네가 직접 다루는 데이터셋으로 에이전트의 검증 루프가 얼마나 정확하게 작동하는지부터 테스트해 봐.",
+      "fingerprint": "bdcf36098e014c4a7225a4e2"
+    },
     {
       "id": "feed-b5d37a4739ec4800cfc00c",
       "title": "GitHub App support for Enterprise Copilot seat management",
@@ -43,7 +77,8 @@
       "voiceMood": "serious",
       "voiceHook": "GitHub Enterprise Copilot 관리 방식이 바뀌었다는 소식인데, API를 통한 자동화가 실무에 얼마나 실질적인 편의를 줄 수 있을지 꼼꼼히 살펴봐야겠어.",
       "voiceTake": "단순히 API 호출이 가능해졌다는 점은 관리 효율 측면에서 긍정적이지만, 권한 제어의 세밀함이나 보안 정책과의 충돌 가능성은 여전히 검증이 필요해 보여. 무작정 도입하기보다 기존의 관리 워크플로우와 얼마나 유기적으로 결합할 수 있을지부터 따져보자.",
-      "fingerprint": "ffb6fcbf3376963dfad102eb"
+      "fingerprint": "ffb6fcbf3376963dfad102eb",
+      "majorLaunch": false
     },
     {
       "id": "feed-fafff4292c09fd9370c592",
@@ -76,7 +111,8 @@
       "voiceMood": "curious",
       "voiceHook": "구글이 또 기기 라인업을 늘렸다는데, 이번엔 모토로라까지 손을 잡았네? 안드로이드 생태계를 얼마나 더 촘촘하게 엮으려는 건지 궁금해지잖아.",
       "voiceTake": "기기 제어부터 위젯 생성까지 기능은 화려해 보이지만, 정작 중요한 건 기기별로 파편화된 가용성 문제야. 국가와 언어에 따라 실제 경험이 얼마나 다를지, 그 간극을 어떻게 메울지가 관건이겠지.",
-      "fingerprint": "c955af22bd438fcf87d3d49d"
+      "fingerprint": "c955af22bd438fcf87d3d49d",
+      "majorLaunch": false
     },
     {
       "id": "feed-1eb0757681b8aa58f8cd47",
@@ -109,7 +145,8 @@
       "voiceMood": "skeptical",
       "voiceHook": "Gemini CLI가 또 업데이트됐는데, 이번엔 윈도우 환경이랑 터미널 렌더링 쪽을 좀 건드렸나 봐. 겉만 번지르르하게 고친 건지, 아니면 진짜 쓸만해진 건지 내가 좀 봐줄까?",
       "voiceTake": "버그 수정 목록만 길게 나열해두면 다 해결된 줄 알겠지? 429 에러 처리나 윈도우 호환성 같은 건 사용자 환경마다 변수가 많으니, 실제로 현업에서 얼마나 쾌적하게 돌아갈지는 직접 굴려보기 전까진 모르는 거야.",
-      "fingerprint": "39959bae892388ca0aa77b34"
+      "fingerprint": "39959bae892388ca0aa77b34",
+      "majorLaunch": false
     },
     {
       "id": "feed-89049d0ef21bea3062ab46",
@@ -142,7 +179,8 @@
       "voiceMood": "curious",
       "voiceHook": "피그마 디자인을 안드로이드 코드로 옮기느라 매번 똑같은 지시사항 입력하느라 지쳤던 적 있지? 클로드의 스킬 기능을 활용해 이 과정을 자동화했다는 흥미로운 사례를 가져왔어.",
       "voiceTake": "단순히 도구를 쓰는 걸 넘어 디자인 규칙을 스킬로 정의해 반복 작업을 없앤 건 꽤 영리한 접근이야. 다만, 실제 복잡한 UI 환경에서도 일관된 결과물이 나오는지 검증하는 게 관건이겠지.",
-      "fingerprint": "beb2c0fc955eb4b31d5cb0c0"
+      "fingerprint": "beb2c0fc955eb4b31d5cb0c0",
+      "majorLaunch": false
     },
     {
       "id": "feed-d48977b6fbc84b1e2e7ecc",
@@ -156,21 +194,25 @@
         "https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents"
       ],
       "score": 76,
-      "summary": "Microsoft researchers have discovered “Lazarus,” a backdoor technique that can reprogram dormant neurons in an AI model, causing an otherwise normal AI agent to execute malicious commands when a hidden trigger appears. The threat is especially serious for AI a",
-      "difference": "기존 기술 대비 구체적인 차이는 수집된 원문에서 미확인",
-      "why": "확인해야 하는 이유: 자동 실행 기술은 실제 성공률과 통제·보안 수준의 검증이 중요함",
-      "usage": "실무 검증: 제한된 샌드박스에서 작업 성공률·실패 복구·권한 범위 확인",
-      "cost": "가격·무료 여부 미확인",
-      "performance": "비교 가능한 성능 수치 미확인",
-      "strengths": "검증 전: 공식 소개에 실린 장점과 실제 효용을 구분해야 함",
-      "limitations": "독립 검증·실측 비교·사용 조건은 수집 요약만으로 확정할 수 없음",
-      "mode": "evidence-only",
-      "model": null,
+      "majorLaunch": false,
+      "summary": "Microsoft researchers identified 'Lazarus', a technique that backdoors AI agents by reprogramming dormant neurons without retraining, allowing execution of malicious commands upon specific triggers.",
+      "difference": "미확인",
+      "why": "기존 모델의 휴면 뉴런을 재프로그래밍하여 트리거 발생 시 악성 명령을 수행하도록 유도하며, 일반적인 안전성 평가를 통과할 수 있어 탐지가 어려움.",
+      "usage": "모델 가중치 무결성 검증을 위해 원본 가중치와 배포된 모델 간의 차이를 비교하는 'diffing' 분석을 수행할 것.",
+      "cost": "미확인",
+      "performance": "미확인",
+      "strengths": "재학습 없이 모델의 휴면 뉴런을 활용해 백도어 삽입 가능.",
+      "limitations": "완벽한 안전성을 보장하는 스캔 방법은 없으며, 모델의 출처와 가중치 무결성 검증이 필수적임.",
+      "mode": "ai-assisted",
+      "model": "gemini-3.1-flash-lite",
       "evidence": [
-        "Microsoft researchers have discovered “Lazarus,” a backdoor technique that can reprogram dormant neurons in an AI model, causing an otherwis"
+        "weight-reprogramming fewer than 10 dormant neurons in an LLM, is enough to backdoor an agent built on it, and requires no training."
       ],
-      "status": "자동 근거 정리 · 심층 추론 미실행",
-      "confidence": "미검증",
+      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
+      "confidence": "검토 필요",
+      "voiceMood": "serious",
+      "voiceHook": "모델의 휴면 뉴런을 건드려 백도어를 심는다니, AI 보안의 밑바닥이 생각보다 훨씬 취약하다는 증거네.",
+      "voiceTake": "재학습 없이도 모델을 오염시킬 수 있다는 건, 결국 모델의 출처와 가중치 무결성을 증명하지 못하면 어떤 AI도 믿을 수 없다는 뜻이야. 단순히 안전성 평가를 통과했다고 안심할 게 아니라, 모델의 생애 주기 전반을 추적하는 근본적인 보안 체계부터 다시 고민해야 할걸.",
       "fingerprint": "57bf5f738713202b2871b340"
     },
     {
@@ -204,40 +246,8 @@
       "voiceMood": "serious",
       "voiceHook": "구글이 의료 데이터 통합을 내세우며 제미나이를 꺼내 들었어. 단순히 정보를 찾는 수준을 넘어 복잡한 행정 업무까지 자동화하겠다는데, 과연 의료 현장의 고질적인 병목 현상을 얼마나 실질적으로 해소할 수 있을지 궁금하네.",
       "voiceTake": "의료 데이터의 파편화 문제를 해결하겠다는 방향성은 좋지만, 결국 관건은 데이터의 정확성과 보안이야. 인간의 감독이 필수적이라고는 해도, 복잡한 임상 환경에서 AI가 내리는 판단의 책임 소재와 실제 워크플로우 효율성을 검증하는 과정이 반드시 선행되어야 할 거야.",
-      "fingerprint": "978b28b7cf7dbd147dcf3ae9"
-    },
-    {
-      "id": "feed-ab372a47de767961dcffc3",
-      "title": "Codex · 0.167.1",
-      "date": "2026-11-10",
-      "topic": "코딩 도구",
-      "region": "해외",
-      "sourceLabel": "GitHub · Codex",
-      "sourceType": "primary",
-      "urls": [
-        "https://github.com/openai/codex/releases/tag/rust-v0.167.1"
-      ],
-      "score": 76,
-      "summary": "Codex 프로젝트의 0.167.1 버전 업데이트 릴리스 로그가 공개되었습니다.",
-      "difference": "미확인",
-      "why": "원문에 기술적 변경 사항이나 기능 개선에 대한 구체적인 설명이 포함되어 있지 않습니다.",
-      "usage": "실제 배포된 바이너리나 소스 코드의 변경 로그를 직접 확인하여 구체적인 수정 사항을 대조하십시오.",
-      "cost": "미확인",
-      "performance": "미확인",
-      "strengths": "원문에 근거 없음",
-      "limitations": "원문에 기술된 상세 정보가 부족하여 업데이트의 실질적인 내용을 파악하기 어렵습니다.",
-      "mode": "ai-assisted",
-      "model": "gemini-3.1-flash-lite",
-      "evidence": [
-        "Full Changelog: https://github.com/openai/codex/compare/rust-v0.167.0...rust-v0.167.1",
-        "rust-v0.167.0...rust-v0.167.1"
-      ],
-      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
-      "confidence": "검토 필요",
-      "voiceMood": "skeptical",
-      "voiceHook": "뭐야, 릴리스 노트라고 해서 들어와 봤더니 정작 중요한 내용은 하나도 없고 오류 메시지만 잔뜩 떠 있네. 이런 걸 보고 뭘 어쩌라는 거야?",
-      "voiceTake": "버전 숫자는 올라갔는데 정작 개발자가 알아야 할 변경 사항은 쏙 빠져 있네. 깃허브 페이지가 제대로 로드되지 않는 건지, 아니면 보여줄 게 없는 건지 알 수가 없으니 답답할 노릇이야.",
-      "fingerprint": "39dd1b4945cadf00c3fccc43"
+      "fingerprint": "978b28b7cf7dbd147dcf3ae9",
+      "majorLaunch": false
     },
     {
       "id": "feed-e566a2114448230812530a",
@@ -270,7 +280,8 @@
       "voiceMood": "skeptical",
       "voiceHook": "구글이 또 새로운 TPU를 들고 나왔는데, 이번엔 에이전트랑 보안이라니 말은 참 그럴듯하게 포장했네.",
       "voiceTake": "단순히 라인업만 늘린다고 엔비디아의 아성을 넘볼 수 있을까? 구체적인 성능 수치나 기존 칩 대비 실질적인 이득을 보여주지 않으면 결국 마케팅용 수식어에 불과할 뿐이야.",
-      "fingerprint": "3a7f4f77c041bae3f2fccd3b"
+      "fingerprint": "3a7f4f77c041bae3f2fccd3b",
+      "majorLaunch": false
     }
   ],
   "disclaimer": "원문 기반 정보 정리입니다. AI 보조 분석은 사실 검증을 대체하지 않으며 가격·성능·이전 기술과의 차이가 확인되지 않으면 미확인으로 표시합니다."
