@@ -73,15 +73,15 @@ MAJOR_MODEL_SOURCES = {
     "Mistral AI", "Anthropic 공식 발표",
 }
 FRONTIER_MODEL_NAME = re.compile(
-    r"\\b(?:gemini(?:\\s+(?:omni|robotics))?\\s+[3-9](?:\\.\\d+)?"
-    r"|gpt[-\\s]?[3-9](?:\\.\\d+)?"
-    r"|claude\\s+(?:opus|sonnet|haiku)(?:\\s+\\d+(?:\\.\\d+)?)?"
-    r"|gemma\\s+[3-9](?:\\.\\d+)?"
-    r"|mistral\\s+(?:large|medium|small)\\s+[3-9](?:\\.\\d+)?)\\b", re.I)
+    r"\b(?:gemini(?:\s+(?:omni|robotics))?\s+[3-9](?:\.\d+)?"
+    r"|gpt[-\s]?[3-9](?:\.\d+)?"
+    r"|claude\s+(?:opus|sonnet|haiku)(?:\s+\d+(?:\.\d+)?)?"
+    r"|gemma\s+[3-9](?:\.\d+)?"
+    r"|mistral\s+(?:large|medium|small)\s+[3-9](?:\.\d+)?)\b", re.I)
 MODEL_RELEASE_WORDS = re.compile(
-    r"\\b(?:now available|available now|launch(?:es|ed|ing)?|releas(?:e|es|ed|ing)|"
-    r"introduc(?:e|es|ed|ing)|announc(?:e|es|ed|ing)|debut(?:s|ed)?)\\b"
-    r"|정식\\s*출시|출시|공개|발표", re.I)
+    r"\b(?:now available|available now|launch(?:es|ed|ing)?|releas(?:e|es|ed|ing)|"
+    r"introduc(?:e|es|ed|ing)|announc(?:e|es|ed|ing)|debut(?:s|ed)?)\b"
+    r"|정식\s*출시|출시|공개|발표", re.I)
 
 
 def major_model_launch(item: dict) -> bool:
