@@ -217,6 +217,8 @@ DISCORD_EMBED_TEXT_BUDGET = 5650
 def editorial_score(item: dict, today: dt.date) -> int:
     """Order by importance and practical use, without treating unknown claims as facts."""
     value = int(item.get("score", 0) or 0)
+    if item.get("majorLaunch") is True:
+        value += 35  # verified first-party frontier launches beat routine product updates
     day = str(item.get("date") or "")
     try:
         age = (today - dt.date.fromisoformat(day)).days
