@@ -1,7 +1,7 @@
 {
   "schema": "signal-desk-briefing-v1",
-  "generatedAt": "2026-11-11T02:45:25.562940+00:00",
-  "newsGeneratedAt": "2026-11-11T02:45:04.635732+00:00",
+  "generatedAt": "2026-11-11T02:45:57.746615+00:00",
+  "newsGeneratedAt": "2026-11-11T02:45:37.112658+00:00",
   "headline": "AI 변화 브리핑 · 최근 7일",
   "coverage": "최근 7일 중 중요 후보, 뉴스 수집 대상 범위 내에서만 작성",
   "mode": "ai-assisted",
