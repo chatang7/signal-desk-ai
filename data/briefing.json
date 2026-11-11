@@ -1,7 +1,7 @@
 {
   "schema": "signal-desk-briefing-v1",
-  "generatedAt": "2026-11-10T20:02:20.890882+00:00",
-  "newsGeneratedAt": "2026-11-10T20:01:59.881863+00:00",
+  "generatedAt": "2026-11-11T02:35:45.492723+00:00",
+  "newsGeneratedAt": "2026-11-11T02:34:48.974945+00:00",
   "headline": "AI 변화 브리핑 · 최근 7일",
   "coverage": "최근 7일 중 중요 후보, 뉴스 수집 대상 범위 내에서만 작성",
   "mode": "ai-assisted",
@@ -14,6 +14,38 @@
   "storyCount": 8,
   "items": [
     {
+      "id": "feed-b5d37a4739ec4800cfc00c",
+      "title": "GitHub App support for Enterprise Copilot seat management",
+      "date": "2026-11-11",
+      "topic": "코딩 도구",
+      "region": "해외",
+      "sourceLabel": "GitHub Copilot",
+      "sourceType": "primary",
+      "urls": [
+        "https://github.blog/changelog/2026-11-10-github-app-support-for-enterprise-copilot-seat-management"
+      ],
+      "score": 81,
+      "summary": "GitHub Enterprise Copilot의 좌석 관리 API가 GitHub 앱을 통해 호출 가능해짐에 따라, 엔터프라이즈 환경에서의 사용자 및 팀별 Copilot 라이선스 할당 자동화가 가능해졌습니다.",
+      "difference": "미확인",
+      "why": "엔터프라이즈 관리자가 수동으로 수행하던 Copilot 좌석 할당 작업을 프로그래밍 방식으로 자동화하여 관리 효율성을 높이기 위함입니다.",
+      "usage": "엔터프라이즈 수준의 GitHub 앱을 구성하여 Copilot 좌석 관리 API를 호출함으로써 사용자 및 팀의 라이선스 배정 권한을 제어할 수 있습니다.",
+      "cost": "미확인",
+      "performance": "미확인",
+      "strengths": "엔터프라이즈 환경에서 Copilot 라이선스 할당의 자동화 및 중앙 집중식 관리가 가능합니다.",
+      "limitations": "원문에 근거 없음",
+      "mode": "ai-assisted",
+      "model": "gemini-3.1-flash-lite",
+      "evidence": [
+        "Enterprise GitHub Apps can now call the enterprise-level Copilot seat management APIs to control which users and enterprise teams are assigned Copilot"
+      ],
+      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
+      "confidence": "검토 필요",
+      "voiceMood": "serious",
+      "voiceHook": "GitHub Enterprise Copilot 관리 방식이 바뀌었다는 소식인데, API를 통한 자동화가 실무에 얼마나 실질적인 편의를 줄 수 있을지 꼼꼼히 살펴봐야겠어.",
+      "voiceTake": "단순히 API 호출이 가능해졌다는 점은 관리 효율 측면에서 긍정적이지만, 권한 제어의 세밀함이나 보안 정책과의 충돌 가능성은 여전히 검증이 필요해 보여. 무작정 도입하기보다 기존의 관리 워크플로우와 얼마나 유기적으로 결합할 수 있을지부터 따져보자.",
+      "fingerprint": "ffb6fcbf3376963dfad102eb"
+    },
+    {
       "id": "feed-fafff4292c09fd9370c592",
       "title": "Gemini Intelligence: New features, on more devices",
       "date": "2026-11-10",
@@ -24,7 +56,7 @@
       "urls": [
         "https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices"
       ],
-      "score": 86,
+      "score": 81,
       "summary": "구글이 'Gemini Intelligence' 지원 기기를 모토로라 시그니처 27 및 픽셀 10 시리즈 등으로 확대하고, 실시간 음성 정리, 작업 자동화, 위젯 생성 등 신규 기능을 추가함.",
       "difference": "미확인",
       "why": "기존 삼성 갤럭시 Z 폴드8 시리즈 등에 이어 지원 기기 범위를 넓히고, 사용자 기기 제어 및 맞춤형 위젯 기능을 통해 안드로이드 생태계 내 활용성을 높이려는 목적임.",
@@ -47,6 +79,39 @@
       "fingerprint": "c955af22bd438fcf87d3d49d"
     },
     {
+      "id": "feed-1eb0757681b8aa58f8cd47",
+      "title": "Gemini CLI · Release v0.68.0",
+      "date": "2026-11-10",
+      "topic": "코딩 도구",
+      "region": "해외",
+      "sourceLabel": "GitHub · Gemini CLI",
+      "sourceType": "primary",
+      "urls": [
+        "https://github.com/google-gemini/gemini-cli/releases/tag/v0.68.0"
+      ],
+      "score": 81,
+      "summary": "Gemini CLI v0.68.0 릴리스는 터미널 UI 개선, 윈도우 환경 호환성 강화, 모델 인식 및 확장 기능 검증 명령 추가를 포함한 다수의 버그 수정과 안정성 업데이트를 담고 있습니다.",
+      "difference": "미확인",
+      "why": "터미널 환경에서의 렌더링 오류 수정, 윈도우 경로 처리 및 프로세스 조회 최적화, 그리고 모델 호출 시 발생하는 예외 상황 대응을 위해 배포되었습니다.",
+      "usage": "CLI 환경에서 터미널 너비 변경 시 히스토리 재렌더링 오류와 429 속도 제한 대응이 정상 작동하는지 실제 터미널 환경에서 시뮬레이션 테스트를 수행하세요.",
+      "cost": "미확인",
+      "performance": "미확인",
+      "strengths": "윈도우 운영체제에서의 파일 경로 및 프로세스 관리 개선, 확장 기능 설치 시 동시성 제어 강화.",
+      "limitations": "원문에 근거 없음",
+      "mode": "ai-assisted",
+      "model": "gemini-3.1-flash-lite",
+      "evidence": [
+        "fix(cli): bound inline history re-render after terminal width changes",
+        "fix(core): make isWithinRoot case-insensitive on Windows"
+      ],
+      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
+      "confidence": "검토 필요",
+      "voiceMood": "skeptical",
+      "voiceHook": "Gemini CLI가 또 업데이트됐는데, 이번엔 윈도우 환경이랑 터미널 렌더링 쪽을 좀 건드렸나 봐. 겉만 번지르르하게 고친 건지, 아니면 진짜 쓸만해진 건지 내가 좀 봐줄까?",
+      "voiceTake": "버그 수정 목록만 길게 나열해두면 다 해결된 줄 알겠지? 429 에러 처리나 윈도우 호환성 같은 건 사용자 환경마다 변수가 많으니, 실제로 현업에서 얼마나 쾌적하게 돌아갈지는 직접 굴려보기 전까진 모르는 거야.",
+      "fingerprint": "39959bae892388ca0aa77b34"
+    },
+    {
       "id": "feed-89049d0ef21bea3062ab46",
       "title": "AI 스킬 만들기 10계명: Figma→Code 자동화 실전기",
       "date": "2026-11-10",
@@ -57,7 +122,7 @@
       "urls": [
         "https://d2.naver.com/helloworld/8562180"
       ],
-      "score": 83,
+      "score": 78,
       "summary": "Claude의 '스킬(Agent Skills)' 기능을 활용해 Figma 디자인을 Android UI 코드로 자동 변환하는 오픈소스 프로젝트 'naver/design-to-ui'의 개발 사례입니다.",
       "difference": "미확인",
       "why": "반복적인 프롬프트 입력 없이 디자인 규칙을 스킬화하여 코드 변환 효율을 높이기 위함입니다.",
@@ -80,6 +145,35 @@
       "fingerprint": "beb2c0fc955eb4b31d5cb0c0"
     },
     {
+      "id": "feed-d48977b6fbc84b1e2e7ecc",
+      "title": "Lazare, veni foras: Reprogramming Dormant Neurons to Backdoor AI Agents",
+      "date": "2026-11-10",
+      "topic": "에이전트",
+      "region": "해외",
+      "sourceLabel": "Microsoft Research",
+      "sourceType": "primary",
+      "urls": [
+        "https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents"
+      ],
+      "score": 76,
+      "summary": "Microsoft researchers have discovered “Lazarus,” a backdoor technique that can reprogram dormant neurons in an AI model, causing an otherwise normal AI agent to execute malicious commands when a hidden trigger appears. The threat is especially serious for AI a",
+      "difference": "기존 기술 대비 구체적인 차이는 수집된 원문에서 미확인",
+      "why": "확인해야 하는 이유: 자동 실행 기술은 실제 성공률과 통제·보안 수준의 검증이 중요함",
+      "usage": "실무 검증: 제한된 샌드박스에서 작업 성공률·실패 복구·권한 범위 확인",
+      "cost": "가격·무료 여부 미확인",
+      "performance": "비교 가능한 성능 수치 미확인",
+      "strengths": "검증 전: 공식 소개에 실린 장점과 실제 효용을 구분해야 함",
+      "limitations": "독립 검증·실측 비교·사용 조건은 수집 요약만으로 확정할 수 없음",
+      "mode": "evidence-only",
+      "model": null,
+      "evidence": [
+        "Microsoft researchers have discovered “Lazarus,” a backdoor technique that can reprogram dormant neurons in an AI model, causing an otherwis"
+      ],
+      "status": "자동 근거 정리 · 심층 추론 미실행",
+      "confidence": "미검증",
+      "fingerprint": "57bf5f738713202b2871b340"
+    },
+    {
       "id": "feed-c979be8e72cc92b8a0fbd6",
       "title": "Google Cloud launches Gemini for healthcare.",
       "date": "2026-11-10",
@@ -90,7 +184,7 @@
       "urls": [
         "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-for-healthcare"
       ],
-      "score": 81,
+      "score": 76,
       "summary": "구글 클라우드가 임상, 운영, 행정 데이터를 통합하고 워크플로우를 자동화하는 의료용 제미나이 솔루션을 출시했습니다.",
       "difference": "미확인",
       "why": "의료 현장의 파편화된 데이터 통합과 행정 업무 자동화를 통한 의료진의 번아웃 감소 및 업무 효율 개선을 목적으로 합니다.",
@@ -113,130 +207,37 @@
       "fingerprint": "978b28b7cf7dbd147dcf3ae9"
     },
     {
-      "id": "feed-a8c416e2c7748124802b5f",
-      "title": "Agent Substrate: Advancing Kubernetes for Agents at Scale",
-      "date": "2026-11-10",
-      "topic": "에이전트",
-      "region": "해외",
-      "sourceLabel": "NVIDIA 개발자",
-      "sourceType": "primary",
-      "urls": [
-        "https://developer.nvidia.com/blog/agent-substrate-advancing-kubernetes-for-agents-at-scale"
-      ],
-      "score": 81,
-      "summary": "AI agents spend most of their time idle, waiting on a human prompt, a tool result or a model response. Kubernetes wasn’t built for that. Running one Pod per...",
-      "difference": "기존 기술 대비 구체적인 차이는 수집된 원문에서 미확인",
-      "why": "확인해야 하는 이유: 자동 실행 기술은 실제 성공률과 통제·보안 수준의 검증이 중요함",
-      "usage": "실무 검증: 제한된 샌드박스에서 작업 성공률·실패 복구·권한 범위 확인",
-      "cost": "가격·무료 여부 미확인",
-      "performance": "비교 가능한 성능 수치 미확인",
-      "strengths": "검증 전: 공식 소개에 실린 장점과 실제 효용을 구분해야 함",
-      "limitations": "독립 검증·실측 비교·사용 조건은 수집 요약만으로 확정할 수 없음",
-      "mode": "evidence-only",
-      "model": null,
-      "evidence": [
-        "AI agents spend most of their time idle, waiting on a human prompt, a tool result or a model response. Kubernetes wasn’t built for that. Run"
-      ],
-      "status": "자동 근거 정리 · 심층 추론 미실행",
-      "confidence": "미검증",
-      "fingerprint": "746e890ec25c2d71657809f4"
-    },
-    {
-      "id": "feed-991ad48e8559b2fefa9ff7",
-      "title": "Introducing Businesses in ChatGPT",
-      "date": "2026-11-10",
-      "topic": "모델 출시",
-      "region": "해외",
-      "sourceLabel": "OpenAI 공식 발표",
-      "sourceType": "primary",
-      "urls": [
-        "https://openai.com/index/introducing-businesses-chatgpt"
-      ],
-      "score": 81,
-      "summary": "ChatGPT 내에서 기업 정보를 관리하고 노출 현황을 분석하며 고객의 관심을 실제 행동으로 전환할 수 있는 비즈니스 관리 기능이 도입되었습니다.",
-      "difference": "미확인",
-      "why": "사용자가 ChatGPT 플랫폼 내에서 직접 기업 정보를 제어하고 고객 상호작용을 최적화하기 위함입니다.",
-      "usage": "기업 계정을 ChatGPT에 연동하여 노출 데이터를 확인하고 고객 문의에 대응하는 워크플로우를 구축해 보시기 바랍니다.",
-      "cost": "미확인",
-      "performance": "미확인",
-      "strengths": "기업 정보 관리와 고객 행동 전환을 하나의 플랫폼에서 통합적으로 처리할 수 있습니다.",
-      "limitations": "원문에 근거 없음",
-      "mode": "ai-assisted",
-      "model": "gemini-3.1-flash-lite",
-      "evidence": [
-        "Manage your business information, get insights about how your business shows up, and turn interest into action in ChatGPT."
-      ],
-      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
-      "confidence": "검토 필요",
-      "voiceMood": "skeptical",
-      "voiceHook": "ChatGPT가 이제 기업 비즈니스 관리까지 손을 뻗치기 시작했네. 플랫폼 안에서 모든 걸 해결하겠다는 건데, 이게 과연 실질적인 효율로 이어질지 궁금하지 않아?",
-      "voiceTake": "단순히 정보를 보여주는 걸 넘어 고객의 행동까지 유도하겠다는 건데, 데이터의 정확성이나 보안에 대한 구체적인 가이드라인이 부족해 보여. 겉만 번지르르한 기능인지, 아니면 진짜 비즈니스 도구로서의 가치가 있는지 직접 검증해 볼 필요가 있겠어.",
-      "fingerprint": "ebacaae25e93fd69cf379af1"
-    },
-    {
-      "id": "feed-654186bc5569d895cf20cf",
-      "title": "Claude Code · v2.1.322",
+      "id": "feed-ab372a47de767961dcffc3",
+      "title": "Codex · 0.167.1",
       "date": "2026-11-10",
       "topic": "코딩 도구",
       "region": "해외",
-      "sourceLabel": "GitHub · Claude Code",
+      "sourceLabel": "GitHub · Codex",
       "sourceType": "primary",
       "urls": [
-        "https://github.com/anthropics/claude-code/releases/tag/v2.1.322"
+        "https://github.com/openai/codex/releases/tag/rust-v0.167.1"
       ],
-      "score": 81,
-      "summary": "Claude Code v2.1.322 업데이트를 통해 Vertex 플랫폼 내 글로벌, 미국, 유럽 지역에서 'fast mode'가 추가되었습니다.",
-      "difference": "Vertex 플랫폼 내 fast mode 지원 추가 및 표준 속도 자동 전환 기능 도입",
-      "why": "Vertex 환경에서 가속 모드를 우선 적용하고, 거부될 경우 표준 속도로 자동 전환하여 안정성을 확보하기 위함입니다.",
-      "usage": "Vertex API를 사용하는 Claude Code 환경에서 자동 적용됩니다.",
-      "cost": "미확인",
-      "performance": "미확인",
-      "strengths": "Vertex 지역별 fast mode 지원을 통한 처리 속도 최적화 시도",
-      "limitations": "Vertex의 거부 응답 시 표준 속도로 폴백되는 구체적인 기준은 원문에 근거 없음",
-      "mode": "ai-assisted",
-      "model": "gemini-3.1-flash-lite",
-      "evidence": [
-        "Added fast mode on Vertex in the global, us and eu regions, falling back to standard speed if Vertex refuses it"
-      ],
-      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
-      "confidence": "검토 필요",
-      "voiceMood": "curious",
-      "voiceHook": "Claude Code가 Vertex 환경에서 속도 개선을 꾀했나 봐, 이번 업데이트가 실제 개발 효율에 얼마나 유의미한 변화를 줄지 궁금해지네.",
-      "voiceTake": "단순히 fast mode를 추가한 것인지, 아니면 Vertex 인프라와의 연동성을 강화한 것인지 확인이 필요해. 속도 향상이 실제 체감 성능으로 이어질지, 아니면 설정상의 변화에 그칠지 좀 더 지켜봐야겠어.",
-      "fingerprint": "484fb5958ef05b91d048af0d"
-    },
-    {
-      "id": "feed-5cd7ff8934485154fbfcf2",
-      "title": "Manage Kubernetes Clusters for GPU Infrastructure with NVIDIA Kubernetes Engine",
-      "date": "2026-11-10",
-      "topic": "반도체",
-      "region": "해외",
-      "sourceLabel": "NVIDIA 개발자",
-      "sourceType": "primary",
-      "urls": [
-        "https://developer.nvidia.com/blog/manage-kubernetes-clusters-for-gpu-infrastructure-with-nvidia-kubernetes-engine"
-      ],
-      "score": 81,
-      "summary": "NVIDIA가 GPU 인프라 기반의 관리형 쿠버네티스 서비스를 구축하기 위한 오픈소스 프로젝트인 NVIDIA Kubernetes Engine(NVKE)과 NVIDIA Kubernetes Recipes(NVKR)를 공개했습니다.",
+      "score": 76,
+      "summary": "Codex 프로젝트의 0.167.1 버전 업데이트 릴리스 로그가 공개되었습니다.",
       "difference": "미확인",
-      "why": "AI 팩토리 고객이 기존 쿠버네티스 생태계를 활용하면서 GPU 자원을 효율적으로 관리하고 API 기반의 프로비저닝, 테넌트 격리, 업그레이드 등을 수행하기 위함입니다.",
-      "usage": "NVKR로 노드 이미지와 패키지를 빌드하고, NVKE가 이를 활용해 REST API로 쿠버네티스 클러스터를 프로비저닝 및 관리합니다.",
+      "why": "원문에 기술적 변경 사항이나 기능 개선에 대한 구체적인 설명이 포함되어 있지 않습니다.",
+      "usage": "실제 배포된 바이너리나 소스 코드의 변경 로그를 직접 확인하여 구체적인 수정 사항을 대조하십시오.",
       "cost": "미확인",
       "performance": "미확인",
-      "strengths": "소프트웨어 버전과 GPU 세대를 검증된 조합으로 정의하여 재현 가능한 인프라 빌드가 가능하며, Apache 2.0 라이선스로 코드 검토 및 기여가 가능합니다.",
-      "limitations": "현재 퍼블릭 프리뷰 단계로 API와 동작 방식이 변경될 수 있으며, 운영 환경(Production) 도입은 권장되지 않습니다.",
+      "strengths": "원문에 근거 없음",
+      "limitations": "원문에 기술된 상세 정보가 부족하여 업데이트의 실질적인 내용을 파악하기 어렵습니다.",
       "mode": "ai-assisted",
       "model": "gemini-3.1-flash-lite",
       "evidence": [
-        "NVIDIA DSX AI Factory Platform introduces two open source projects, NVIDIA Kubernetes Engine (NVKE) and NVIDIA Kubernetes Recipes (NVKR)",
-        "Both projects are in public preview under the Apache 2.0 license, with APIs and behavior subject to change, and are not yet recommended for production"
+        "Full Changelog: https://github.com/openai/codex/compare/rust-v0.167.0...rust-v0.167.1",
+        "rust-v0.167.0...rust-v0.167.1"
       ],
       "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
       "confidence": "검토 필요",
       "voiceMood": "skeptical",
-      "voiceHook": "NVIDIA가 GPU 인프라 관리를 위한 오픈소스 프로젝트를 들고 나왔는데, 이게 정말 실무 환경의 복잡한 요구사항을 다 감당할 수 있을지 궁금하네.",
-      "voiceTake": "퍼블릭 프리뷰 단계라 API가 언제든 바뀔 수 있다는 점은 명심해야 해. 운영 환경에 바로 올리기엔 아직 검증할 게 너무 많아 보이는데, 섣불리 움직이지 말고 기술 문서부터 꼼꼼히 뜯어보는 게 좋을 거야.",
-      "fingerprint": "6a2381596ba08b4940f7cc01"
+      "voiceHook": "뭐야, 릴리스 노트라고 해서 들어와 봤더니 정작 중요한 내용은 하나도 없고 오류 메시지만 잔뜩 떠 있네. 이런 걸 보고 뭘 어쩌라는 거야?",
+      "voiceTake": "버전 숫자는 올라갔는데 정작 개발자가 알아야 할 변경 사항은 쏙 빠져 있네. 깃허브 페이지가 제대로 로드되지 않는 건지, 아니면 보여줄 게 없는 건지 알 수가 없으니 답답할 노릇이야.",
+      "fingerprint": "39dd1b4945cadf00c3fccc43"
     },
     {
       "id": "feed-e566a2114448230812530a",
@@ -249,7 +250,7 @@
       "urls": [
         "https://www.aitimes.com/news/articleView.html?idxno=217211"
       ],
-      "score": 67,
+      "score": 62,
       "summary": "구글이 AI 에이전트 및 기업 보안 시스템에 특화된 8세대 TPU 신제품 2종인 'TPU 8i Max'와 'TPU 8tx'를 공개하며 인프라 라인업을 확장했습니다.",
       "difference": "미확인",
       "why": "AI 에이전트의 대규모 정보 처리와 기업용 민감 데이터 보안 강화를 위해 전용 칩셋을 도입했습니다.",
