@@ -1,18 +1,52 @@
 {
   "schema": "signal-desk-briefing-v1",
-  "generatedAt": "2026-11-12T07:46:10.048354+00:00",
-  "newsGeneratedAt": "2026-11-12T07:45:50.590207+00:00",
+  "generatedAt": "2026-11-12T19:57:22.540746+00:00",
+  "newsGeneratedAt": "2026-11-12T19:57:00.844975+00:00",
   "headline": "AI 변화 브리핑 · 최근 7일",
   "coverage": "최근 7일 중 중요 후보, 뉴스 수집 대상 범위 내에서만 작성",
   "mode": "ai-assisted",
   "aiAnalyzed": 8,
-  "aiCalls": 0,
+  "aiCalls": 3,
   "aiErrors": 0,
   "aiFailureCode": null,
-  "cacheHits": 8,
+  "cacheHits": 5,
   "modelConfigured": true,
   "storyCount": 8,
   "items": [
+    {
+      "id": "feed-5b69826eead48a963c75ef",
+      "title": "Introducing Gemini 4 Hydrogen",
+      "date": "2026-11-12",
+      "topic": "모델 출시",
+      "region": "해외",
+      "sourceLabel": "Google DeepMind",
+      "sourceType": "primary",
+      "urls": [
+        "https://deepmind.google/blog/introducing-gemini-4-hydrogen"
+      ],
+      "score": 100,
+      "majorLaunch": true,
+      "summary": "구글이 에이전트 워크플로우와 일상적인 코딩 작업의 효율적 실행을 위해 설계된 경량 모델 'Gemini 4 Hydrogen'을 발표했습니다.",
+      "difference": "Gemini 3.8 Flash 대비 작업 속도 2.5배 향상, 환각 현상 5배 감소, 벤치마크 점수 향상 및 Orchestrator를 통한 다중 모델 협업 기능 추가.",
+      "why": "복잡한 추론을 담당하는 기존 프론티어 모델과 달리, 일상적인 코딩, 테스트, 코드 검증 등 빠른 실행이 필요한 작업에 최적화하기 위함입니다.",
+      "usage": "단독 모델로 사용하거나, Carbon 및 Argon과 같은 고성능 모델과 함께 다중 모델 워크플로우의 실행 엔진으로 활용 가능합니다.",
+      "cost": "원문에서 확인 가능한 수치 없음",
+      "performance": "SWE-sweep 및 MKA 벤치마크 등에서 동급 모델 대비 우수한 성능을 보이며, Orchestrator 사용 시 기존 대비 24% 적은 할당량과 19% 빠른 속도를 기록함.",
+      "strengths": "빠른 코드 실행 속도, 환각 감소, 대규모 저장소 탐색을 위한 병렬 파일 읽기 및 검색 기능, 100만 토큰의 대용량 입출력 지원.",
+      "limitations": "복잡한 아키텍처 판단이나 심층적인 장기 추론 작업은 Carbon/Argon 등 프론티어 모델에 의존해야 함.",
+      "mode": "ai-assisted",
+      "model": "gemini-3.1-flash-lite",
+      "evidence": [
+        "Hydrogen is built for rapid execution across diverse agentic workflows.",
+        "Hydrogen handles issue resolution, debugging, rapid iteration, and codebase Q&A with focused, surgical edits"
+      ],
+      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
+      "confidence": "검토 필요",
+      "voiceMood": "skeptical",
+      "voiceHook": "구글이 또 새로운 모델을 들고 나왔는데, 이번엔 'Hydrogen'이라니 이름 한번 거창하네.",
+      "voiceTake": "결국 복잡한 건 기존 모델에 맡기고 이건 '빠른 셔틀' 역할 하겠다는 거잖아. 다중 모델 오케스트레이션이 말처럼 매끄럽게 돌아갈지, 아니면 그냥 토큰만 더 잡아먹는 복잡한 구조가 될지는 직접 돌려봐야 알겠지.",
+      "fingerprint": "3c63fa9d3a8c61b0ea4200ac"
+    },
     {
       "id": "feed-55cb0588b3e8436e78b20b",
       "title": "Gemini 4 Carbon is now available",
@@ -48,6 +82,73 @@
       "fingerprint": "bdcf36098e014c4a7225a4e2"
     },
     {
+      "id": "feed-d6d23163b98ddfa1ea7abe",
+      "title": "Google Search gets a major upgrade with Gemini 4 Hydrogen",
+      "date": "2026-11-12",
+      "topic": "모델 출시",
+      "region": "해외",
+      "sourceLabel": "Google AI 블로그",
+      "sourceType": "primary",
+      "urls": [
+        "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade"
+      ],
+      "score": 81,
+      "majorLaunch": false,
+      "summary": "Google has integrated the Gemini 4 Hydrogen model into its global search engine to enhance response quality through improved intent understanding and visual content presentation.",
+      "difference": "미확인",
+      "why": "복합적인 질문에 대한 의도 파악 능력과 동시 쿼리 수행을 통한 정보 연결성을 강화하기 위함입니다.",
+      "usage": "검색창에 복잡한 다단계 질문이나 구체적인 요구사항을 자연어로 입력하여 테스트할 수 있습니다.",
+      "cost": "미확인",
+      "performance": "미확인",
+      "strengths": "복합 질문 처리, 구조화된 정보(표, 이미지) 제공, 향상된 의도 파악 및 다국어 지원.",
+      "limitations": "생성형 AI의 실험적 특성상 정확성 검증이 필요하며, 구체적인 벤치마크 수치는 제공되지 않음.",
+      "mode": "ai-assisted",
+      "model": "gemini-3.1-flash-lite",
+      "evidence": [
+        "We are bringing Gemini 4 Hydrogen to Google Search globally to provide you with more helpful, visual, and intuitive responses.",
+        "This update helps you navigate complex questions by understanding your intent, conducting simultaneous queries, and displaying structured information "
+      ],
+      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
+      "confidence": "검토 필요",
+      "voiceMood": "skeptical",
+      "voiceHook": "구글이 또 거창한 이름을 붙여서 검색 엔진을 갈아엎었다는데, 이번 '제미나이 4 하이드로젠'이 정말 말한 대로 똑똑하게 의도를 파악할지 궁금하지 않아?",
+      "voiceTake": "단순히 검색 결과에 표나 이미지를 더 붙여주는 게 전부라면 '지능형 검색'이라는 수식어가 좀 민망하지 않을까? 실제 복합적인 질문을 던졌을 때 환각 현상 없이 얼마나 정교하게 맥락을 짚어내는지 직접 교차 검증해봐야겠어.",
+      "fingerprint": "6199dca8cfab2258edf90da8"
+    },
+    {
+      "id": "feed-4922ca6fb0dd92994c3498",
+      "title": "Holiday Extras is rethinking what it can build with Codex",
+      "date": "2026-11-12",
+      "topic": "코딩 도구",
+      "region": "해외",
+      "sourceLabel": "OpenAI 공식 발표",
+      "sourceType": "primary",
+      "urls": [
+        "https://openai.com/business/customer-stories/holidays-extras-codex"
+      ],
+      "score": 81,
+      "majorLaunch": false,
+      "summary": "Holiday Extras는 Codex를 도입하여 고객 전문 지식을 활용한 애플리케이션 개선 및 예약 전환율 향상을 도모하고 있습니다.",
+      "difference": "미확인",
+      "why": "고객 경험 최적화와 비즈니스 성장을 위한 기술적 도구로 Codex를 활용하고자 함.",
+      "usage": "고객 데이터를 기반으로 한 애플리케이션 개발 및 예약 프로세스 최적화.",
+      "cost": "미확인",
+      "performance": "미확인",
+      "strengths": "고객 전문 지식을 앱 개발에 직접 반영할 수 있는 가능성 제시.",
+      "limitations": "구체적인 기술적 구현 방식이나 실제 성과 데이터는 원문에 근거 없음.",
+      "mode": "ai-assisted",
+      "model": "gemini-3.1-flash-lite",
+      "evidence": [
+        "With Codex, Holiday Extras is turning customer expertise into better apps, higher booking conversion and new possibilities for growth."
+      ],
+      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
+      "confidence": "검토 필요",
+      "voiceMood": "skeptical",
+      "voiceHook": "Holiday Extras가 Codex를 쓴다는데, 구체적인 수치나 기술적 성과 없이 마케팅 문구만 나열되어 있어서 조금 의아하네. 정말 실질적인 변화가 있는지 우리가 직접 뜯어봐야겠어.",
+      "voiceTake": "단순히 도구를 도입했다고 해서 비즈니스 성장이 보장되는 건 아니지. 고객 전문 지식을 어떻게 코드로 치환해서 예약 전환율을 높였는지, 그 구체적인 검증 데이터가 빠져 있는 게 가장 큰 쟁점이야.",
+      "fingerprint": "2472d3cfe2cd7cf9778e4f51"
+    },
+    {
       "id": "feed-b5d37a4739ec4800cfc00c",
       "title": "GitHub App support for Enterprise Copilot seat management",
       "date": "2026-11-11",
@@ -79,40 +180,6 @@
       "voiceTake": "단순히 API 호출이 가능해졌다는 점은 관리 효율 측면에서 긍정적이지만, 권한 제어의 세밀함이나 보안 정책과의 충돌 가능성은 여전히 검증이 필요해 보여. 무작정 도입하기보다 기존의 관리 워크플로우와 얼마나 유기적으로 결합할 수 있을지부터 따져보자.",
       "fingerprint": "ffb6fcbf3376963dfad102eb",
       "majorLaunch": false
-    },
-    {
-      "id": "feed-ac94b61a25ade5edbf713f",
-      "title": "ChatGPT Plus for veterans and servicemembers",
-      "date": "2026-11-11",
-      "topic": "모델 출시",
-      "region": "해외",
-      "sourceLabel": "OpenAI 공식 발표",
-      "sourceType": "primary",
-      "urls": [
-        "https://openai.com/index/chatgpt-plus-for-veterans"
-      ],
-      "score": 76,
-      "majorLaunch": false,
-      "summary": "2만 명 이상의 참전 용사와 전역 예정 장병들이 ChatGPT Plus 1년 무료 이용 혜택을 수령함.",
-      "difference": "미확인",
-      "why": "참전 용사 및 전역 장병들의 민간 분야 경력 준비를 지원하기 위함.",
-      "usage": "민간 분야 경력 준비를 위한 도구로 활용됨.",
-      "cost": "원문에서 확인 가능한 수치 없음",
-      "performance": "미확인",
-      "strengths": "참전 용사와 전역 예정자들에게 실질적인 경력 개발 기회를 제공함.",
-      "limitations": "원문에 근거 없음",
-      "mode": "ai-assisted",
-      "model": "gemini-3.1-flash-lite",
-      "evidence": [
-        "More than 20,000 veterans and transitioning service members have claimed a free year of ChatGPT Plus.",
-        "See how they use it to prepare for civilian careers."
-      ],
-      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
-      "confidence": "검토 필요",
-      "fingerprint": "9805bf9f51674d3e575c34d5",
-      "voiceMood": "curious",
-      "voiceHook": "세상에, 군 복무를 마친 분들에게 이런 혜택이 돌아갔다니 흥미롭네. 과연 이 도구가 그들의 새로운 사회 진출에 얼마나 실질적인 힘이 되어줄지 궁금하지 않아?",
-      "voiceTake": "단순히 무료 이용권을 나눠주는 것만으로는 부족해. 이들이 실제로 어떤 직무 역량을 보완하고 있는지, 그 과정에서 AI가 얼마나 유의미한 가이드를 제공하는지 확인하는 게 핵심이야. 홍보성 수치에 가려진 실질적인 성과를 들여다볼 필요가 있어."
     },
     {
       "id": "feed-4b30bf9e8a4d0303bec665",
@@ -147,74 +214,6 @@
       "voiceHook": "쿠버네티스 위에서 AI가 대체 뭘 하고 있는지 도통 알 수 없어 답답했지? NVIDIA가 드디어 런타임 가시성을 확보할 도구를 들고 나왔어.",
       "voiceTake": "단순히 배포 설정만 맞췄다고 끝나는 시대는 지났어. 이제는 실행 중인 워크로드의 실체까지 추적하는 게 보안의 핵심인데, 이 도구가 그 '섀도우 워크로드'를 얼마나 정확히 짚어낼지가 관건이겠네.",
       "fingerprint": "5b405943940a5578df709a92"
-    },
-    {
-      "id": "feed-403902bb9a7078030fe851",
-      "title": "Codex · 0.167.2",
-      "date": "2026-11-11",
-      "topic": "코딩 도구",
-      "region": "해외",
-      "sourceLabel": "GitHub · Codex",
-      "sourceType": "primary",
-      "urls": [
-        "https://github.com/openai/codex/releases/tag/rust-v0.167.2"
-      ],
-      "score": 76,
-      "majorLaunch": false,
-      "summary": "Codex 0.167.2 버전에서 Google Cloud Vertex AI 환경의 도구 업데이트 방식이 점진적 전송으로 기본 설정되었습니다.",
-      "difference": "기존에는 도구 업데이트 방식에 대한 명시적 기본값이 없었으나, 이번 업데이트로 점진적 전송이 기본값이 되었습니다.",
-      "why": "Google Cloud Vertex AI 환경에서의 효율적인 도구 업데이트 처리를 위해 도입되었습니다.",
-      "usage": "config.toml 파일의 [features] 섹션에서 incremental_tools_legacy_gcp 설정을 통해 기능을 제어할 수 있습니다.",
-      "cost": "미확인",
-      "performance": "미확인",
-      "strengths": "Google Cloud Vertex AI 사용 시 도구 업데이트의 점진적 전송을 기본 지원하여 설정 편의성을 높였습니다.",
-      "limitations": "기존 방식 유지를 원할 경우 별도의 설정값 변경이 필요합니다.",
-      "mode": "ai-assisted",
-      "model": "gemini-3.1-flash-lite",
-      "evidence": [
-        "Codex now sends tool updates incrementally by default on Google Cloud Vertex AI.",
-        "To opt out, set `incremental_tools_legacy_gcp = false` under `[features]` in `config.toml`."
-      ],
-      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
-      "confidence": "검토 필요",
-      "voiceMood": "curious",
-      "voiceHook": "Codex가 이번엔 Google Cloud Vertex AI 환경을 건드렸네? 도구 업데이트 방식이 바뀌었다는데, 이게 실제 작업 효율에 얼마나 영향을 줄지 궁금하지 않아?",
-      "voiceTake": "단순히 기본값을 바꾼 건지, 아니면 클라우드 환경에서의 데이터 처리 최적화를 위한 포석인지 확인이 필요해 보여. 설정 하나 바꿨다고 다 해결될 문제는 아닐 테니까 꼼꼼히 살펴봐.",
-      "fingerprint": "747b1bd5d7dd426145e1d0db"
-    },
-    {
-      "id": "feed-19b4fcb1faac9c9bdbccd3",
-      "title": "BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model",
-      "date": "2026-11-11",
-      "topic": "에이전트",
-      "region": "해외",
-      "sourceLabel": "Hugging Face 블로그",
-      "sourceType": "primary",
-      "urls": [
-        "https://huggingface.co/blog/qvac/botpsy"
-      ],
-      "score": 76,
-      "majorLaunch": false,
-      "summary": "Tether AI Research가 발표한 BotPsy는 Qwen3.5-0.8B 기반의 0.8B 파라미터 에이전트 모델로, 온디바이스 환경에서의 함수 호출 및 에이전트 워크플로우 수행을 목적으로 설계되었습니다.",
-      "difference": "기존 Qwen3.5-0.8B 모델 대비 에이전트 성능을 약 2배 향상시켰으며, 특정 벤치마크에서는 2.5배 큰 모델인 Qwen3.5-2B-Think를 상회하는 결과를 보였습니다.",
-      "why": "클라우드 기반 LLM의 높은 운영 비용과 데이터 프라이버시 문제를 해결하고, 온디바이스 환경에서 효율적인 도구 사용 및 에이전트 작업을 수행하기 위해 개발되었습니다.",
-      "usage": "웹 검색, 여행, 금융, 기기 제어, 문서 관리, 이메일 등 사용자의 일상적인 작업을 보조하는 개인 비서 용도로 활용 가능합니다.",
-      "cost": "미확인",
-      "performance": "원문에서 확인 가능한 수치 없음",
-      "strengths": "명시적 지시 이행 능력과 다단계 작업 수행 능력이 뛰어나며, 도구 사용이 불필요한 상황을 판단하는 거부율(hallucination test) 성능이 높습니다.",
-      "limitations": "지시사항이 누적될수록 성능이 저하되며, 저자원 언어에 대한 처리 능력이 부족하고 전체적인 지식 수준은 파라미터 수에 비례하여 제한적입니다.",
-      "mode": "ai-assisted",
-      "model": "gemini-3.1-flash-lite",
-      "evidence": [
-        "Tether AI Research introduces , a 0.8B-parameter model introduce , a 0.8B-parameter model designed for function calling and agentic workflows",
-        "BotPsy has the highest score of all models tested on five of the six benchmarks, beating Qwen3.5-2B-Think, a model 2.5× its size"
-      ],
-      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
-      "confidence": "검토 필요",
-      "voiceMood": "skeptical",
-      "voiceHook": "0.8B라는 작은 몸집으로 거대 모델들을 제쳤다니, 이게 정말 실무에서도 그만큼의 똑똑함을 보여줄 수 있을지 궁금하네.",
-      "voiceTake": "벤치마크 점수만 보면 화려하지만, 결국 에이전트는 복잡한 실전 상황에서 얼마나 덜 헤매느냐가 관건이지. 지시가 쌓일수록 성능이 떨어진다는 점을 고려하면, 실제 서비스에 올리기 전에 구체적인 작업 시나리오별로 에러율부터 꼼꼼히 뜯어봐야겠어.",
-      "fingerprint": "0738cb8f03a2c0169e919a2d"
     },
     {
       "id": "feed-89049d0ef21bea3062ab46",
