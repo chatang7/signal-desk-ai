@@ -2,15 +2,15 @@ name: Collect AI news (free)
 
 on:
   schedule:
-    # 09:17 / 21:17 Korea Standard Time (UTC+9); schedules may be delayed.
-    - cron: '17 0,12 * * *'
+    # One daily digest at 09:17 Korea Standard Time (UTC+9); schedules may be delayed.
+    - cron: '17 0 * * *'
     # Backup 30 minutes later, if GitHub drops a scheduled event.
-    # Normal delivery ledger and 7-hour cooldown prevent extra Discord posts.
-    - cron: '47 0,12 * * *'
+    # Daily delivery cap and persisted ledger prevent a duplicate post.
+    - cron: '47 0 * * *'
   workflow_dispatch:
     inputs:
       discord_send:
-        description: 'Post Discord digest now (requires DISCORD_WEBHOOK_URL; sends 1-3 unseen stories)'
+        description: 'Post Discord digest now (requires DISCORD_WEBHOOK_URL; sends the single top unseen story)'
         type: boolean
         required: false
         default: false
