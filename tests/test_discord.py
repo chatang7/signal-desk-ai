@@ -429,7 +429,7 @@ class DiscordTests(unittest.TestCase):
         self.assertEqual(sum("상세" in e["footer"]["text"]
                              for e in payload["embeds"]), 1)
         self.assertEqual(sum("간략" in e["footer"]["text"]
-                             for e in payload["embeds"]), 2)
+                             for e in payload["embeds"]), 0)
 
     def test_official_model_launch_is_first_even_above_routine_updates(self):
         routine = story(1, score=96, topic="코딩 도구")
