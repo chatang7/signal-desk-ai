@@ -1,6 +1,6 @@
 {
   "schema": "signal-desk-public-feed-v1",
-  "generatedAt": "2026-11-12T20:28:33.262973+00:00",
+  "generatedAt": "2026-11-13T04:56:34.884334+00:00",
   "successfulSources": 22,
   "failedSources": 0,
   "sources": [
@@ -52,17 +52,17 @@
     {
       "source": "Google AI 블로그",
       "ok": true,
-      "count": 8
+      "count": 7
     },
     {
       "source": "Google DeepMind",
       "ok": true,
-      "count": 6
+      "count": 5
     },
     {
       "source": "카카오테크",
       "ok": true,
-      "count": 1
+      "count": 0
     },
     {
       "source": "네이버 D2",
@@ -72,7 +72,7 @@
     {
       "source": "Google Research",
       "ok": true,
-      "count": 3
+      "count": 2
     },
     {
       "source": "Hugging Face 블로그",
@@ -82,17 +82,17 @@
     {
       "source": "Mistral AI",
       "ok": true,
-      "count": 1
+      "count": 0
     },
     {
       "source": "NVIDIA 개발자",
       "ok": true,
-      "count": 7
+      "count": 5
     },
     {
       "source": "Microsoft Research",
       "ok": true,
-      "count": 2
+      "count": 1
     },
     {
       "source": "GitHub Copilot",
@@ -116,6 +116,130 @@
     }
   ],
   "items": [
+    {
+      "id": "feed-dbaa9ef5d2d58994f712be",
+      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217353",
+      "title": "트럼프 \"젠슨 황 후임은 팀 쿡\"…엔비디아, 차기 CEO 물색 본격화",
+      "topic": "반도체",
+      "region": "한국",
+      "date": "2026-11-13",
+      "summary": "도널드 트럼프 미국 대통령이 젠슨 황의 뒤를 이을 엔비디아 CEO로 팀 쿡 전 애플 CEO를 공개 추천했다. 엔비디아가 외부 전문업체와 함께 정식 후임자를 찾고 있는 가운데, 이안 벅과 르네 하스 등 반도체 업계 인사들도 후보로 거론되고 있다.트럼프 대통령은 12일(현지시간) 트루스소셜을 통해 쿡 전 CEO를 엔비디아의 차기 수장으로 추천했다. \"훌륭한 일을 해 온 젠슨 황이 사임한 지금, 그를 대신할 사람은 애플의 팀 쿡뿐\"이라며 \"전설이 전설을 대신한다\"라고 밝혔다.쿡은 지난 9월 15년간 맡아 온 애플 CEO에서 물러나 현재",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217353"
+      ],
+      "importance": 3,
+      "reliability": 2,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
+      "sourceType": "secondary",
+      "relatedSources": [
+        "AI타임스 (보도)"
+      ]
+    },
+    {
+      "id": "feed-be1d9af99a785daa4b79f5",
+      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217033",
+      "title": "[AI리더의 서가] AI 컴플라이언스 실무가이드",
+      "topic": "미정",
+      "region": "한국",
+      "date": "2026-11-13",
+      "summary": "AI 컴플라이언스 실무가이드법무법인 화우 AI센터 | 법률신문사2026년 7월 30일추천이유기업이 AI를 안전하게 개발하고 운영하기 위해 알아야 할 법적 리스크와 대응 방안을 종합적으로 제시합니다. 저자는 한국과 EU, 미국 등의 규제를 비교하고 헬스케어·금융·자율주행 등 산업별 쟁점을 분석하며, 즉시 활용 가능한 가이드라인과 체크리스트를 제공합니다.상세보기 연말은 기업이 내년 사업계획을 짜는 시기다. 올해는 계획서에 새 항목이 하나 더 붙는다. 지난 1월 22일 「 인공지능 발전과 신뢰 기반 조성 등에 관한 기본법 」, 이른바 A",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217033"
+      ],
+      "importance": 3,
+      "reliability": 2,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
+      "sourceType": "secondary",
+      "relatedSources": [
+        "AI타임스 (보도)"
+      ]
+    },
+    {
+      "id": "feed-716462c9ff2bd5117e1905",
+      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217352",
+      "title": "구글, '제미나이 4 하이드로젠' 출시…상위 모델 '아르곤' 성능 추월",
+      "topic": "미정",
+      "region": "한국",
+      "date": "2026-11-13",
+      "summary": "구글이 빠른 처리 속도와 AI 에이전트 작업에 특화된 '제미나이 4 하이드로젠(Gemini 4 Hydrogen)'을 출시했다. 기존 경량 모델보다 작업 완료 속도가 2.5배 빨라졌으며, 외부 종합 성능 평가에서는 상위 모델인 '제미나이 4 아르곤'을 앞서는 성적을 기록했다.구글은 12일(현지시간) 공식 블로그를 통해 하이드로젠을 공개하고 구글 AI 스튜디오와 API, 제미나이 앱, 검색 등에 제공하기 시작했다고 밝혔다. 복잡한 추론에 특화된 '카본'과 아르곤에 이어 코딩과 반복적인 업무를 빠르게 처리하는 모델을 추가한 것이다.하이드",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217352"
+      ],
+      "importance": 3,
+      "reliability": 2,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
+      "sourceType": "secondary",
+      "relatedSources": [
+        "AI타임스 (보도)"
+      ]
+    },
+    {
+      "id": "feed-6fd8a081b7a83e4dadb6d3",
+      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217375",
+      "title": "앨리스 황, 딥시크 투자·화웨이 사업 연관…젠슨 황에 소개한 인물은 남편",
+      "topic": "AI 기업",
+      "region": "한국",
+      "date": "2026-11-13",
+      "summary": "중국 정보기관의 정보 수집에 관여했다는 의혹을 받는 앨리스 황이 중국 AI 기업 딥시크에 투자한 기업들과 연결돼 있고, 엔비디아의 경쟁사인 화웨이와도 사업적 관계를 맺었던 것으로 드러났다. 특히 젠슨 황 전 엔비디아 CEO에게 그를 소개한 사람이 남편이었다는 사실까지 알려지면서, 중국 정보기관의 접근 의혹과 첨단 AI 반도체를 둘러싼 사업적 이해관계에 관심이 쏠리고 있다.월스트리트저널(WSJ)은 12일(현지시간) 중국 사업가 캉웨이가 약 10년 동안 알고 지낸 젠슨 황에게 자신의 아내를 소개했다고 보도했다.부부를 아는 관계자들에 따",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217375"
+      ],
+      "importance": 3,
+      "reliability": 2,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
+      "sourceType": "secondary",
+      "relatedSources": [
+        "AI타임스 (보도)"
+      ]
+    },
     {
       "id": "feed-63bd078a8755ac74f487c6",
       "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217348",
@@ -147,6 +271,98 @@
         "AI타임스 (보도)"
       ],
       "duplicateCount": 1
+    },
+    {
+      "id": "feed-4d6f90f319e13fbe6a0b44",
+      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217374",
+      "title": "중국 광군제서 AI 쇼핑 급증…상품 검색부터 구매까지 지원",
+      "topic": "미정",
+      "region": "한국",
+      "date": "2026-11-13",
+      "summary": "중국 최대 쇼핑 행사인 광군제에서 AI가 상품을 검색하고 구매를 돕는 새로운 쇼핑 수단으로 떠올랐다. AI 쇼핑 도우미 이용자가 급증하고 AI 기기와 모델 이용권 판매도 크게 늘어나면서, 지난해 미국 블랙프라이데이에 이어 중국에서도 AI가 온라인 소비에 미치는 영향이 커지고 있다.로이터는 12일(현지시간) 올해 중국 광군제에서 AI 쇼핑 도우미와 AI 관련 제품의 판매가 크게 늘어났다고 보도했다. 알리바바와 징둥(JD.com) 등 주요 전자상거래 업체들이 AI를 활용한 상품 검색과 추천, 구매 지원 기능을 강화하면서 쇼핑 방식에도",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217374"
+      ],
+      "importance": 3,
+      "reliability": 2,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
+      "sourceType": "secondary",
+      "relatedSources": [
+        "AI타임스 (보도)"
+      ]
+    },
+    {
+      "id": "feed-49f7195f6cac8922ef73f9",
+      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217371",
+      "title": "스페이스X, 100조 규모 AI 데이터센터 투자…애리조나에 6GW 추가",
+      "topic": "AI 기업",
+      "region": "한국",
+      "date": "2026-11-13",
+      "summary": "스페이스X가 미국 텍사스와 애리조나에 총 740억달러(약 100조원) 이상을 투자하는 AI 슈퍼컴퓨팅 시설 건설 계획을 공식 발표했다. 앞서 알려진 텍사스의 240억달러 규모 데이터센터·가스발전소 사업과 함께 애리조나에 500억달러를 투입해 최대 6기가와트(GW)의 전력을 사용하는 대규모 AI 캠퍼스를 조성할 계획이다.스페이스X는 12일(현지시간) 홈페이지를 통해 두 지역의 AI 인프라 투자 계획을 공개했다. 텍사스 사업은 지난 9일 지방정부에 재산세 감면을 요청하면서 알려졌으며, 애리조나 사업도 이달 초 지역 주민설명회를 통해 공",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217371"
+      ],
+      "importance": 3,
+      "reliability": 2,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
+      "sourceType": "secondary",
+      "relatedSources": [
+        "AI타임스 (보도)"
+      ]
+    },
+    {
+      "id": "feed-05ec462beea10d8e56a09f",
+      "externalId": "github:openai/codex:443793906",
+      "title": "Codex · 0.168.0",
+      "topic": "코딩 도구",
+      "region": "해외",
+      "date": "2026-11-13",
+      "summary": "## New Features - Browse model providers under Sessions → Model providers and choose the default for new chats. (#59541, #59722) - Enable `features.tui_workspace` to view a side conversation beside the main chat. Drag the divider to resize the panes or press `leader z` to zoom the focused pane. (#58992, #59527, #59595) - Attach recordings when using an audio-capable model. Codex skips confirmed rejected recordings on later turns and uses clip duration to keep more short recordings in context. (#",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://github.com/openai/codex/releases/tag/rust-v0.168.0"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "GitHub · Codex",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
+      "relatedSources": [
+        "GitHub · Codex"
+      ]
     },
     {
       "id": "feed-eb685d1e8a0c930ce09385",
@@ -268,7 +484,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -299,7 +515,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Google AI 블로그"
       ],
@@ -330,11 +546,71 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
       "duplicateCount": 1
+    },
+    {
+      "id": "feed-ca75d1f1a93ab096c40a43",
+      "externalId": "github:anthropics/claude-code:443483677",
+      "title": "Claude Code · v2.1.323",
+      "topic": "코딩 도구",
+      "region": "해외",
+      "date": "2026-11-12",
+      "summary": "## What's changed - Added Code Mode, an experimental opt-in in which Claude writes JavaScript to call its tools; see https://code.claude.com/docs/en/code-mode to turn it on, or to turn it off for an organization - Added `engines[\"claude-code\"]` to `plugin.json`: plugins outside their stated Claude Code version range are not installed, updated or loaded, and install and update pick the newest version that fits - Added type checking of a plugin's TypeScript hooks module to `claude plugin validate`",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.323"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "GitHub · Claude Code",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
+      "relatedSources": [
+        "GitHub · Claude Code"
+      ]
+    },
+    {
+      "id": "feed-b9840fd67063a36a400d5e",
+      "externalId": "https://openai.com/business/customer-stories/gondola",
+      "title": "Gondola doubles revenue as its team builds more with Codex",
+      "topic": "코딩 도구",
+      "region": "해외",
+      "date": "2026-11-12",
+      "summary": "Gondola helps creatives get credit and get hired, with Codex raising its lead engineer’s output by 50% and ChatGPT simplifying daily work.",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://openai.com/business/customer-stories/gondola"
+      ],
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "OpenAI 공식 발표",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
+      "relatedSources": [
+        "OpenAI 공식 발표"
+      ]
     },
     {
       "id": "feed-b7fb0244747d18899f144d",
@@ -414,7 +690,8 @@
       "cost": "",
       "performance": "",
       "urls": [
-        "https://openai.com/index/amplitude"
+        "https://openai.com/index/amplitude",
+        "https://openai.com/business/customer-stories/amplitude"
       ],
       "importance": 3,
       "reliability": 4,
@@ -428,7 +705,8 @@
       "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
-      ]
+      ],
+      "duplicateCount": 1
     },
     {
       "id": "feed-84ec87286cb35a64f463f0",
@@ -455,7 +733,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -550,7 +828,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -612,7 +890,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google DeepMind",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Google DeepMind"
       ],
@@ -643,7 +921,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -802,7 +1080,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "네이버 D2",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "네이버 D2"
       ],
@@ -961,7 +1239,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Google AI 블로그"
       ],
@@ -992,7 +1270,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google Research",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Google Research"
       ],
@@ -1086,7 +1364,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google DeepMind",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Google DeepMind"
       ],
@@ -1149,7 +1427,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub Copilot",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "GitHub Copilot"
       ],
@@ -1180,7 +1458,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -1441,6 +1719,36 @@
       "duplicateCount": 1
     },
     {
+      "id": "feed-57c683f1b35d4f0b034cb5",
+      "externalId": "arxiv:2611.15131",
+      "title": "Duo: A Reciprocal World Model for Full-Duplex Interaction",
+      "topic": "연구·논문",
+      "region": "해외",
+      "date": "2026-11-11",
+      "summary": "In this report, we introduce the Reciprocal World Model (RWM) and present Duo v1, a full-duplex world model that continuously perceives audiovisual inputs while responding to users in real time. The RWM treats intelligence and physical reality as equally fundamental to what constitutes a world. Existing world models largely focus on simulating the latter, leaving reasoning and decision-making as external controls rather than intrinsic parts of the world itself. In RWM, we identify two equally fu",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://arxiv.org/abs/2611.15131"
+      ],
+      "importance": 3,
+      "reliability": 3,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face Daily Papers",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
+    },
+    {
       "id": "feed-55ff14dc4213127df72a80",
       "externalId": "https://openai.com/index/jiostar-vijay-seshadri",
       "title": "JioStar’s chief architect on AI discovery at 500M-user scale",
@@ -1465,7 +1773,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -1527,7 +1835,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "NVIDIA 개발자",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "NVIDIA 개발자"
       ],
@@ -1621,7 +1929,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Google AI 블로그"
       ],
@@ -1684,7 +1992,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -1715,7 +2023,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -1746,7 +2054,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Google AI 블로그"
       ],
@@ -1803,13 +2111,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Google AI 블로그"
       ],
@@ -1990,13 +2298,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Google AI 블로그"
       ],
@@ -2146,13 +2454,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Microsoft Research",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Microsoft Research"
       ],
@@ -2177,13 +2485,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub Copilot",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "GitHub Copilot"
       ],
@@ -2208,13 +2516,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -2239,13 +2547,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Google AI 블로그"
       ],
@@ -2458,13 +2766,13 @@
       "importance": 3,
       "reliability": 3,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
@@ -2489,13 +2797,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · ComfyUI",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "GitHub · ComfyUI"
       ],
@@ -2520,13 +2828,13 @@
       "importance": 3,
       "reliability": 3,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
@@ -2551,13 +2859,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "NVIDIA 개발자",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "NVIDIA 개발자"
       ],
@@ -2646,13 +2954,13 @@
       "importance": 3,
       "reliability": 3,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
@@ -2708,13 +3016,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -2770,13 +3078,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "네이버 D2",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "네이버 D2"
       ],
@@ -2895,13 +3203,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -2958,13 +3266,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Claude Code",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "GitHub · Claude Code"
       ],
@@ -2989,13 +3297,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -3051,13 +3359,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "NVIDIA 개발자",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "NVIDIA 개발자"
       ],
@@ -3082,13 +3390,13 @@
       "importance": 3,
       "reliability": 3,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
@@ -3144,17 +3452,47 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google DeepMind",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Google DeepMind"
       ],
       "duplicateCount": 1
+    },
+    {
+      "id": "feed-54cca1cbc5ed30a4ac17d1",
+      "externalId": "arxiv:2611.14815",
+      "title": "BirdDreams: Joint Perspective and BEV Video Generation for a Plausible, Reactive Driving World Model",
+      "topic": "연구·논문",
+      "region": "해외",
+      "date": "2026-11-10",
+      "summary": "Driving world models aim to simulate how a scene unfolds under different ego actions. This requires plausible motion of surrounding vehicles as well as precise ego-trajectory control. Learning vehicle motion from perspective video alone is challenging because motion is entangled with appearance and vehicles can be occluded. Prior work therefore conditions video generation on layouts that specify vehicle motion, providing control over surrounding vehicles but requiring their future trajectories a",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://arxiv.org/abs/2611.14815"
+      ],
+      "importance": 3,
+      "reliability": 3,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face Daily Papers",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
     },
     {
       "id": "feed-4fb1ae291bfddb878af97b",
@@ -3300,13 +3638,13 @@
       "importance": 3,
       "reliability": 3,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
@@ -3331,13 +3669,13 @@
       "importance": 3,
       "reliability": 3,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
@@ -3393,13 +3731,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "NVIDIA 개발자",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "NVIDIA 개발자"
       ],
@@ -3424,13 +3762,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Gemini CLI",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "GitHub · Gemini CLI"
       ],
@@ -3517,13 +3855,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -3548,13 +3886,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google DeepMind",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Google DeepMind"
       ],
@@ -3736,13 +4074,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "NVIDIA 개발자",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "NVIDIA 개발자"
       ],
@@ -3804,7 +4142,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Ollama",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "GitHub · Ollama"
       ],
@@ -4209,7 +4547,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -4333,7 +4671,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub Copilot",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "GitHub Copilot"
       ],
@@ -4459,7 +4797,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
@@ -4490,7 +4828,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
@@ -4553,7 +4891,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google DeepMind",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Google DeepMind"
       ],
@@ -4584,7 +4922,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Claude Code",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "GitHub · Claude Code"
       ],
@@ -4647,7 +4985,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -5146,7 +5484,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google Research",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Google Research"
       ],
@@ -5215,6 +5553,66 @@
       "duplicateCount": 1
     },
     {
+      "id": "feed-73a7d086669e4908a69e52",
+      "externalId": "arxiv:2611.13004",
+      "title": "G-STAR: Group-Scaled Token Capacity for Deeply Compressed Autoregressive Generation",
+      "topic": "연구·논문",
+      "region": "해외",
+      "date": "2026-11-08",
+      "summary": "Discrete autoregressive models offer a scalable framework for image generation. However, they face a fundamental trade-off: long token sequences preserve representation quality but slow generation, while aggressive spatial compression reduces representation capacity. Based on product quantization, we show that, under a fixed nominal information budget, group size should scale quadratically with the per-axis spatial compression factor. Building on this principle, we propose GSTAR, a spatial--grou",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://arxiv.org/abs/2611.13004"
+      ],
+      "importance": 3,
+      "reliability": 3,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face Daily Papers",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
+    },
+    {
+      "id": "feed-600c4fb4e5ca184259b46c",
+      "externalId": "arxiv:2611.11531",
+      "title": "Probing Transformer Representations Layer by Layer, Module by Module",
+      "topic": "연구·논문",
+      "region": "해외",
+      "date": "2026-11-08",
+      "summary": "Which representation should be probed in a transformer-based foundation model? Recent work shows that the standard practice of probing the final layer is often suboptimal, as intermediate layers can provide better features. Yet, representations are still largely studied along depth alone, treating each transformer block as an atomic unit. In this work, we analyze transformer representations layer by layer, module by module. Through more than 144,000 linear probing evaluations of vision foundatio",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://arxiv.org/abs/2611.11531"
+      ],
+      "importance": 3,
+      "reliability": 3,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face Daily Papers",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
+    },
+    {
       "id": "feed-cc9249299f5d778e839bcc",
       "externalId": "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates",
       "title": "Copilot code review: API management and review overview updates",
@@ -5239,7 +5637,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub Copilot",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "GitHub Copilot"
       ],
@@ -5824,7 +6222,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub Copilot",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "GitHub Copilot"
       ],
@@ -5979,7 +6377,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Transformers",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "GitHub · Transformers"
       ],
@@ -6134,7 +6532,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -6195,7 +6593,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub Copilot",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "GitHub Copilot"
       ],
@@ -6380,7 +6778,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub Copilot",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "GitHub Copilot"
       ],
@@ -6411,7 +6809,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub Copilot",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "GitHub Copilot"
       ],
@@ -6504,7 +6902,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -6535,7 +6933,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub Copilot",
-      "sourceCheckedAt": "2026-11-12T20:28:33.262973+00:00",
+      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
       "relatedSources": [
         "GitHub Copilot"
       ],
@@ -9156,8 +9554,8 @@
     "freshIntakeDays": 7,
     "archiveDays": 35,
     "nearDuplicateRule": "strict-title-and-number",
-    "incoming": 86,
-    "unique": 291,
-    "previous": 290
+    "incoming": 78,
+    "unique": 304,
+    "previous": 291
   }
 }
