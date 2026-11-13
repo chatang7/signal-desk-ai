@@ -22,12 +22,12 @@ ROOT = Path(__file__).resolve().parents[1]
 FEED = ROOT / "data" / "briefing.json"
 STATE = ROOT / "data" / "discord_state.json"
 KST = dt.timezone(dt.timedelta(hours=9))
-MAX_STORIES = 3
+MAX_STORIES = 1
 MIN_STORIES = 1
 MIN_SCORE = 62
 MAX_NEWS_AGE_DAYS = 3
 MIN_HOURS_BETWEEN_POSTS = 7
-MAX_SENDS_PER_DAY = 2
+MAX_SENDS_PER_DAY = 1
 WEBHOOK_USERNAME = "[가시춘의 홍원 가십]"
 
 
@@ -444,8 +444,7 @@ def payload_for(items: list, when: dt.datetime, state: dict | None = None) -> di
     return {
         "username": WEBHOOK_USERNAME,
         "content": ("🌸 **SIGNAL DESK | 오늘의 AI 소식**  " + date + "\n"
-                    + str(len(embeds)) + "건 중 " + str(num_featured)
-                    + "건은 자세히 골랐어. " + opening + "\n"
+                    + "가장 중요한 소식 1건을 자세히 골랐어. " + opening + "\n"
                     "*가상 진행자의 평가는 사실과 별개야. 발표사의 주장과 독립 검증도 구분해.*"),
         "embeds": embeds,
         "allowed_mentions": {"parse": []},
