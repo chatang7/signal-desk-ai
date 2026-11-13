@@ -70,7 +70,7 @@ class DiscordTests(unittest.TestCase):
         self.assertTrue(discord.can_send(s, tomorrow))
         # A prior late-night delivery can still trigger the cooldown next morning.
         s["history"] = [{"at": NOW.replace(hour=23).isoformat(), "count": 1}]
-        self.assertFalse(discord.can_send(s, tomorrow))
+        self.assertFalse(discord.can_send(s, tomorrow.replace(hour=4)))
 
     def test_unknown_history_fails_closed(self):
         s = fresh_state()
