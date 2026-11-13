@@ -35,12 +35,13 @@ class DiscordTests(unittest.TestCase):
         items = [story(1), story(2, "2026-11-05"), story(3, "2026-11-11"),
                  story(4, score=50), story(5), story(6)]
         selected = discord.pick(items, fresh_state(), NOW.date())
-        self.assertEqual({i["id"] for i in selected}, {"feed-1", "feed-5", "feed-6"})
+        self.assertEqual(len(selected), 1)
+        self.assertIn(selected[0]["id"], {"feed-1", "feed-5", "feed-6"})
 
-    def test_one_or_two_important_stories_are_allowed(self):
-        for count in (1, 2):
+    def test_one_article_cap_even_when_multiple_eligible(self):
+        for count in (1, 2, 5):
             items = [story(i) for i in range(count)]
-            self.assertEqual(len(discord.pick(items, fresh_state(), NOW.date())), count)
+            self.assertEqual(len(discord.pick(items, fresh_state(), NOW.date())), 1)
         self.assertEqual(discord.pick([], fresh_state(), NOW.date()), [])
         self.assertEqual(discord.pick([story(1, score=50)], fresh_state(), NOW.date()), [])
 
@@ -53,20 +54,23 @@ class DiscordTests(unittest.TestCase):
     def test_caps_source_and_topic(self):
         items = [story(i, source="one", topic="same") for i in range(6)]
         selected = discord.pick(items, fresh_state(), NOW.date())
-        self.assertEqual(len(selected), 2)
-        self.assertTrue(all(x["sourceLabel"] == "one" for x in selected))
+        self.assertEqual(len(selected), 1)
+        self.assertEqual(selected[0]["sourceLabel"], "one")
 
     def test_cooldown_and_daily_limit(self):
+        self.assertEqual(discord.MAX_SENDS_PER_DAY, 1)
         s = fresh_state()
         self.assertTrue(discord.can_send(s, NOW))
-        s["history"].append({"at": (NOW-dt.timedelta(hours=2)).isoformat(), "count": 3})
-        self.assertFalse(discord.can_send(s, NOW))
+        # Even after 7+ hours have passed, the second real daily send is blocked.
+        s["history"].append({"at": NOW.isoformat(), "count": 1})
         evening = NOW.replace(hour=23)
-        s["history"] = [
-            {"at": (evening-dt.timedelta(hours=18)).isoformat(), "count": 3},
-            {"at": (evening-dt.timedelta(hours=9)).isoformat(), "count": 3},
-        ]
         self.assertFalse(discord.can_send(s, evening))
+        # A new Korean calendar day after the cooldown becomes eligible.
+        tomorrow = NOW + dt.timedelta(days=1)
+        self.assertTrue(discord.can_send(s, tomorrow))
+        # A prior late-night delivery can still trigger the cooldown next morning.
+        s["history"] = [{"at": NOW.replace(hour=23).isoformat(), "count": 1}]
+        self.assertFalse(discord.can_send(s, tomorrow))
 
     def test_unknown_history_fails_closed(self):
         s = fresh_state()
@@ -91,7 +95,7 @@ class DiscordTests(unittest.TestCase):
         self.assertEqual(payload["username"], "[가시춘의 홍원 가십]")
         self.assertEqual(payload["allowed_mentions"], {"parse": []})
         self.assertLessEqual(len(payload["content"]), 2000)
-        self.assertEqual(len(payload["embeds"]), 3)
+        self.assertEqual(len(payload["embeds"]), 1)
         self.assertTrue(all(len(e["title"]) <= 256 and len(e["description"]) <= 4096
                             for e in payload["embeds"]))
         self.assertNotIn("@everyone", json.dumps(payload))
@@ -103,7 +107,7 @@ class DiscordTests(unittest.TestCase):
         report = discord.deliver({"items": [story(i) for i in range(5)]},
                                  fresh_state(), "", NOW, dry_run=True, sender=forbidden)
         self.assertEqual(report["status"], "preview")
-        self.assertEqual(report["count"], 3)
+        self.assertEqual(report["count"], 1)
 
     def test_success_records_and_repeat_skips(self):
         state = fresh_state()
@@ -115,12 +119,14 @@ class DiscordTests(unittest.TestCase):
         report = discord.deliver({"items": posts}, state,
             "https://discord.com/api/webhooks/12345/valid_token", NOW, sender=fake_send)
         self.assertEqual(report["status"], "sent")
-        self.assertEqual(report["count"], 3)
-        self.assertEqual(len(state["posted"]), 3)
+        self.assertEqual(report["count"], 1)
+        self.assertEqual(len(state["posted"]), 1)
+        self.assertEqual(len(sent[0]["embeds"]), 1)
         self.assertEqual(state["history"][0]["messageId"], "123456789012345678")
-        later = NOW+dt.timedelta(hours=12)
-        self.assertEqual(discord.deliver({"items": posts}, state, "", later,
-                                         dry_run=True)["status"], "no_new_stories")
+        later_same_day = NOW.replace(hour=23)
+        # Even if fresh items remain, a second normal delivery is forbidden.
+        self.assertEqual(discord.deliver({"items": posts}, state, "", later_same_day,
+                                         dry_run=True)["status"], "cooldown")
         self.assertEqual(len(sent), 1)
 
     def test_failed_send_keeps_ledger_unchanged(self):
@@ -141,10 +147,10 @@ class DiscordTests(unittest.TestCase):
         self.assertEqual(discord.mood_for(serious), "serious")
         msg = discord.payload_for([curious, skeptical, serious], NOW)
         self.assertIn("SIGNAL DESK", msg["content"])
-        self.assertEqual(len({x["color"] for x in msg["embeds"]}), 3)
-        self.assertTrue(all("내 평가" in x["description"] or "한마디" in x["description"]
-                            for x in msg["embeds"]))
-        self.assertTrue(all(x["url"].startswith("https://") for x in msg["embeds"]))
+        self.assertEqual(len(msg["embeds"]), 1)
+        self.assertEqual(msg["embeds"][0]["color"], discord.MOOD_COLORS["curious"])
+        self.assertIn("내 평가", msg["embeds"][0]["description"])
+        self.assertTrue(msg["embeds"][0]["url"].startswith("https://"))
 
     def test_gemini_editorial_voice_and_sensitive_override(self):
         item = story(10, topic="에이전트")
@@ -192,39 +198,35 @@ class DiscordTests(unittest.TestCase):
             "https://discord.com/api/webhooks/12345/valid_token", NOW,
             sender=lambda url, payload: sent.append(payload) or "123456789012345678")
         self.assertEqual(result["status"], "sent")
-        self.assertEqual(state["totalPosted"], 20)
-        self.assertEqual(state["loreMentions"]["hongwonAt"], 20)
-        self.assertEqual(len(state["posted"]), 3)
-        self.assertEqual(len(sent), 1)
+        self.assertEqual(state["totalPosted"], 18)
+        self.assertEqual(state["loreMentions"]["hongwonAt"], 18)
+        self.assertEqual(len(state["posted"]), 1)
+        self.assertEqual(len(sent[0]["embeds"]), 1)
 
-    def test_three_story_hybrid_is_one_featured_two_medium(self):
+    def test_one_story_is_always_detailed(self):
         items = [story(i) for i in range(5)]
         payload = discord.payload_for(items, NOW)
-        self.assertEqual(len(payload["embeds"]), 3)
+        self.assertEqual(len(payload["embeds"]), 1)
         self.assertEqual(sum("상세" in e["footer"]["text"] for e in payload["embeds"]), 1)
-        self.assertEqual(sum("간략" in e["footer"]["text"] for e in payload["embeds"]), 2)
+        self.assertEqual(sum("간략" in e["footer"]["text"] for e in payload["embeds"]), 0)
         self.assertIn("무슨 소란이지?", payload["embeds"][0]["description"])
         self.assertIn("실속은?", [x["name"] for x in payload["embeds"][0]["fields"]])
-        self.assertIn("핵심", payload["embeds"][2]["description"])
-        self.assertIn("쓸모는 있겠지?", [x["name"] for x in payload["embeds"][2]["fields"]])
-        self.assertIn("1건은 자세히", payload["content"])
+        self.assertIn("가장 중요한 소식 1건", payload["content"])
 
-    def test_one_to_three_story_hybrid_keeps_one_featured(self):
+    def test_one_story_cap_applies_to_any_input_length(self):
         for size in (1, 2, 3, 4, 5):
             payload = discord.payload_for([story(i) for i in range(size)], NOW)
-            self.assertEqual(len(payload["embeds"]), min(size, 3))
+            self.assertEqual(len(payload["embeds"]), 1)
             self.assertEqual(sum("상세" in x["footer"]["text"]
                                  for x in payload["embeds"]), 1)
             self.assertEqual(sum("간략" in x["footer"]["text"]
-                                 for x in payload["embeds"]), min(size, 3) - 1)
+                                 for x in payload["embeds"]), 0)
 
     def test_specific_comparison_only_shown_when_grounded(self):
         items = [story(i) for i in range(5)]
         items[0]["difference"] = "기존 기술 대비 구체적인 차이는 수집된 원문에서 미확인"
-        items[1]["difference"] = "기존 대비 공식 시험에서 대기 시간이 줄었다고 발표함."
         payload = discord.payload_for(items, NOW)
         self.assertNotIn("뭐가 다른데?", [x["name"] for x in payload["embeds"][0]["fields"]])
-        self.assertNotIn("뭐가 다른데?", [x["name"] for x in payload["embeds"][1]["fields"]])
         items[0]["difference"] = "공식 시험에서 기존 대비 대기 시간이 줄었다고 발표함."
         amended = discord.payload_for(items, NOW)
         self.assertIn("뭐가 다른데?", [x["name"] for x in amended["embeds"][0]["fields"]])
@@ -235,14 +237,12 @@ class DiscordTests(unittest.TestCase):
                          "cost": "원문 언급: 무료 공개", "performance": "미확인",
                          "why": "확인해야 하는 이유: 모델 배포 비용 절감",
                          "date": "2026-11-10"})
-        items[1]["sourceType"] = "secondary"
         payload = discord.payload_for(items, NOW)
         first = payload["embeds"][0]
         self.assertIn("2026-11-10 · 공식 발표 · 원문", first["footer"]["text"])
         self.assertIn("내 평가", first["description"])
         self.assertIn("무슨 소란이지?", first["description"])
         self.assertIn("무료 공개", str(first["fields"]))
-        self.assertIn("보도", payload["embeds"][1]["footer"]["text"])
         self.assertEqual(first["url"], "https://example.com/article/0")
 
     def test_discord_total_embed_limit_five_long_stories(self):
@@ -267,7 +267,7 @@ class DiscordTests(unittest.TestCase):
         items[1]["title"] = "무료 오픈소스 Windows 로컬 AI 도구"
         selected = discord.pick(items, fresh_state(), NOW.date())
         self.assertEqual(selected[0]["id"], "feed-2")
-        self.assertEqual(len(selected), 3)
+        self.assertEqual(len(selected), 1)
 
     def test_old_or_future_news_not_sent(self):
         items = [story(1, "2026-11-06"), story(2, "2026-11-11")]
@@ -284,12 +284,12 @@ class DiscordTests(unittest.TestCase):
         report = discord.send_labeled_test(
             {"items": rows}, "https://discord.com/api/webhooks/12345/valid_token", NOW,
             sender=lambda url, payload: outbound.append((url, payload)) or "123456789012345678")
-        self.assertEqual(report, {"status": "test_sent", "count": 3})
+        self.assertEqual(report, {"status": "test_sent", "count": 1})
         self.assertEqual(len(outbound), 1)
         self.assertIn("[테스트 전송", outbound[0][1]["content"])
         self.assertEqual(outbound[0][1]["username"], discord.WEBHOOK_USERNAME)
         self.assertEqual(sum("상세" in x["footer"]["text"] for x in outbound[0][1]["embeds"]), 1)
-        self.assertEqual(sum("간략" in x["footer"]["text"] for x in outbound[0][1]["embeds"]), 2)
+        self.assertEqual(sum("간략" in x["footer"]["text"] for x in outbound[0][1]["embeds"]), 0)
         self.assertEqual(outbound[0][1]["allowed_mentions"], {"parse": []})
         self.assertEqual(json.dumps(history, sort_keys=True), before)
 
@@ -372,15 +372,14 @@ class DiscordTests(unittest.TestCase):
         item["topic"] = "미정"
         self.assertEqual(discord.story_type(item), "뉴스")
 
-    def test_content_type_in_medium_and_featured_titles(self):
+    def test_content_type_in_single_featured_title(self):
         items = [story(i) for i in range(5)]
         items[0].update({"topic": "연구·논문",
                          "urls": ["https://arxiv.org/abs/2611.12345"]})
         items[2].update({"title": "Data set for voice agents", "topic": "미정"})
         payload = discord.payload_for(items, NOW)
         self.assertTrue(payload["embeds"][0]["title"].startswith("📄 [논문] "))
-        self.assertTrue(payload["embeds"][2]["title"].startswith("🗂 [데이터셋] "))
-        self.assertEqual(len(payload["embeds"]), 3)
+        self.assertEqual(len(payload["embeds"]), 1)
 
     def test_clean_editorial_style_has_no_emoji_clutter(self):
         items = [story(i) for i in range(5)]
@@ -395,7 +394,7 @@ class DiscordTests(unittest.TestCase):
                      for f in e["fields"] for icon in ("🌸", "🌺", "⚔️", "🛠", "💰"))
                      for _ in (0,)))
         self.assertEqual(sum("상세" in e["footer"]["text"] for e in payload["embeds"]), 1)
-        self.assertEqual(sum("간략" in e["footer"]["text"] for e in payload["embeds"]), 2)
+        self.assertEqual(sum("간략" in e["footer"]["text"] for e in payload["embeds"]), 0)
 
     def test_exactly_one_type_icon_in_each_headline_and_banner_flower(self):
         cases = [
@@ -440,7 +439,7 @@ class DiscordTests(unittest.TestCase):
                        "sourceLabel": "Google DeepMind", "majorLaunch": True})
         second = story(3, score=82, topic="반도체")
         picked = discord.pick([routine, carbon, second], fresh_state(), NOW.date())
-        self.assertEqual(len(picked), 3)
+        self.assertEqual(len(picked), 1)
         self.assertEqual(picked[0]["id"], carbon["id"])
         self.assertTrue(discord.payload_for(picked, NOW)["embeds"][0]["title"]
                         .startswith("🤖 [AI 모델] Gemini 4 Carbon"))
