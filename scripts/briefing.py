@@ -338,12 +338,12 @@ class ArticleImageParser(HTMLParser):
 def confirm_image(url: str, article_url: str) -> bool:
     """HEAD-only media check with redirect controls; no raw image bytes fetched."""
     allowed = lambda candidate: bool(safe_article_image_url(article_url, candidate))
-    opener = urllib.request.build_opener(SourceRedirectGuard(allowed))
-    req = urllib.request.Request(url, method="HEAD", headers={
-        "User-Agent": "SignalDeskImageCheck/1.0",
-        "Accept": "image/avif,image/webp,image/png,image/jpeg,image/gif",
-    })
     try:
+        opener = urllib.request.build_opener(SourceRedirectGuard(allowed))
+        req = urllib.request.Request(url, method="HEAD", headers={
+            "User-Agent": "SignalDeskImageCheck/1.0",
+            "Accept": "image/webp,image/png,image/jpeg,image/gif",
+        })
         with opener.open(req, timeout=5) as response:
             final = response.geturl()
             mime = (response.headers.get("Content-Type") or "").lower().split(";")[0].strip()
@@ -364,11 +364,11 @@ def official_article_image(item: dict) -> tuple[str, str]:
         return rss_image, "RSS 이미지"
 
     # Only fetch official publisher pages, not arbitrary third-party article URLs.
-    opener = urllib.request.build_opener(SourceRedirectGuard(approved_source))
-    request = urllib.request.Request(article_url, headers={
-        "User-Agent": "SignalDeskImageCheck/1.0", "Accept": "text/html",
-    })
     try:
+        opener = urllib.request.build_opener(SourceRedirectGuard(approved_source))
+        request = urllib.request.Request(article_url, headers={
+            "User-Agent": "SignalDeskImageCheck/1.0", "Accept": "text/html",
+        })
         with opener.open(request, timeout=6) as response:
             if not approved_source(response.geturl()):
                 return "", ""
