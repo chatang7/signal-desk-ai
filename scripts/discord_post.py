@@ -363,6 +363,42 @@ def type_prefix(item: dict) -> str:
     return STORY_TYPE_ICON.get(category, "📰") + " [" + category + "] "
 
 
+def safe_embed_image(item: dict, article_url: str) -> str:
+    """Defence-in-depth: only use a verified cover URL tied to this article."""
+    image = item.get("imageUrl")
+    if not isinstance(image, str) or not image or len(image) > 2000:
+        return ""
+    try:
+        page = urllib.parse.urlsplit(article_url)
+        p = urllib.parse.urlsplit(image)
+        host = (p.hostname or "").lower().rstrip(".")
+        article_host = (page.hostname or "").lower().rstrip(".")
+        if p.scheme != "https" or p.username or p.password or p.port not in (None, 443):
+            return ""
+        if not host or not re.fullmatch(r"[a-z0-9.-]+", host) or not any(ch.isalpha() for ch in host):
+            return ""
+        if host.endswith((".local", ".internal", ".localhost")) or p.fragment:
+            return ""
+        if re.search(r"\.svg(?:$|[?])", p.path, re.I):
+            return ""
+        publishers = ("openai.com", "blog.google", "deepmind.google",
+                      "research.google", "github.com", "huggingface.co",
+                      "mistral.ai", "developer.nvidia.com", "microsoft.com",
+                      "tech.kakao.com", "d2.naver.com", "msit.go.kr")
+        publisher = next((d for d in publishers if
+                          article_host == d or article_host.endswith("." + d)), None)
+        if not publisher:
+            return ""
+        cdns = ("gstatic.com", "googleusercontent.com", "storage.googleapis.com",
+                "images.ctfassets.net", "openaicom.imgix.net")
+        if (host == publisher or host.endswith("." + publisher)
+                or any(host == d or host.endswith("." + d) for d in cdns)):
+            return image
+    except (ValueError, TypeError):
+        pass
+    return ""
+
+
 def build_story_embed(item: dict, detailed: bool, lore: str | None = None) -> dict:
     link = next((u for u in item.get("urls", []) if safe_link(u)), "")
     source = safe_text(item.get("sourceLabel") or "출처 미상", 45)
@@ -402,7 +438,8 @@ def build_story_embed(item: dict, detailed: bool, lore: str | None = None) -> di
 
     if lore:
         description += "\n\n*" + safe_text(lore, 145) + "*"
-    return {
+    image = safe_embed_image(item, link)
+    embed = {
         "title": (type_prefix(item) + title)[:150],
         "url": link,
         "description": description,
@@ -410,6 +447,9 @@ def build_story_embed(item: dict, detailed: bool, lore: str | None = None) -> di
         "color": MOOD_COLORS[mood],
         "footer": {"text": safe_text(date + " · " + source + " · " + origin + " · " + ("상세" if detailed else "간략") + " · " + ai, 104)},
     }
+    if image:
+        embed["image"] = {"url": image}
+    return embed
 
 
 def payload_for(items: list, when: dt.datetime, state: dict | None = None) -> dict:
