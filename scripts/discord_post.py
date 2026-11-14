@@ -390,7 +390,8 @@ def safe_embed_image(item: dict, article_url: str) -> str:
         if not publisher:
             return ""
         cdns = ("gstatic.com", "googleusercontent.com", "storage.googleapis.com",
-                "images.ctfassets.net", "openaicom.imgix.net")
+                "images.ctfassets.net", "openaicom.imgix.net",
+                "developer-blogs.nvidia.com", "images.nvidia.com")
         if (host == publisher or host.endswith("." + publisher)
                 or any(host == d or host.endswith("." + d) for d in cdns)):
             return image
@@ -619,12 +620,19 @@ def main(argv=None) -> int:
             draft = payload_for(sample, now_kst(), state)
             detailed = featured_count(len(sample))
             length = sum(embed_text_length(x) for x in draft["embeds"])
+            image_count = sum(bool(embed.get("image")) for embed in draft["embeds"])
             print(f"Discord layout preview: {detailed} detailed + {len(sample)-detailed} medium"
-                  f"; {length}/{DISCORD_MAX_EMBED_TEXT} embed characters; no message sent")
+                  f"; {length}/{DISCORD_MAX_EMBED_TEXT} embed characters"
+                  f"; images {image_count}/{len(draft['embeds'])}; no message sent")
             return 0
         result = deliver(briefing, state, secret, now_kst(), dry_run=False)
         if result["status"] == "sent":
             STATE.write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        if result["status"] == "sent":
+            print("Discord image status: " + ("attached" if any(
+                x.get("imageUrl") for x in briefing.get("items", [])
+                if item_key(x) in state.get("posted", {}) and
+                   state["posted"][item_key(x)] == state["updatedAt"]) else "text_only"))
         print("Discord status: " + result["status"] + " (" + str(result["count"]) + " stories)")
         return 0
     except (ValueError, RuntimeError, OSError, json.JSONDecodeError) as e:
