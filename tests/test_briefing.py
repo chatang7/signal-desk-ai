@@ -163,6 +163,104 @@ class BriefingTests(unittest.TestCase):
         d=b.evidence_draft(x)
         self.assertIn("미확인",d["cost"])
 
+    def test_image_url_must_match_official_publisher_or_trusted_cdn(self):
+        article = "https://deepmind.google/blog/model-launch"
+        self.assertEqual(
+            b.safe_article_image_url(article, "/images/model.webp"),
+            "https://deepmind.google/images/model.webp")
+        self.assertEqual(
+            b.safe_article_image_url(article, "https://lh3.googleusercontent.com/model.png"),
+            "https://lh3.googleusercontent.com/model.png")
+        invalid = [
+            "http://deepmind.google/cover.png",
+            "https://deepmind.google.evil.com/cover.png",
+            "https://127.0.0.1/img.jpg",
+            "https://localhost/img.jpg",
+            "https://deepmind.google@evil.com/img.jpg",
+            "https://deepmind.google:444/img.jpg",
+            "data:image/png;base64,aaa",
+            "//evil.example.com/cover.png",
+            "https://deepmind.google/images/cover.svg",
+            "https://deepmind.google/cover.png#fragment",
+        ]
+        for url in invalid:
+            with self.subTest(url=url):
+                self.assertEqual(b.safe_article_image_url(article, url), "")
+        self.assertEqual(
+            b.safe_article_image_url("https://random.example.com/news", "/img.png"), "")
+
+    def test_meta_parser_prefers_article_og_image_over_twitter_card(self):
+        p = b.ArticleImageParser()
+        p.feed('<html><head><meta name="twitter:image" content="/twitter.png">'
+               '<meta property="og:image" content="/cover.webp">'
+               '<meta property="og:image:secure_url" content="/secure.jpg">'
+               '</head></html>')
+        self.assertEqual(sorted(p.candidates)[0], (0, "/secure.jpg"))
+
+    def test_rss_image_success_needs_only_head_request(self):
+        article = story()
+        article["imageUrl"] = "https://openai.com/images/new-model.webp"
+        with patch.object(b, "confirm_image", return_value=True) as check:
+            url, attribution = b.official_article_image(article)
+        self.assertEqual(url, article["imageUrl"])
+        self.assertEqual(attribution, "RSS 이미지")
+        self.assertEqual(check.call_count, 1)
+
+    def test_no_reachable_image_falls_back_to_text(self):
+        article = story()
+        article["imageUrl"] = "https://bad.example.com/picture.png"
+        with patch.object(b.urllib.request, "build_opener", side_effect=OSError("offline")):
+            self.assertEqual(b.official_article_image(article), ("", ""))
+
+    def test_image_content_type_and_length_are_checked(self):
+        class Response:
+            def __init__(self, mime, size):
+                self.headers = {"Content-Type": mime, "Content-Length": size}
+            def geturl(self):
+                return "https://openai.com/images/model.jpg"
+            def __enter__(self):
+                return self
+            def __exit__(self, *args):
+                return False
+        class Opener:
+            response = None
+            def open(self, req, timeout=0):
+                self.request = req
+                return self.response
+        opener = Opener()
+        article = "https://openai.com/index/model"
+        with patch.object(b.urllib.request, "build_opener", return_value=opener):
+            opener.response = Response("image/jpeg", "20000")
+            self.assertTrue(b.confirm_image("https://openai.com/images/model.jpg", article))
+            self.assertEqual(opener.request.get_method(), "HEAD")
+            opener.response = Response("text/html", "20000")
+            self.assertFalse(b.confirm_image("https://openai.com/images/model.jpg", article))
+            opener.response = Response("image/jpeg", "10000000")
+            self.assertFalse(b.confirm_image("https://openai.com/images/model.jpg", article))
+
+    def test_image_redirect_to_other_host_is_rejected(self):
+        class RedirectRequest:
+            full_url = "https://openai.com/images/model.jpg"
+        guard = b.SourceRedirectGuard(lambda url: bool(
+            b.safe_article_image_url("https://openai.com/index/model", url)))
+        with self.assertRaises(ValueError):
+            guard.redirect_request(
+                RedirectRequest(), None, 302, "Found", {},
+                "https://127.0.0.1/private.png")
+
+    def test_image_is_carried_through_build_and_cached(self):
+        article = story()
+        article["imageUrl"] = "https://openai.com/images/new-model.jpg"
+        resolved = ("https://openai.com/images/new-model.jpg", "공식 원문 대표 이미지")
+        with patch.object(b, "official_article_image", return_value=resolved) as resolver:
+            first = b.build({"items": [article]}, enrich_images=True)
+        self.assertEqual(first["items"][0]["imageUrl"], resolved[0])
+        self.assertEqual(first["items"][0]["imageSource"], resolved[1])
+        self.assertEqual(resolver.call_count, 1)
+        with patch.object(b, "official_article_image", side_effect=AssertionError("cache bypass")):
+            second = b.build({"items": [article]}, previous=first, enrich_images=True)
+        self.assertEqual(second["items"][0]["imageUrl"], resolved[0])
+
     def test_no_public_api_secret_in_output(self):
         s=story()
         with patch.object(b,'_json_request',side_effect=ValueError):
