@@ -444,6 +444,32 @@ class DiscordTests(unittest.TestCase):
         self.assertTrue(discord.payload_for(picked, NOW)["embeds"][0]["title"]
                         .startswith("🤖 [AI 모델] Gemini 4 Carbon"))
 
+    def test_single_daily_card_can_include_one_official_picture(self):
+        item = story(80)
+        item["urls"] = ["https://deepmind.google/blog/model-release"]
+        item["imageUrl"] = "https://deepmind.google/static/model-cover.jpg"
+        payload = discord.payload_for([item, story(81)], NOW)
+        self.assertEqual(len(payload["embeds"]), 1)
+        self.assertEqual(payload["embeds"][0]["image"],
+                         {"url": "https://deepmind.google/static/model-cover.jpg"})
+        self.assertEqual(payload["embeds"][0]["url"], item["urls"][0])
+
+    def test_unsafe_or_missing_picture_keeps_original_text_card(self):
+        article = story(82)
+        article["urls"] = ["https://openai.com/index/launch"]
+        for url in ("", "http://openai.com/img.jpg",
+                    "https://openai.com.attacker.example/bad.png",
+                    "https://127.0.0.1/internal.png",
+                    "https://openai.com/media/logo.svg"):
+            with self.subTest(url=url):
+                article["imageUrl"] = url
+                e = discord.build_story_embed(article, detailed=True)
+                self.assertNotIn("image", e)
+                self.assertIn("무슨 소란이지?", e["description"])
+        article["imageUrl"] = "https://images.ctfassets.net/official/photo.webp"
+        embed = discord.build_story_embed(article, detailed=True)
+        self.assertEqual(embed["image"]["url"], article["imageUrl"])
+
     def test_invalid_ledger_refuses_reset(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "state.json"
