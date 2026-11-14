@@ -150,6 +150,7 @@ def create_item(title: str, link: str, date: str, summary: str, source: str, reg
         "cost": "",
         "performance": "",
         "urls": [link],
+        "imageUrl": "",
         "importance": 3,
         "reliability": reliability,
         "pricing": "미정",
@@ -221,6 +222,32 @@ def xml_value(elem: ET.Element, tag_names: list[str]) -> str:
     return ""
 
 
+
+MEDIA_NS = "http://search.yahoo.com/mrss/"
+
+
+def rss_article_image(element: ET.Element) -> str:
+    """Per-item image only. Never use a channel logo as an article image."""
+    for node in element.iter():
+        tag = str(node.tag)
+        local = tag.rsplit("}", 1)[-1]
+        if tag.startswith("{" + MEDIA_NS + "}") and local in {"thumbnail", "content"}:
+            media_type = (node.attrib.get("type") or "").lower()
+            medium = (node.attrib.get("medium") or "").lower()
+            if medium and medium != "image":
+                continue
+            if media_type and not media_type.startswith("image/"):
+                continue
+            if node.attrib.get("url"):
+                return node.attrib["url"].strip()
+        if local == "enclosure" and (node.attrib.get("type") or "").lower().startswith("image/"):
+            return (node.attrib.get("url") or "").strip()
+        if local == "link" and node.attrib.get("rel") == "enclosure" and (
+                node.attrib.get("type") or "").lower().startswith("image/"):
+            return (node.attrib.get("href") or "").strip()
+    return ""
+
+
 def collect_rss(name: str, url: str, region: str) -> list:
     xml = fetch(url)
     # Some RSS providers have stray invalid XML control characters.
@@ -249,6 +276,8 @@ def collect_rss(name: str, url: str, region: str) -> list:
         day = date_str(when)
         item = create_item(title, link, day, desc, name, region, classify(title, "미정"),
                            2 if name in SECONDARY_SOURCES else 4)
+        if item:
+            item["imageUrl"] = rss_article_image(el)
         if item and name in SECONDARY_SOURCES:
             item["notes"] = "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요."
             item["sourceType"] = "secondary"
@@ -363,6 +392,7 @@ def dedup_merge(old: list, new: list) -> list:
                 if label and label not in sources and len(sources) < 12:
                     sources.append(label)
             item["relatedSources"] = sources
+            item["imageUrl"] = (item.get("imageUrl") or prior.get("imageUrl") or "")
             item["duplicateCount"] = max(len(sources), int(prior.get("duplicateCount") or 1))
         by_id[key] = item
     ranked = sorted(by_id.values(), key=lambda x: (
