@@ -27,7 +27,8 @@ MAX_AI_CALLS = 4  # per run; unchanged stories are cached
 MODEL = "gemini-3.1-flash-lite"  # current documented free-tier model; subject to quota and account eligibility
 ALLOWED_DOMAINS = {"github.com", "openai.com", "blog.google", "deepmind.google", "research.google",
                    "huggingface.co", "arxiv.org", "mistral.ai", "developer.nvidia.com",
-                   "microsoft.com", "tech.kakao.com", "d2.naver.com", "msit.go.kr"}
+                   "microsoft.com", "tech.kakao.com", "d2.naver.com", "msit.go.kr",
+                   "developer-blogs.nvidia.com"}
 
 GUIDANCE = {
     "코딩 도구": ("코딩 에이전트의 작업 흐름·생산성에 영향을 줄 수 있어 변경 범위를 확인할 필요가 있음",
@@ -271,6 +272,7 @@ def approved_source(url: str) -> bool:
 IMAGE_CDNS = {
     "gstatic.com", "googleusercontent.com", "storage.googleapis.com",
     "images.ctfassets.net", "openaicom.imgix.net",
+    "developer-blogs.nvidia.com", "images.nvidia.com",
 }
 SUPPORTED_IMAGE_MIME = {"image/jpeg", "image/png", "image/webp", "image/gif"}
 
@@ -318,12 +320,16 @@ class SourceRedirectGuard(urllib.request.HTTPRedirectHandler):
 
 
 class ArticleImageParser(HTMLParser):
+    """OpenGraph image first; use an actual in-article figure if it is missing."""
     def __init__(self):
         super().__init__()
         self.candidates = []
+        self.figure_depth = 0
 
     def handle_starttag(self, tag, attrs):
         attributes = dict(attrs)
+        if tag == "figure":
+            self.figure_depth += 1
         if tag == "meta":
             marker = (attributes.get("property") or attributes.get("name") or "").lower()
             if marker in {"og:image:secure_url", "og:image", "twitter:image"}:
@@ -333,23 +339,51 @@ class ArticleImageParser(HTMLParser):
                     self.candidates.append((rank, content))
         if tag == "link" and "image_src" in (attributes.get("rel") or "").lower():
             self.candidates.append((3, attributes.get("href") or ""))
+        if self.figure_depth and tag in {"img", "source"}:
+            # WordPress uses lazy-loaded figure images. Never use a site logo/sidebar image.
+            source = (attributes.get("data-src") or attributes.get("src") or "")
+            if not source:
+                srcset = attributes.get("data-srcset") or attributes.get("srcset") or ""
+                source = srcset.split(",")[0].strip().split(" ")[0] if srcset else ""
+            if source:
+                self.candidates.append((4, source))
+
+    def handle_endtag(self, tag):
+        if tag == "figure":
+            self.figure_depth = max(0, self.figure_depth - 1)
 
 
 def confirm_image(url: str, article_url: str) -> bool:
-    """HEAD-only media check with redirect controls; no raw image bytes fetched."""
+    """Validate image MIME and size. Retry blocked HEAD using a bounded range GET."""
     allowed = lambda candidate: bool(safe_article_image_url(article_url, candidate))
     try:
         opener = urllib.request.build_opener(SourceRedirectGuard(allowed))
-        req = urllib.request.Request(url, method="HEAD", headers={
+        headers = {
             "User-Agent": "SignalDeskImageCheck/1.0",
             "Accept": "image/webp,image/png,image/jpeg,image/gif",
-        })
-        with opener.open(req, timeout=5) as response:
+        }
+        def check(response):
             final = response.geturl()
             mime = (response.headers.get("Content-Type") or "").lower().split(";")[0].strip()
             size = response.headers.get("Content-Length")
             return (allowed(final) and mime in SUPPORTED_IMAGE_MIME
                     and (not size or (size.isdecimal() and int(size) <= 8_000_000)))
+        try:
+            req = urllib.request.Request(url, method="HEAD", headers=headers)
+            with opener.open(req, timeout=5) as response:
+                return check(response)
+        except urllib.error.HTTPError as exc:
+            if exc.code not in {403, 405, 406, 501}:
+                return False
+        # Some publisher CDNs deny HEAD, although Discord can fetch images with GET.
+        # Request a tiny byte range; never save or load a whole image into memory.
+        req = urllib.request.Request(url, method="GET",
+                                     headers={**headers, "Range": "bytes=0-31"})
+        with opener.open(req, timeout=5) as response:
+            valid = check(response)
+            if valid:
+                response.read(32)
+            return valid
     except (OSError, ValueError, OverflowError):
         return False
 
@@ -535,7 +569,7 @@ def build(news: dict, previous: dict | None = None, api_key: str = "", today=Non
         # Cache unchanged results to avoid repeated HEAD/HTML requests.
         if enrich_images:
             cache_valid = bool(cached and cached.get("fingerprint") == fp
-                               and cached.get("imageCheckedAt"))
+                               and cached.get("imageCheckedAt") and cached.get("imageUrl"))
             if cache_valid:
                 row["imageUrl"] = cached.get("imageUrl") or ""
                 row["imageSource"] = cached.get("imageSource") or ""
