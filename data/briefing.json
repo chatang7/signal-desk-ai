@@ -1,7 +1,7 @@
 {
   "schema": "signal-desk-briefing-v1",
-  "generatedAt": "2026-11-14T08:35:56.792465+00:00",
-  "newsGeneratedAt": "2026-11-14T08:35:36.238153+00:00",
+  "generatedAt": "2026-11-14T08:38:31.460647+00:00",
+  "newsGeneratedAt": "2026-11-14T08:38:10.303926+00:00",
   "headline": "AI 변화 브리핑 · 최근 7일",
   "coverage": "최근 7일 중 중요 후보, 뉴스 수집 대상 범위 내에서만 작성",
   "mode": "ai-assisted",
@@ -122,7 +122,7 @@
       "fingerprint": "399f5c4efe3bc38332af4508",
       "imageUrl": "",
       "imageSource": "",
-      "imageCheckedAt": "2026-11-14T08:35:56.792465+00:00"
+      "imageCheckedAt": "2026-11-14T08:38:31.460647+00:00"
     },
     {
       "id": "feed-dde13a6350f0c89d7a8f6d",
@@ -159,7 +159,7 @@
       "fingerprint": "f15914c131d5a33528f511e7",
       "imageUrl": "",
       "imageSource": "",
-      "imageCheckedAt": "2026-11-14T08:35:56.792465+00:00"
+      "imageCheckedAt": "2026-11-14T08:38:31.460647+00:00"
     },
     {
       "id": "feed-da389d05699fd69e402329",
@@ -196,7 +196,7 @@
       "fingerprint": "a17b90ecf87f954980b5308f",
       "imageUrl": "",
       "imageSource": "",
-      "imageCheckedAt": "2026-11-14T08:35:56.792465+00:00"
+      "imageCheckedAt": "2026-11-14T08:38:31.460647+00:00"
     },
     {
       "id": "feed-b46b6bb43e745acd7c60d6",
@@ -269,7 +269,7 @@
       "voiceMood": "skeptical",
       "voiceHook": "AI가 모든 걸 바꾼다며 다들 난리인데, 정작 현업에 있는 사람들은 무엇을 고민하고 있는지 궁금하지 않아?",
       "voiceTake": "변화의 속도가 빠르다는 건 인정하지만, 정답 없는 고민을 공유하는 것만으로 학생들에게 얼마나 실질적인 도움이 될지는 의문이야. 막연한 불안감을 해소하기보다는 구체적으로 어떤 기술적 변화가 직무를 대체하고 있는지부터 짚어줬으면 좋았을 텐데 말이지.",
-      "imageCheckedAt": "2026-11-14T08:35:56.792465+00:00",
+      "imageCheckedAt": "2026-11-14T08:38:31.460647+00:00",
       "fingerprint": "66bdd3bba08635981ccf1fb7"
     },
     {
@@ -306,7 +306,7 @@
       "voiceMood": "skeptical",
       "voiceHook": "오픈AI가 이번엔 지갑까지 넘보네? AI가 내 카드를 대신 쓴다니 편리함 뒤에 숨겨진 보안 리스크를 꼼꼼히 따져봐야겠어.",
       "voiceTake": "카드 정보를 직접 노출하지 않는다는 점은 다행이지만, AI가 결제 권한까지 갖게 된 상황에서 발생할 수 있는 오결제나 보안 사고에 대한 구체적인 책임 소재는 여전히 의문이야. 기술적 편의가 곧 안전을 보장하는 건 아니니까.",
-      "imageCheckedAt": "2026-11-14T08:35:56.792465+00:00",
+      "imageCheckedAt": "2026-11-14T08:38:31.460647+00:00",
       "fingerprint": "fed4371773720ce6b19959c8"
     }
   ],
