@@ -215,6 +215,7 @@ def evidence_draft(item: dict) -> dict:
         "urls": [u for u in item.get("urls", [])[:5] if isinstance(u, str) and u.startswith("https://")],
         "score": score(item),
         "majorLaunch": major_model_launch(item),
+        "imageUrl": "", "imageSource": "",
         "summary": summary[:260] if summary else "공식 원문에 핵심 내용이 충분하지 않아 검토가 필요함.",
         "difference": ("원문 표현: " + diff) if diff else "기존 기술 대비 구체적인 차이는 수집된 원문에서 미확인",
         "why": "확인해야 하는 이유: " + why,
@@ -261,6 +262,128 @@ def approved_source(url: str) -> bool:
         )
     except ValueError:
         return False
+
+
+
+# Discord only receives an image URL if it came from that article's official
+# metadata and its host is an accepted publisher host or a trusted image CDN.
+# Nothing is downloaded or published as a new image asset.
+IMAGE_CDNS = {
+    "gstatic.com", "googleusercontent.com", "storage.googleapis.com",
+    "images.ctfassets.net", "openaicom.imgix.net",
+}
+SUPPORTED_IMAGE_MIME = {"image/jpeg", "image/png", "image/webp", "image/gif"}
+
+
+def safe_article_image_url(article_url: str, candidate: object) -> str:
+    if not approved_source(article_url) or not isinstance(candidate, str) or not candidate.strip():
+        return ""
+    if len(candidate) > 2000 or candidate.lstrip().startswith(("//", "data:", "javascript:")):
+        return ""
+    try:
+        full = urllib.parse.urljoin(article_url, candidate.strip())
+        article = urllib.parse.urlsplit(article_url)
+        img = urllib.parse.urlsplit(full)
+        host = (img.hostname or "").lower().rstrip(".")
+        article_host = (article.hostname or "").lower().rstrip(".")
+        if img.scheme != "https" or img.username or img.password or not host or img.port not in (None, 443):
+            return ""
+        if img.fragment or len(full) > 2000 or re.search(r"\.svg(?:$|[?])", img.path, re.I):
+            return ""
+        # Never accept IPs (including numeric hosts), localhost, or intranet aliases.
+        if not re.fullmatch(r"[a-z0-9.-]+", host) or not any(c.isalpha() for c in host):
+            return ""
+        if host in {"localhost"} or host.endswith((".local", ".internal", ".localhost")):
+            return ""
+        publisher = next((d for d in ALLOWED_DOMAINS if
+                          article_host == d or article_host.endswith("." + d)), None)
+        if publisher is None:
+            return ""
+        same_publisher = host == publisher or host.endswith("." + publisher)
+        cdn = any(host == d or host.endswith("." + d) for d in IMAGE_CDNS)
+        return full if same_publisher or cdn else ""
+    except (ValueError, TypeError):
+        return ""
+
+
+class SourceRedirectGuard(urllib.request.HTTPRedirectHandler):
+    def __init__(self, allowed):
+        super().__init__()
+        self.allowed = allowed
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        if not self.allowed(newurl):
+            raise ValueError("Unapproved redirect")
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+class ArticleImageParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.candidates = []
+
+    def handle_starttag(self, tag, attrs):
+        attributes = dict(attrs)
+        if tag == "meta":
+            marker = (attributes.get("property") or attributes.get("name") or "").lower()
+            if marker in {"og:image:secure_url", "og:image", "twitter:image"}:
+                content = attributes.get("content") or ""
+                if content:
+                    rank = {"og:image:secure_url": 0, "og:image": 1, "twitter:image": 2}[marker]
+                    self.candidates.append((rank, content))
+        if tag == "link" and "image_src" in (attributes.get("rel") or "").lower():
+            self.candidates.append((3, attributes.get("href") or ""))
+
+
+def confirm_image(url: str, article_url: str) -> bool:
+    """HEAD-only media check with redirect controls; no raw image bytes fetched."""
+    allowed = lambda candidate: bool(safe_article_image_url(article_url, candidate))
+    opener = urllib.request.build_opener(SourceRedirectGuard(allowed))
+    req = urllib.request.Request(url, method="HEAD", headers={
+        "User-Agent": "SignalDeskImageCheck/1.0",
+        "Accept": "image/avif,image/webp,image/png,image/jpeg,image/gif",
+    })
+    try:
+        with opener.open(req, timeout=5) as response:
+            final = response.geturl()
+            mime = (response.headers.get("Content-Type") or "").lower().split(";")[0].strip()
+            size = response.headers.get("Content-Length")
+            return (allowed(final) and mime in SUPPORTED_IMAGE_MIME
+                    and (not size or (size.isdecimal() and int(size) <= 8_000_000)))
+    except (OSError, ValueError, OverflowError):
+        return False
+
+
+def official_article_image(item: dict) -> tuple[str, str]:
+    urls = item.get("urls") or []
+    article_url = next((u for u in urls[:1] if isinstance(u, str) and approved_source(u)), "")
+    if not article_url:
+        return "", ""
+    rss_image = safe_article_image_url(article_url, item.get("imageUrl"))
+    if rss_image and confirm_image(rss_image, article_url):
+        return rss_image, "RSS 이미지"
+
+    # Only fetch official publisher pages, not arbitrary third-party article URLs.
+    opener = urllib.request.build_opener(SourceRedirectGuard(approved_source))
+    request = urllib.request.Request(article_url, headers={
+        "User-Agent": "SignalDeskImageCheck/1.0", "Accept": "text/html",
+    })
+    try:
+        with opener.open(request, timeout=6) as response:
+            if not approved_source(response.geturl()):
+                return "", ""
+            if "html" not in (response.headers.get("Content-Type") or "").lower():
+                return "", ""
+            document = response.read(250_000).decode("utf-8", "replace")
+        parser = ArticleImageParser()
+        parser.feed(document)
+        for _, candidate in sorted(parser.candidates, key=lambda pair: pair[0]):
+            image = safe_article_image_url(article_url, candidate)
+            if image and confirm_image(image, article_url):
+                return image, "공식 원문 대표 이미지"
+    except (OSError, ValueError, UnicodeError):
+        pass
+    return "", ""
 
 
 def article_text(item: dict) -> str:
@@ -355,7 +478,8 @@ def _json_request(item: dict, api_key: str) -> dict:
             "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요", "confidence": "검토 필요"}
 
 
-def build(news: dict, previous: dict | None = None, api_key: str = "", today=None) -> dict:
+def build(news: dict, previous: dict | None = None, api_key: str = "", today=None,
+          enrich_images: bool = False) -> dict:
     previous = previous or {}
     today = today or NOW.date()
     retained = {x.get("id"): x for x in previous.get("items", []) if isinstance(x, dict)}
@@ -407,6 +531,18 @@ def build(news: dict, previous: dict | None = None, api_key: str = "", today=Non
                 errors += 1
                 if first_error is None:
                     first_error = type(exc).__name__
+        # Images are optional and not part of the AI-generated factual summary.
+        # Cache unchanged results to avoid repeated HEAD/HTML requests.
+        if enrich_images:
+            cache_valid = bool(cached and cached.get("fingerprint") == fp
+                               and cached.get("imageCheckedAt"))
+            if cache_valid:
+                row["imageUrl"] = cached.get("imageUrl") or ""
+                row["imageSource"] = cached.get("imageSource") or ""
+                row["imageCheckedAt"] = cached["imageCheckedAt"]
+            else:
+                row["imageUrl"], row["imageSource"] = official_article_image(original)
+                row["imageCheckedAt"] = NOW.isoformat()
         row["fingerprint"] = fp
         enriched.append(row)
     ai_count = sum(x.get("mode") == "ai-assisted" for x in enriched)
@@ -427,7 +563,7 @@ def main() -> int:
         if not isinstance(news, dict) or not isinstance(news.get("items"), list):
             raise ValueError("Missing public feed")
         api_key = os.environ.get("GEMINI_API_KEY", "").strip()
-        result = build(news, previous, api_key=api_key)
+        result = build(news, previous, api_key=api_key, enrich_images=True)
         OUT.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"브리핑 {result['storyCount']}건 · AI 보조 {result['aiAnalyzed']}건 · 캐시 {result['cacheHits']}건 · AI 호출 오류 {result['aiErrors']}건")
         if api_key and result["aiErrors"]:
