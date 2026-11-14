@@ -567,6 +567,75 @@ def deliver(briefing: dict, state: dict, secret: str, when: dt.datetime,
 
 
 
+def repair_last_message_image(briefing: dict, state: dict, secret: str,
+                              when: dt.datetime, requester=urllib.request.urlopen) -> dict:
+    """Edit the existing one-story Discord webhook message, without posting again.
+
+    Only permitted for the latest message sent today by this webhook, when
+    its article and verified official image match the stored delivery ledger.
+    """
+    history = state.get("history") or []
+    if not history:
+        return {"status": "no_message"}
+    record = history[-1]
+    try:
+        posted_at = dt.datetime.fromisoformat(record["at"])
+        message_id = str(record["messageId"])
+        if (posted_at.tzinfo is None or posted_at.astimezone(KST).date() != when.date()
+                or not 0 <= (when - posted_at).total_seconds() <= 86400
+                or record.get("count") != 1
+                or not re.fullmatch(r"\d{5,22}", message_id)):
+            return {"status": "not_eligible"}
+    except (KeyError, ValueError, TypeError):
+        return {"status": "not_eligible"}
+    matching = [x for x in briefing.get("items", [])
+                if state.get("posted", {}).get(item_key(x)) == record["at"]]
+    if len(matching) != 1:
+        return {"status": "article_not_found"}
+    item = matching[0]
+    article_url = next((u for u in item.get("urls", []) if safe_link(u)), "")
+    image = safe_embed_image(item, article_url)
+    if not image or not item.get("imageCheckedAt") or not item.get("imageSource"):
+        return {"status": "no_verified_image"}
+
+    # webhook_endpoint() validates the exact Discord host and token format.
+    base = webhook_endpoint(secret).split("?", 1)[0]
+    edit_url = base + "/messages/" + message_id
+    headers = {"User-Agent": "SignalDeskDiscord/1.0"}
+    try:
+        with requester(urllib.request.Request(edit_url, headers=headers), timeout=18) as resp:
+            original = json.loads(resp.read(80_000))
+        embeds = original.get("embeds", [])
+        if (str(original.get("id")) != message_id or len(embeds) != 1
+                or embeds[0].get("url") != article_url):
+            return {"status": "message_mismatch"}
+        if embeds[0].get("image", {}).get("url") == image:
+            return {"status": "already_has_image"}
+        # Preserve the original article text, fields, and footer exactly.
+        allowed = {"title", "url", "description", "fields", "color", "footer", "author"}
+        updated = {key: value for key, value in embeds[0].items() if key in allowed}
+        if "footer" in updated and isinstance(updated["footer"], dict):
+            updated["footer"] = {k: v for k, v in updated["footer"].items()
+                                 if k in {"text", "icon_url"}}
+        updated["image"] = {"url": image}
+        body = json.dumps({"embeds": [updated], "allowed_mentions": {"parse": []}},
+                          ensure_ascii=False).encode("utf-8")
+        request = urllib.request.Request(
+            edit_url, data=body, method="PATCH",
+            headers={**headers, "Content-Type": "application/json"})
+        with requester(request, timeout=22) as resp:
+            response = json.loads(resp.read(80_000))
+        if (str(response.get("id")) != message_id
+                or not response.get("embeds")
+                or response["embeds"][0].get("image", {}).get("url") != image):
+            raise RuntimeError("Discord image edit not confirmed")
+        return {"status": "repaired"}
+    except urllib.error.HTTPError as exc:
+        raise RuntimeError("Discord image repair rejected (HTTP " + str(exc.code) + ")") from None
+    except (urllib.error.URLError, TimeoutError, OSError, json.JSONDecodeError, ValueError):
+        raise RuntimeError("Discord image repair unconfirmed") from None
+
+
 def send_labeled_test(briefing: dict, secret: str, when: dt.datetime,
                       sender=transmit) -> dict:
     """One explicit test message; never touches or relies on production delivery ledger.
@@ -590,7 +659,14 @@ def main(argv=None) -> int:
     args = argv if argv is not None else sys.argv[1:]
     dry_run = "--dry-run" in args
     test_send = "--test-send" in args
+    repair_image = "--repair-image" in args
     secret = os.environ.get("DISCORD_WEBHOOK_URL", "").strip()
+    if repair_image and (dry_run or test_send or os.environ.get("SIGNAL_DESK_REPAIR_IMAGE") != "1"):
+        print("Discord image repair blocked: explicit authorization required")
+        return 1
+    if repair_image and not secret:
+        print("Discord image repair blocked: webhook secret not configured")
+        return 1
     if test_send and (dry_run or os.environ.get("SIGNAL_DESK_TEST_SEND") != "1"):
         print("Discord test blocked: explicit test authorization required")
         return 1
@@ -604,6 +680,10 @@ def main(argv=None) -> int:
         briefing = json.loads(FEED.read_text(encoding="utf-8"))
         if briefing.get("schema") != "signal-desk-briefing-v1":
             raise ValueError("Invalid briefing format")
+        if repair_image:
+            result = repair_last_message_image(briefing, load_state(), secret, now_kst())
+            print("Discord image repair status: " + result["status"])
+            return 0 if result["status"] in {"repaired", "already_has_image"} else 1
         if test_send:
             result = send_labeled_test(briefing, secret, now_kst())
             print("Discord test status: " + result["status"] +
