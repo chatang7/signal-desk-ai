@@ -470,6 +470,86 @@ class DiscordTests(unittest.TestCase):
         embed = discord.build_story_embed(article, detailed=True)
         self.assertEqual(embed["image"]["url"], article["imageUrl"])
 
+    def test_nvidia_official_image_host_is_accepted_for_daily_card(self):
+        item = story(94)
+        item.update({
+            "urls": ["https://developer.nvidia.com/blog/cudla-python"],
+            "imageUrl": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/08/dla-inference.webp",
+        })
+        embed = discord.build_story_embed(item, detailed=True)
+        self.assertEqual(embed["image"]["url"], item["imageUrl"])
+
+    def test_edit_existing_discord_message_image_without_new_post(self):
+        item = story(95)
+        item.update({
+            "urls": ["https://developer.nvidia.com/blog/cudla-python"],
+            "imageUrl": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/08/dla.webp",
+            "imageSource": "공식 원문 대표 이미지",
+            "imageCheckedAt": NOW.isoformat(),
+        })
+        state = fresh_state()
+        sent_at = NOW.isoformat()
+        msg_id = "1571052110995267595"
+        state["posted"][item["id"]] = sent_at
+        state["history"].append({"at": sent_at, "count": 1, "messageId": msg_id})
+        before = json.dumps(state, sort_keys=True)
+        old = {"id": msg_id, "embeds": [{
+            "url": item["urls"][0], "title": "NVIDIA cuDLA",
+            "description": "Original Discord content", "color": 123,
+            "fields": [{"name": "Source", "value": "Original", "inline": False}],
+            "footer": {"text": "Official source"}
+        }]}
+        requests = []
+        class Response:
+            def __init__(self, data):
+                self.data = data
+            def __enter__(self):
+                return self
+            def __exit__(self, *args):
+                return False
+            def read(self, limit):
+                return json.dumps(self.data).encode()
+        def fake_request(req, timeout=0):
+            requests.append(req)
+            if req.get_method() == "GET":
+                return Response(old)
+            self.assertEqual(req.get_method(), "PATCH")
+            body = json.loads(req.data)
+            self.assertEqual(body["embeds"][0]["image"]["url"], item["imageUrl"])
+            self.assertEqual(body["embeds"][0]["description"], "Original Discord content")
+            self.assertEqual(body["allowed_mentions"], {"parse": []})
+            return Response({"id": msg_id, "embeds": body["embeds"]})
+        result = discord.repair_last_message_image(
+            {"items": [item]}, state,
+            "https://discord.com/api/webhooks/123456789/secret_token",
+            NOW + dt.timedelta(hours=1), requester=fake_request)
+        self.assertEqual(result, {"status": "repaired"})
+        self.assertEqual([r.get_method() for r in requests], ["GET", "PATCH"])
+        self.assertEqual(json.dumps(state, sort_keys=True), before)
+
+    def test_image_repair_refuses_older_or_unrelated_messages(self):
+        item = story(96)
+        item.update({
+            "urls": ["https://developer.nvidia.com/blog/cudla-python"],
+            "imageUrl": "https://developer-blogs.nvidia.com/wp-content/uploads/dla.jpg",
+            "imageCheckedAt": NOW.isoformat(),
+            "imageSource": "공식 원문 대표 이미지",
+        })
+        state = fresh_state()
+        state["posted"][item["id"]] = NOW.isoformat()
+        state["history"].append({"at": NOW.isoformat(), "count": 1,
+                                 "messageId": "1571052110995267595"})
+        def forbidden(*args, **kwargs):
+            raise AssertionError("No network request expected")
+        stale = discord.repair_last_message_image(
+            {"items": [item]}, state, "unused", NOW+dt.timedelta(days=1),
+            requester=forbidden)
+        self.assertEqual(stale["status"], "not_eligible")
+        other = discord.repair_last_message_image(
+            {"items": [story(97)]}, state, "unused", NOW+dt.timedelta(hours=1),
+            requester=forbidden)
+        self.assertEqual(other["status"], "article_not_found")
+
     def test_invalid_ledger_refuses_reset(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "state.json"
