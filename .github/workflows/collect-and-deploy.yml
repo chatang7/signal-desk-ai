@@ -93,6 +93,12 @@ jobs:
           rm -rf "$snapshot"
           exit 1
 
+      - name: Repair today's existing Discord image once (no new post)
+        if: ${{ github.event_name == 'push' && github.event.head_commit.message == 'repair-discord-image-nvidia-20261114-once' }}
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          SIGNAL_DESK_REPAIR_IMAGE: '1'
+        run: python scripts/discord_post.py --repair-image
       - name: Send clearly labeled Discord test (never changes delivery ledger)
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.discord_test_send }}
         env:
