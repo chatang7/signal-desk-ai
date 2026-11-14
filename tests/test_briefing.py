@@ -261,6 +261,96 @@ class BriefingTests(unittest.TestCase):
             second = b.build({"items": [article]}, previous=first, enrich_images=True)
         self.assertEqual(second["items"][0]["imageUrl"], resolved[0])
 
+    def test_article_figures_provide_fallback_when_og_image_is_missing(self):
+        parser = b.ArticleImageParser()
+        parser.feed('<html><img src="/site-logo.png">'
+                    '<figure><picture><img data-src="https://developer-blogs.nvidia.com/'
+                    'wp-content/uploads/2026/11/cudla-figure.png" alt="cuDLA pipeline">'
+                    '</picture></figure></html>')
+        self.assertEqual(parser.candidates, [
+            (4, "https://developer-blogs.nvidia.com/wp-content/uploads/2026/11/cudla-figure.png")
+        ])
+
+    def test_nvidia_owned_media_host_is_accepted_not_arbitrary_host(self):
+        page = "https://developer.nvidia.com/blog/run-native-dla-inference"
+        asset = "https://developer-blogs.nvidia.com/wp-content/uploads/2026/11/dla.png"
+        self.assertEqual(b.safe_article_image_url(page, asset), asset)
+        self.assertEqual(b.safe_article_image_url(page, "https://developer-blogs.nvidia.com.bad.org/figure.png"), "")
+
+    def test_article_html_figure_image_is_selected_after_metadata_failure(self):
+        article = {
+            "urls": ["https://developer.nvidia.com/blog/cudla-python"],
+            "imageUrl": "",
+        }
+        class FakeResponse:
+            headers = {"Content-Type": "text/html; charset=utf-8"}
+            def __enter__(self):
+                return self
+            def __exit__(self, *args):
+                return False
+            def geturl(self):
+                return article["urls"][0]
+            def read(self, n):
+                return (b'<html><head><meta property="og:image" '
+                        b'content="https://unsafe.example.com/blank.jpg"></head>'
+                        b'<body><figure><img src="https://developer-blogs.nvidia.com/'
+                        b'wp-content/uploads/2026/11/cudla.jpg"></figure></body></html>')
+        class FakeOpener:
+            def open(self, req, timeout=0):
+                return FakeResponse()
+        accepted = "https://developer-blogs.nvidia.com/wp-content/uploads/2026/11/cudla.jpg"
+        with patch.object(b.urllib.request, "build_opener", return_value=FakeOpener()), \
+             patch.object(b, "confirm_image", return_value=True):
+            self.assertEqual(b.official_article_image(article),
+                             (accepted, "공식 원문 대표 이미지"))
+
+    def test_negative_image_cache_is_retried_on_next_collection(self):
+        sample = story()
+        with patch.object(b, "official_article_image", return_value=("", "")) as resolve:
+            first = b.build({"items": [sample]}, enrich_images=True)
+        self.assertEqual(resolve.call_count, 1)
+        picture = "https://openai.com/images/new-model.jpg"
+        with patch.object(b, "official_article_image",
+                          return_value=(picture, "공식 원문 대표 이미지")) as resolve:
+            second = b.build({"items": [sample]}, previous=first, enrich_images=True)
+        self.assertEqual(resolve.call_count, 1)
+        self.assertEqual(second["items"][0]["imageUrl"], picture)
+
+    def test_image_head_blocked_falls_back_to_ranged_get(self):
+        from urllib.error import HTTPError
+        from io import BytesIO
+        article = "https://developer.nvidia.com/blog/cudla"
+        img = "https://developer-blogs.nvidia.com/wp-content/uploads/dla.jpg"
+        class Response:
+            headers = {"Content-Type": "image/jpeg", "Content-Length": "100"}
+            def __init__(self):
+                self.read_calls = []
+            def geturl(self):
+                return img
+            def read(self, size):
+                self.read_calls.append(size)
+                return b"\xff\xd8" + b"0" * 30
+            def __enter__(self):
+                return self
+            def __exit__(self, *args):
+                return False
+        class Opener:
+            def __init__(self):
+                self.methods = []
+                self.response = Response()
+            def open(self, req, timeout=0):
+                self.methods.append((req.get_method(), req.headers.get("Range")))
+                if req.get_method() == "HEAD":
+                    raise HTTPError(img, 405, "HEAD blocked", {}, BytesIO())
+                return self.response
+        op = Opener()
+        with patch.object(b.urllib.request, "build_opener", return_value=op):
+            self.assertTrue(b.confirm_image(img, article))
+        self.assertEqual(op.methods[0][0], "HEAD")
+        self.assertEqual(op.methods[1][0], "GET")
+        self.assertEqual(op.methods[1][1], "bytes=0-31")
+        self.assertEqual(op.response.read_calls, [32])
+
     def test_no_public_api_secret_in_output(self):
         s=story()
         with patch.object(b,'_json_request',side_effect=ValueError):
