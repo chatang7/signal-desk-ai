@@ -106,6 +106,37 @@ class QualityTests(unittest.TestCase):
         self.assertEqual(mocked.call_args.args[0], primary)
         self.assertEqual(rows[0]["title"], "Gemini 4 Carbon is now available")
 
+    def test_article_media_image_from_rss_is_preserved(self):
+        day = c.NOW.strftime('%a, %d %b %Y %H:%M:%S +0000')
+        xml = ('<rss xmlns:media="http://search.yahoo.com/mrss/"><channel>'
+               '<image><url>https://example.org/channel-logo.png</url></image>'
+               '<item><title>New AI model announced</title>'
+               '<link>https://blog.google/news/item</link>'
+               f'<pubDate>{day}</pubDate>'
+               '<media:content url="https://blog.google/media/cover.jpg" type="image/jpeg" />'
+               '</item></channel></rss>').encode()
+        with patch.object(c, "fetch", return_value=xml):
+            rows = c.collect_rss("Google AI 블로그", "https://feed.example/rss", "해외")
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["imageUrl"], "https://blog.google/media/cover.jpg")
+
+    def test_image_enclosure_is_accepted_only_for_images(self):
+        import xml.etree.ElementTree as ET
+        el = ET.fromstring('<item><enclosure url="https://official.test/evil.mp4" '
+                           'type="video/mp4" /><enclosure url="https://official.test/cover.png" '
+                           'type="image/png" /></item>')
+        self.assertEqual(c.rss_article_image(el), "https://official.test/cover.png")
+        empty = ET.fromstring('<item><enclosure url="https://official.test/clip.mp4" '
+                              'type="video/mp4" /></item>')
+        self.assertEqual(c.rss_article_image(empty), "")
+
+    def test_recollection_keeps_prior_image_when_feed_omits_one(self):
+        old = self.make("New AI model announced", "https://blog.google/news/unchanged")
+        new = self.make("New AI model announced", "https://blog.google/news/unchanged")
+        old["imageUrl"] = "https://blog.google/media/cover.jpg"
+        self.assertEqual(c.dedup_merge([old], [new])[0]["imageUrl"],
+                         "https://blog.google/media/cover.jpg")
+
     def test_retains_old_while_source_failure(self):
         day=(c.NOW.date()-dt.timedelta(days=20)).isoformat()
         old={'id':'old','title':'Old AI item','date':day,'urls':['https://example.org/old'],'externalId':'old'}
