@@ -1,15 +1,15 @@
 {
   "schema": "signal-desk-briefing-v1",
-  "generatedAt": "2026-11-15T06:46:12.921313+00:00",
-  "newsGeneratedAt": "2026-11-15T06:45:51.324262+00:00",
+  "generatedAt": "2026-11-15T07:15:37.072943+00:00",
+  "newsGeneratedAt": "2026-11-15T07:15:19.044199+00:00",
   "headline": "AI 변화 브리핑 · 최근 7일",
   "coverage": "최근 7일 중 중요 후보, 뉴스 수집 대상 범위 내에서만 작성",
   "mode": "ai-assisted",
   "aiAnalyzed": 8,
-  "aiCalls": 1,
+  "aiCalls": 0,
   "aiErrors": 0,
   "aiFailureCode": null,
-  "cacheHits": 7,
+  "cacheHits": 8,
   "modelConfigured": true,
   "storyCount": 8,
   "items": [
@@ -122,7 +122,7 @@
       "fingerprint": "399f5c4efe3bc38332af4508",
       "imageUrl": "",
       "imageSource": "",
-      "imageCheckedAt": "2026-11-15T06:46:12.921313+00:00"
+      "imageCheckedAt": "2026-11-15T07:15:37.072943+00:00"
     },
     {
       "id": "feed-dde13a6350f0c89d7a8f6d",
@@ -159,7 +159,7 @@
       "fingerprint": "f15914c131d5a33528f511e7",
       "imageUrl": "",
       "imageSource": "",
-      "imageCheckedAt": "2026-11-15T06:46:12.921313+00:00"
+      "imageCheckedAt": "2026-11-15T07:15:37.072943+00:00"
     },
     {
       "id": "feed-da389d05699fd69e402329",
@@ -196,7 +196,7 @@
       "fingerprint": "a17b90ecf87f954980b5308f",
       "imageUrl": "",
       "imageSource": "",
-      "imageCheckedAt": "2026-11-15T06:46:12.921313+00:00"
+      "imageCheckedAt": "2026-11-15T07:15:37.072943+00:00"
     },
     {
       "id": "feed-b46b6bb43e745acd7c60d6",
@@ -269,7 +269,7 @@
       "voiceMood": "skeptical",
       "voiceHook": "AI가 모든 걸 바꾼다며 다들 난리인데, 정작 현업에 있는 사람들은 무엇을 고민하고 있는지 궁금하지 않아?",
       "voiceTake": "변화의 속도가 빠르다는 건 인정하지만, 정답 없는 고민을 공유하는 것만으로 학생들에게 얼마나 실질적인 도움이 될지는 의문이야. 막연한 불안감을 해소하기보다는 구체적으로 어떤 기술적 변화가 직무를 대체하고 있는지부터 짚어줬으면 좋았을 텐데 말이지.",
-      "imageCheckedAt": "2026-11-15T06:46:12.921313+00:00",
+      "imageCheckedAt": "2026-11-15T07:15:37.072943+00:00",
       "fingerprint": "66bdd3bba08635981ccf1fb7"
     },
     {
@@ -306,7 +306,7 @@
       "voiceMood": "skeptical",
       "voiceHook": "엔비디아 이사회가 투자자들의 압박에 못 이겨 전 CEO를 다시 불러들이려나 봐, 이게 정말 기업의 미래를 위한 선택일지 아니면 단순히 과거의 영광에 매달리는 건지 의문이 드네.",
       "voiceTake": "경영진 교체라는 중대한 사안이 투자자들의 여론몰이로 결정되는 건 위험해 보여. 단순히 인물의 명성에 의존하기보다 현재 엔비디아가 직면한 사업적 난관을 돌파할 실질적인 전략이 무엇인지 냉정하게 따져봐야 할 때야.",
-      "imageCheckedAt": "2026-11-15T06:46:12.921313+00:00",
+      "imageCheckedAt": "2026-11-15T07:15:37.072943+00:00",
       "fingerprint": "158ec46604ac63c05085e772"
     }
   ],
