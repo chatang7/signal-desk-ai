@@ -1,15 +1,15 @@
 {
   "schema": "signal-desk-briefing-v1",
-  "generatedAt": "2026-11-14T08:40:48.769093+00:00",
-  "newsGeneratedAt": "2026-11-14T08:40:29.132917+00:00",
+  "generatedAt": "2026-11-15T06:46:12.921313+00:00",
+  "newsGeneratedAt": "2026-11-15T06:45:51.324262+00:00",
   "headline": "AI 변화 브리핑 · 최근 7일",
   "coverage": "최근 7일 중 중요 후보, 뉴스 수집 대상 범위 내에서만 작성",
   "mode": "ai-assisted",
   "aiAnalyzed": 8,
-  "aiCalls": 0,
+  "aiCalls": 1,
   "aiErrors": 0,
   "aiFailureCode": null,
-  "cacheHits": 8,
+  "cacheHits": 7,
   "modelConfigured": true,
   "storyCount": 8,
   "items": [
@@ -24,7 +24,7 @@
       "urls": [
         "https://deepmind.google/blog/introducing-gemini-4-hydrogen"
       ],
-      "score": 100,
+      "score": 96,
       "majorLaunch": true,
       "summary": "구글이 에이전트 워크플로우와 일상적인 코딩 작업의 효율적 실행을 위해 설계된 경량 모델 'Gemini 4 Hydrogen'을 발표했습니다.",
       "difference": "Gemini 3.8 Flash 대비 작업 속도 2.5배 향상, 환각 현상 5배 감소, 벤치마크 점수 향상 및 Orchestrator를 통한 다중 모델 협업 기능 추가.",
@@ -61,7 +61,7 @@
       "urls": [
         "https://deepmind.google/blog/gemini-4-carbon-is-now-available"
       ],
-      "score": 91,
+      "score": 86,
       "majorLaunch": true,
       "summary": "구글이 복잡한 추론과 에이전트 워크플로우에 특화된 최신 모델 Gemini 4 Carbon을 공개했습니다.",
       "difference": "Argon 모델 대비 복잡한 다단계 코딩, 디버깅, 심층적인 과학 연구 등 고난도 지능형 작업에 최적화되어 있습니다.",
@@ -98,7 +98,7 @@
       "urls": [
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.325"
       ],
-      "score": 76,
+      "score": 71,
       "majorLaunch": false,
       "summary": "Claude Code v2.1.325 업데이트는 zstd 압축 디코딩 보안 취약점 수정 및 VS Code 내 노트북 셀 재실행 안내, 조직 정책 차단 시 대응 가이드 제공 등 다수의 버그 수정과 사용자 경험 개선을 포함합니다.",
       "difference": "미확인",
@@ -122,7 +122,7 @@
       "fingerprint": "399f5c4efe3bc38332af4508",
       "imageUrl": "",
       "imageSource": "",
-      "imageCheckedAt": "2026-11-14T08:40:48.769093+00:00"
+      "imageCheckedAt": "2026-11-15T06:46:12.921313+00:00"
     },
     {
       "id": "feed-dde13a6350f0c89d7a8f6d",
@@ -135,7 +135,7 @@
       "urls": [
         "https://github.blog/changelog/2026-11-13-gemini-4-hydrogen-in-github-copilot"
       ],
-      "score": 76,
+      "score": 71,
       "majorLaunch": false,
       "summary": "Google의 최신 Flash 모델인 Gemini 4 Hydrogen이 GitHub Copilot에 정식 도입되었습니다.",
       "difference": "미확인",
@@ -159,7 +159,7 @@
       "fingerprint": "f15914c131d5a33528f511e7",
       "imageUrl": "",
       "imageSource": "",
-      "imageCheckedAt": "2026-11-14T08:40:48.769093+00:00"
+      "imageCheckedAt": "2026-11-15T06:46:12.921313+00:00"
     },
     {
       "id": "feed-da389d05699fd69e402329",
@@ -172,7 +172,7 @@
       "urls": [
         "https://github.com/openai/codex/releases/tag/rust-v0.169.0"
       ],
-      "score": 76,
+      "score": 71,
       "majorLaunch": false,
       "summary": "Codex 0.169.0 업데이트는 터미널 워크스페이스의 사이드 채팅 탭 기능, 에이전트 커맨드 센터의 작업 검색, 전체 화면 트랜스크립트의 상세 내용 접기 기능을 도입했습니다.",
       "difference": "미확인",
@@ -196,7 +196,7 @@
       "fingerprint": "a17b90ecf87f954980b5308f",
       "imageUrl": "",
       "imageSource": "",
-      "imageCheckedAt": "2026-11-14T08:40:48.769093+00:00"
+      "imageCheckedAt": "2026-11-15T06:46:12.921313+00:00"
     },
     {
       "id": "feed-b46b6bb43e745acd7c60d6",
@@ -209,7 +209,7 @@
       "urls": [
         "https://developer.nvidia.com/blog/run-native-dla-inference-in-python-on-nvidia-jetson-agx-orin-using-cudla"
       ],
-      "score": 76,
+      "score": 71,
       "majorLaunch": false,
       "summary": "NVIDIA는 Jetson AGX Orin 및 Windows AI 노트북에서 Python을 통해 DLA(Deep Learning Accelerator) 추론을 직접 제어할 수 있는 cuda.bindings.cudla 모듈을 공개했습니다.",
       "difference": "기존 C++ 기반의 cuDLA 워크플로우를 Python 환경으로 확장하여, CUDA 스트림을 통한 GPU와 DLA 간의 하이브리드 모드 연동을 Python 코드만으로 구현 가능하게 함.",
@@ -246,7 +246,7 @@
       "urls": [
         "https://d2.naver.com/helloworld/1975819"
       ],
-      "score": 68,
+      "score": 63,
       "majorLaunch": false,
       "imageUrl": "",
       "imageSource": "",
@@ -269,45 +269,45 @@
       "voiceMood": "skeptical",
       "voiceHook": "AI가 모든 걸 바꾼다며 다들 난리인데, 정작 현업에 있는 사람들은 무엇을 고민하고 있는지 궁금하지 않아?",
       "voiceTake": "변화의 속도가 빠르다는 건 인정하지만, 정답 없는 고민을 공유하는 것만으로 학생들에게 얼마나 실질적인 도움이 될지는 의문이야. 막연한 불안감을 해소하기보다는 구체적으로 어떤 기술적 변화가 직무를 대체하고 있는지부터 짚어줬으면 좋았을 텐데 말이지.",
-      "imageCheckedAt": "2026-11-14T08:40:48.769093+00:00",
+      "imageCheckedAt": "2026-11-15T06:46:12.921313+00:00",
       "fingerprint": "66bdd3bba08635981ccf1fb7"
     },
     {
-      "id": "feed-0413df98e5c1943a54d233",
-      "title": "오픈AI, AI 에이전트가 대신 결제하는 '챗GPT 월렛' 출시",
-      "date": "2026-11-14",
-      "topic": "에이전트",
+      "id": "feed-c97fbf2dc09c4bcaf2e219",
+      "title": "엔비디아 투자자들 \"젠슨 황 복귀 검토해야\"…머스크 등 거물 가세",
+      "date": "2026-11-15",
+      "topic": "반도체",
       "region": "한국",
       "sourceLabel": "AI타임스 (보도)",
       "sourceType": "secondary",
       "urls": [
-        "https://www.aitimes.com/news/articleView.html?idxno=217400"
+        "https://www.aitimes.com/news/articleView.html?idxno=217413"
       ],
-      "score": 67,
+      "score": 62,
       "majorLaunch": false,
       "imageUrl": "",
       "imageSource": "",
-      "summary": "오픈AI가 AI 에이전트가 사용자를 대신해 결제를 수행하는 '챗GPT 월렛'을 출시했습니다.",
+      "summary": "엔비디아의 주요 투자자와 기술 업계 거물들이 전 CEO 젠슨 황의 복귀를 이사회에 공식적으로 촉구하고 나섰습니다.",
       "difference": "미확인",
-      "why": "AI 에이전트 기반 상거래 시장을 공략하기 위함입니다.",
-      "usage": "미국 거주 18세 이상 챗GPT 프로 가입자 중 적격 미국 발행 카드 소지자가 사용 가능합니다.",
+      "why": "젠슨 황의 퇴진이 엔비디아의 사업 경쟁력과 미국 AI 산업 전반에 부정적인 영향을 미칠 수 있다는 우려 때문입니다.",
+      "usage": "미확인",
       "cost": "미확인",
       "performance": "미확인",
-      "strengths": "실제 카드번호를 AI에 노출하지 않고 생체인증을 거쳐 결제하는 방식을 채택했습니다.",
-      "limitations": "미국 거주자 및 특정 카드 소지자로 사용 대상이 제한적입니다.",
+      "strengths": "주요 투자사들의 지지와 기술 업계 거물들의 공개적인 복귀 요청을 확보함.",
+      "limitations": "이사회 측의 공식적인 답변이나 구체적인 복귀 가능성 여부는 원문에 근거 없음.",
       "mode": "ai-assisted",
       "model": "gemini-3.1-flash-lite",
       "evidence": [
-        "실제 카드번호를 AI에 노출하지 않고 사용자의 생체인증을 거쳐 결제하는 방식으로",
-        "미국에 거주하는 18세 이상 '챗GPT 프로' 가입자 가운데 적격 미국 발행 카드와 미국 청구지"
+        "엔비디아 지분 20억달러 이상을 보유한 투자사 두 곳이 이사회에 후임 CEO 선임을 서두르지 말고, 황의 복귀 가능성을 검토하라고 촉구했다.",
+        "일론 머스크 CEO 등 기술 업계 거물들도 황의 퇴진이 엔비디아의 사업 경쟁력과 미국 AI 산업에 타격을 줄 수 있다며 복귀를 지지하고 있다."
       ],
       "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
       "confidence": "검토 필요",
       "voiceMood": "skeptical",
-      "voiceHook": "오픈AI가 이번엔 지갑까지 넘보네? AI가 내 카드를 대신 쓴다니 편리함 뒤에 숨겨진 보안 리스크를 꼼꼼히 따져봐야겠어.",
-      "voiceTake": "카드 정보를 직접 노출하지 않는다는 점은 다행이지만, AI가 결제 권한까지 갖게 된 상황에서 발생할 수 있는 오결제나 보안 사고에 대한 구체적인 책임 소재는 여전히 의문이야. 기술적 편의가 곧 안전을 보장하는 건 아니니까.",
-      "imageCheckedAt": "2026-11-14T08:40:48.769093+00:00",
-      "fingerprint": "fed4371773720ce6b19959c8"
+      "voiceHook": "엔비디아 이사회가 투자자들의 압박에 못 이겨 전 CEO를 다시 불러들이려나 봐, 이게 정말 기업의 미래를 위한 선택일지 아니면 단순히 과거의 영광에 매달리는 건지 의문이 드네.",
+      "voiceTake": "경영진 교체라는 중대한 사안이 투자자들의 여론몰이로 결정되는 건 위험해 보여. 단순히 인물의 명성에 의존하기보다 현재 엔비디아가 직면한 사업적 난관을 돌파할 실질적인 전략이 무엇인지 냉정하게 따져봐야 할 때야.",
+      "imageCheckedAt": "2026-11-15T06:46:12.921313+00:00",
+      "fingerprint": "158ec46604ac63c05085e772"
     }
   ],
   "disclaimer": "원문 기반 정보 정리입니다. AI 보조 분석은 사실 검증을 대체하지 않으며 가격·성능·이전 기술과의 차이가 확인되지 않으면 미확인으로 표시합니다."
