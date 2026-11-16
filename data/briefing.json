@@ -1,15 +1,15 @@
 {
   "schema": "signal-desk-briefing-v1",
-  "generatedAt": "2026-11-16T06:44:28.613863+00:00",
-  "newsGeneratedAt": "2026-11-16T06:44:08.407175+00:00",
+  "generatedAt": "2026-11-16T07:21:34.885669+00:00",
+  "newsGeneratedAt": "2026-11-16T07:21:13.078774+00:00",
   "headline": "AI 변화 브리핑 · 최근 7일",
   "coverage": "최근 7일 중 중요 후보, 뉴스 수집 대상 범위 내에서만 작성",
   "mode": "ai-assisted",
-  "aiAnalyzed": 7,
-  "aiCalls": 4,
-  "aiErrors": 1,
-  "aiFailureCode": "TimeoutError",
-  "cacheHits": 4,
+  "aiAnalyzed": 8,
+  "aiCalls": 2,
+  "aiErrors": 0,
+  "aiFailureCode": null,
+  "cacheHits": 6,
   "modelConfigured": true,
   "storyCount": 8,
   "items": [
@@ -84,7 +84,7 @@
       "voiceMood": "curious",
       "voiceHook": "표준 모형을 격자 위에서 정의하겠다는 발상도 흥미로운데, GPT-6 Astra가 증명까지 도왔다니 수학적 난제 해결의 새로운 이정표가 될지 궁금해지네.",
       "voiceTake": "AI가 단순한 계산을 넘어 복잡한 이론 물리학의 증명 과정을 보조하는 단계에 이르렀다는 점이 핵심이야. 다만, AI가 도출한 증명 논리의 엄밀함과 물리적 타당성을 학계가 어떻게 검증할지가 관건이겠지.",
-      "imageCheckedAt": "2026-11-16T06:44:28.613863+00:00",
+      "imageCheckedAt": "2026-11-16T07:21:34.885669+00:00",
       "fingerprint": "ecb685ef73d202dd48695e46"
     },
     {
@@ -157,8 +157,45 @@
       "voiceMood": "curious",
       "voiceHook": "OpenAI가 과학 연구를 위한 전용 블로그를 따로 냈다는 소식이 들려왔어. AI가 정말 과학의 영역에서 얼마나 유의미한 진전을 이뤄내고 있는지 궁금해지지 않아?",
       "voiceTake": "단순히 연구 사례를 나열하는 홍보성 창구인지, 아니면 실제 과학계의 난제를 해결하는 실질적인 방법론을 제시하는 곳인지 지켜볼 필요가 있어. 말뿐인 성과보다는 구체적인 연구 데이터와 검증 가능한 방법론이 뒷받침되어야 진짜 의미가 있겠지.",
-      "imageCheckedAt": "2026-11-16T06:44:28.613863+00:00",
+      "imageCheckedAt": "2026-11-16T07:21:34.885669+00:00",
       "fingerprint": "230a23f9cce890573e74ace8"
+    },
+    {
+      "id": "feed-572e751e5486df0305f2cd",
+      "title": "\"챗GPT에 SNS 데이터 연동\"...뉴엔AI, 소셜 분석 MCP 출시",
+      "date": "2026-11-16",
+      "topic": "에이전트",
+      "region": "한국",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceType": "secondary",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217458"
+      ],
+      "score": 67,
+      "majorLaunch": false,
+      "imageUrl": "",
+      "imageSource": "",
+      "summary": "뉴엔AI가 생성형 AI와 소셜미디어 분석 기능을 직접 연동하는 '퀘타아이 MCP'를 출시함.",
+      "difference": "미확인",
+      "why": "별도의 API 개발 과정 없이 자연어 질문만으로 소셜미디어 데이터를 조회 및 분석하기 위함.",
+      "usage": "생성형 AI 환경에서 실시간 소비자 데이터 기반의 분석 결과를 도출하는 용도.",
+      "cost": "미확인",
+      "performance": "미확인",
+      "strengths": "소셜미디어 및 온라인 커뮤니티의 실제 소비자 데이터를 기반으로 분석 결과를 제공함.",
+      "limitations": "원문에 근거 없음.",
+      "mode": "ai-assisted",
+      "model": "gemini-3.1-flash-lite",
+      "evidence": [
+        "별도 API 개발 없이 챗GPT·클로드 등 생성형 AI에 뉴엔AI의 소셜미디어 분석 기능을 연동하고",
+        "SNS와 온라인 커뮤니티 등 실제 소비자 데이터 기반 분석 결과를 제공해 신뢰도 높은 답변을 도출할 수 있다는 설명이다."
+      ],
+      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
+      "confidence": "검토 필요",
+      "voiceMood": "curious",
+      "voiceHook": "생성형 AI가 직접 SNS 데이터를 파고든다니, 뉴엔AI가 내놓은 퀘타아이 MCP가 실무 현장의 복잡한 분석 과정을 얼마나 간소화해 줄지 궁금해지네.",
+      "voiceTake": "API 개발 없이 연동된다는 점은 매력적이지만, 결국 AI가 선택하는 분석 도구의 정확도와 데이터 해석의 신뢰성을 어떻게 검증할지가 관건이야. 무작정 도입하기 전에 실제 기업 환경에서 데이터의 정합성을 먼저 테스트해 보는 게 좋겠어.",
+      "imageCheckedAt": "2026-11-16T07:21:34.885669+00:00",
+      "fingerprint": "1c914b43f8f51479d0e79d06"
     },
     {
       "id": "feed-f25c1cec00ea5ce1522d56",
@@ -195,7 +232,7 @@
       "fingerprint": "399f5c4efe3bc38332af4508",
       "imageUrl": "",
       "imageSource": "",
-      "imageCheckedAt": "2026-11-16T06:44:28.613863+00:00"
+      "imageCheckedAt": "2026-11-16T07:21:34.885669+00:00"
     },
     {
       "id": "feed-dde13a6350f0c89d7a8f6d",
@@ -232,77 +269,44 @@
       "fingerprint": "f15914c131d5a33528f511e7",
       "imageUrl": "",
       "imageSource": "",
-      "imageCheckedAt": "2026-11-16T06:44:28.613863+00:00"
+      "imageCheckedAt": "2026-11-16T07:21:34.885669+00:00"
     },
     {
-      "id": "feed-2bde76109f67d68ffa7e7a",
-      "title": "백악관 \"AI 보안 사고 자진 신고하면 처벌 완화\"",
+      "id": "feed-8f78c90986a8a46b99c59d",
+      "title": "노타, 두베에 금융권 특화 AI 코딩 에이전트 기술 제공",
       "date": "2026-11-16",
-      "topic": "보안",
+      "topic": "에이전트",
       "region": "한국",
       "sourceLabel": "AI타임스 (보도)",
       "sourceType": "secondary",
       "urls": [
-        "https://www.aitimes.com/news/articleView.html?idxno=217450"
+        "https://www.aitimes.com/news/articleView.html?idxno=217457"
       ],
       "score": 62,
       "majorLaunch": false,
       "imageUrl": "",
       "imageSource": "",
-      "summary": "백악관이 AI 관련 사이버 공격이나 보안 취약점을 선의로 자진 신고하는 기업에 대해 최소 1년간 규제상 책임을 제한하는 방안을 권고했다. AI의 공격 능력이 빠르게 발전하면서 기존 보안 기준을 준수한 기업도 피해를 볼 수 있는 만큼, 처벌 부담을 줄여 사고 정보 공유를 장려하겠다는 취지다.블룸버그에 따르면, 도널드 트럼프 대통령의 AI 태스크포스인 '초지능 부대(SIF)' 관계자들은 12일(현지시간) 백악관 회의에서 각 정부 기관에 사이버 사고에 대한 기존 규제",
-      "difference": "원문 표현: AI의 공격 능력이 빠르게 발전하면서 기존 보안 기준을 준수한 기업도 피해를 볼 수 있는 만큼, 처벌 부담을 줄여 사고 정보 공유를 장려하겠다는 취지다.블룸버그에 따르면, 도널드 트럼프 대통령의 AI 태스크포스인 '초지능 부대(SIF)' 관계자들은 12일(현지시간) 백악관 회의에서 각 정부 기관에 사이버 사고에 대한 기존 규제 기준을 재검토하라고 권고했다.현행 기준이 AI 관련 보안 사고의 특성을",
-      "why": "확인해야 하는 이유: 실제 위협 범위와 패치 상태를 확인하는 것이 우선임",
-      "usage": "실무 검증: 공식 보안 권고·영향 버전·대응 절차 확인",
-      "cost": "가격·무료 여부 미확인",
-      "performance": "비교 가능한 성능 수치 미확인",
-      "strengths": "검증 전: 공식 소개에 실린 장점과 실제 효용을 구분해야 함",
-      "limitations": "독립 검증·실측 비교·사용 조건은 수집 요약만으로 확정할 수 없음",
-      "mode": "evidence-only",
-      "model": null,
-      "evidence": [
-        "백악관이 AI 관련 사이버 공격이나 보안 취약점을 선의로 자진 신고하는 기업에 대해 최소 1년간 규제상 책임을 제한하는 방안을 권고했다. AI의 공격 능력이 빠르게 발전하면서 기존 보안 기준을 준수한 기업도 피해를 볼 수 있는 만큼, 처벌 부담을 줄여"
-      ],
-      "status": "자동 근거 정리 · 심층 추론 미실행",
-      "confidence": "미검증",
-      "imageCheckedAt": "2026-11-16T06:44:28.613863+00:00",
-      "fingerprint": "4437fe44cbff95b31962ae30"
-    },
-    {
-      "id": "feed-08c66325fe6fd66fdaf761",
-      "title": "SKT, 효성중공업과 AI 데이터센터 전력 인프라 맞손",
-      "date": "2026-11-16",
-      "topic": "AI 인프라",
-      "region": "한국",
-      "sourceLabel": "AI타임스 (보도)",
-      "sourceType": "secondary",
-      "urls": [
-        "https://www.aitimes.com/news/articleView.html?idxno=217437"
-      ],
-      "score": 62,
-      "majorLaunch": false,
-      "imageUrl": "",
-      "imageSource": "",
-      "summary": "SK텔레콤과 효성중공업이 AI 데이터센터 전력 설비 공급 및 차세대 전력 기술 실증을 위한 전략적 업무협약을 체결함.",
+      "summary": "노타가 금융 IT 기업 두베에 온프레미스 환경에서 구동되는 금융권 특화 LLM 및 서버 인프라를 공급함.",
       "difference": "미확인",
-      "why": "AI 데이터센터 운영에 필수적인 대용량 전력 공급 체계를 안정적으로 확보하기 위함.",
-      "usage": "345kV 변전소 기자재 및 변압기 등 데이터센터 핵심 전력 인프라 구축에 활용.",
+      "why": "금융권의 폐쇄망 보안 요구사항을 충족하기 위해 외부망 연결 없이 내부 서버에서 실행 가능한 온프레미스 방식을 채택함.",
+      "usage": "금융권 시스템통합(SI) 사업 내 AI 코딩 에이전트의 모델 경량화 및 추론 최적화 지원.",
       "cost": "미확인",
       "performance": "미확인",
-      "strengths": "SKT의 데이터센터 운영 역량과 효성중공업의 전력 인프라 제조 기술의 결합.",
-      "limitations": "구체적인 실증 항목이나 기술적 목표치에 대한 상세 정보는 원문에 근거 없음.",
+      "strengths": "금융권 특화 모델 적용 및 온프레미스 서버 구성의 통합 제공.",
+      "limitations": "원문에 근거 없음.",
       "mode": "ai-assisted",
       "model": "gemini-3.1-flash-lite",
       "evidence": [
-        "SK텔레콤(대표 정재헌)은 효성중공업과 AI 데이터센터 전력설비 공급과 차세대 전력기술 실증을 위한 전략적 파트너십 업무협약(MOU)을 맺었다고 16일 밝혔다.",
-        "345kV 변전소는 전력계통에서 받은 대용량 전력을 데이터센터에서 사용할 수 있는 전압으로 변환하는 핵심 인프라다."
+        "폐쇄망을 쓰는 금융권 특성을 고려해 온프레미스 방식을 적용, 고객사 내부 서버에서 LLM이 실행이 가능하도록 구현했다.",
+        "노타는 두베의 AI 코딩 에이전트에 맞춰 모델 경량화, 추론·서빙 최적화부터 서버 구성까지 통합 제공했다."
       ],
       "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
       "confidence": "검토 필요",
-      "voiceMood": "serious",
-      "voiceHook": "AI 데이터센터의 핵심인 전력 인프라를 두고 SKT와 효성중공업이 손을 잡았다는 소식이야, 전력 공급망 확보가 얼마나 시급한 과제인지 다시금 실감하게 되네.",
-      "voiceTake": "단순한 MOU를 넘어 변압기 같은 장납기 설비의 수급 문제를 해결하려는 의도가 보여. 다만 실제 실증 단계에서 어떤 차세대 기술이 적용될지, 그 구체적인 성과가 어떻게 데이터센터 효율로 이어질지는 지켜봐야 할 거야.",
-      "imageCheckedAt": "2026-11-16T06:44:28.613863+00:00",
-      "fingerprint": "eb9feeefce5b5e8fd67da409"
+      "voiceMood": "skeptical",
+      "voiceHook": "금융권 폐쇄망에 AI 코딩 에이전트를 심겠다니, 보안과 효율이라는 두 마리 토끼를 어떻게 잡았는지 궁금해지네.",
+      "voiceTake": "단순히 모델을 경량화해서 서버에 올리는 건 흔한 방식이야. 금융권의 까다로운 보안 정책을 뚫고 실제 개발 생산성까지 유의미하게 개선했는지, 그 실질적인 코드 처리 정확도를 검증해봐야겠어.",
+      "imageCheckedAt": "2026-11-16T07:21:34.885669+00:00",
+      "fingerprint": "f60f7c1ffd42fbbfdb0c0e0a"
     }
   ],
   "disclaimer": "원문 기반 정보 정리입니다. AI 보조 분석은 사실 검증을 대체하지 않으며 가격·성능·이전 기술과의 차이가 확인되지 않으면 미확인으로 표시합니다."
