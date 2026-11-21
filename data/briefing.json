@@ -1,15 +1,15 @@
 {
   "schema": "signal-desk-briefing-v1",
-  "generatedAt": "2026-11-20T07:48:37.713098+00:00",
-  "newsGeneratedAt": "2026-11-20T07:48:16.650689+00:00",
+  "generatedAt": "2026-11-21T07:22:29.346459+00:00",
+  "newsGeneratedAt": "2026-11-21T07:22:05.974704+00:00",
   "headline": "AI 변화 브리핑 · 최근 7일",
   "coverage": "최근 7일 중 중요 후보, 뉴스 수집 대상 범위 내에서만 작성",
   "mode": "ai-assisted",
   "aiAnalyzed": 8,
-  "aiCalls": 0,
+  "aiCalls": 2,
   "aiErrors": 0,
   "aiFailureCode": null,
-  "cacheHits": 8,
+  "cacheHits": 6,
   "modelConfigured": true,
   "storyCount": 8,
   "items": [
@@ -24,7 +24,7 @@
       "urls": [
         "https://deepmind.google/blog/introducing-gemini-4-neon"
       ],
-      "score": 100,
+      "score": 96,
       "majorLaunch": true,
       "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-neon__blog-header__sm.width-1300.png",
       "imageSource": "공식 원문 대표 이미지",
@@ -61,10 +61,10 @@
       "urls": [
         "https://openai.com/index/introducing-gpt-6-2-astra-sol"
       ],
-      "score": 100,
+      "score": 96,
       "majorLaunch": true,
-      "imageUrl": "",
-      "imageSource": "",
+      "imageUrl": "https://cdn.openai.com/mdx-assets/e193aefe-5e58-431c-8cd2-adadac0c1496/44573edd-9653-49b3-ba07-7b3643545ef9.d3072be3.png",
+      "imageSource": "공식 원문 대표 이미지",
       "summary": "GPT-6.2 Astra 및 Sol 모델이 발표되었으며, 전문적인 출력, 코딩, 컴퓨터 제어 능력 및 효율성 개선을 강조함.",
       "difference": "미확인",
       "why": "전문적인 작업 수행 능력과 코딩 및 컴퓨터 사용 효율을 높이기 위해 개발됨.",
@@ -83,8 +83,82 @@
       "voiceMood": "skeptical",
       "voiceHook": "새로운 모델이 나왔다길래 기대했더니, 정작 중요한 성능 수치는 쏙 빠져있네. 이런 발표는 늘 알맹이가 부족해서 직접 뜯어보기 전까진 믿기 어렵단 말이지.",
       "voiceTake": "효율과 성능 개선을 내세웠지만, 정작 비교 근거가 되는 구체적인 수치가 전무해. 그저 '더 좋아졌다'는 말만 반복하는 홍보 문구에 휘둘리지 말고, 실제 워크플로우에서 얼마나 생산성이 체감되는지부터 냉정하게 따져봐야 할 거야.",
-      "imageCheckedAt": "2026-11-20T07:48:37.713098+00:00",
+      "imageCheckedAt": "2026-11-21T07:22:29.346459+00:00",
       "fingerprint": "426eb41ceea15d5358258817"
+    },
+    {
+      "id": "feed-701a571706ec6c00de8bbc",
+      "title": "Introducing harness adapters: adapt your favorite model to your harness to improve performance and cost",
+      "date": "2026-11-20",
+      "topic": "모델 출시",
+      "region": "해외",
+      "sourceLabel": "Hugging Face 블로그",
+      "sourceType": "primary",
+      "urls": [
+        "https://huggingface.co/blog/harness-adapters-at-scale"
+      ],
+      "score": 76,
+      "majorLaunch": false,
+      "imageUrl": "https://huggingface.co/blog/assets/harness-adapters-at-scale/thumbnail.png",
+      "imageSource": "공식 원문 대표 이미지",
+      "summary": "특정 에이전트 하네스(Harness)와 작업 환경에 최적화된 LoRA 어댑터를 강화학습(RL)으로 학습시켜 모델의 성능과 효율을 개선하는 방법론을 제시합니다.",
+      "difference": "범용 모델과 달리 특정 하네스 및 작업 분포에 맞춰 RL로 학습된 어댑터를 결합하여 정확도와 효율성을 높임.",
+      "why": "모델이 범용 성능에만 최적화되어 있어 실제 특정 작업 환경에서 잠재적 성능을 완전히 발휘하지 못하는 문제를 해결하기 위함.",
+      "usage": "Hugging Face의 TRL과 Harbor 형식을 활용해 사용자 정의 작업 환경에서 모델을 학습하고 어댑터를 생성.",
+      "cost": "미확인",
+      "performance": "Qwen3.8-27B 모델 기준, Pi 하네스에서 pass@1 점수가 39%에서 55%로 상승하고 토큰 사용량이 2.9K에서 1.5K로 감소함.",
+      "strengths": "특정 작업 환경에 맞춘 최적화로 모델의 불필요한 추론과 도구 호출을 줄여 효율성을 극대화함.",
+      "limitations": "모델이 구체적으로 어떤 학습 과정을 거쳐 성능이 향상되었는지에 대한 내부 메커니즘은 여전히 미해결 과제로 남아 있음.",
+      "mode": "ai-assisted",
+      "model": "gemini-3.1-flash-lite",
+      "evidence": [
+        "Combining RL on a custom task distribution with your favorite agent harness yields more accurate and efficient models",
+        "If we freeze those weights and add a custom RL-trained LoRA adapter we can get 55% pass@1, with average token usage of 1.5K"
+      ],
+      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
+      "confidence": "검토 필요",
+      "voiceMood": "curious",
+      "voiceHook": "범용 모델이 내 작업 환경에선 왜 이렇게 굼뜬지 답답했지? 특정 하네스에 딱 맞춘 어댑터로 모델을 길들이는 흥미로운 실험이 나왔어.",
+      "voiceTake": "단순히 모델을 키우는 게 아니라, 환경에 맞춰 깎아내는 최적화 방식이 인상적이네. 다만 블랙박스 같은 RL 학습 결과가 정말 의도대로 작동하는지, 그 근거를 직접 검증해 볼 필요가 있어 보여.",
+      "imageCheckedAt": "2026-11-21T07:22:29.346459+00:00",
+      "fingerprint": "6577ba478895928c1c597d28"
+    },
+    {
+      "id": "feed-55844ef3baed08baf75513",
+      "title": "Claude Code · v2.1.330",
+      "date": "2026-11-20",
+      "topic": "코딩 도구",
+      "region": "해외",
+      "sourceLabel": "GitHub · Claude Code",
+      "sourceType": "primary",
+      "urls": [
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.330"
+      ],
+      "score": 76,
+      "majorLaunch": false,
+      "imageUrl": "",
+      "imageSource": "",
+      "summary": "Claude Code v2.1.330 업데이트는 엔터프라이즈 관리 콘솔 연동과 시각화 도구 'easel' 추가, 다수의 버그 수정을 포함합니다.",
+      "difference": "미확인",
+      "why": "엔터프라이즈 환경의 보안 정책 적용과 개발 생산성 향상을 위한 시각화 기능 및 안정성 개선이 목적입니다.",
+      "usage": "엔터프라이즈 환경에서 claude auth login을 통해 조직 설정을 적용하거나, 코드 작업 중 차트 생성을 위해 easel 기능을 활용할 수 있습니다.",
+      "cost": "미확인",
+      "performance": "미확인",
+      "strengths": "엔터프라이즈 관리 콘솔과의 연동성 강화, MCP 메트릭 시각화 도구 추가, 대화 압축 시 발생하는 프리징 현상 등 다수의 안정성 문제 해결.",
+      "limitations": "일부 기능은 macOS 및 Linux 환경으로 제한되며, 특정 상황에서 발생하던 세션 프리징 및 설정 저장 오류 등은 수정되었으나 실사용 환경에 따른 추가 검증이 필요합니다.",
+      "mode": "ai-assisted",
+      "model": "gemini-3.1-flash-lite",
+      "evidence": [
+        "Added sign-in to organizations managed in Anthropic's Enterprise Admin Console",
+        "Added easel, a built-in mod that draws charts when asked and under MCP metrics results"
+      ],
+      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
+      "confidence": "검토 필요",
+      "voiceMood": "serious",
+      "voiceHook": "Anthropic이 기업용 관리 콘솔 연동과 시각화 도구를 들고 왔는데, 과연 실무에서 얼마나 쾌적하게 돌아갈지 궁금하지 않아?",
+      "voiceTake": "단순한 기능 추가보다 눈에 띄는 건 그동안 지적되던 세션 프리징과 동기화 오류를 대거 잡았다는 거야. 개발 도구는 결국 안정성이 생명인데, 이번 패치가 얼마나 실질적인 작업 효율을 끌어올릴지 직접 돌려보며 확인해봐야겠어.",
+      "imageCheckedAt": "2026-11-21T07:22:29.346459+00:00",
+      "fingerprint": "6663ea53fa003ac1e2ffb7a8"
     },
     {
       "id": "feed-0167766c43bbb128cd1a94",
@@ -97,7 +171,7 @@
       "urls": [
         "https://github.com/openai/codex/releases/tag/rust-v0.171.0"
       ],
-      "score": 81,
+      "score": 76,
       "majorLaunch": false,
       "imageUrl": "",
       "imageSource": "",
@@ -120,7 +194,7 @@
       "voiceMood": "curious",
       "voiceHook": "Codex가 0.171.0 버전으로 돌아왔는데, 이번엔 GPT-6.2 Sol 모델을 기본으로 내세우고 TUI 워크스페이스를 아예 기본값으로 박아버렸네?",
       "voiceTake": "단순히 모델만 갈아 끼운 게 아니라 TUI 환경을 기본으로 밀어붙이는 걸 보니, 이제 터미널 기반의 생산성 워크플로우를 본격적으로 정착시키려는 속셈인가 봐. 이 변화가 실제로 내 작업 흐름을 얼마나 매끄럽게 만들어줄지, 아니면 그저 화려한 껍데기일 뿐인지 직접 돌려보며 확인해봐야겠어.",
-      "imageCheckedAt": "2026-11-20T07:48:37.713098+00:00",
+      "imageCheckedAt": "2026-11-21T07:22:29.346459+00:00",
       "fingerprint": "568d0be30609f44876dbfae4"
     },
     {
@@ -134,7 +208,7 @@
       "urls": [
         "https://github.com/google-gemini/gemini-cli/releases/tag/v0.69.0"
       ],
-      "score": 81,
+      "score": 76,
       "majorLaunch": false,
       "imageUrl": "",
       "imageSource": "",
@@ -157,82 +231,8 @@
       "voiceMood": "curious",
       "voiceHook": "Gemini CLI가 0.69.0으로 판올림됐는데, 이번엔 토큰 사용량을 히트맵으로 보여준대. 이런 건 직접 써봐야 감이 오지 않겠어?",
       "voiceTake": "단순한 버그 수정 너머로 토큰 사용량을 시각화하려는 시도가 보여. CLI 도구에서 이런 통계 기능이 얼마나 실질적인 생산성 향상으로 이어질지는 좀 더 지켜봐야겠네.",
-      "imageCheckedAt": "2026-11-20T07:48:37.713098+00:00",
+      "imageCheckedAt": "2026-11-21T07:22:29.346459+00:00",
       "fingerprint": "65d04900ae14a49376be31fa"
-    },
-    {
-      "id": "feed-82fe289fe466dcc1d4f71a",
-      "title": "Explore the Codex Security Plugin",
-      "date": "2026-11-19",
-      "topic": "보안",
-      "region": "해외",
-      "sourceLabel": "OpenAI 공식 발표",
-      "sourceType": "primary",
-      "urls": [
-        "https://openai.com/business/learn/codex-security-plugin-demo"
-      ],
-      "score": 81,
-      "majorLaunch": false,
-      "imageUrl": "",
-      "imageSource": "",
-      "summary": "Codex Security Plugin의 기능과 워크플로우를 시연하는 데모 영상이 공개되었습니다.",
-      "difference": "미확인",
-      "why": "원문에 근거 없음",
-      "usage": "데모 영상을 통해 초기 설정부터 결과 검토까지의 전체 워크플로우를 확인할 수 있습니다.",
-      "cost": "미확인",
-      "performance": "미확인",
-      "strengths": "초기 설정부터 결과 검토까지의 전 과정을 시각적으로 확인할 수 있는 데모가 제공됩니다.",
-      "limitations": "구체적인 기술 사양이나 보안 성능에 대한 정보가 원문에 없습니다.",
-      "mode": "ai-assisted",
-      "model": "gemini-3.1-flash-lite",
-      "evidence": [
-        "Watch a demo of the Codex Security Plugin and see the workflow in action",
-        "from getting started to reviewing the results shown in the recording"
-      ],
-      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
-      "confidence": "검토 필요",
-      "voiceMood": "skeptical",
-      "voiceHook": "Codex Security Plugin 데모가 나왔다는데, 정작 중요한 보안 성능이나 구체적인 기능 설명은 하나도 없어서 좀 당황스럽네.",
-      "voiceTake": "데모 영상으로 워크플로우를 보여주겠다는 건 알겠는데, 기술적 실체에 대한 설명이 너무 부족해. 단순히 영상만 보고 판단하기엔 검증할 데이터가 전혀 없으니, 실제 환경에서의 보안 취약점 탐지율이나 오탐률을 직접 테스트해 보는 과정이 반드시 필요해 보여.",
-      "imageCheckedAt": "2026-11-20T07:48:37.713098+00:00",
-      "fingerprint": "a99799013d8ec99b915ae239"
-    },
-    {
-      "id": "feed-7b5e78fba2db434e32f95c",
-      "title": "Gemini CLI · Release v0.70.0",
-      "date": "2026-11-19",
-      "topic": "코딩 도구",
-      "region": "해외",
-      "sourceLabel": "GitHub · Gemini CLI",
-      "sourceType": "primary",
-      "urls": [
-        "https://github.com/google-gemini/gemini-cli/releases/tag/v0.70.0"
-      ],
-      "score": 81,
-      "majorLaunch": false,
-      "imageUrl": "",
-      "imageSource": "",
-      "summary": "Gemini CLI v0.70.0 릴리스는 유니코드 프롬프트 처리 개선, 인증 재시작 시 워크트리 유지, 모델 출력 토큰 제한 보고 정확도 향상 등 다수의 버그 수정과 내부 로직 최적화를 포함합니다.",
-      "difference": "미확인",
-      "why": "CLI 환경의 안정성 확보와 세션 관리, 보안 권한 정책 강화가 주된 목적입니다.",
-      "usage": "실제 터미널 환경에서 유니코드 프롬프트가 포함된 긴 세션을 실행하여 텍스트 깨짐 현상이나 세션 유지 오류가 발생하는지 재현 테스트를 수행하세요.",
-      "cost": "미확인",
-      "performance": "미확인",
-      "strengths": "유니코드 프롬프트 및 ANSI 조각 처리 개선, 워크트리 및 세션 상태 유지 기능 강화.",
-      "limitations": "원문에 근거 없음",
-      "mode": "ai-assisted",
-      "model": "gemini-3.1-flash-lite",
-      "evidence": [
-        "fix(cli): preserve Unicode prompts and strip ANSI fragments in session previews",
-        "fix(cli): preserve selected worktree across authentication restarts"
-      ],
-      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
-      "confidence": "검토 필요",
-      "voiceMood": "serious",
-      "voiceHook": "Gemini CLI가 v0.70.0으로 업데이트됐는데, 겉보기엔 단순한 버그 수정 같지만 뜯어볼 구석이 꽤 많아 보여.",
-      "voiceTake": "단순한 패치처럼 보이지만 유니코드 처리나 인증 재시작 같은 세션 안정성 문제를 집중적으로 건드렸네. 툴의 기본기를 다지는 건 좋지만, 이런 변화가 실제 워크플로우에서 얼마나 체감될지는 직접 돌려봐야 알겠지.",
-      "imageCheckedAt": "2026-11-20T07:48:37.713098+00:00",
-      "fingerprint": "c469b1492b687fab69a1c943"
     },
     {
       "id": "feed-c9e57ff93738c487d92d60",
@@ -245,7 +245,7 @@
       "urls": [
         "https://d2.naver.com/helloworld/6180316"
       ],
-      "score": 73,
+      "score": 68,
       "majorLaunch": false,
       "imageUrl": "",
       "imageSource": "",
@@ -268,7 +268,7 @@
       "voiceMood": "curious",
       "voiceHook": "GPU 8장을 꽂아두고도 마음대로 못 쓴다니, 하드웨어 제약이라는 게 참 까다롭기도 하지?",
       "voiceTake": "단순히 개수만 맞추는 게 아니라 NVLink 토폴로지까지 고려해야 하는 상황이네. 쿠버네티스 스케줄러가 이 복잡한 제약 조건을 어떻게 DRA로 우아하게 풀어냈을지 궁금해지는데.",
-      "imageCheckedAt": "2026-11-20T07:48:37.713098+00:00",
+      "imageCheckedAt": "2026-11-21T07:22:29.346459+00:00",
       "fingerprint": "7ef59e1dacf7187590177086"
     },
     {
@@ -282,7 +282,7 @@
       "urls": [
         "https://d2.naver.com/helloworld/1376800"
       ],
-      "score": 73,
+      "score": 68,
       "majorLaunch": false,
       "imageUrl": "",
       "imageSource": "",
@@ -305,7 +305,7 @@
       "voiceMood": "skeptical",
       "voiceHook": "GPU 8장을 VM에 쑤셔 넣으려다 부팅조차 안 되는 상황이라니, 다들 너무 무리하는 거 아냐?",
       "voiceTake": "단순히 GPU 개수만 늘린다고 해결될 문제가 아닌 것 같은데, 호스트의 토폴로지 정보를 게스트가 어떻게 인지하게 할지가 관건이겠네. 무작정 연결하기 전에 하드웨어 계층부터 제대로 뜯어봐야 할 거야.",
-      "imageCheckedAt": "2026-11-20T07:48:37.713098+00:00",
+      "imageCheckedAt": "2026-11-21T07:22:29.346459+00:00",
       "fingerprint": "8e1c7347eaac45d11cb33a36"
     }
   ],
