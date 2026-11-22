@@ -1,6 +1,6 @@
 {
   "schema": "signal-desk-public-feed-v1",
-  "generatedAt": "2026-11-22T07:02:00.935545+00:00",
+  "generatedAt": "2026-11-22T07:30:03.482551+00:00",
   "successfulSources": 21,
   "failedSources": 1,
   "sources": [
@@ -142,11 +142,12 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "AI타임스 (보도)",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "sourceType": "secondary",
       "relatedSources": [
         "AI타임스 (보도)"
-      ]
+      ],
+      "duplicateCount": 1
     },
     {
       "id": "feed-5bf435abc7dbd56002356b",
@@ -174,11 +175,12 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "AI타임스 (보도)",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "sourceType": "secondary",
       "relatedSources": [
         "AI타임스 (보도)"
-      ]
+      ],
+      "duplicateCount": 1
     },
     {
       "id": "feed-320e4134ec7305599802d4",
@@ -206,11 +208,12 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "AI타임스 (보도)",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "sourceType": "secondary",
       "relatedSources": [
         "AI타임스 (보도)"
-      ]
+      ],
+      "duplicateCount": 1
     },
     {
       "id": "feed-21f5321fa1960c108195e1",
@@ -238,11 +241,12 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "AI타임스 (보도)",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "sourceType": "secondary",
       "relatedSources": [
         "AI타임스 (보도)"
-      ]
+      ],
+      "duplicateCount": 1
     },
     {
       "id": "feed-03fca9cfc3f484b83d2e71",
@@ -270,11 +274,12 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "AI타임스 (보도)",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "sourceType": "secondary",
       "relatedSources": [
         "AI타임스 (보도)"
-      ]
+      ],
+      "duplicateCount": 1
     },
     {
       "id": "feed-bf913a72d224887ff6b31f",
@@ -401,10 +406,11 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Transformers",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "GitHub · Transformers"
-      ]
+      ],
+      "duplicateCount": 1
     },
     {
       "id": "feed-704f8c31faf83a4ccfeb22",
@@ -530,11 +536,12 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "AI타임스 (보도)",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "sourceType": "secondary",
       "relatedSources": [
         "AI타임스 (보도)"
-      ]
+      ],
+      "duplicateCount": 1
     },
     {
       "id": "feed-f74bf5c2850fbfdf45fe71",
@@ -693,7 +700,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -790,7 +797,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google Research",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Google Research"
       ],
@@ -822,7 +829,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -854,7 +861,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -886,7 +893,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -918,7 +925,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -950,7 +957,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Claude Code",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "GitHub · Claude Code"
       ],
@@ -1047,7 +1054,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Codex",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "GitHub · Codex"
       ],
@@ -1079,7 +1086,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Claude Code",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "GitHub · Claude Code"
       ],
@@ -1111,7 +1118,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Claude Code",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "GitHub · Claude Code"
       ],
@@ -1208,7 +1215,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Gemini CLI",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "GitHub · Gemini CLI"
       ],
@@ -1240,7 +1247,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -1433,7 +1440,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
@@ -1529,7 +1536,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -1561,7 +1568,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "NVIDIA 개발자",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "NVIDIA 개발자"
       ],
@@ -1625,7 +1632,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -1721,7 +1728,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -1817,7 +1824,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Gemini CLI",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "GitHub · Gemini CLI"
       ],
@@ -1881,7 +1888,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
@@ -1913,7 +1920,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
@@ -1977,7 +1984,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Google AI 블로그"
       ],
@@ -2041,7 +2048,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google Research",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Google Research"
       ],
@@ -2073,7 +2080,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "NVIDIA 개발자",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "NVIDIA 개발자"
       ],
@@ -2105,7 +2112,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
@@ -2137,7 +2144,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
@@ -2201,7 +2208,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
@@ -2233,7 +2240,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -2265,7 +2272,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
@@ -2329,7 +2336,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Google AI 블로그"
       ],
@@ -2361,7 +2368,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
@@ -2393,7 +2400,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google DeepMind",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Google DeepMind"
       ],
@@ -2521,7 +2528,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -2584,7 +2591,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -2647,7 +2654,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -2679,7 +2686,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "NVIDIA 개발자",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "NVIDIA 개발자"
       ],
@@ -2744,7 +2751,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google DeepMind",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Google DeepMind"
       ],
@@ -2808,7 +2815,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
@@ -2904,7 +2911,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
@@ -3001,7 +3008,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -3161,7 +3168,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub Copilot",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "GitHub Copilot"
       ],
@@ -3257,7 +3264,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub Copilot",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "GitHub Copilot"
       ],
@@ -3385,7 +3392,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -3481,7 +3488,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -3610,7 +3617,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub Copilot",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "GitHub Copilot"
       ],
@@ -3642,7 +3649,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · ComfyUI",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "GitHub · ComfyUI"
       ],
@@ -3738,7 +3745,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "NVIDIA 개발자",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "NVIDIA 개발자"
       ],
@@ -3770,7 +3777,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -3834,7 +3841,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Google AI 블로그"
       ],
@@ -3994,7 +4001,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "NVIDIA 개발자",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "NVIDIA 개발자"
       ],
@@ -4091,7 +4098,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub Copilot",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "GitHub Copilot"
       ],
@@ -4350,7 +4357,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Google AI 블로그"
       ],
@@ -4414,7 +4421,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub Copilot",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "GitHub Copilot"
       ],
@@ -4479,7 +4486,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub Copilot",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "GitHub Copilot"
       ],
@@ -4575,7 +4582,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub Copilot",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "GitHub Copilot"
       ],
@@ -4607,7 +4614,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub Copilot",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "GitHub Copilot"
       ],
@@ -4672,7 +4679,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub Copilot",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "GitHub Copilot"
       ],
@@ -4704,7 +4711,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub Copilot",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "GitHub Copilot"
       ],
@@ -4864,7 +4871,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "카카오테크",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "카카오테크"
       ],
@@ -5279,7 +5286,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "NVIDIA 개발자",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "NVIDIA 개발자"
       ],
@@ -5535,7 +5542,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · vLLM",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "GitHub · vLLM"
       ],
@@ -5599,7 +5606,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -5823,7 +5830,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Microsoft Research",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Microsoft Research"
       ],
@@ -5887,7 +5894,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
@@ -6176,7 +6183,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Google AI 블로그"
       ],
@@ -6272,7 +6279,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-22T07:02:00.935545+00:00",
+      "sourceCheckedAt": "2026-11-22T07:30:03.482551+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
