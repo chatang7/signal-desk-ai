@@ -1,48 +1,48 @@
 {
   "schema": "signal-desk-public-feed-v1",
-  "generatedAt": "2026-11-24T10:27:55.071909+00:00",
-  "successfulSources": 13,
-  "failedSources": 9,
+  "generatedAt": "2026-11-25T08:46:37.721318+00:00",
+  "successfulSources": 21,
+  "failedSources": 1,
   "sources": [
     {
       "source": "Codex 릴리스",
-      "ok": false,
-      "error": "HTTP Error 403: rate limit exceeded"
+      "ok": true,
+      "count": 1
     },
     {
       "source": "Gemini CLI 릴리스",
-      "ok": false,
-      "error": "HTTP Error 403: rate limit exceeded"
+      "ok": true,
+      "count": 2
     },
     {
       "source": "Claude Code 릴리스",
-      "ok": false,
-      "error": "HTTP Error 403: rate limit exceeded"
+      "ok": true,
+      "count": 3
     },
     {
       "source": "Transformers 릴리스",
-      "ok": false,
-      "error": "HTTP Error 403: rate limit exceeded"
+      "ok": true,
+      "count": 2
     },
     {
       "source": "vLLM 릴리스",
-      "ok": false,
-      "error": "HTTP Error 403: rate limit exceeded"
+      "ok": true,
+      "count": 0
     },
     {
       "source": "Ollama 릴리스",
-      "ok": false,
-      "error": "HTTP Error 403: rate limit exceeded"
+      "ok": true,
+      "count": 1
     },
     {
       "source": "ComfyUI 릴리스",
-      "ok": false,
-      "error": "HTTP Error 403: rate limit exceeded"
+      "ok": true,
+      "count": 1
     },
     {
       "source": "llama.cpp 릴리스",
-      "ok": false,
-      "error": "HTTP Error 403: rate limit exceeded"
+      "ok": true,
+      "count": 0
     },
     {
       "source": "OpenAI 공식 발표",
@@ -56,18 +56,18 @@
     },
     {
       "source": "Google DeepMind",
-      "ok": true,
-      "count": 3
+      "ok": false,
+      "error": "not well-formed (invalid token): line 1, column 0"
     },
     {
       "source": "카카오테크",
-      "ok": false,
-      "error": "<urlopen error timed out>"
+      "ok": true,
+      "count": 0
     },
     {
       "source": "네이버 D2",
       "ok": true,
-      "count": 6
+      "count": 9
     },
     {
       "source": "Google Research",
@@ -77,7 +77,7 @@
     {
       "source": "Hugging Face 블로그",
       "ok": true,
-      "count": 9
+      "count": 10
     },
     {
       "source": "Mistral AI",
@@ -87,7 +87,7 @@
     {
       "source": "NVIDIA 개발자",
       "ok": true,
-      "count": 6
+      "count": 7
     },
     {
       "source": "Microsoft Research",
@@ -97,7 +97,7 @@
     {
       "source": "GitHub Copilot",
       "ok": true,
-      "count": 10
+      "count": 3
     },
     {
       "source": "과학기술정보통신부",
@@ -116,6 +116,353 @@
     }
   ],
   "items": [
+    {
+      "id": "feed-fa0a371bc7f79d3fa1dd80",
+      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217782",
+      "title": "음악 플랫폼 타이달, AI 생성곡 전면 금지…연말까지 2900만곡 삭제",
+      "topic": "미정",
+      "region": "한국",
+      "date": "2026-11-25",
+      "summary": "음악 스트리밍 플랫폼 타이달(Tidal)이 AI로만 생성한 음악의 등록을 전면 금지하고, 연말까지 약 2900만곡을 삭제한다. 주요 음악 플랫폼들이 AI 생성곡에 별도 표시를 붙이거나 스팸 음원을 선별적으로 삭제해 온 것에서 한발 더 나아간 조치다.타이달은 24일(현지시간) 오는 12월9일부터 AI로만 제작한 음원의 신규 등록을 거부하고 기존 음원도 삭제한다는 새로운 정책을 발표했다. 음원 유통사를 통한 등록도 차단하며, 하루 8만~8만5000곡의 등록을 거부할 것으로 예상했다.타이달은 트위터 공동 창업자인 잭 도시가 이끄는 미국",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217782"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 2,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "sourceType": "secondary",
+      "relatedSources": [
+        "AI타임스 (보도)"
+      ]
+    },
+    {
+      "id": "feed-e5470c885808e84662dfe0",
+      "externalId": "github:anthropics/claude-code:457391405",
+      "title": "Claude Code · v2.1.332",
+      "topic": "코딩 도구",
+      "region": "해외",
+      "date": "2026-11-25",
+      "summary": "## What's changed - Added skills from MCP servers (beta). They show as `server:skill` in the `/` menu; other skills keep their names - Added a `PreSkillShellCommand` hook event that can refuse a skill or command's inline shell commands as it loads; on 2.1.331 and older, a settings file naming it opens a dialog at start - Added \"Always deliver\" to the prompt for held messages from other sessions - Added a footer line that stays while a flagged message has your session on a different model, until ",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.332"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "GitHub · Claude Code",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "relatedSources": [
+        "GitHub · Claude Code"
+      ]
+    },
+    {
+      "id": "feed-c12df918688dab022d02ee",
+      "externalId": "https://d2.naver.com/helloworld/6934862",
+      "title": "운영자의 시간을 아끼는 AI 에이전트 1부 - RCA·Q&A 운영 지식그래프",
+      "topic": "에이전트",
+      "region": "한국",
+      "date": "2026-11-25",
+      "summary": "네이버 사내 기술 교류 행사인 NAVER Engineering Day 10th 에서 발표되었던 세션을 공개합니다. ​ ​ 발표 내용 운영 문의에 명확한 답변을 남겨도 이슈가 닫히면 묻히기 쉽습니다. 같은 원인으로 문의가 다시 들어오면 운영자는 처음부터 다시 조사해야 했습니다. 이 발표에서는 n3r 운영 이슈에서 LLM으로 RCA(근본 원인 분석)와 Q&A를 추출해 Neo4j 지식 그래프에 쌓고, Care AI 에이전트가 이를 찾아 답변에 활용하도록 만든 과정을 소개합니다. \"OpenSearch 업그레이드가 멈췄어요\"라는 실제 문의를 따라가며, 대화를 그래프로 바꾸기 위한 프롬프트와 추출 결과를 검증하는 방법을 설명합니다. 증상뿐 아니라 원인도 같은 사례를 찾기 위해 적용한 하이브리드 검색과 LLM 리랭킹, 클러스터 상태 정보의 활용 방식도 함께 다룹니다. ​ <참고> 영상속 사내용어 n3r = 네이버 사내 쿠버네티스 기반 컨테이너 플랫폼 ​ 발표 대상 AI 에이전트로 반복되는 운영 ",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://d2.naver.com/helloworld/6934862"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "네이버 D2",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "relatedSources": [
+        "네이버 D2"
+      ]
+    },
+    {
+      "id": "feed-a0f84537024bbf3ef16197",
+      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217775",
+      "title": "앤트로픽 \"AI 도입 기업, 직원 해고보다 신규 채용 줄여\"",
+      "topic": "AI 기업",
+      "region": "한국",
+      "date": "2026-11-25",
+      "summary": "기업들이 AI를 도입하면서 기존 직원을 대규모로 해고하기보다는 신규 채용과 외주 인력을 줄이는 방식으로 인력 수요를 조정하고 있는 것으로 나타났다. 앤트로픽이 미국 기업 58곳을 조사한 결과, AI 자동화로 기존 직원을 해고한 기업은 2곳에 불과했지만 약 3분의 2는 신규 채용을 줄였다고 답했다.앤트로픽은 23일(현지시간) 미국 기업 58곳의 경영진과 관리자, 실무자를 대상으로 진행한 66건의 인터뷰를 바탕으로 AI 도입이 업무와 고용에 미치는 영향을 분석한 보고서를 공개했다. 제조업과 기술 기업부터 법률·금융·의료 분야까지 약 3",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217775"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 2,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "sourceType": "secondary",
+      "relatedSources": [
+        "AI타임스 (보도)"
+      ]
+    },
+    {
+      "id": "feed-6836765298ce95a75f398c",
+      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217773",
+      "title": "오픈클로, 실생활 AI 에이전트 평가 '셸벤치' 공개…최고 모델도 성공률 62.5%",
+      "topic": "에이전트",
+      "region": "한국",
+      "date": "2026-11-25",
+      "summary": "AI 에이전트가 일상 업무를 자율적으로 처리하는 데 여전히 상당한 한계가 있다는 평가 결과가 나왔다. 최고 성능 모델조차 과제 성공률이 62.5%에 그쳤으며, 같은 작업을 세 차례 수행해 모두 성공한 비율은 절반에도 못 미쳤다.오픈클로 재단은 24일(현지시간) 실제 AI 에이전트 사용 기록 1000만건 이상에서 추출한 업무 유형을 바탕으로 일상 업무 수행 능력을 측정하는 벤치마크 '셸벤치(ShellBench)'를 공개했다.셸벤치는 오픈클로 재단이 파스웨이브(Parsewave), 허깅페이스, 레드햇, UC버클리 연구진 등과 공동 개발",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217773"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 2,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "sourceType": "secondary",
+      "relatedSources": [
+        "AI타임스 (보도)"
+      ]
+    },
+    {
+      "id": "feed-4f46bdecd5628195f02063",
+      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217779",
+      "title": "xAI 창립 멤버들, 미래 예측 AI 개발 나서…30년치 인터넷 활용",
+      "topic": "미정",
+      "region": "한국",
+      "date": "2026-11-25",
+      "summary": "xAI 창립 멤버들이 미래 예측에 특화한 AI 모델을 개발하기 위해 새로운 스타트업을 설립했다. 지난 30년간의 인터넷 기록을 활용해 과거 특정 시점의 정보 환경을 재현하고, AI가 사건의 결과를 모르는 상태에서 예측하도록 훈련하는 방식이다.AI 스타트업 에포칼(Epochal)은 24일(현지시간) 회사 출범과 함께 AI 에이전트의 미래 예측 능력을 훈련하고 평가하기 위한 첫 제품 '타임 포털(Time Portal)'을 공개했다.에포칼은 xAI 창립 멤버인 궈둥 장과 즈항 다이, 마누엘 크로이스가 공동 창업했다. 세 사람은 지난 2월",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217779"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 2,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "sourceType": "secondary",
+      "relatedSources": [
+        "AI타임스 (보도)"
+      ]
+    },
+    {
+      "id": "feed-43ef0b06ceca81e024fc72",
+      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217784",
+      "title": "로이터 \"앨리스 황 관련 기업, 중국서 3억달러 규모 AI 장비 금융 거래 확인\"",
+      "topic": "AI 기업",
+      "region": "한국",
+      "date": "2026-11-25",
+      "summary": "앨리스 황의 가족 및 사업 관계자와 연결된 기업들이 중국에서 3억달러(약 4000억원) 규모의 AI 컴퓨팅 장비를 대상으로 금융 거래를 한 사실이 확인됐다. 중국 중앙은행의 금융 기록을 통해 이들 기업이 중국 AI 데이터센터 사업에 관여한 구체적인 규모가 드러났다.로이터는 25일(현지시간) 중국 중앙은행의 미공개 신용 등록 자료 수십건을 분석한 결과, 앨리스 황과 관련된 기업들이 고성능 AI 장비를 담보로 자금을 조달한 사실을 확인했다고 보도했다.금융 기록에 포함된 AI 서버와 컴퓨팅 모듈은 최대 764대로, 평가액은 2억7000만",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217784"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 2,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "sourceType": "secondary",
+      "relatedSources": [
+        "AI타임스 (보도)"
+      ]
+    },
+    {
+      "id": "feed-2afb7e86ede9cc87ff50d4",
+      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217780",
+      "title": "브릴스, 디와이에이에 로봇 솔루션 공급...AI 고속 비전 로봇으로 공정 고도화",
+      "topic": "미정",
+      "region": "한국",
+      "date": "2026-11-25",
+      "summary": "브릴스(대표 전진)가 현대차·기아 1차 협력사인 자동차 시트 제조기업 디와이에이의 생산라인에 조립·검사·물류 로봇 솔루션을 공급한다고 25일 밝혔다. 이로써 브릴스의 올해 누적 수주액은 46억8000만원(17건)에 달했다.이 프로젝트는 스마트 팩토리 구축을 추진 중인 디와이에이 광주·화성·인주 공장에서 진행된다.브릴스는 로봇제어, 이미지센싱, 특수객체 대응, AI 안전, 고정밀 검사, 협동로봇 등 6대 핵심기술을 16개 세부 표준 모듈로 구성한 로봇 모듈화 플랫폼을 적용한다.디와이에이 생산라인에는 제품 투입부터 조립·검사·물류까지",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217780"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 2,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "sourceType": "secondary",
+      "relatedSources": [
+        "AI타임스 (보도)"
+      ]
+    },
+    {
+      "id": "feed-1802317d576a813e5052ea",
+      "externalId": "https://d2.naver.com/helloworld/4331341",
+      "title": "OmniEvaluator: AI 모델과 에이전트를 위한 통합 평가 프레임워크",
+      "topic": "에이전트",
+      "region": "한국",
+      "date": "2026-11-25",
+      "summary": "네이버 사내 기술 교류 행사인 NAVER Engineering Day 10th 에서 발표되었던 세션을 공개합니다. ​ 발표 내용 AI 서비스를 만들 때 \"이 모델, 우리 서비스에 써도 될까?\"라는 질문은 도입 전(후보 모델·API·툴 조합 비교)과 도입 후(의도대로 서빙되는지, 패치·버전별 차이) 반복해서 돌아옵니다. 그런데 이 질문에 답하는 비용은 큽니다. 모달리티마다 평가 툴킷이 다르고, 같은 벤치마크라도 프롬프트·파서·메트릭 구현에 따라 점수가 수십 점씩 갈라지며, 결과는 사람 손으로 모아야 합니다. ​ OmniEvaluator는 이 문제를 구조적으로 푸는 통합 평가 프레임워크입니다. 추론 엔진 4종(HF Transformers·vLLM·SGLang·상용 API)과 평가 프레임워크 4종(lm-eval-harness·lmms-eval·VLMEvalKit·built-in)을 하나의 중간 스키마로 연결해 텍스트·이미지·비디오·오디오 1,000개 이상의 벤치마크를 하나의 인터페이스로 ",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://d2.naver.com/helloworld/4331341"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "네이버 D2",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "relatedSources": [
+        "네이버 D2"
+      ]
+    },
+    {
+      "id": "feed-04e5bb9e09f20bf67b875a",
+      "externalId": "https://d2.naver.com/helloworld/5073599",
+      "title": "운영자의 시간을 아끼는 AI 에이전트 2부 - MCP 부터 Agent 설계까지",
+      "topic": "에이전트",
+      "region": "한국",
+      "date": "2026-11-25",
+      "summary": "네이버 사내 기술 교류 행사인 NAVER Engineering Day 10th 에서 발표되었던 세션을 공개합니다. ​ 발표 내용 운영 문의가 들어오면 운영자는 로그와 메트릭, 과거 사례를 직접 살펴보고 답변해야 합니다. 업무 시간 밖에 들어온 문의는 첫 답변을 받기까지 약 13시간이 걸리기도 했습니다. 이 발표에서는 OpenSearch 운영 문의에 운영자보다 먼저 답변하는 AI 에이전트, care-ai를 만들면서 겪은 시행착오를 소개합니다. 그 과정에서 얻은 설계 원칙과 개선 효과를 실제 사례와 수치로 공유합니다. ​ <참고> 운영자의 시간을 아끼는 AI 에이전트 1부 - RCA·Q&A 운영 지식 그래프 ​ 발표 대상 LLM 에이전트를 운영 업무에 적용하려는 분 MCP 서버와 도구를 설계하는 분 에이전트 답변의 정확도와 신뢰성을 높이고 싶은 분 ​ 목차 Episode 1. 처음 만든 에이전트 필요한 정보가 모두 있었는데도, 에이전트는 왜 원인을 확정하지 못했을까요? Episode 2",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://d2.naver.com/helloworld/5073599"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "네이버 D2",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "relatedSources": [
+        "네이버 D2"
+      ]
+    },
+    {
+      "id": "feed-f4eb70b14d6af019c5795f",
+      "externalId": "arxiv:2611.32884",
+      "title": "Lazy Agents Answer Against Their Own Beliefs: Reinforcement Learning with Verifiable Beliefs Teaches Them to Act on What They Believe",
+      "topic": "연구·논문",
+      "region": "해외",
+      "date": "2026-11-24",
+      "summary": "AI agents working on long tasks often commit to an answer before they have enough evidence, a behavior called laziness. In our evaluations, they frequently commit even while their stated belief still names several possible answers. An outcome reward at the end of the episode scores only the final answer, so it cannot teach the agent when to commit, because a lucky guess receives the same reward as an answer backed by evidence. During training, however, the simulator can compute the exact posteri",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://arxiv.org/abs/2611.32884"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 3,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face Daily Papers",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
+    },
     {
       "id": "feed-f3aca982bc1a41005bd286",
       "externalId": "github:ollama/ollama:456227993",
@@ -142,9 +489,41 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Ollama",
-      "sourceCheckedAt": "2026-11-24T10:02:33.331989+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "GitHub · Ollama"
+      ],
+      "duplicateCount": 1
+    },
+    {
+      "id": "feed-ed802fbed1c313d34d4ce9",
+      "externalId": "arxiv:2611.32639",
+      "title": "ReFocus: Progress-Guided Adaptive Practice for Long-Horizon Robotic Manipulation Reinforcement Learning",
+      "topic": "연구·논문",
+      "region": "해외",
+      "date": "2026-11-24",
+      "summary": "Online reinforcement learning (RL) enables vision-language-action policies to improve through environmental interaction. However, in long-horizon manipulation, sparse success/failure feedback provides little information about where policies encounter bottlenecks. Moreover, repeated full-task rollouts also leave these bottlenecks weakly analyzed and insufficiently practiced. To this end, we introduce ReFocus, a progress-guided multi-round RL framework that alternates between Global and Local RL t",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://arxiv.org/abs/2611.32639"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 3,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face Daily Papers",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
       ]
     },
     {
@@ -181,6 +560,285 @@
       "duplicateCount": 1
     },
     {
+      "id": "feed-d7b303e8869a23845805eb",
+      "externalId": "arxiv:2611.30986",
+      "title": "Reinforcing Diffusion Models by Instantaneous Trajectory Distribution Matching",
+      "topic": "연구·논문",
+      "region": "해외",
+      "date": "2026-11-24",
+      "summary": "Forward diffusion reinforcement learning (RL)---enabling deterministic ODE sampling without trajectory backpropagation---has grown increasingly popular for efficiently aligning diffusion models. However, we reveal that existing methods essentially rely on signed reward-weighted regression (RWR), regressing the trainable policy velocity onto rollouts from a behavior distribution. Unbiased baseline subtraction implicitly assumes that the policy velocity equals the behavior marginal velocity---an i",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://arxiv.org/abs/2611.30986"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 3,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face Daily Papers",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
+    },
+    {
+      "id": "feed-c973c7dfbe893c37880748",
+      "externalId": "arxiv:2611.32423",
+      "title": "Factorized Context Attention: From Emulated to Native Grid Probing",
+      "topic": "연구·논문",
+      "region": "해외",
+      "date": "2026-11-24",
+      "summary": "Models read a book, an hour of video, or an image in one forward pass. As the context grows, this pass slows down, loses accuracy, and stops at the context window. Sparse attention is efficient, but keeps the other two limitations. Grid probing, a recent training-free method, recovers the accuracy and extends the reach by asking a frozen model the same question about short local and strided spans of the input, but every question repeats the whole computation, since each span is encoded again. Ou",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://arxiv.org/abs/2611.32423"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 3,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face Daily Papers",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
+    },
+    {
+      "id": "feed-c68fe56a2e2aaf9ae32851",
+      "externalId": "arxiv:2611.33010",
+      "title": "Embodied AI Fails the Mirror Test: How a Simple Mirror Breaks Robot Policies",
+      "topic": "연구·논문",
+      "region": "해외",
+      "date": "2026-11-24",
+      "summary": "Can a simple mirror expose the limitations of today's robotic manipulation policies? Inspired by the mirror self-recognition test in animal cognition, we investigate whether robot policies can reliably manipulate physical objects in scenes containing their reflections. We introduce RoboDojo-Mirror, a benchmark built on RoboDojo that preserves task objectives, success criteria, and policy checkpoints while comparing a mirror-free baseline with single-mirror, dual-mirror, and mirrored-tabletop con",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://arxiv.org/abs/2611.33010"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 3,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face Daily Papers",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
+    },
+    {
+      "id": "feed-c0d507596078021a4d8bef",
+      "externalId": "https://developer.nvidia.com/blog/how-to-run-nvidia-cosmos-3-on-local-ai-devices-using-hugging-face-diffusers",
+      "title": "How to Run NVIDIA Cosmos 3 on Local AI Devices Using Hugging Face Diffusers",
+      "topic": "반도체",
+      "region": "해외",
+      "date": "2026-11-24",
+      "summary": "Running video generation models locally can be challenging when model weights and intermediate data exceed available GPU memory. NVIDIA Cosmos 3 Nano is a world...",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://developer.nvidia.com/blog/how-to-run-nvidia-cosmos-3-on-local-ai-devices-using-hugging-face-diffusers"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "NVIDIA 개발자",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "relatedSources": [
+        "NVIDIA 개발자"
+      ]
+    },
+    {
+      "id": "feed-b0f1ecea9f9be2e7001b1e",
+      "externalId": "arxiv:2611.32973",
+      "title": "SpecEngineeringBench: Evaluating Coding Agents as Autonomous Specification Engineers",
+      "topic": "연구·논문",
+      "region": "해외",
+      "date": "2026-11-24",
+      "summary": "Autonomous specification engineering requires coding agents to translate functional requirements into executable tests and use the results to discover and validate defects. However, existing benchmarks evaluate coding agents on explicitly specified test generation tasks, commonly providing an issue description, a designated test entry point, or files to inspect, leaving the ability to determine what to test and where to investigate insufficiently evaluated. Relying on such clues bypasses the cha",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://arxiv.org/abs/2611.32973"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 3,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face Daily Papers",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
+    },
+    {
+      "id": "feed-aec48e00044e30fead1cf3",
+      "externalId": "github:huggingface/transformers:457003909",
+      "title": "Transformers · Patch release v5.24.1",
+      "topic": "GitHub 오픈소스",
+      "region": "해외",
+      "date": "2026-11-24",
+      "summary": "# Patch release v5.24.1 A patch to fix a bunch of stuff for vLLM, a few distributed issues, and some model fixes (llama4, dory); see the full list ### vLLM related - Fix backward compatibility of the cache rename for remote code (#51085) by @hmellor - Restore modeling_attn_mask_utils for remote code (one-off to unblock vLLM) (#51124) by @hmellor - Expose past_key_values in MBartDecoderLayer.forward signature for remote code (#51177) by @hmellor - [OmniASR] Support a padding_mask kept on the CPU ",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://github.com/huggingface/transformers/releases/tag/v5.24.1"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "GitHub · Transformers",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "relatedSources": [
+        "GitHub · Transformers"
+      ]
+    },
+    {
+      "id": "feed-ac2f786b30f6d45772c421",
+      "externalId": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
+      "title": "GPT-6 models demonstrate intrinsic protein-design capabilities",
+      "topic": "모델 출시",
+      "region": "해외",
+      "date": "2026-11-24",
+      "summary": "GPT-6 models design protein structures and sequences using reasoning and code. Lab tests found evidence of binding across five targets.",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "OpenAI 공식 발표",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "relatedSources": [
+        "OpenAI 공식 발표"
+      ]
+    },
+    {
+      "id": "feed-a7a0adf7d6c734e350c9ea",
+      "externalId": "https://blog.google/products-and-platforms/products/gemini/gemini-golden-state",
+      "title": "How Gemini is changing the game for Golden State's organization and fans.",
+      "topic": "모델 출시",
+      "region": "해외",
+      "date": "2026-11-24",
+      "summary": "Google Gemini partners with Golden State to power fan experiences and business operations for the Warriors, Valkyries, and Chase Center. See the news.",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://blog.google/products-and-platforms/products/gemini/gemini-golden-state"
+      ],
+      "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Google_Gemini_1.max-600x600.format-webp.webp",
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Google AI 블로그",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "relatedSources": [
+        "Google AI 블로그"
+      ]
+    },
+    {
+      "id": "feed-a3c9028eefd69cfd15ff27",
+      "externalId": "https://openai.com/business/customer-stories/clay-plugins-openai",
+      "title": "Clay helps sales teams win with Codex and ChatGPT",
+      "topic": "코딩 도구",
+      "region": "해외",
+      "date": "2026-11-24",
+      "summary": "ChatGPT and Codex integrations help Clay’s users research deals and turn data into go-to-market plays, with GPT-6 models handling the reasoning.",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://openai.com/business/customer-stories/clay-plugins-openai"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "OpenAI 공식 발표",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "relatedSources": [
+        "OpenAI 공식 발표"
+      ]
+    },
+    {
       "id": "feed-9f722ade80a0ed5063194b",
       "externalId": "github:openai/codex:456141969",
       "title": "Codex · 0.172.0",
@@ -206,10 +864,11 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Codex",
-      "sourceCheckedAt": "2026-11-24T10:02:33.331989+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "GitHub · Codex"
-      ]
+      ],
+      "duplicateCount": 1
     },
     {
       "id": "feed-8ab193ed18c2df916a8d19",
@@ -245,6 +904,130 @@
       "duplicateCount": 1
     },
     {
+      "id": "feed-89a905d5eae9fa3ef5a8af",
+      "externalId": "https://openai.com/business/customer-stories/ifood",
+      "title": "How iFood scales coding agents across 15,000 repositories",
+      "topic": "에이전트",
+      "region": "해외",
+      "date": "2026-11-24",
+      "summary": "",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://openai.com/business/customer-stories/ifood"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "OpenAI 공식 발표",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "relatedSources": [
+        "OpenAI 공식 발표"
+      ]
+    },
+    {
+      "id": "feed-7e14b56be674430859075a",
+      "externalId": "https://openai.com/business/customer-stories/intentful-dots",
+      "title": "How Intentful uses dots to make more time for growth",
+      "topic": "미정",
+      "region": "해외",
+      "date": "2026-11-24",
+      "summary": "Marina Petrova’s dot Aria helps research websites and build proposals, while proactively flagging messages and resolving issues.",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://openai.com/business/customer-stories/intentful-dots"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "OpenAI 공식 발표",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "relatedSources": [
+        "OpenAI 공식 발표"
+      ]
+    },
+    {
+      "id": "feed-7b954579ed83a0b2eeeb5d",
+      "externalId": "arxiv:2611.32617",
+      "title": "VenusOCR2.0: Towards Efficient and Effective Document Parsing",
+      "topic": "연구·논문",
+      "region": "해외",
+      "date": "2026-11-24",
+      "summary": "We present VenusOCR2.0, a compact 1B-parameter vision-language recognizer designed for both high-accuracy and high-throughput document parsing across text, tables, and formulas. To continuously improve recognition quality without self-training collapse, we build a bounded recursive self-improvement (RSI) data engine where the model acts strictly as a weakness probe, while external multi-expert medoid consensus, VLM visual verification, and factorized synthesis supply reliable supervision across ",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://arxiv.org/abs/2611.32617"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 3,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face Daily Papers",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
+    },
+    {
+      "id": "feed-7758c04a629331bf96383f",
+      "externalId": "https://openai.com/index/searching-for-distant-planets-with-astra",
+      "title": "Searching for distant planets with Astra",
+      "topic": "미정",
+      "region": "해외",
+      "date": "2026-11-24",
+      "summary": "See how two amateur astronomers used Codex and Astra to find potential exoplanets in public data from NASA’s Kepler and TESS space telescopes.",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://openai.com/index/searching-for-distant-planets-with-astra"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "OpenAI 공식 발표",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "relatedSources": [
+        "OpenAI 공식 발표"
+      ]
+    },
+    {
       "id": "feed-6e4f69ac4625ebf958a9a0",
       "externalId": "github:google-gemini/gemini-cli:456191495",
       "title": "Gemini CLI · Release v0.71.0",
@@ -270,9 +1053,41 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Gemini CLI",
-      "sourceCheckedAt": "2026-11-24T10:02:33.331989+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "GitHub · Gemini CLI"
+      ],
+      "duplicateCount": 1
+    },
+    {
+      "id": "feed-6a28e842b3bf4bfd840022",
+      "externalId": "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance",
+      "title": "Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton",
+      "topic": "미정",
+      "region": "해외",
+      "date": "2026-11-24",
+      "summary": "",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face 블로그",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "relatedSources": [
+        "Hugging Face 블로그"
       ]
     },
     {
@@ -375,6 +1190,37 @@
       "duplicateCount": 1
     },
     {
+      "id": "feed-3663e76a3283a6205e99b0",
+      "externalId": "arxiv:2611.33020",
+      "title": "GRAPE-Bench: When Vision Degrades, Does Video Reasoning Hold?",
+      "topic": "연구·논문",
+      "region": "해외",
+      "date": "2026-11-24",
+      "summary": "Despite strong performance on standard benchmarks, video reasoning models remain vulnerable to visual degradation, raising concerns about their reliability in safety-critical scenarios. Existing benchmarks address this concern in part by simulating visual degradation or probing model reasoning with challenging questions, leaving open how well models handle naturally degraded video and whether they can make the simpler judgments that matter for safe driving. To this end, we introduce GRAPE-Bench,",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://arxiv.org/abs/2611.33020"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 3,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face Daily Papers",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
+    },
+    {
       "id": "feed-28e2d13975b7656f145e1b",
       "externalId": "github:google-gemini/gemini-cli:456283358",
       "title": "Gemini CLI · Release v0.71.1",
@@ -400,9 +1246,72 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Gemini CLI",
-      "sourceCheckedAt": "2026-11-24T10:02:33.331989+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "GitHub · Gemini CLI"
+      ],
+      "duplicateCount": 1
+    },
+    {
+      "id": "feed-2144450e43e277e0d3fbe2",
+      "externalId": "https://developer.nvidia.com/blog/whats-new-for-game-developers-ai-animation-and-rtx-tools",
+      "title": "What’s New for Game Developers: AI Animation and RTX Tools",
+      "topic": "미정",
+      "region": "해외",
+      "date": "2026-11-24",
+      "summary": "This month’s NVIDIA game development updates help teams bring new graphics, animation, and local AI capabilities into their engines while balancing image...",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://developer.nvidia.com/blog/whats-new-for-game-developers-ai-animation-and-rtx-tools"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "NVIDIA 개발자",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "relatedSources": [
+        "NVIDIA 개발자"
+      ]
+    },
+    {
+      "id": "feed-1a08c330dc0cfda041ba7d",
+      "externalId": "arxiv:2611.32183",
+      "title": "ThinkMorph-SSL: Scaling Interleaved Multimodal Reasoning with Pretext Tasks",
+      "topic": "연구·논문",
+      "region": "해외",
+      "date": "2026-11-24",
+      "summary": "People reason with pictures as well as words. Interleaved multimodal reasoning gives models a similar way to solve problems by creating intermediate images and using them to guide further reasoning. Training models with this ability usually relies on task-specific demonstrations, which are difficult to collect. We introduce ThinkMorph-SSL, a two-stage training recipe that uses images themselves as a source of supervision. The first stage, pretext reasoning, converts visual pretext tasks, such as",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://arxiv.org/abs/2611.32183"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 3,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face Daily Papers",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
       ]
     },
     {
@@ -437,6 +1346,68 @@
         "AI타임스 (보도)"
       ],
       "duplicateCount": 1
+    },
+    {
+      "id": "feed-04b3ee014f28d4ce8d87be",
+      "externalId": "arxiv:2611.32736",
+      "title": "Qwen-Image-HD: Autoregressive Diffusion for High Definition Image Generation",
+      "topic": "연구·논문",
+      "region": "해외",
+      "date": "2026-11-24",
+      "summary": "Fine-tuning a generator on a complete high-resolution canvas requires long image sequences and substantial computation, yet local regions can still exhibit unnatural repetitive stripes when training resources are limited. We introduce Qwen-Image-HD, which adapts Qwen-Image 2.0 to high-resolution synthesis through local training and blockwise autoregressive generation. Each prediction covers a target tile at 1K scale, conditioned on high-resolution upper and left neighbors and a compressed histor",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://arxiv.org/abs/2611.32736"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 3,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face Daily Papers",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
+    },
+    {
+      "id": "feed-f989299c07c2173242e4cd",
+      "externalId": "arxiv:2611.31466",
+      "title": "AdProducer: Towards Agentic Advertising Video Generation",
+      "topic": "연구·논문",
+      "region": "해외",
+      "date": "2026-11-23",
+      "summary": "Recent advances in video generation have made automated advertising production increasingly feasible. However, an effective advertisement must faithfully represent the product and communicate its selling points through compelling visual storytelling, which requires more than visual synthesis: it calls for deeper product understanding and strategic decisions about how to present product value. Crucially, product research and creative design are closely intertwined, as the information gathered abo",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://arxiv.org/abs/2611.31466"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 3,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face Daily Papers",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
     },
     {
       "id": "feed-f659f82978b0009b96e485",
@@ -496,7 +1467,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -528,10 +1499,11 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Claude Code",
-      "sourceCheckedAt": "2026-11-24T10:02:33.331989+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "GitHub · Claude Code"
-      ]
+      ],
+      "duplicateCount": 1
     },
     {
       "id": "feed-e7aa12fc456a44a02fb8fd",
@@ -721,7 +1693,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -786,7 +1758,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "NVIDIA 개발자",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "NVIDIA 개발자"
       ],
@@ -818,7 +1790,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google Research",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "Google Research"
       ],
@@ -979,7 +1951,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "Google AI 블로그"
       ],
@@ -1108,7 +2080,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "네이버 D2",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "네이버 D2"
       ],
@@ -1140,7 +2112,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "네이버 D2",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "네이버 D2"
       ],
@@ -1204,7 +2176,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -1236,7 +2208,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -1268,7 +2240,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "네이버 D2",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "네이버 D2"
       ],
@@ -1300,7 +2272,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -1490,13 +2462,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -1692,7 +2664,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Transformers",
-      "sourceCheckedAt": "2026-11-24T10:02:33.331989+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "GitHub · Transformers"
       ],
@@ -2179,7 +3151,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google Research",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "Google Research"
       ],
@@ -2211,7 +3183,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -2275,7 +3247,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -2307,7 +3279,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -2339,7 +3311,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Claude Code",
-      "sourceCheckedAt": "2026-11-24T10:02:33.331989+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "GitHub · Claude Code"
       ],
@@ -2790,7 +3762,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "네이버 D2",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "네이버 D2"
       ],
@@ -3110,7 +4082,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "NVIDIA 개발자",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "NVIDIA 개발자"
       ],
@@ -3526,7 +4498,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "Google AI 블로그"
       ],
@@ -3622,7 +4594,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google Research",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "Google Research"
       ],
@@ -3718,7 +4690,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "NVIDIA 개발자",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "NVIDIA 개발자"
       ],
@@ -3917,6 +4889,37 @@
       "duplicateCount": 1
     },
     {
+      "id": "feed-10c29c1073219d197d1dff",
+      "externalId": "arxiv:2611.25509",
+      "title": "LingSante MedGuard Technical Report",
+      "topic": "연구·논문",
+      "region": "해외",
+      "date": "2026-11-19",
+      "summary": "As medical AI is increasingly used for patient consultation and clinical decision support, identifying harmful, non-compliant, or ethically problematic responses is essential for responsible deployment. Assessing these risks requires checking clinical claims against relevant evidence, verifying calculations, and applying medical requirements under their intended conditions. We introduce LingSante MedGuard, a capability-enhanced guardrail that integrates supervision from a medical guardrail teach",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://arxiv.org/abs/2611.25509"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 3,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face Daily Papers",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
+    },
+    {
       "id": "feed-0d454f3e01e68640c011b5",
       "externalId": "arxiv:2611.26232",
       "title": "Time Series Structure Learning with Local Causal Parent Discovery",
@@ -4006,7 +5009,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "Google AI 블로그"
       ],
@@ -4198,7 +5201,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -4261,7 +5264,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -4324,7 +5327,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -4356,7 +5359,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "NVIDIA 개발자",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "NVIDIA 개발자"
       ],
@@ -4453,7 +5456,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "네이버 D2",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "네이버 D2"
       ],
@@ -4678,7 +5681,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -4838,7 +5841,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub Copilot",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "GitHub Copilot"
       ],
@@ -4934,7 +5937,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub Copilot",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "GitHub Copilot"
       ],
@@ -5030,7 +6033,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "네이버 D2",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "네이버 D2"
       ],
@@ -5093,7 +6096,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -5350,7 +6353,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub Copilot",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "GitHub Copilot"
       ],
@@ -5382,7 +6385,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · ComfyUI",
-      "sourceCheckedAt": "2026-11-24T10:02:33.331989+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "GitHub · ComfyUI"
       ],
@@ -5478,7 +6481,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "NVIDIA 개발자",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "NVIDIA 개발자"
       ],
@@ -5606,7 +6609,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-24T10:27:55.071909+00:00",
+      "sourceCheckedAt": "2026-11-25T08:46:37.721318+00:00",
       "relatedSources": [
         "Google AI 블로그"
       ],
@@ -15063,1015 +16066,13 @@
         "GitHub Copilot"
       ],
       "duplicateCount": 1
-    },
-    {
-      "id": "feed-a25a0cda6eedcd6e68752e",
-      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217178",
-      "title": "아마존, '아스트로' 실패 딛고 가정용 로봇 재도전…피지컬 AI 발전에 기대",
-      "topic": "미정",
-      "region": "한국",
-      "date": "2026-11-09",
-      "summary": "아마존이 가정용 로봇 '아스트로(Astro)'의 부진에도 차세대 로봇 개발에 다시 나섰다. 과거와 달리 AI가 실제 환경을 인식하고 움직이는 '피지컬 AI(Physical AI)' 기술이 빠르게 발전하면서 가정용 로봇의 실용화 가능성도 높아졌다는 판단이다.CNBC는 8일(현지시간) 아마존이 최근 채용 공고를 통해 차세대 가정용 로봇 개발 조직을 구성하고 인력을 모집하고 있다고 보도했다. 채용 공고에는 변화하는 가정환경을 탐색하고 가족 구성원과 같은 공간에서 자율적으로 작동하는 로봇을 개발한다는 내용이 담겼다.아마존은 2021년 14",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://www.aitimes.com/news/articleView.html?idxno=217178"
-      ],
-      "importance": 3,
-      "reliability": 2,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "AI타임스 (보도)",
-      "sourceCheckedAt": "2026-11-09T08:29:53.219088+00:00",
-      "sourceType": "secondary",
-      "relatedSources": [
-        "AI타임스 (보도)"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-9b15ad13c1bae6f0efe96b",
-      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217157",
-      "title": "트럼프 \"민주당과 AI 규제 협력할 의사 있어\"…중간선거 패배 후 변화",
-      "topic": "정책·규제",
-      "region": "한국",
-      "date": "2026-11-09",
-      "summary": "도널드 트럼프 미국 대통령이 중간선거에서 공화당이 패배한 이후 AI 안전 규제를 놓고 민주당과 협력할 의사가 있다고 밝혔다. 중국과의 기술 경쟁에서 미국이 뒤처지지 않는다는 조건을 달았지만, 그동안 AI 기업의 자율 규제를 선호해 온 트럼프 대통령이 정부 차원의 안전장치 마련에 긍정적인 태도를 보인 것이다.트럼프 대통령은 8일(현지시간) 방송된 CBS 시사 프로그램 '60분' 인터뷰에서 민주당과 AI 안전 규제에 협력할 의사가 있느냐는 질문에 \"물론이다\"라고 답했다. 이어 \"안전장치를 두는 것에 반대하지 않는다\"라고 말했다.이번 인",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://www.aitimes.com/news/articleView.html?idxno=217157"
-      ],
-      "importance": 3,
-      "reliability": 2,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "AI타임스 (보도)",
-      "sourceCheckedAt": "2026-11-09T08:25:02.027372+00:00",
-      "sourceType": "secondary",
-      "relatedSources": [
-        "AI타임스 (보도)"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-952d2516af2e905436adea",
-      "externalId": "https://openai.com/index/control-room",
-      "title": "Control Room: A central system to track and stop model workloads across our research infrastructure",
-      "topic": "AI 인프라",
-      "region": "해외",
-      "date": "2026-11-09",
-      "summary": "Learn how OpenAI’s Control Room tracks model workloads across our research infrastructure and can rapidly stop them when safety or security concerns arise.",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://openai.com/index/control-room"
-      ],
-      "importance": 3,
-      "reliability": 4,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-11T07:11:42.754845+00:00",
-      "relatedSources": [
-        "OpenAI 공식 발표"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-91c449c9295080a3cb3300",
-      "externalId": "arxiv:2611.12304",
-      "title": "Evolving Infra: Agent-Adaptive LLM Serving at Scale",
-      "topic": "연구·논문",
-      "region": "해외",
-      "date": "2026-11-09",
-      "summary": "Agentic workloads are a major source of LLM inference demand. Existing prefill--decode (PD) disaggregated serving systems offer limited flexibility for runtime adaptation of compute allocation and KV cache management, and rely on coarse signals that only partly capture the diverse and dynamic agent workload. These limitations lead to load imbalance between prefill and decode nodes and eviction of KV caches that agents will reuse. We present Evolving Infra, an agent-adaptive serving framework tha",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://arxiv.org/abs/2611.12304"
-      ],
-      "importance": 3,
-      "reliability": 3,
-      "pricing": "미정",
-      "status": "나중에 검토",
-      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
-      "relatedSources": [
-        "Hugging Face Daily Papers"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-8394fc7da4f959409e9126",
-      "externalId": "arxiv:2611.12869",
-      "title": "Where Does Alignment Emerge and What Does It Mean? A Closer Look at the Platonic Representation Hypothesis",
-      "topic": "연구·논문",
-      "region": "해외",
-      "date": "2026-11-09",
-      "summary": "The Platonic Representation Hypothesis (PRH) suggests that neural networks are converging toward similar representation spaces. As language models become more capable, their representations are aligning with those of vision models. However, recent work has questioned whether this trend continues to hold for newer language models. Moreover, it has been shown that representation similarity metrics can be confounded by model depth and width, requiring appropriate baselines for interpretation. In th",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://arxiv.org/abs/2611.12869"
-      ],
-      "importance": 3,
-      "reliability": 3,
-      "pricing": "미정",
-      "status": "나중에 검토",
-      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
-      "relatedSources": [
-        "Hugging Face Daily Papers"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-803c51d171ef86e5f925ea",
-      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217167",
-      "title": "오픈AI, 생명과학 AI 벤치마크 공개…GPT-6 아스트라 성능 23%P 향상",
-      "topic": "성능 비교",
-      "region": "한국",
-      "date": "2026-11-09",
-      "summary": "오픈AI가 실제 생명과학 실험실에서 AI 에이전트의 데이터 분석과 오류 탐지 능력을 측정하는 새로운 벤치마크를 공개했다. 최신 모델인 'GPT-6 아스트라'는 이전 모델보다 22.9%포인트 높은 점수를 기록했으며, 이번 연구는 오픈AI가 확대하고 있는 제약·바이오 기업용 AI 사업과도 연결된다.오픈AI는 6일(현지시간) 공식 블로그를 통해 생명과학 실험 분석용 벤치마크 '바이오베이직스벤치(BioBasicsBench)'를 발표했다. 효소 설계 전문 생명공학 기업 리고(Ligo)와 공동 개발했으며, 실제 실험실에서 수행하는 업무를 반영",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://www.aitimes.com/news/articleView.html?idxno=217167"
-      ],
-      "importance": 3,
-      "reliability": 2,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "AI타임스 (보도)",
-      "sourceCheckedAt": "2026-11-09T08:29:53.219088+00:00",
-      "sourceType": "secondary",
-      "relatedSources": [
-        "AI타임스 (보도)"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-6b6709b612e5913e3ffca5",
-      "externalId": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence",
-      "title": "Gemini Robotics 2.5 accelerates real-world general dexterity",
-      "topic": "모델 출시",
-      "region": "해외",
-      "date": "2026-11-09",
-      "summary": "Our most capable vision-language-action model enhances robot dexterity, reliability, and safety",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence"
-      ],
-      "imageUrl": "https://lh3.googleusercontent.com/F1CrVEYRb8lJOyyxGgcyow-Td1de-nkp7K8MZrhjrKPANJUc0EYB754Ninn-Yrppjdb54nolOWo6Rk8iDaRNuixWwLaEKc0K9ImGooxen9fj9IOh=w528-h297-n-nu-rw-lo",
-      "importance": 3,
-      "reliability": 4,
-      "pricing": "미정",
-      "status": "나중에 검토",
-      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Google DeepMind",
-      "sourceCheckedAt": "2026-11-16T06:44:08.407175+00:00",
-      "relatedSources": [
-        "Google DeepMind"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-638eb75804c8343f22586d",
-      "externalId": "github:anthropics/claude-code:439536010",
-      "title": "Claude Code · v2.1.321",
-      "topic": "코딩 도구",
-      "region": "해외",
-      "date": "2026-11-09",
-      "summary": "## What's changed - Added Claude Fable 5.2 (`claude-fable-5-2`), now the default Fable model — 1M context, $8/$40 per Mtok with $0.20/Mtok cache reads - Added `--settings ` to `claude remote-control`, which applies a settings file to every session it starts; if the file changes, no new session starts until you restart `claude remote-control` - Fixed MCP OAuth requests sending secrets such as refresh tokens to another host when a server redirected them - Fixed a case where a read-only Bash comman",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://github.com/anthropics/claude-code/releases/tag/v2.1.321"
-      ],
-      "importance": 3,
-      "reliability": 4,
-      "pricing": "미정",
-      "status": "나중에 검토",
-      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "GitHub · Claude Code",
-      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
-      "relatedSources": [
-        "GitHub · Claude Code"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-56228bfd3257f568f133ca",
-      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217170",
-      "title": "엔비디아·SK텔레콤·리벨리온, 이기종 AI 컴퓨팅 겨냥 3각 동맹",
-      "topic": "반도체",
-      "region": "한국",
-      "date": "2026-11-09",
-      "summary": "엔비디아·SK텔레콤·리벨리온이 국산 신경망처리장치(NPU)와 엔비디아 GPU를 연계한 융합 AI 컴퓨팅 시스템 구현에 손을 모은다.이들 3사는 9일 서울 코엑스에서 열린 엔비디아 'AI 데이' 행사에서 'NV 링크 퓨전(Link Fusion) 협력 업무협약(MOU)'을 체결했다. 이번 협약은 과학기술정보통신부와 엔비디아가 협의해 온 NV 링크 퓨전 기반 국산 NPU 연계 협력사업의 일환으로 추진됐다.이에 따라 향후 SK텔레콤이 AI 데이터센터(AIDC)를 구축하면서 리벨리온의 NPU와 엔비디아 GPU를 결합한 이기종 컴퓨팅 시스템",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://www.aitimes.com/news/articleView.html?idxno=217170"
-      ],
-      "importance": 3,
-      "reliability": 2,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "AI타임스 (보도)",
-      "sourceCheckedAt": "2026-11-09T08:29:53.219088+00:00",
-      "sourceType": "secondary",
-      "relatedSources": [
-        "AI타임스 (보도)"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-55d059b88c6c576a2f3d9a",
-      "externalId": "https://huggingface.co/blog/amazon/higher-order-pruning-experts",
-      "title": "Your Experts Have Partners. There's HOPE for Keeping Them Together",
-      "topic": "미정",
-      "region": "해외",
-      "date": "2026-11-09",
-      "summary": "",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://huggingface.co/blog/amazon/higher-order-pruning-experts"
-      ],
-      "imageUrl": "",
-      "importance": 3,
-      "reliability": 4,
-      "pricing": "미정",
-      "status": "나중에 검토",
-      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-16T07:21:13.078774+00:00",
-      "relatedSources": [
-        "Hugging Face 블로그"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-4e5acccc15168c8a4d440b",
-      "externalId": "arxiv:2611.11890",
-      "title": "Training Vision Transformers to Focus: Emergence of Spatial Attention Head Specialization",
-      "topic": "연구·논문",
-      "region": "해외",
-      "date": "2026-11-09",
-      "summary": "Self-supervised learning in Vision Transformer models, such as DINO, enables robust visual perception without requiring labeled data by leveraging large-scale image datasets. However, these models lack a focusing mechanism during training, resulting in perceptual representations that are often ambiguous or overly similar. In this work, we introduce two visual focusing loss functions designed to establish correspondence between the model's attention and specific regions within images. Specificall",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://arxiv.org/abs/2611.11890"
-      ],
-      "importance": 3,
-      "reliability": 3,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-10T20:01:59.881863+00:00",
-      "relatedSources": [
-        "Hugging Face Daily Papers"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-4d55b65d8b2917f34a446b",
-      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217165",
-      "title": "\"말로 설명하면 영상 완성\"…딥브레인AI, 에이전트 탑재 AI스튜디오 5.0 공개",
-      "topic": "에이전트",
-      "region": "한국",
-      "date": "2026-11-09",
-      "summary": "딥브레인AI(대표 장세영)는 영상 기획에서 편집까지 대화만으로 수행할 수 있는 '비디오 에이전트'가 적용된 올인원 AI 영상 제작 플랫폼 'AI스튜디오 5.0'을 출시했다고 9일 밝혔다.비디오 에이전트는 사용자가 원하는 영상 내용을 대화 형식으로 설명하거나 문서를 올리면 구성안을 먼저 제안한다. 이어 대본·이미지·생성 영상·음성·AI 아바타를 결합해 영상을 자동으로 완성한다.회사 측은 기획·대본·디자인·내레이션·편집을 한 플랫폼에서 처리할 수 있어 제작 시간과 비용, 전문 인력 의존도를 줄일 수 있다고 설명했다.대화형 AI 아바타의",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://www.aitimes.com/news/articleView.html?idxno=217165"
-      ],
-      "importance": 3,
-      "reliability": 2,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "AI타임스 (보도)",
-      "sourceCheckedAt": "2026-11-09T08:06:23.397167+00:00",
-      "sourceType": "secondary",
-      "relatedSources": [
-        "AI타임스 (보도)"
-      ]
-    },
-    {
-      "id": "feed-497d81be07fbae2e3de8a1",
-      "externalId": "arxiv:2611.13028",
-      "title": "GTAGym: Real AAA Game Tasks Environment for Evaluation and Reinforcement Learning",
-      "topic": "연구·논문",
-      "region": "해외",
-      "date": "2026-11-09",
-      "summary": "AAA games offer a rich testbed for evaluating agent perception, reasoning, and control. However, evaluating whether agents can complete tasks in AAA games is challenging and often human-annotated because task outcomes are often difficult to verify automatically, let alone applying it for Reinforcement Learning (RL). We introduce GTAGym, an environment and framework for evaluation and RL on GTA V tasks. Its evaluation benchmark, GTAVBench, derived from GTA V main-story missions, contains 103 onli",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://arxiv.org/abs/2611.13028"
-      ],
-      "importance": 3,
-      "reliability": 3,
-      "pricing": "미정",
-      "status": "나중에 검토",
-      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-12T07:45:50.590207+00:00",
-      "relatedSources": [
-        "Hugging Face Daily Papers"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-4710c30cce05a70024c549",
-      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217176",
-      "title": "엔비디아, 로봇 AI 추론 5배 빠르게 하는 'V플래시' 공개",
-      "topic": "반도체",
-      "region": "한국",
-      "date": "2026-11-09",
-      "summary": "엔비디아가 로봇의 움직임을 계획하는 AI 추론 속도를 5배 높이면서 경로 예측 오류도 줄이는 기술을 공개했다. 이동 경로의 좌표를 하나씩 생성하는 대신 전체 경로를 한꺼번에 예측하는 방식으로, 로봇과 자율주행 차량의 실시간 제어 성능을 개선하는 데 활용할 수 있다는 설명이다.엔비디아는 6일(현지시간) 로봇과 자율주행 차량 등 피지컬 AI의 시각적 계획(Visual Planning)을 가속하는 새로운 디코딩 프레임워크 'V플래시(VFlash)'를 공개했다. 기존 비전언어모델(VLM)의 순차적인 토큰 생성 과정에서 발생하는 속도와 정확",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://www.aitimes.com/news/articleView.html?idxno=217176"
-      ],
-      "importance": 3,
-      "reliability": 2,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "AI타임스 (보도)",
-      "sourceCheckedAt": "2026-11-09T18:17:16.682793+00:00",
-      "sourceType": "secondary",
-      "relatedSources": [
-        "AI타임스 (보도)"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-2e34e84f0999c607fcd026",
-      "externalId": "https://openai.com/index/kuken",
-      "title": "Kuken Industries searches 70 years of drawings in minutes",
-      "topic": "미정",
-      "region": "해외",
-      "date": "2026-11-09",
-      "summary": "Kuken Industries uses the OpenAI API to search 70 years of cooling tower drawings. Engineers can find the drawing for a repair in 4.5 minutes, down from nearly an hour.",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://openai.com/index/kuken"
-      ],
-      "importance": 3,
-      "reliability": 4,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-11T02:45:37.112658+00:00",
-      "relatedSources": [
-        "OpenAI 공식 발표"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-2bcb269cc91ff5873148f1",
-      "externalId": "arxiv:2611.12167",
-      "title": "FraudBench: A Legal Evaluation of AI Deception",
-      "topic": "연구·논문",
-      "region": "해외",
-      "date": "2026-11-09",
-      "summary": "We introduce FraudBench, an evaluation of large language models' (LLMs) propensities to recommend, assist, or directly take actions that would constitute fraud under U.S. law. Our evaluation contains a novel dataset of 159 scenarios based on real-world U.S. court cases and validated by legal experts. We present each scenario to LLMs via three tasks at varying levels of autonomy: advising users, drafting messages for users to send, and acting directly on behalf of users (477 tasks total). In each",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://arxiv.org/abs/2611.12167"
-      ],
-      "importance": 3,
-      "reliability": 3,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-11T02:45:37.112658+00:00",
-      "relatedSources": [
-        "Hugging Face Daily Papers"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-267d50643daef26d032fc5",
-      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217183",
-      "title": "AI 학습 데이터 0.1%만 조작해도 에이전트에 원격 코드 백도어 심을 수 있어",
-      "topic": "에이전트",
-      "region": "한국",
-      "date": "2026-11-09",
-      "summary": "AI 사전 학습 데이터의 0.1%만 오염시켜도 이를 기반으로 개발한 AI 에이전트에 원격 코드 실행(RCE) 백도어를 심을 수 있다는 연구 결과가 나왔다. 정상적인 데이터로 미세조정과 강화학습을 거쳐도 백도어가 제거되지 않았으며, 평소에는 정상적으로 작동하다가 특정 조건에서만 악성 명령을 생성해 탐지도 어려운 것으로 나타났다.앤트로픽 등이 참여한 공동 연구진은 지난달 27일 논문 사전 공개 사이트 아카이브에 발표한 '사전 학습 데이터 오염을 통한 에이전트 백도어(Agentic Backdoors via Pretraining Poiso",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://www.aitimes.com/news/articleView.html?idxno=217183"
-      ],
-      "importance": 3,
-      "reliability": 2,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "AI타임스 (보도)",
-      "sourceCheckedAt": "2026-11-09T18:17:16.682793+00:00",
-      "sourceType": "secondary",
-      "relatedSources": [
-        "AI타임스 (보도)"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-223aacbc5b120e6f3c26d7",
-      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217158",
-      "title": "딥시크 하네스, 일일 사용자 154만명…미국 주도 AI 에이전트 시장 도전",
-      "topic": "에이전트",
-      "region": "한국",
-      "date": "2026-11-09",
-      "summary": "딥시크의 AI 에이전트 플랫폼 '딥시크 하네스(DeepSeek Harness)'가 출시 3개월 만에 일일 사용자 154만명을 돌파했다. 외부 개발자가 제작한 플러그인도 3만5000개에 달하면서, 딥시크는 공식 마켓플레이스를 구축하고 개발자 지원에 나서기로 했다.딥시크는 8일 공식 X 게시물을 통해 하네스의 이용 현황과 플러그인 생태계 확대 계획을 발표했다.이에 따르면 11월4일 기준 하네스의 일일 활성 사용자(DAU)는 154만명으로, 9월 말 약 27만1000명에서 한 달여 만에 5배 이상 증가했다. 이는 딥시크 공식 API 사용",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://www.aitimes.com/news/articleView.html?idxno=217158"
-      ],
-      "importance": 3,
-      "reliability": 2,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "AI타임스 (보도)",
-      "sourceCheckedAt": "2026-11-09T08:25:02.027372+00:00",
-      "sourceType": "secondary",
-      "relatedSources": [
-        "AI타임스 (보도)"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-1ee9d6a1ddc70f569a3dcb",
-      "externalId": "arxiv:2611.13348",
-      "title": "ProTEUS: A mutation-resolved world model for closed-loop protein evolution",
-      "topic": "연구·논문",
-      "region": "해외",
-      "date": "2026-11-09",
-      "summary": "Protein engineering requires navigating rugged fitness landscapes, where small sequence changes can produce large functional differences, but experimental screening can only sample a small fraction of sequence space. Thus, a central challenge is to efficiently traverse the large combinatorial space of mutations in silico. We introduce ProTEUS, a mutation-resolved world model for closed-loop protein evolution. Pretrained on deep mutational scanning assays, ProTEUS learns a joint representation of",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://arxiv.org/abs/2611.13348"
-      ],
-      "importance": 3,
-      "reliability": 3,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-11T07:11:42.754845+00:00",
-      "relatedSources": [
-        "Hugging Face Daily Papers"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-126eb079f629db74ecdbd0",
-      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217187",
-      "title": "카카오모빌리티-엔비디아, 레벨4 자율주행 협력…기아 PBV 우선 적용",
-      "topic": "반도체",
-      "region": "한국",
-      "date": "2026-11-09",
-      "summary": "카카오모빌리티와 엔비디아가 자율주행 기술과 컴퓨팅·센싱·안전 기술을 기아 목적기반차량(PBV)에 통합, 레벨4 자율주행 고도화에 나선다.카카오모빌리티(대표 류긍선)는 엔비디아와 레벨4 자율주행 기술 협력을 위한 업무협약(MOU)을 체결한다고 9일 밝혔다.카카오모빌리티는 강남 도심 운행으로 검증한 자체 자율주행 AI 모델의 엔드투엔드(E2E) 고도화를 위해 대규모 AI 연산을 실시간으로 처리하는 엔비디아 ‘드라이브 AGX 토르’ 2개를 탑재한 자율주행 컴퓨팅 유닛(ADCU)을 도입한다.센서와 하드웨어 연결을 최적화하는 엔비디아 ‘하이",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://www.aitimes.com/news/articleView.html?idxno=217187"
-      ],
-      "importance": 3,
-      "reliability": 2,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "AI타임스 (보도)",
-      "sourceCheckedAt": "2026-11-09T18:17:16.682793+00:00",
-      "sourceType": "secondary",
-      "relatedSources": [
-        "AI타임스 (보도)"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-107d750beb1376b3598fbd",
-      "externalId": "arxiv:2611.12527",
-      "title": "WaveGen: Truly End-to-End Waveform Generation via Internal Spectral Trajectory Learning",
-      "topic": "연구·논문",
-      "region": "해외",
-      "date": "2026-11-09",
-      "summary": "This work proposes WaveGen, a fully end-to-end diffusion-based text-to-waveform framework based on Spectral Forcing, which jointly learns an internal spectral trajectory and the target waveform trajectory within a single model, enabling direct end-to-end text-to-waveform generation. Unlike recent TTS pipelines, WaveGen does not rely on separately trained or externally decoded intermediate representations, such as neural audio codecs, Mel-spectrogram vocoders, or VAE-based latent models. In addit",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://arxiv.org/abs/2611.12527"
-      ],
-      "importance": 3,
-      "reliability": 3,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-11T07:11:42.754845+00:00",
-      "relatedSources": [
-        "Hugging Face Daily Papers"
-      ]
-    },
-    {
-      "id": "feed-0868cffd8752a3663ab9cc",
-      "externalId": "arxiv:2611.12865",
-      "title": "Shortcuts and Boundaries: Verifiable RL Misalignment and Contextual Safety Learning",
-      "topic": "연구·논문",
-      "region": "해외",
-      "date": "2026-11-09",
-      "summary": "Reinforcement learning (RL) can improve an agent's task capability while reinforcing behavior that violates contextual execution requirements. We study this reward-driven misalignment, including reward hacking, through verifiable reward--context conflicts, where compliant task completion remains feasible while some executable shortcuts earn more reward than every compliant strategy. Encoding these conflicts in task dynamics lets us generate diverse interactive environments at scale and derive co",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://arxiv.org/abs/2611.12865"
-      ],
-      "importance": 3,
-      "reliability": 3,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-11T07:11:42.754845+00:00",
-      "relatedSources": [
-        "Hugging Face Daily Papers"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-05d09902fe865a21d7ee93",
-      "externalId": "arxiv:2611.12324",
-      "title": "How Many Exposures Does a World Model Need? Learning Unseen Game Mechanics at Test Time",
-      "topic": "연구·논문",
-      "region": "해외",
-      "date": "2026-11-09",
-      "summary": "World models enable agents to plan and learn from imagined experience, but in an unfamiliar environment they must learn its mechanics from limited interaction. A mechanic is a rule for how an action or an interaction changes part of the environment. Each occurrence of a mechanic that the model observes is one exposure. We ask how many exposures a world model needs to predict the effects of a new environment's mechanics. We address this question on ARC-AGI-3, a benchmark of interactive games defi",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://arxiv.org/abs/2611.12324"
-      ],
-      "importance": 3,
-      "reliability": 3,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-10T07:23:14.864585+00:00",
-      "relatedSources": [
-        "Hugging Face Daily Papers"
-      ]
-    },
-    {
-      "id": "feed-02e9abf47eaf3fa01f98fe",
-      "externalId": "https://openai.com/index/coderabbit-codex-daybreak",
-      "title": "CodeRabbit scales agentic software development and ships 20x more",
-      "topic": "에이전트",
-      "region": "해외",
-      "date": "2026-11-09",
-      "summary": "CodeRabbit uses OpenAI models to govern and trust AI-generated code and Codex to ship 20 times more software with the same engineering team.",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://openai.com/index/coderabbit-codex-daybreak"
-      ],
-      "importance": 3,
-      "reliability": 4,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-11T06:29:08.281411+00:00",
-      "relatedSources": [
-        "OpenAI 공식 발표"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-01bd1da936e5577d0a8c59",
-      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217188",
-      "title": "엔비디아, 국내 AI 스타트업 3곳 투자 낙점...리얼월드·업스테이지·모티프",
-      "topic": "반도체",
-      "region": "한국",
-      "date": "2026-11-09",
-      "summary": "엔비디아가 리얼월드·업스테이지·모티프테크놀로지스 등 국내 AI 스타트업 3곳에 투자한다.엔비디아는 9일 서울 코엑스에서 국내 AI 스타트업 20여개 사가 참석한 가운데 열린 ‘AI 스타트업 파트너십 포럼'에서 이 같은 투자계획을 공개했다.리얼월드는 피지컬 AI 구현을 위한 로봇파운데이션모델(RFM)에서, 업스테이지와 모티프는 거대언어모델(LLM) 모델 분야에서 주목받고 있는 기업들이다. 앞서 지난 4월 엔비디아는 포인트투테크놀로지의 7600만 달러 규모 시리즈B 투자 라운드에도 참여한 바 있다.엔비디아는 현재 진행중인 업스테이지의",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://www.aitimes.com/news/articleView.html?idxno=217188"
-      ],
-      "importance": 3,
-      "reliability": 2,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "AI타임스 (보도)",
-      "sourceCheckedAt": "2026-11-09T18:17:16.682793+00:00",
-      "sourceType": "secondary",
-      "relatedSources": [
-        "AI타임스 (보도)"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-009b316662ff4c3f317f02",
-      "externalId": "https://research.google/blog/exploring-the-worlds-languages-with-language-explorer",
-      "title": "Exploring the world's languages with Language Explorer",
-      "topic": "미정",
-      "region": "해외",
-      "date": "2026-11-09",
-      "summary": "Natural Language Processing",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://research.google/blog/exploring-the-worlds-languages-with-language-explorer"
-      ],
-      "imageUrl": "https://storage.googleapis.com/gweb-research2023-media/original_images/LanguageExplorer-hero.png",
-      "importance": 3,
-      "reliability": 4,
-      "pricing": "미정",
-      "status": "나중에 검토",
-      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Google Research",
-      "sourceCheckedAt": "2026-11-16T07:21:13.078774+00:00",
-      "relatedSources": [
-        "Google Research"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-a540533373bbbc0912e451",
-      "externalId": "arxiv:2611.13001",
-      "title": "One Table, Many Queries: Benchmarking Generalist Tabular Models Across Generation, Imputation, and Prediction",
-      "topic": "연구·논문",
-      "region": "해외",
-      "date": "2026-11-08",
-      "summary": "Generation, imputation, and prediction query different aspects of the same tabular distribution, but are usually evaluated separately. This leaves unclear which capabilities they share, how their training objectives interact, and whether one model can perform all three well. We introduce the One Table Benchmark (), spanning 56 datasets, 46 registered methods, and 20 capability axes under aligned data splits and explicit task contracts. We compare task ranks on aligned support, train five backbon",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://arxiv.org/abs/2611.13001"
-      ],
-      "importance": 3,
-      "reliability": 3,
-      "pricing": "미정",
-      "status": "나중에 검토",
-      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-12T07:45:50.590207+00:00",
-      "relatedSources": [
-        "Hugging Face Daily Papers"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-7c5fbf3fd77e1401fa6c48",
-      "externalId": "arxiv:2611.11558",
-      "title": "InfraRSI: Harnessing Recursive Self-Improvement for Training Infrastructure",
-      "topic": "연구·논문",
-      "region": "해외",
-      "date": "2026-11-08",
-      "summary": "While Recursive Self-Improvement (RSI) accelerates isolated algorithm and kernel synthesis, distributed LLM training depends on tightly coupled launch settings, operator kernels, and communication schedules, where single edits often hit out-of-memory (OOM) boundaries, compiler conflicts, measurement jitter, or silent numerical drift. We present InfraRSI, the agentic harness that turns open-ended human commands into verified training optimizations via a five-stage workflow: init locks editable sc",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://arxiv.org/abs/2611.11558"
-      ],
-      "importance": 3,
-      "reliability": 3,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-10T20:01:59.881863+00:00",
-      "relatedSources": [
-        "Hugging Face Daily Papers"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-73a7d086669e4908a69e52",
-      "externalId": "arxiv:2611.13004",
-      "title": "G-STAR: Group-Scaled Token Capacity for Deeply Compressed Autoregressive Generation",
-      "topic": "연구·논문",
-      "region": "해외",
-      "date": "2026-11-08",
-      "summary": "Discrete autoregressive models offer a scalable framework for image generation. However, they face a fundamental trade-off: long token sequences preserve representation quality but slow generation, while aggressive spatial compression reduces representation capacity. Based on product quantization, we show that, under a fixed nominal information budget, group size should scale quadratically with the per-axis spatial compression factor. Building on this principle, we propose GSTAR, a spatial--grou",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://arxiv.org/abs/2611.13004"
-      ],
-      "importance": 3,
-      "reliability": 3,
-      "pricing": "미정",
-      "status": "나중에 검토",
-      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
-      "relatedSources": [
-        "Hugging Face Daily Papers"
-      ]
-    },
-    {
-      "id": "feed-600c4fb4e5ca184259b46c",
-      "externalId": "arxiv:2611.11531",
-      "title": "Probing Transformer Representations Layer by Layer, Module by Module",
-      "topic": "연구·논문",
-      "region": "해외",
-      "date": "2026-11-08",
-      "summary": "Which representation should be probed in a transformer-based foundation model? Recent work shows that the standard practice of probing the final layer is often suboptimal, as intermediate layers can provide better features. Yet, representations are still largely studied along depth alone, treating each transformer block as an atomic unit. In this work, we analyze transformer representations layer by layer, module by module. Through more than 144,000 linear probing evaluations of vision foundatio",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://arxiv.org/abs/2611.11531"
-      ],
-      "importance": 3,
-      "reliability": 3,
-      "pricing": "미정",
-      "status": "나중에 검토",
-      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
-      "relatedSources": [
-        "Hugging Face Daily Papers"
-      ]
-    },
-    {
-      "id": "feed-e9745c9b6973effd7e5e93",
-      "externalId": "arxiv:2611.10439",
-      "title": "Who Remembers What? Multi-Granularity Memory Extraction for Multi-User, Multi-Agent Interaction",
-      "topic": "연구·논문",
-      "region": "해외",
-      "date": "2026-11-07",
-      "summary": "Self-evolving agents improve their own skills, memory, and harness code from experience without retraining the base LLM, and group-evolving agents go further by sharing these lessons across agents. Yet most such systems overlook that sharing across users and heterogeneous agents requires deciding who can benefit from each lesson and what information must remain private. We present MixUA, a memory system that distills independent user-agent trajectories into lessons and assigns each lesson to a u",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://arxiv.org/abs/2611.10439"
-      ],
-      "imageUrl": "",
-      "importance": 3,
-      "reliability": 3,
-      "pricing": "미정",
-      "status": "나중에 검토",
-      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-14T08:40:29.132917+00:00",
-      "relatedSources": [
-        "Hugging Face Daily Papers"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-cc9249299f5d778e839bcc",
-      "externalId": "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates",
-      "title": "Copilot code review: API management and review overview updates",
-      "topic": "코딩 도구",
-      "region": "해외",
-      "date": "2026-11-07",
-      "summary": "You can now manage GitHub Copilot code review settings through the REST and GraphQL APIs, from enterprise policy down to individual repositories. Copilot’s review overview comment is now more compact,… The post Copilot code review: API management and review overview updates appeared first on The GitHub Blog .",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates"
-      ],
-      "imageUrl": "",
-      "importance": 3,
-      "reliability": 4,
-      "pricing": "미정",
-      "status": "나중에 검토",
-      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "GitHub Copilot",
-      "sourceCheckedAt": "2026-11-14T08:40:29.132917+00:00",
-      "relatedSources": [
-        "GitHub Copilot"
-      ],
-      "duplicateCount": 1
     }
   ],
   "quality": {
     "freshIntakeDays": 7,
     "archiveDays": 35,
     "nearDuplicateRule": "strict-title-and-number",
-    "incoming": 70,
+    "incoming": 75,
     "unique": 500,
     "previous": 500
   }
