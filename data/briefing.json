@@ -1,15 +1,15 @@
 {
   "schema": "signal-desk-briefing-v1",
-  "generatedAt": "2026-11-25T09:15:07.814480+00:00",
-  "newsGeneratedAt": "2026-11-25T09:14:47.146630+00:00",
+  "generatedAt": "2026-11-26T08:33:34.085877+00:00",
+  "newsGeneratedAt": "2026-11-26T08:33:12.174851+00:00",
   "headline": "AI 변화 브리핑 · 최근 7일",
   "coverage": "최근 7일 중 중요 후보, 뉴스 수집 대상 범위 내에서만 작성",
   "mode": "ai-assisted",
-  "aiAnalyzed": 7,
-  "aiCalls": 2,
-  "aiErrors": 1,
-  "aiFailureCode": "HTTP 503",
-  "cacheHits": 6,
+  "aiAnalyzed": 8,
+  "aiCalls": 3,
+  "aiErrors": 0,
+  "aiFailureCode": null,
+  "cacheHits": 5,
   "modelConfigured": true,
   "storyCount": 8,
   "items": [
@@ -24,7 +24,7 @@
       "urls": [
         "https://d2.naver.com/helloworld/6934862"
       ],
-      "score": 83,
+      "score": 78,
       "majorLaunch": false,
       "imageUrl": "",
       "imageSource": "",
@@ -47,7 +47,7 @@
       "voiceMood": "curious",
       "voiceHook": "운영 이슈가 닫히면 그대로 잊히는 게 아까웠는데, 이걸 지식 그래프로 엮어서 AI가 답변하게 만들었다니 꽤 흥미로운 시도네.",
       "voiceTake": "단순히 LLM에 질문을 던지는 걸 넘어, 운영 데이터를 그래프로 구조화해 검색 정확도를 높이려는 접근은 실무적으로 아주 영리해. 다만, 추출된 정보의 정확성을 어떻게 지속적으로 검증하고 데이터의 노후화를 관리할지가 이 에이전트의 성패를 가를 핵심이겠지.",
-      "imageCheckedAt": "2026-11-25T09:15:07.814480+00:00",
+      "imageCheckedAt": "2026-11-26T08:33:34.085877+00:00",
       "fingerprint": "eb74d58bb46fbac54a7af388"
     },
     {
@@ -61,7 +61,7 @@
       "urls": [
         "https://d2.naver.com/helloworld/4331341"
       ],
-      "score": 83,
+      "score": 78,
       "majorLaunch": false,
       "imageUrl": "",
       "imageSource": "",
@@ -84,7 +84,7 @@
       "voiceMood": "curious",
       "voiceHook": "네이버에서 멀티모달 모델 평가를 한데 묶는 프레임워크를 내놨다는데, 이게 정말 파편화된 평가 환경을 정리할 수 있을지 궁금해지네.",
       "voiceTake": "평가 툴마다 점수가 널뛰는 건 고질적인 문제였지. 단순히 툴을 통합하는 걸 넘어, 서로 다른 프레임워크 사이의 메트릭 불일치를 얼마나 정교하게 보정할 수 있을지가 이 프로젝트의 진짜 성패를 가를 거야.",
-      "imageCheckedAt": "2026-11-25T09:15:07.814480+00:00",
+      "imageCheckedAt": "2026-11-26T08:33:34.085877+00:00",
       "fingerprint": "ebf6b16ce95a08e06ed1f92e"
     },
     {
@@ -98,7 +98,7 @@
       "urls": [
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.332"
       ],
-      "score": 81,
+      "score": 76,
       "majorLaunch": false,
       "imageUrl": "",
       "imageSource": "",
@@ -121,8 +121,44 @@
       "voiceMood": "serious",
       "voiceHook": "Claude Code가 이번엔 MCP 서버 연동이랑 자잘한 프리징 문제들을 잔뜩 들고 왔네, 꽤 꼼꼼하게 손본 것 같아.",
       "voiceTake": "단순 기능 추가보다 터미널 프리징이나 세션 복구 같은 안정성 패치가 훨씬 눈에 띄는군. 실무에서 굴리기 전에 쉘 커맨드 훅이 의도대로 차단되는지부터 직접 테스트해 봐.",
-      "imageCheckedAt": "2026-11-25T09:15:07.814480+00:00",
+      "imageCheckedAt": "2026-11-26T08:33:34.085877+00:00",
       "fingerprint": "ba86910864f459fd81d6c64c"
+    },
+    {
+      "id": "feed-69c0601d70f93f1e53f861",
+      "title": "Copilot code review billing will default to the organization",
+      "date": "2026-11-25",
+      "topic": "코딩 도구",
+      "region": "해외",
+      "sourceLabel": "GitHub Copilot",
+      "sourceType": "primary",
+      "urls": [
+        "https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization"
+      ],
+      "score": 76,
+      "majorLaunch": false,
+      "imageUrl": "",
+      "imageSource": "",
+      "summary": "GitHub Copilot 코드 리뷰 비용 청구 방식이 2026년 12월 30일부터 조직 단위로 기본 설정됩니다.",
+      "difference": "미확인",
+      "why": "사용자가 별도의 청구 설정을 선택하지 않은 경우, 조직이 비용을 부담하도록 정책이 변경되었습니다.",
+      "usage": "조직 관리자는 12월 30일 이전에 Copilot 코드 리뷰 비용 청구 설정을 검토하여 의도한 대로 비용이 분배되는지 확인해야 합니다.",
+      "cost": "미확인",
+      "performance": "미확인",
+      "strengths": "원문에 근거 없음",
+      "limitations": "원문에 근거 없음",
+      "mode": "ai-assisted",
+      "model": "gemini-3.1-flash-lite",
+      "evidence": [
+        "If you haven’t chosen how to bill Copilot code review for members with a Copilot license, those reviews will be billed to your organization starting D"
+      ],
+      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
+      "confidence": "검토 필요",
+      "voiceMood": "serious",
+      "voiceHook": "GitHub에서 Copilot 코드 리뷰 비용 청구 방식을 바꾼다는데, 관리자라면 당장 설정부터 확인해 보는 게 좋을 거야.",
+      "voiceTake": "결제 기본값이 조직으로 넘어간다는 건데, 이게 비용 관리 측면에서 어떤 파장을 일으킬지 꼼꼼히 따져봐야 해. 무심코 지나쳤다간 예산 계획이 완전히 꼬일 수도 있으니까.",
+      "imageCheckedAt": "2026-11-26T08:33:34.085877+00:00",
+      "fingerprint": "4059ca60aaee5e50bf865b83"
     },
     {
       "id": "feed-6e4f69ac4625ebf958a9a0",
@@ -135,7 +171,7 @@
       "urls": [
         "https://github.com/google-gemini/gemini-cli/releases/tag/v0.71.0"
       ],
-      "score": 81,
+      "score": 76,
       "majorLaunch": false,
       "imageUrl": "",
       "imageSource": "",
@@ -157,44 +193,82 @@
       "voiceMood": "serious",
       "voiceHook": "Gemini CLI v0.71.0 업데이트 소식 가져왔어. 이번엔 PowerShell 명령어 처리할 때 UI가 멈추던 고질적인 문제를 비동기 방식으로 손본 모양인데, 얼마나 매끄러워졌는지 직접 따져봐야겠지?",
       "voiceTake": "단순한 버전 업데이트 같아 보여도 UI 응답성 개선은 실사용 체감에 직결되는 문제야. 비동기 처리로 전환하면서 다른 의존성 충돌은 없는지, 실제 터미널 환경에서 파싱 속도와 안정성을 꼼꼼히 검증해 볼 필요가 있어.",
-      "imageCheckedAt": "2026-11-25T09:15:07.814480+00:00",
+      "imageCheckedAt": "2026-11-26T08:33:34.085877+00:00",
       "fingerprint": "fec749f20deeee61a150b0d2"
     },
     {
-      "id": "feed-28e2d13975b7656f145e1b",
-      "title": "Gemini CLI · Release v0.71.1",
-      "date": "2026-11-24",
-      "topic": "코딩 도구",
+      "id": "feed-88bd06d7e0e9b82f43a3c7",
+      "title": "Where scientists draw the line on AI agents",
+      "date": "2026-11-25",
+      "topic": "에이전트",
       "region": "해외",
-      "sourceLabel": "GitHub · Gemini CLI",
+      "sourceLabel": "Hugging Face 블로그",
       "sourceType": "primary",
       "urls": [
-        "https://github.com/google-gemini/gemini-cli/releases/tag/v0.71.1"
+        "https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents"
       ],
-      "score": 81,
+      "score": 71,
       "majorLaunch": false,
-      "imageUrl": "",
-      "imageSource": "",
-      "summary": "Gemini CLI v0.71.1 패치 릴리스가 배포되었으며, v0.71.0 버전의 특정 변경 사항을 반영한 수정 업데이트입니다.",
+      "imageUrl": "https://cdn-uploads.huggingface.co/production/uploads/638e39b249de7ae552d977b5/F32BgZC_rj0kg99apJlto.png",
+      "imageSource": "공식 원문 대표 이미지",
+      "summary": "AI2는 과학 연구에서 AI 에이전트 활용 시 연구자의 책임과 윤리적 기준을 유지하기 위한 5가지 핵심 요소(검증, 개인정보, 객관성, 책임, 투명성)를 제시함.",
       "difference": "미확인",
-      "why": "v0.71.0 버전의 오류 수정 및 패치 적용을 위해 릴리스되었습니다.",
-      "usage": "실무 검증 아이디어: 기존 Gemini CLI 환경에서 v0.71.1로 업데이트 후, v0.71.0에서 발생하던 특정 작업의 오류가 해결되었는지 릴리스 노트의 커밋 내용을 기반으로 재현 테스트를 수행하세요.",
+      "why": "AI 에이전트가 생성한 결과물의 정확성뿐만 아니라, 도출 과정의 검증 가능성과 연구 윤리 준수 여부가 과학적 신뢰성에 필수적이기 때문임.",
+      "usage": "연구자는 AI가 처리한 데이터 분석 방법과 접근 파일 목록을 추적하고, 생성된 결과가 원천 자료와 일치하는지 교차 검증해야 함.",
       "cost": "미확인",
       "performance": "미확인",
-      "strengths": "원문에 근거 없음",
-      "limitations": "원문에 근거 없음",
+      "strengths": "연구자가 반복적인 데이터 처리나 행정 업무를 자동화하여 창의적 연구에 집중할 수 있는 환경을 제공함.",
+      "limitations": "AI가 편향된 자료를 검색하거나, 연구자가 의도하지 않은 기밀 데이터에 접근할 위험이 있으며, 결과 도출 과정을 투명하게 검증하기 어려울 수 있음.",
       "mode": "ai-assisted",
       "model": "gemini-3.1-flash-lite",
       "evidence": [
-        "cherry-pick aafdfdf to release/v0.71.0-pr-30420 to patch version v0.71.0 and create version 0.71.1"
+        "Delegating research tasks to AI does not remove scientists’ responsibility for how the work is accomplished.",
+        "Across the interviews, we identified five dimensions of : validation, privacy, objectivity, accountability, and transparency."
+      ],
+      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
+      "confidence": "검토 필요",
+      "voiceMood": "serious",
+      "voiceHook": "AI가 과학의 영역에 발을 들이는 건 흥미롭지만, 그 결과물을 맹신하는 건 위험한 도박이라는 거 알고 있지?",
+      "voiceTake": "결과가 맞다고 해서 과정까지 정당한 건 아니야. AI가 내놓은 답이 과학적 근거를 갖췄는지, 아니면 그저 그럴싸한 허상인지 파헤치는 건 결국 인간 연구자의 몫이라는 점을 잊지 마.",
+      "imageCheckedAt": "2026-11-26T08:33:34.085877+00:00",
+      "fingerprint": "a07b84895dfc6e51161c0054"
+    },
+    {
+      "id": "feed-5b91da256f36ad75ae2cc8",
+      "title": "Verifiable Social Reasoning for LLM Assistants",
+      "date": "2026-11-25",
+      "topic": "모델 출시",
+      "region": "해외",
+      "sourceLabel": "Google Research",
+      "sourceType": "primary",
+      "urls": [
+        "https://research.google/blog/verifiable-social-reasoning-for-llm-assistants"
+      ],
+      "score": 71,
+      "majorLaunch": false,
+      "imageUrl": "https://storage.googleapis.com/gweb-research2023-media/original_images/VerifiableSocialReasoning1-UserMediatedReality.png",
+      "imageSource": "RSS 이미지",
+      "summary": "Google Research는 사용자의 주관적 서술을 통해 사회적 상황을 추론해야 하는 AI 어시스턴트의 능력을 평가하기 위해 다중 에이전트 시뮬레이션 기반 프레임워크를 도입함.",
+      "difference": "미확인",
+      "why": "사용자가 제공하는 정보는 주관적이고 편향될 수 있어 AI가 객관적인 사회적 동기를 파악하는 데 한계가 있기 때문임.",
+      "usage": "다중 에이전트 시뮬레이션을 통해 숨겨진 동기를 가진 타겟 에이전트의 행동을 AI가 추론하게 하여 사회적 추론 능력을 측정함.",
+      "cost": "미확인",
+      "performance": "미확인",
+      "strengths": "사용자 서술의 주관성과 사회적 상황의 정답 부재라는 두 가지 난제를 시뮬레이션 환경으로 해결함.",
+      "limitations": "모델이 사용자 프레이밍에 민감하게 반응하며, 인간보다 더 상세한 정보를 요구하고 명확화 질문을 충분히 활용하지 못함.",
+      "mode": "ai-assisted",
+      "model": "gemini-3.1-flash-lite",
+      "evidence": [
+        "We introduce an evaluation framework based on multi-agent social simulations that quantifies how well AI assistants understand social situations from ",
+        "Evaluating a diverse range of LLMs through our framework reveals that relying on subjective user mediation substantially complicates social reasoning."
       ],
       "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
       "confidence": "검토 필요",
       "voiceMood": "skeptical",
-      "voiceHook": "Gemini CLI가 v0.71.1로 업데이트됐다는데, 정작 릴리스 노트에는 패치 내용에 대한 구체적인 설명은 없고 기계적인 커밋 로그만 덩그러니 놓여 있네.",
-      "voiceTake": "단순히 버전 숫자만 올리는 게 업데이트의 전부라면 사용자 입장에선 무엇이 개선됐는지 알 길이 없잖아. 실질적인 변경 사항을 투명하게 공개하지 않는 이런 방식은 신뢰를 얻기 어려워 보여.",
-      "imageCheckedAt": "2026-11-25T09:15:07.814480+00:00",
-      "fingerprint": "af307fa426f7920deb7ad9f0"
+      "voiceHook": "AI가 사람 마음을 읽는 척 조언을 쏟아내지만, 정작 그게 얼마나 편향된 정보인지 제대로 파악하고 있는지 의문이 들지 않아?",
+      "voiceTake": "결국 사용자의 주관적인 입장에 휘둘려 엉뚱한 조언을 내놓는 게 AI의 현주소네. 인간의 편향을 학습하는 게 아니라, 그 편향을 꿰뚫어 볼 객관적 기준을 세우는 게 그렇게 어려운 일인가 봐.",
+      "imageCheckedAt": "2026-11-26T08:33:34.085877+00:00",
+      "fingerprint": "e837c92eded96672088c5728"
     },
     {
       "id": "feed-c0d507596078021a4d8bef",
@@ -207,7 +281,7 @@
       "urls": [
         "https://developer.nvidia.com/blog/how-to-run-nvidia-cosmos-3-on-local-ai-devices-using-hugging-face-diffusers"
       ],
-      "score": 76,
+      "score": 71,
       "majorLaunch": false,
       "imageUrl": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/11/ai-model.webp",
       "imageSource": "공식 원문 대표 이미지",
@@ -232,76 +306,6 @@
       "voiceTake": "VRAM 부족을 시스템 RAM으로 메꾸는 건 고전적인 트레이드오프지만, 실시간성이 중요한 환경에선 병목 현상이 치명적일 거야. 단순히 '실행 가능'하다는 사실에만 매몰되지 말고, 실제 워크플로우에서 PCIe 전송 지연이 얼마나 성능을 갉아먹는지 직접 프로파일링해 봐.",
       "imageCheckedAt": "2026-11-25T08:46:59.384765+00:00",
       "fingerprint": "e0f46ee748800f11c79e9cff"
-    },
-    {
-      "id": "feed-ac2f786b30f6d45772c421",
-      "title": "GPT-6 models demonstrate intrinsic protein-design capabilities",
-      "date": "2026-11-24",
-      "topic": "모델 출시",
-      "region": "해외",
-      "sourceLabel": "OpenAI 공식 발표",
-      "sourceType": "primary",
-      "urls": [
-        "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities"
-      ],
-      "score": 76,
-      "majorLaunch": false,
-      "imageUrl": "https://images.ctfassets.net/kftzwdyauwt9/Eg5mCwwaA3KqnznOVCh0n/8e6deaef25fd508d9853ff86a95187c1/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities-social.png?w=1600&h=900&fit=fill",
-      "imageSource": "공식 원문 대표 이미지",
-      "summary": "GPT-6 models design protein structures and sequences using reasoning and code. Lab tests found evidence of binding across five targets.",
-      "difference": "기존 기술 대비 구체적인 차이는 수집된 원문에서 미확인",
-      "why": "확인해야 하는 이유: 새 모델의 실용성은 벤치마크뿐 아니라 가격·지연·제한사항에 좌우됨",
-      "usage": "실무 검증: 기존 모델과 동일 프롬프트로 품질·가격·속도를 비교",
-      "cost": "가격·무료 여부 미확인",
-      "performance": "비교 가능한 성능 수치 미확인",
-      "strengths": "검증 전: 공식 소개에 실린 장점과 실제 효용을 구분해야 함",
-      "limitations": "독립 검증·실측 비교·사용 조건은 수집 요약만으로 확정할 수 없음",
-      "mode": "evidence-only",
-      "model": null,
-      "evidence": [
-        "GPT-6 models design protein structures and sequences using reasoning and code. Lab tests found evidence of binding across five targets."
-      ],
-      "status": "자동 근거 정리 · 심층 추론 미실행",
-      "confidence": "미검증",
-      "imageCheckedAt": "2026-11-25T08:46:59.384765+00:00",
-      "fingerprint": "344a670ae40de9578d69c272"
-    },
-    {
-      "id": "feed-fd9bebbff7e692862dad0c",
-      "title": "Introducing Gemini 4 Neon",
-      "date": "2026-11-18",
-      "topic": "모델 출시",
-      "region": "해외",
-      "sourceLabel": "Google DeepMind",
-      "sourceType": "primary",
-      "urls": [
-        "https://deepmind.google/blog/introducing-gemini-4-neon"
-      ],
-      "score": 76,
-      "majorLaunch": true,
-      "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-neon__blog-header__sm.width-1300.png",
-      "imageSource": "공식 원문 대표 이미지",
-      "summary": "구글이 복잡한 소프트웨어 엔지니어링, 지식 업무, 과학적 워크플로우 처리에 최적화된 Gemini 4 Neon 모델을 발표함.",
-      "difference": "이전 기술 대비 구체적인 비교 수치는 원문에 근거 없음.",
-      "why": "복잡한 다단계 지시 이행 능력과 긴 문맥 창을 활용한 구조화된 결과물 생성 능력을 강조함.",
-      "usage": "Gemini API, Google AI Pro 및 Ultra 구독자를 통해 제공되며 대규모 데이터 통합 및 에이전트 워크플로우에 활용 가능함.",
-      "cost": "입력 토큰 100만 개당 3달러(캐시 입력 시 0.15달러), 출력 토큰 100만 개당 15달러.",
-      "performance": "Artificial Analysis Intelligence Index 61점, 100만 토큰 문맥 창 지원.",
-      "strengths": "다단계 지시 이행, 높은 조종성(steerability), 제조 오류(fabrication) 감소.",
-      "limitations": "제시된 벤치마크 점수 외에 실제 운영 환경에서의 구체적인 오류율이나 한계점은 원문에 근거 없음.",
-      "mode": "ai-assisted",
-      "model": "gemini-3.1-flash-lite",
-      "evidence": [
-        "Neon ranks ahead of comparable models and #3 overall with a score of 61 on the Artificial Analysis Intelligence Index",
-        "The model is priced at $3 per million input tokens ($0.15 per million cached input tokens, a 95% discount) and $15 per million output tokens"
-      ],
-      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
-      "confidence": "검토 필요",
-      "voiceMood": "skeptical",
-      "voiceHook": "새 모델이 나왔다며 떠들썩한데, 정말 홍보하는 만큼 실무에서 복잡한 코딩과 추론을 매끄럽게 해낼지 궁금하지 않아?",
-      "voiceTake": "벤치마크 점수만 잔뜩 나열해 놨는데, 실제 기업 환경에서 대규모 데이터를 다룰 때 얼마나 안정적인지 직접 검증해 봐야겠어. 화려한 시연 영상보다는 실제 프로덕션 코드에서 얼마나 '환각'을 억제하는지가 핵심일 테니까.",
-      "imageCheckedAt": "2026-11-19T07:36:36.566201+00:00",
-      "fingerprint": "c0fb0fc989b8315d1d783a2e"
     }
   ],
   "disclaimer": "원문 기반 정보 정리입니다. AI 보조 분석은 사실 검증을 대체하지 않으며 가격·성능·이전 기술과의 차이가 확인되지 않으면 미확인으로 표시합니다."
