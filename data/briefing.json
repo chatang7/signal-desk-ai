@@ -1,15 +1,15 @@
 {
   "schema": "signal-desk-briefing-v1",
-  "generatedAt": "2026-11-26T08:33:34.085877+00:00",
-  "newsGeneratedAt": "2026-11-26T08:33:12.174851+00:00",
+  "generatedAt": "2026-11-26T08:56:17.553768+00:00",
+  "newsGeneratedAt": "2026-11-26T08:55:54.571029+00:00",
   "headline": "AI 변화 브리핑 · 최근 7일",
   "coverage": "최근 7일 중 중요 후보, 뉴스 수집 대상 범위 내에서만 작성",
   "mode": "ai-assisted",
   "aiAnalyzed": 8,
-  "aiCalls": 3,
+  "aiCalls": 0,
   "aiErrors": 0,
   "aiFailureCode": null,
-  "cacheHits": 5,
+  "cacheHits": 8,
   "modelConfigured": true,
   "storyCount": 8,
   "items": [
@@ -47,7 +47,7 @@
       "voiceMood": "curious",
       "voiceHook": "운영 이슈가 닫히면 그대로 잊히는 게 아까웠는데, 이걸 지식 그래프로 엮어서 AI가 답변하게 만들었다니 꽤 흥미로운 시도네.",
       "voiceTake": "단순히 LLM에 질문을 던지는 걸 넘어, 운영 데이터를 그래프로 구조화해 검색 정확도를 높이려는 접근은 실무적으로 아주 영리해. 다만, 추출된 정보의 정확성을 어떻게 지속적으로 검증하고 데이터의 노후화를 관리할지가 이 에이전트의 성패를 가를 핵심이겠지.",
-      "imageCheckedAt": "2026-11-26T08:33:34.085877+00:00",
+      "imageCheckedAt": "2026-11-26T08:56:17.553768+00:00",
       "fingerprint": "eb74d58bb46fbac54a7af388"
     },
     {
@@ -84,7 +84,7 @@
       "voiceMood": "curious",
       "voiceHook": "네이버에서 멀티모달 모델 평가를 한데 묶는 프레임워크를 내놨다는데, 이게 정말 파편화된 평가 환경을 정리할 수 있을지 궁금해지네.",
       "voiceTake": "평가 툴마다 점수가 널뛰는 건 고질적인 문제였지. 단순히 툴을 통합하는 걸 넘어, 서로 다른 프레임워크 사이의 메트릭 불일치를 얼마나 정교하게 보정할 수 있을지가 이 프로젝트의 진짜 성패를 가를 거야.",
-      "imageCheckedAt": "2026-11-26T08:33:34.085877+00:00",
+      "imageCheckedAt": "2026-11-26T08:56:17.553768+00:00",
       "fingerprint": "ebf6b16ce95a08e06ed1f92e"
     },
     {
@@ -121,7 +121,7 @@
       "voiceMood": "serious",
       "voiceHook": "Claude Code가 이번엔 MCP 서버 연동이랑 자잘한 프리징 문제들을 잔뜩 들고 왔네, 꽤 꼼꼼하게 손본 것 같아.",
       "voiceTake": "단순 기능 추가보다 터미널 프리징이나 세션 복구 같은 안정성 패치가 훨씬 눈에 띄는군. 실무에서 굴리기 전에 쉘 커맨드 훅이 의도대로 차단되는지부터 직접 테스트해 봐.",
-      "imageCheckedAt": "2026-11-26T08:33:34.085877+00:00",
+      "imageCheckedAt": "2026-11-26T08:56:17.553768+00:00",
       "fingerprint": "ba86910864f459fd81d6c64c"
     },
     {
@@ -157,7 +157,7 @@
       "voiceMood": "serious",
       "voiceHook": "GitHub에서 Copilot 코드 리뷰 비용 청구 방식을 바꾼다는데, 관리자라면 당장 설정부터 확인해 보는 게 좋을 거야.",
       "voiceTake": "결제 기본값이 조직으로 넘어간다는 건데, 이게 비용 관리 측면에서 어떤 파장을 일으킬지 꼼꼼히 따져봐야 해. 무심코 지나쳤다간 예산 계획이 완전히 꼬일 수도 있으니까.",
-      "imageCheckedAt": "2026-11-26T08:33:34.085877+00:00",
+      "imageCheckedAt": "2026-11-26T08:56:17.553768+00:00",
       "fingerprint": "4059ca60aaee5e50bf865b83"
     },
     {
@@ -193,7 +193,7 @@
       "voiceMood": "serious",
       "voiceHook": "Gemini CLI v0.71.0 업데이트 소식 가져왔어. 이번엔 PowerShell 명령어 처리할 때 UI가 멈추던 고질적인 문제를 비동기 방식으로 손본 모양인데, 얼마나 매끄러워졌는지 직접 따져봐야겠지?",
       "voiceTake": "단순한 버전 업데이트 같아 보여도 UI 응답성 개선은 실사용 체감에 직결되는 문제야. 비동기 처리로 전환하면서 다른 의존성 충돌은 없는지, 실제 터미널 환경에서 파싱 속도와 안정성을 꼼꼼히 검증해 볼 필요가 있어.",
-      "imageCheckedAt": "2026-11-26T08:33:34.085877+00:00",
+      "imageCheckedAt": "2026-11-26T08:56:17.553768+00:00",
       "fingerprint": "fec749f20deeee61a150b0d2"
     },
     {
