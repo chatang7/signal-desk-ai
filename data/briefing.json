@@ -1,15 +1,15 @@
 {
   "schema": "signal-desk-briefing-v1",
-  "generatedAt": "2026-11-27T09:08:29.198811+00:00",
-  "newsGeneratedAt": "2026-11-27T09:08:08.448547+00:00",
+  "generatedAt": "2026-11-28T07:59:57.379784+00:00",
+  "newsGeneratedAt": "2026-11-28T07:59:35.844644+00:00",
   "headline": "AI 변화 브리핑 · 최근 7일",
   "coverage": "최근 7일 중 중요 후보, 뉴스 수집 대상 범위 내에서만 작성",
   "mode": "ai-assisted",
-  "aiAnalyzed": 8,
-  "aiCalls": 0,
-  "aiErrors": 0,
-  "aiFailureCode": null,
-  "cacheHits": 8,
+  "aiAnalyzed": 7,
+  "aiCalls": 2,
+  "aiErrors": 1,
+  "aiFailureCode": "HTTP 503",
+  "cacheHits": 6,
   "modelConfigured": true,
   "storyCount": 8,
   "items": [
@@ -24,7 +24,7 @@
       "urls": [
         "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench"
       ],
-      "score": 76,
+      "score": 71,
       "majorLaunch": false,
       "imageUrl": "https://cdn-uploads.huggingface.co/production/uploads/67289c93ff90038d9a6e5675/tbIvyMSISXCm64WYP3atl.png",
       "imageSource": "공식 원문 대표 이미지",
@@ -61,7 +61,7 @@
       "urls": [
         "https://d2.naver.com/helloworld/6934862"
       ],
-      "score": 73,
+      "score": 68,
       "majorLaunch": false,
       "imageUrl": "",
       "imageSource": "",
@@ -84,7 +84,7 @@
       "voiceMood": "curious",
       "voiceHook": "운영 이슈가 닫히면 그대로 잊히는 게 아까웠는데, 이걸 지식 그래프로 엮어서 AI가 답변하게 만들었다니 꽤 흥미로운 시도네.",
       "voiceTake": "단순히 LLM에 질문을 던지는 걸 넘어, 운영 데이터를 그래프로 구조화해 검색 정확도를 높이려는 접근은 실무적으로 아주 영리해. 다만, 추출된 정보의 정확성을 어떻게 지속적으로 검증하고 데이터의 노후화를 관리할지가 이 에이전트의 성패를 가를 핵심이겠지.",
-      "imageCheckedAt": "2026-11-27T09:08:29.198811+00:00",
+      "imageCheckedAt": "2026-11-28T07:59:57.379784+00:00",
       "fingerprint": "eb74d58bb46fbac54a7af388"
     },
     {
@@ -98,7 +98,7 @@
       "urls": [
         "https://d2.naver.com/helloworld/4331341"
       ],
-      "score": 73,
+      "score": 68,
       "majorLaunch": false,
       "imageUrl": "",
       "imageSource": "",
@@ -121,45 +121,78 @@
       "voiceMood": "curious",
       "voiceHook": "네이버에서 멀티모달 모델 평가를 한데 묶는 프레임워크를 내놨다는데, 이게 정말 파편화된 평가 환경을 정리할 수 있을지 궁금해지네.",
       "voiceTake": "평가 툴마다 점수가 널뛰는 건 고질적인 문제였지. 단순히 툴을 통합하는 걸 넘어, 서로 다른 프레임워크 사이의 메트릭 불일치를 얼마나 정교하게 보정할 수 있을지가 이 프로젝트의 진짜 성패를 가를 거야.",
-      "imageCheckedAt": "2026-11-27T09:08:29.198811+00:00",
+      "imageCheckedAt": "2026-11-28T07:59:57.379784+00:00",
       "fingerprint": "ebf6b16ce95a08e06ed1f92e"
     },
     {
-      "id": "feed-819f2bb8e324e5e7f3ab17",
-      "title": "Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems",
-      "date": "2026-11-26",
+      "id": "feed-70bbc7b3ecb12c17b8d622",
+      "title": "프리즘ML, 5.9GB AI 모델 '본사이 2.5' 출시...코딩·에이전트 성능 대폭 향상",
+      "date": "2026-11-28",
       "topic": "에이전트",
-      "region": "해외",
-      "sourceLabel": "Hugging Face 블로그",
-      "sourceType": "primary",
+      "region": "한국",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceType": "secondary",
       "urls": [
-        "https://huggingface.co/blog/training-swarms"
+        "https://www.aitimes.com/news/articleView.html?idxno=217893"
       ],
-      "score": 71,
+      "score": 67,
       "majorLaunch": false,
-      "imageUrl": "https://huggingface.co/blog/assets/training-swarms/thumbnail.png",
-      "imageSource": "공식 원문 대표 이미지",
-      "summary": "다중 에이전트 시스템(Multi-Agent Systems)의 구축, 학습, 평가를 다루는 교육용 블로그 시리즈의 첫 번째 게시물로, 에이전트 간 통신이 실질적인 성능 향상을 가져오는지 검증하는 방법론을 제시함.",
-      "difference": "미확인",
-      "why": "다중 에이전트 시스템에서 통신은 성능 향상을 보장하지 않으며, 에이전트 수 증가에 따른 컨텍스트 복잡도와 예산 소모 문제를 해결하기 위해 학습이 필요함.",
-      "usage": "Hugging Face Jobs 환경에서 4개의 에이전트와 공유 언어 모델을 활용한 간단한 검증 가능 작업 수행.",
-      "cost": "원문에서 확인 가능한 수치 없음",
-      "performance": "미확인",
-      "strengths": "에이전트 간 협력의 실효성을 예산 기반의 동일 조건 비교를 통해 객관적으로 측정하려는 방법론적 접근.",
-      "limitations": "다중 에이전트 시스템의 복잡성으로 인해 통신이 오히려 리소스 낭비가 될 가능성이 존재하며, 단순히 에이전트 수를 늘리는 것이 협력의 증거가 되지는 않음.",
+      "imageUrl": "",
+      "imageSource": "",
+      "summary": "프리즘ML(PrismML)이 270억개 매개변수 규모의 AI 모델을 5.9GB로 압축한 오픈웨이트 모델을 출시했다. 기존 버전과 동일한 용량을 유지하면서도 원본 모델의 99%에 달하는 도구 호출 성능과 90% 수준의 에이전트 코딩 성능을 구현, 개인용 기기에서 AI 에이전트를 실행할 가능성을 높였다.프리즘ML은 24일(현지시간) 공식 블로그를 통해 '터너리 본사이 2.5 27B(Ternary Bonsai 2.5 27B)'를 출시했다고 밝혔다.지난 9월 출시한 본",
+      "difference": "원문 표현: 기존 버전과 동일한 용량을 유지하면서도 원본 모델의 99%에 달하는 도구 호출 성능과 90% 수준의 에이전트 코딩 성능을 구현, 개인용 기기에서 AI 에이전트를 실행할 가능성을 높였다.프리즘ML은 24일(현지시간) 공식 블로그를 통해 '터너리 본사이 2.5 27B(Ternary Bonsai 2.5 27B)'를 출시했다고 밝혔다.지난 9월 출시한 본사이 2 27B의 후속 버전으로, 두 모델 모두 알리바바의 '큐",
+      "why": "확인해야 하는 이유: 자동 실행 기술은 실제 성공률과 통제·보안 수준의 검증이 중요함",
+      "usage": "실무 검증: 제한된 샌드박스에서 작업 성공률·실패 복구·권한 범위 확인",
+      "cost": "가격·무료 여부 미확인",
+      "performance": "원문 언급: 기존 버전과 동일한 용량을 유지하면서도 원본 모델의 99%에 달하는 도구 호출 성능과 90% 수준의 에이전트 코딩 성능을 구현, 개인용 기기에서 AI 에이전트를 실행할 가능성을 높였다.프리즘ML은 24일(현지시간) 공식 블로그를 통해 '터너리 본사이 2.5 27B(Ternary Bonsai 2.5 27B)'를 출시했다고 밝혔다.지난 9월 출시한 본사이 2 27B의 후속 버전으로, 두 모델 모두 알리바바의 '큐",
+      "strengths": "검증 전: 공식 소개에 실린 장점과 실제 효용을 구분해야 함",
+      "limitations": "독립 검증·실측 비교·사용 조건은 수집 요약만으로 확정할 수 없음",
+      "mode": "evidence-only",
+      "model": null,
+      "evidence": [
+        "프리즘ML(PrismML)이 270억개 매개변수 규모의 AI 모델을 5.9GB로 압축한 오픈웨이트 모델을 출시했다. 기존 버전과 동일한 용량을 유지하면서도 원본 모델의 99%에 달하는 도구 호출 성능과 90% 수준의 에이전트 코딩 성능을 구현, 개인용"
+      ],
+      "status": "자동 근거 정리 · 심층 추론 미실행",
+      "confidence": "미검증",
+      "imageCheckedAt": "2026-11-28T07:59:57.379784+00:00",
+      "fingerprint": "4fd4e6cae6bde97d7dc87ccd"
+    },
+    {
+      "id": "feed-6cc107d3161c5998c6e66b",
+      "title": "바이트댄스, AI 에이전트 강화학습 도구 '라미나' 공개...GPU 사용 시간 64% 절감",
+      "date": "2026-11-28",
+      "topic": "반도체",
+      "region": "한국",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceType": "secondary",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217894"
+      ],
+      "score": 67,
+      "majorLaunch": false,
+      "imageUrl": "",
+      "imageSource": "",
+      "summary": "바이트댄스와 홍콩대학교가 AI 에이전트 강화학습 효율을 높이는 오픈소스 프레임워크 '라미나(Laminar)'를 공개함.",
+      "difference": "기존 방식 대비 GPU 사용 시간 64%, 학습 샘플 33% 절감 및 모델 성능 향상.",
+      "why": "LLM 및 장시간 작업 수행 AI 에이전트의 강화학습 효율성 개선을 위해 개발됨.",
+      "usage": "깃허브에 공개된 소스 코드를 활용하여 코딩 에이전트 학습 실험 환경에 적용 가능함.",
+      "cost": "미확인",
+      "performance": "코딩 에이전트 학습 시 GPU 사용 시간 64%, 학습 샘플 33% 감소.",
+      "strengths": "강화학습 자원 소모를 줄이면서도 모델 성능을 개선함.",
+      "limitations": "원문에 근거 없음.",
       "mode": "ai-assisted",
       "model": "gemini-3.1-flash-lite",
       "evidence": [
-        "Mixing agents' context together through communication is not an inherent performance boost compared to a single agent.",
-        "This post's example takes about five hours on two H200s, which costs roughly $50."
+        "코딩 에이전트 학습 실험에서 기존 방식 대비 GPU 사용 시간을 64%, 학습 샘플을 33% 줄이면서도 모델 성능을 높였다.",
+        "대형언어모델(LLM)과 장시간 작업을 수행하는 AI 에이전트의 강화학습을 위한 프레임워크 '라미나(Laminar)'를 깃허브에 오픈소스로 공개했다."
       ],
       "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
       "confidence": "검토 필요",
-      "voiceMood": "skeptical",
-      "voiceHook": "다들 에이전트 군집이 대단한 만능키라도 되는 양 떠들지만, 정작 그게 진짜 효율적인지 따져본 적은 있니?",
-      "voiceTake": "협력한다고 무작정 성능이 오르는 게 아니야. 단순히 토큰만 더 쓴 건지, 아니면 진짜 똑똑해진 건지 예산 대비 효율부터 똑바로 계산해 보는 게 우선 아닐까?",
-      "imageCheckedAt": "2026-11-27T08:46:34.687536+00:00",
-      "fingerprint": "9bbbec86a0e0ed48b5995f64"
+      "voiceMood": "curious",
+      "voiceHook": "바이트댄스가 이번엔 강화학습 효율을 잡겠다며 '라미나'를 들고 나왔는데, 정말 GPU 비용 고민을 덜어줄 수 있을지 궁금하지 않아?",
+      "voiceTake": "GPU 사용 시간을 64%나 줄였다는 수치는 꽤 매력적이지만, 실제 복잡한 실무 환경에서도 동일한 효율이 나올지는 직접 벤치마크를 돌려봐야 알겠지. 단순 코딩 실험을 넘어 범용적인 에이전트 학습으로 확장할 수 있을지가 이번 기술의 진짜 시험대가 될 거야.",
+      "imageCheckedAt": "2026-11-28T07:59:57.379784+00:00",
+      "fingerprint": "4dd04197fafb828f6c860025"
     },
     {
       "id": "feed-e5470c885808e84662dfe0",
@@ -172,7 +205,7 @@
       "urls": [
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.332"
       ],
-      "score": 71,
+      "score": 66,
       "majorLaunch": false,
       "imageUrl": "",
       "imageSource": "",
@@ -195,7 +228,7 @@
       "voiceMood": "serious",
       "voiceHook": "Claude Code가 이번엔 MCP 서버 연동이랑 자잘한 프리징 문제들을 잔뜩 들고 왔네, 꽤 꼼꼼하게 손본 것 같아.",
       "voiceTake": "단순 기능 추가보다 터미널 프리징이나 세션 복구 같은 안정성 패치가 훨씬 눈에 띄는군. 실무에서 굴리기 전에 쉘 커맨드 훅이 의도대로 차단되는지부터 직접 테스트해 봐.",
-      "imageCheckedAt": "2026-11-27T09:08:29.198811+00:00",
+      "imageCheckedAt": "2026-11-28T07:59:57.379784+00:00",
       "fingerprint": "ba86910864f459fd81d6c64c"
     },
     {
@@ -209,7 +242,7 @@
       "urls": [
         "https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization"
       ],
-      "score": 71,
+      "score": 66,
       "majorLaunch": false,
       "imageUrl": "",
       "imageSource": "",
@@ -231,7 +264,7 @@
       "voiceMood": "serious",
       "voiceHook": "GitHub에서 Copilot 코드 리뷰 비용 청구 방식을 바꾼다는데, 관리자라면 당장 설정부터 확인해 보는 게 좋을 거야.",
       "voiceTake": "결제 기본값이 조직으로 넘어간다는 건데, 이게 비용 관리 측면에서 어떤 파장을 일으킬지 꼼꼼히 따져봐야 해. 무심코 지나쳤다간 예산 계획이 완전히 꼬일 수도 있으니까.",
-      "imageCheckedAt": "2026-11-27T09:08:29.198811+00:00",
+      "imageCheckedAt": "2026-11-28T07:59:57.379784+00:00",
       "fingerprint": "4059ca60aaee5e50bf865b83"
     },
     {
@@ -245,7 +278,7 @@
       "urls": [
         "https://github.com/google-gemini/gemini-cli/releases/tag/v0.71.0"
       ],
-      "score": 71,
+      "score": 66,
       "majorLaunch": false,
       "imageUrl": "",
       "imageSource": "",
@@ -267,44 +300,8 @@
       "voiceMood": "serious",
       "voiceHook": "Gemini CLI v0.71.0 업데이트 소식 가져왔어. 이번엔 PowerShell 명령어 처리할 때 UI가 멈추던 고질적인 문제를 비동기 방식으로 손본 모양인데, 얼마나 매끄러워졌는지 직접 따져봐야겠지?",
       "voiceTake": "단순한 버전 업데이트 같아 보여도 UI 응답성 개선은 실사용 체감에 직결되는 문제야. 비동기 처리로 전환하면서 다른 의존성 충돌은 없는지, 실제 터미널 환경에서 파싱 속도와 안정성을 꼼꼼히 검증해 볼 필요가 있어.",
-      "imageCheckedAt": "2026-11-27T09:08:29.198811+00:00",
+      "imageCheckedAt": "2026-11-28T07:59:57.379784+00:00",
       "fingerprint": "fec749f20deeee61a150b0d2"
-    },
-    {
-      "id": "feed-5337ce2e9a27dbfb8cf021",
-      "title": "llama.cpp · v1.1.0",
-      "date": "2026-11-26",
-      "topic": "무료 도구",
-      "region": "해외",
-      "sourceLabel": "GitHub · llama.cpp",
-      "sourceType": "primary",
-      "urls": [
-        "https://github.com/ggml-org/llama.cpp/releases/tag/v1.1.0"
-      ],
-      "score": 66,
-      "majorLaunch": false,
-      "imageUrl": "",
-      "imageSource": "",
-      "summary": "llama.cpp v1.1.0은 Inkling 2, Domyn Edge 4B, Zaya1 8B 등 신규 모델군 지원과 대규모 음성 및 TTS 모델 통합, API 구조 개선을 포함한 업데이트입니다.",
-      "difference": "기존 llama_batch API를 llama_batch_ext로 대체하고 DFlash 추측 디코딩 방식을 분리하는 등 API 구조를 변경했습니다.",
-      "why": "신규 모델 아키텍처 지원, 음성 처리 기능 확장 및 API 효율성 개선을 위해 배포되었습니다.",
-      "usage": "llama_batch_ext API로 전환하고, 토큰 인식 채팅 파싱 및 자동 텐서 양자화 기능을 활용해 모델을 로드하십시오.",
-      "cost": "미확인",
-      "performance": "미확인",
-      "strengths": "다양한 오디오/TTS 모델 지원, 토큰 기반 채팅 파싱, 웹 UI 내 음성 메시지 및 에이전트 추적 기능 추가.",
-      "limitations": "기존 llama_batch API가 폐기되어 하위 호환성을 위해 코드 수정이 필요합니다.",
-      "mode": "ai-assisted",
-      "model": "gemini-3.1-flash-lite",
-      "evidence": [
-        "llama.cpp v1.1.0 adds the Inkling 2 family (base, Mini and DSpark), Domyn Edge 4B, Zaya1 8B"
-      ],
-      "status": "AI 보조 분석 · 원문 대조 및 독립 검증 필요",
-      "confidence": "검토 필요",
-      "voiceMood": "curious",
-      "voiceHook": "llama.cpp가 또 한 번 판을 키웠네, 이번엔 오디오 모델이랑 API까지 싹 갈아엎었다니 어디 한번 들여다볼까?",
-      "voiceTake": "단순히 모델만 추가한 게 아니라 API 구조까지 건드린 건 꽤 과감한 선택이야. 특히 음성 모델을 대거 통합한 건 흥미롭지만, 기존 API를 쓰던 사람들은 코드 수정하느라 꽤나 골치 아프겠는걸?",
-      "imageCheckedAt": "2026-11-27T09:08:29.198811+00:00",
-      "fingerprint": "2537e973cda2a5e10540e58a"
     }
   ],
   "disclaimer": "원문 기반 정보 정리입니다. AI 보조 분석은 사실 검증을 대체하지 않으며 가격·성능·이전 기술과의 차이가 확인되지 않으면 미확인으로 표시합니다."

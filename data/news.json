@@ -1,53 +1,53 @@
 {
   "schema": "signal-desk-public-feed-v1",
-  "generatedAt": "2026-11-27T09:08:08.448547+00:00",
-  "successfulSources": 14,
-  "failedSources": 8,
+  "generatedAt": "2026-11-28T07:59:35.844644+00:00",
+  "successfulSources": 21,
+  "failedSources": 1,
   "sources": [
     {
       "source": "Codex 릴리스",
-      "ok": false,
-      "error": "HTTP Error 403: rate limit exceeded"
+      "ok": true,
+      "count": 1
     },
     {
       "source": "Gemini CLI 릴리스",
-      "ok": false,
-      "error": "HTTP Error 403: rate limit exceeded"
+      "ok": true,
+      "count": 2
     },
     {
       "source": "Claude Code 릴리스",
-      "ok": false,
-      "error": "HTTP Error 403: rate limit exceeded"
+      "ok": true,
+      "count": 2
     },
     {
       "source": "Transformers 릴리스",
-      "ok": false,
-      "error": "HTTP Error 403: rate limit exceeded"
+      "ok": true,
+      "count": 2
     },
     {
       "source": "vLLM 릴리스",
-      "ok": false,
-      "error": "HTTP Error 403: rate limit exceeded"
+      "ok": true,
+      "count": 0
     },
     {
       "source": "Ollama 릴리스",
-      "ok": false,
-      "error": "HTTP Error 403: rate limit exceeded"
+      "ok": true,
+      "count": 2
     },
     {
       "source": "ComfyUI 릴리스",
-      "ok": false,
-      "error": "HTTP Error 403: rate limit exceeded"
+      "ok": true,
+      "count": 0
     },
     {
       "source": "llama.cpp 릴리스",
-      "ok": false,
-      "error": "HTTP Error 403: rate limit exceeded"
+      "ok": true,
+      "count": 0
     },
     {
       "source": "OpenAI 공식 발표",
       "ok": true,
-      "count": 10
+      "count": 9
     },
     {
       "source": "Google AI 블로그",
@@ -56,8 +56,8 @@
     },
     {
       "source": "Google DeepMind",
-      "ok": true,
-      "count": 2
+      "ok": false,
+      "error": "not well-formed (invalid token): line 1, column 0"
     },
     {
       "source": "카카오테크",
@@ -72,12 +72,12 @@
     {
       "source": "Google Research",
       "ok": true,
-      "count": 3
+      "count": 2
     },
     {
       "source": "Hugging Face 블로그",
       "ok": true,
-      "count": 9
+      "count": 8
     },
     {
       "source": "Mistral AI",
@@ -116,6 +116,166 @@
     }
   ],
   "items": [
+    {
+      "id": "feed-fb7265593817876f5cf844",
+      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217888",
+      "title": "미국·유럽 잇단 사이버 공격…AI 시대 디지털 인프라 취약성 드러나",
+      "topic": "보안",
+      "region": "한국",
+      "date": "2026-11-28",
+      "summary": "미국 공군과 재무부, 영국 정부 부처 등 서방 주요 기관에서 사이버 공격과 시스템 장애가 잇따르고 있다. AI의 소프트웨어 취약점 발견 능력이 급격하게 발전하면서 공격자와 방어자의 보안 경쟁이 치열해지고, 노후한 디지털 인프라가 이를 감당할 수 있을지에 대한 의문도 커지고 있다.파이낸셜타임스(FT)는 27일(현지시간) 최근 한달간 미국과 유럽에서 발생한 대규모 사이버 공격과 네트워크 장애로 국가 주요 기반 시설의 취약성이 드러나고 있다고 보도했다.연간 3300억파운드(약 578조원) 규모의 영국 복지 시스템을 운영하는 노동연금부(D",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217888"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 2,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
+      "sourceType": "secondary",
+      "relatedSources": [
+        "AI타임스 (보도)"
+      ]
+    },
+    {
+      "id": "feed-70bbc7b3ecb12c17b8d622",
+      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217893",
+      "title": "프리즘ML, 5.9GB AI 모델 '본사이 2.5' 출시...코딩·에이전트 성능 대폭 향상",
+      "topic": "에이전트",
+      "region": "한국",
+      "date": "2026-11-28",
+      "summary": "프리즘ML(PrismML)이 270억개 매개변수 규모의 AI 모델을 5.9GB로 압축한 오픈웨이트 모델을 출시했다. 기존 버전과 동일한 용량을 유지하면서도 원본 모델의 99%에 달하는 도구 호출 성능과 90% 수준의 에이전트 코딩 성능을 구현, 개인용 기기에서 AI 에이전트를 실행할 가능성을 높였다.프리즘ML은 24일(현지시간) 공식 블로그를 통해 '터너리 본사이 2.5 27B(Ternary Bonsai 2.5 27B)'를 출시했다고 밝혔다.지난 9월 출시한 본사이 2 27B의 후속 버전으로, 두 모델 모두 알리바바의 '큐원 3.8",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217893"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 2,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
+      "sourceType": "secondary",
+      "relatedSources": [
+        "AI타임스 (보도)"
+      ]
+    },
+    {
+      "id": "feed-6cc107d3161c5998c6e66b",
+      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217894",
+      "title": "바이트댄스, AI 에이전트 강화학습 도구 '라미나' 공개...GPU 사용 시간 64% 절감",
+      "topic": "반도체",
+      "region": "한국",
+      "date": "2026-11-28",
+      "summary": "바이트댄스가 AI 에이전트의 강화학습에 필요한 GPU 자원을 크게 줄이는 오픈소스 도구를 공개했다. 코딩 에이전트 학습 실험에서 기존 방식 대비 GPU 사용 시간을 64%, 학습 샘플을 33% 줄이면서도 모델 성능을 높였다.바이트댄스의 AI 연구 조직 시드(Seed)와 홍콩대학교 공동 연구진은 24일 대형언어모델(LLM)과 장시간 작업을 수행하는 AI 에이전트의 강화학습을 위한 프레임워크 '라미나(Laminar)'를 깃허브에 오픈소스로 공개했다.지난해 10월 논문을 통해 소개한 기술로, 소스 코드와 코딩 에이전트 학습 실험 결과를",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217894"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 2,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
+      "sourceType": "secondary",
+      "relatedSources": [
+        "AI타임스 (보도)"
+      ]
+    },
+    {
+      "id": "feed-54381fb88af9152f2dc627",
+      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217889",
+      "title": "오픈AI, 애플에 맞소송…\"협력업체 압박해 AI 기기 생산 방해\"",
+      "topic": "미정",
+      "region": "한국",
+      "date": "2026-11-28",
+      "summary": "오픈AI가 애플을 상대로 맞소송을 제기하며 자사의 AI 기기 개발을 방해하기 위해 제조 협력업체에 압력을 행사했다고 주장했다. 불공정한 고용 계약과 영업비밀 침해 의혹도 제기하면서 양사의 갈등이 인재 확보를 넘어 하드웨어 공급망 경쟁으로 번지고 있다.블룸버그와 로이터 등에 따르면 오픈AI는 27일(현지시간) 미국 캘리포니아주 산호세 연방법원에 맞소송을 제기했다.소장에 따르면 애플은 제조 협력업체에 경쟁사 프로젝트 참여 여부와 관련 직원의 이름, 근무지, 담당 업무 등을 파악하도록 요구했다. 특히 향후 거래에서 불이익을 받을 수 있다",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217889"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 2,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
+      "sourceType": "secondary",
+      "relatedSources": [
+        "AI타임스 (보도)"
+      ]
+    },
+    {
+      "id": "feed-3ca6059f16acef7d41c08a",
+      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217892",
+      "title": "사카나 AI, 30B급 추론 모델 '나마즈 스몰' 공개...웹 검색서 120B 모델 압도",
+      "topic": "미정",
+      "region": "한국",
+      "date": "2026-11-28",
+      "summary": "일본의 사카나 AI가 엔비디아의 오픈 모델을 기반으로 웹 검색과 장문서 이해 능력을 강화한 소형 추론 모델을 공개했다. 자체 평가에서 매개변수가 4배 많은 엔비디아 모델의 평균 성능을 넘어섰으며, 기업의 자체 서버에서도 운영할 수 있도록 개발했다.사카나 AI는 25일 공식 블로그를 통해 300억개 매개변수 규모의 추론 모델 '사카나 나마즈 스몰(Sakana Namazu Small)'을 공개했다.엔비디아의 '네모트론 3 나노(Nemotron 3 Nano)' 사전 학습 모델을 기반으로 추가 사전 학습과 사후 학습을 독자적으로 진행했다.",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://www.aitimes.com/news/articleView.html?idxno=217892"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 2,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "AI타임스 (보도)",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
+      "sourceType": "secondary",
+      "relatedSources": [
+        "AI타임스 (보도)"
+      ]
+    },
     {
       "id": "feed-f9bc69fe7c1880621812cb",
       "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217878",
@@ -175,7 +335,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "AI타임스 (보도)",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "sourceType": "secondary",
       "relatedSources": [
         "AI타임스 (보도)"
@@ -214,6 +374,37 @@
         "AI타임스 (보도)"
       ],
       "duplicateCount": 1
+    },
+    {
+      "id": "feed-c2bd7953104652e48b060c",
+      "externalId": "https://huggingface.co/blog/video-trainium3",
+      "title": "Taking Trainium3 to the Track: Generating Videos with LTX-2.5",
+      "topic": "미정",
+      "region": "해외",
+      "date": "2026-11-27",
+      "summary": "",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://huggingface.co/blog/video-trainium3"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face 블로그",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
+      "relatedSources": [
+        "Hugging Face 블로그"
+      ]
     },
     {
       "id": "feed-8a35357ca55ca483348f67",
@@ -406,7 +597,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -470,7 +661,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -541,6 +732,37 @@
         "AI타임스 (보도)"
       ],
       "duplicateCount": 1
+    },
+    {
+      "id": "feed-67ce46ad292158ac829846",
+      "externalId": "github:ollama/ollama:459061903",
+      "title": "Ollama · v0.40.19",
+      "topic": "무료 도구",
+      "region": "해외",
+      "date": "2026-11-26",
+      "summary": "## What's Changed * inkling2: faster short histories, draft proposals and conv snapshots by @dhiltgen in https://github.com/ollama/ollama/pull/19881 * mlxrunner: compact Engram history buffers by @pdevine in https://github.com/ollama/ollama/pull/19913 * bump llama-server by @pdevine in https://github.com/ollama/ollama/pull/19917 **Full Changelog**: https://github.com/ollama/ollama/compare/v0.40.18...v0.40.19-rc0",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://github.com/ollama/ollama/releases/tag/v0.40.19"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 4,
+      "pricing": "미정",
+      "status": "오늘 읽을 것",
+      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "GitHub · Ollama",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
+      "relatedSources": [
+        "GitHub · Ollama"
+      ]
     },
     {
       "id": "feed-5e4b1a31da10ad22bf9650",
@@ -632,7 +854,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -851,13 +1073,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Claude Code",
-      "sourceCheckedAt": "2026-11-27T08:46:11.623893+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "GitHub · Claude Code"
       ],
@@ -883,13 +1105,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -1107,13 +1329,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "네이버 D2",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "네이버 D2"
       ],
@@ -1139,13 +1361,13 @@
       "importance": 3,
       "reliability": 3,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
@@ -1279,6 +1501,37 @@
       ]
     },
     {
+      "id": "feed-908c5f7a688111175dbc91",
+      "externalId": "arxiv:2611.33885",
+      "title": "LayoutRecall: Preserving Appearance in Multi-Round 3D Layout-Controlled Image Editing",
+      "topic": "연구·논문",
+      "region": "해외",
+      "date": "2026-11-25",
+      "summary": "3D layout-controlled image editing gives users explicit control over object placement and camera viewpoint. In a sequence of edits, however, the latest image can lose the appearance of an object when it is occluded or leaves view. The target layout specifies where the object should reappear, while its appearance must be recovered from earlier observations. We introduce LayoutRecall, a multi-round editor that stores and reuses appearance in the local coordinate systems of 3D boxes. Box-Surface La",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://arxiv.org/abs/2611.33885"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 3,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face Daily Papers",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
+    },
+    {
       "id": "feed-8e4d22edd38bc71f9be560",
       "externalId": "arxiv:2611.34064",
       "title": "SPARC: Geometry-Guided Attention Pruning for Long-Horizon Camera-Controlled Video Generation",
@@ -1330,13 +1583,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -1362,13 +1615,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub Copilot",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "GitHub Copilot"
       ],
@@ -1457,13 +1710,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google Research",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "Google Research"
       ],
@@ -1649,13 +1902,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "네이버 D2",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "네이버 D2"
       ],
@@ -1712,13 +1965,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "네이버 D2",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "네이버 D2"
       ],
@@ -1744,13 +1997,13 @@
       "importance": 3,
       "reliability": 4,
       "pricing": "미정",
-      "status": "오늘 읽을 것",
+      "status": "나중에 검토",
       "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
       "selected": false,
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -1814,7 +2067,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Ollama",
-      "sourceCheckedAt": "2026-11-27T08:46:11.623893+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "GitHub · Ollama"
       ],
@@ -2007,7 +2260,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "NVIDIA 개발자",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "NVIDIA 개발자"
       ],
@@ -2071,7 +2324,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Transformers",
-      "sourceCheckedAt": "2026-11-27T08:46:11.623893+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "GitHub · Transformers"
       ],
@@ -2103,7 +2356,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -2135,7 +2388,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "Google AI 블로그"
       ],
@@ -2167,7 +2420,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -2199,7 +2452,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Codex",
-      "sourceCheckedAt": "2026-11-27T08:46:11.623893+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "GitHub · Codex"
       ],
@@ -2295,7 +2548,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -2359,7 +2612,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -2423,7 +2676,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -2455,7 +2708,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Gemini CLI",
-      "sourceCheckedAt": "2026-11-27T08:46:11.623893+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "GitHub · Gemini CLI"
       ],
@@ -2746,7 +2999,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
@@ -2778,7 +3031,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Gemini CLI",
-      "sourceCheckedAt": "2026-11-27T08:46:11.623893+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "GitHub · Gemini CLI"
       ],
@@ -2810,7 +3063,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "NVIDIA 개발자",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "NVIDIA 개발자"
       ],
@@ -3063,7 +3316,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Claude Code",
-      "sourceCheckedAt": "2026-11-27T08:46:11.623893+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "GitHub · Claude Code"
       ],
@@ -3095,7 +3348,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
@@ -3232,6 +3485,68 @@
       "duplicateCount": 1
     },
     {
+      "id": "feed-be3aa08a4caeb45e7d180d",
+      "externalId": "arxiv:2611.30494",
+      "title": "Revisiting LLMs as Context Engineers",
+      "topic": "연구·논문",
+      "region": "해외",
+      "date": "2026-11-23",
+      "summary": "As large language models (LLMs) are used in more and more new tasks, context engineering becomes a fundamental method to efficiently steer LLMs by constructing instruction prompts or metadata without intensive training. A growing number of LLM context engineering (LCE) approaches automate the task by casting the LLM itself as the engineer that draws generalizable instructions or experiences from offline trials as context. Although these methods resemble how humans learn from experiences, it rema",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://arxiv.org/abs/2611.30494"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 3,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face Daily Papers",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
+    },
+    {
+      "id": "feed-bd56555ff7e703d947cb8a",
+      "externalId": "arxiv:2611.30025",
+      "title": "Damped Atomic Wave Integration Neurons (DAWIN): A Universal Primitive for Continuous-Time Spatiotemporal Learning",
+      "topic": "연구·논문",
+      "region": "해외",
+      "date": "2026-11-23",
+      "summary": "Conventional artificial neurons separate spatial feature aggregation from continuous physical time, limiting their ability to model irregular observations. We introduce the Damped Atomic Wave Integration Neuron (DAWIN), a continuous-time primitive for replacing standard neural layers in MLPs, Transformers, and graph neural networks. DAWIN couples spatial projection with elapsed-time-dependent wave excitation and integrates it into a local complex state through closed-form damped evolution, avoid",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://arxiv.org/abs/2611.30025"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 3,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face Daily Papers",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
+    },
+    {
       "id": "feed-b9b820db7944ce4f84c63d",
       "externalId": "arxiv:2611.30287",
       "title": "MMMem: Self-Improving Agents with Task-Aware Multimodal Experience Consolidation",
@@ -3289,7 +3604,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -3321,7 +3636,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
@@ -3418,7 +3733,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "NVIDIA 개발자",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "NVIDIA 개발자"
       ],
@@ -3450,7 +3765,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google Research",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "Google Research"
       ],
@@ -3611,11 +3926,73 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Google AI 블로그",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "Google AI 블로그"
       ],
       "duplicateCount": 1
+    },
+    {
+      "id": "feed-3b60eb5059350a8e6de14e",
+      "externalId": "arxiv:2611.31516",
+      "title": "InitFree-SfM: When Initialization-Free Bundle Adjustment meets Learned Structure-from-Motion",
+      "topic": "연구·논문",
+      "region": "해외",
+      "date": "2026-11-23",
+      "summary": "Initialization-free bundle adjustment (InitFree BA) aims to jointly recover camera poses and scene structure without requiring an initial global estimate. It is a very challenging problem, especially compared to traditional BA where a good estimation is assumed. While recent methods optimize surrogate Object Space Error (OSE) objectives from random initialization, a low objective value does not necessarily yield an accurate reconstruction, revealing a gap between optimization and reconstruction.",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://arxiv.org/abs/2611.31516"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 3,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face Daily Papers",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
+    },
+    {
+      "id": "feed-3acbfe997a16f3344930e9",
+      "externalId": "arxiv:2611.30723",
+      "title": "BiSAT: Bidirectionally Aligned Semantic-Acoustic Tokenization for Speech Language Models",
+      "topic": "연구·논문",
+      "region": "해외",
+      "date": "2026-11-23",
+      "summary": "Speech language models (LMs) generate speech as sequences of discrete tokens. Their tokenizer must therefore preserve both acoustic detail and linguistic content at a low bitrate. Semantic-enhanced tokenizers may lose acoustic detail, whereas acoustic-oriented tokenizers retain acoustic variation that makes language modeling harder. Unified tokenizers combine both, but representing acoustic detail and linguistic content within a single feature space can cause interference between the two objecti",
+      "difference": "",
+      "why": "",
+      "usage": "",
+      "cost": "",
+      "performance": "",
+      "urls": [
+        "https://arxiv.org/abs/2611.30723"
+      ],
+      "imageUrl": "",
+      "importance": 3,
+      "reliability": 3,
+      "pricing": "미정",
+      "status": "나중에 검토",
+      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
+      "selected": false,
+      "groupKey": "",
+      "importedFrom": "public-api",
+      "sourceLabel": "Hugging Face Daily Papers",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
+      "relatedSources": [
+        "Hugging Face Daily Papers"
+      ]
     },
     {
       "id": "feed-3a8472e4b794ad036a3d5f",
@@ -3771,7 +4148,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
@@ -3803,7 +4180,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
@@ -3835,7 +4212,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "네이버 D2",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "네이버 D2"
       ],
@@ -3867,7 +4244,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "네이버 D2",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "네이버 D2"
       ],
@@ -3963,7 +4340,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -3995,7 +4372,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -4027,7 +4404,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "네이버 D2",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "네이버 D2"
       ],
@@ -4059,7 +4436,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face 블로그",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "Hugging Face 블로그"
       ],
@@ -4255,7 +4632,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "OpenAI 공식 발표",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "OpenAI 공식 발표"
       ],
@@ -4451,7 +4828,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "GitHub · Transformers",
-      "sourceCheckedAt": "2026-11-27T08:46:11.623893+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "GitHub · Transformers"
       ],
@@ -4516,7 +4893,7 @@
       "groupKey": "",
       "importedFrom": "public-api",
       "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-27T09:08:08.448547+00:00",
+      "sourceCheckedAt": "2026-11-28T07:59:35.844644+00:00",
       "relatedSources": [
         "Hugging Face Daily Papers"
       ],
@@ -15753,390 +16130,13 @@
         "AI타임스 (보도)"
       ],
       "duplicateCount": 1
-    },
-    {
-      "id": "feed-b68ca6af8517ab7a3eb041",
-      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217239",
-      "title": "챗GPT, 주요 AI 챗봇 이용량 81% 차지…클로드 급성장에도 독주",
-      "topic": "모델 출시",
-      "region": "한국",
-      "date": "2026-11-10",
-      "summary": "구글 '제미나이'와 앤트로픽 '클로드'의 추격에도 오픈AI의 '챗GPT'가 글로벌 AI 챗봇 시장에서 압도적인 지위를 유지하고 있는 것으로 나타났다. 경쟁 서비스들이 빠르게 성장하는 가운데 챗GPT도 올해 상반기 하락했던 점유율을 최근 다시 회복하면서 주요 AI 챗봇 이용량의 81% 이상을 차지했다.시장조사 업체 그래파이트(Graphite)는 9일(현지시간) 시밀러웹 데이터를 분석한 보고서를 통해 챗GPT가 전 세계 주요 AI 챗봇 6종의 웹·앱 이용 세션 가운데 81.2%를 차지했다고 밝혔다.조사 대상에는 챗GPT와 클로드, 제미",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://www.aitimes.com/news/articleView.html?idxno=217239"
-      ],
-      "importance": 3,
-      "reliability": 2,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "AI타임스 (보도)",
-      "sourceCheckedAt": "2026-11-11T02:45:37.112658+00:00",
-      "sourceType": "secondary",
-      "relatedSources": [
-        "AI타임스 (보도)"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-b67be93ea5d9377d57ca31",
-      "externalId": "arxiv:2611.13907",
-      "title": "EVAThink: Evidence Sufficiency-Guided Training for Adaptive Thinking in Video Understanding",
-      "topic": "연구·논문",
-      "region": "해외",
-      "date": "2026-11-10",
-      "summary": "Under a fixed frame budget, video understanding with vision-language models (VLMs) depends on whether the sampled frames provide sufficient evidence for the question. Sufficient frame evidence supports direct answering, whereas less informative observations may benefit from reasoning that connects the available cues. We introduce EVAThink, which enhances video understanding through evidence sufficiency-guided training for adaptive thinking. First, Recoverable Evidence Gap Mining constructs evide",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://arxiv.org/abs/2611.13907"
-      ],
-      "importance": 3,
-      "reliability": 3,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-11T07:11:42.754845+00:00",
-      "relatedSources": [
-        "Hugging Face Daily Papers"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-aee953421b341d0b194685",
-      "externalId": "arxiv:2611.14488",
-      "title": "Is Your Robot's Memory Just a Clock? Temporal Shortcuts in Memory-Augmented VLA Policies",
-      "topic": "연구·논문",
-      "region": "해외",
-      "date": "2026-11-10",
-      "summary": "Memory-augmented vision-language-action (VLA) policies are meant to remember what happened. Many of them, however, fill memory by time: they sample frames uniformly across the episode and stamp each frame with its time step. Because time passes even when nothing happens, such a memory may not tell waiting from working. We show that it does not. On the counting tasks of RoboMME, we make the robot briefly pause or fidget its wrist. Such a null event changes nothing the task depends on, yet a relea",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://arxiv.org/abs/2611.14488"
-      ],
-      "importance": 3,
-      "reliability": 3,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-11T07:11:42.754845+00:00",
-      "relatedSources": [
-        "Hugging Face Daily Papers"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-ab372a47de767961dcffc3",
-      "externalId": "github:openai/codex:440934118",
-      "title": "Codex · 0.167.1",
-      "topic": "코딩 도구",
-      "region": "해외",
-      "date": "2026-11-10",
-      "summary": "## Changelog Full Changelog: https://github.com/openai/codex/compare/rust-v0.167.0...rust-v0.167.1",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://github.com/openai/codex/releases/tag/rust-v0.167.1"
-      ],
-      "importance": 3,
-      "reliability": 4,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "GitHub · Codex",
-      "sourceCheckedAt": "2026-11-11T19:53:04.036329+00:00",
-      "relatedSources": [
-        "GitHub · Codex"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-a9deb0b0c3490eb44796ec",
-      "externalId": "arxiv:2611.13766",
-      "title": "FAME-QP: A GPU-Accelerated Quadratic-Programming Solver for Real-Time Model Predictive Control",
-      "topic": "연구·논문",
-      "region": "해외",
-      "date": "2026-11-10",
-      "summary": "We present FAME-QP, a GPU-accelerated solver for dense quadratic programs arising in linear model predictive control. FAME-QP combines constraint-dependent operator representations with fused single- and two-kernel iterations replayed through CUDA graphs, automatically selecting the execution configuration through device calibration and problem-specific timing. It probes a cached operator bank to select the initial penalty and updates operators lazily when problem matrices change. Numerical benc",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://arxiv.org/abs/2611.13766"
-      ],
-      "importance": 3,
-      "reliability": 3,
-      "pricing": "미정",
-      "status": "나중에 검토",
-      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
-      "relatedSources": [
-        "Hugging Face Daily Papers"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-a96890901da597998a101a",
-      "externalId": "github:comfyanonymous/ComfyUI:440610822",
-      "title": "ComfyUI · v0.45.0",
-      "topic": "이미지 생성",
-      "region": "해외",
-      "date": "2026-11-10",
-      "summary": "## What's Changed * Bump comfyui-frontend-package to 1.58.5 by @comfy-pr-bot in https://github.com/Comfy-Org/ComfyUI/pull/17442 * Add better error for when pixel_space VAE wrongly selected. by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/17518 * Make SeedVR2 VAE slice length adaptive to free memory by @kijai in https://github.com/Comfy-Org/ComfyUI/pull/17508 * [Partner Nodes] feat(Pika): add Pika H3 Flex nodes by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/17509 * [Par",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.45.0"
-      ],
-      "imageUrl": "",
-      "importance": 3,
-      "reliability": 4,
-      "pricing": "미정",
-      "status": "나중에 검토",
-      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "GitHub · ComfyUI",
-      "sourceCheckedAt": "2026-11-17T08:32:08.870278+00:00",
-      "relatedSources": [
-        "GitHub · ComfyUI"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-a96833867e1e876ce359ab",
-      "externalId": "arxiv:2611.14413",
-      "title": "Bits or permutations? Spending a fixed inference budget on weight precision or on option-order averaging in small local language models",
-      "topic": "연구·논문",
-      "region": "해외",
-      "date": "2026-11-10",
-      "summary": "Local language models can save memory by storing weights in fewer bits, and they can reduce sensitivity to the order of answer options by averaging a few reorderings. We ask whether the first makes the second worse, and which is the cheaper way to spend a fixed budget. On Qwen3-0.6B and Qwen3-1.7B with simulated round-to-nearest weight quantization (8, 6, 4 and 3 bits, fp16 reference), read from the logits of the letters A to D on ARC-Easy, ARC-Challenge, MMLU and HellaSwag (300 items each), 6 b",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://arxiv.org/abs/2611.14413"
-      ],
-      "importance": 3,
-      "reliability": 3,
-      "pricing": "미정",
-      "status": "나중에 검토",
-      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
-      "relatedSources": [
-        "Hugging Face Daily Papers"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-a8c416e2c7748124802b5f",
-      "externalId": "https://developer.nvidia.com/blog/agent-substrate-advancing-kubernetes-for-agents-at-scale",
-      "title": "Agent Substrate: Advancing Kubernetes for Agents at Scale",
-      "topic": "에이전트",
-      "region": "해외",
-      "date": "2026-11-10",
-      "summary": "AI agents spend most of their time idle, waiting on a human prompt, a tool result or a model response. Kubernetes wasn’t built for that. Running one Pod per...",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://developer.nvidia.com/blog/agent-substrate-advancing-kubernetes-for-agents-at-scale"
-      ],
-      "imageUrl": "",
-      "importance": 3,
-      "reliability": 4,
-      "pricing": "미정",
-      "status": "나중에 검토",
-      "notes": "자동 수집 메타데이터. 공식 정보와 주장에 대한 독립 검증은 별도 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "NVIDIA 개발자",
-      "sourceCheckedAt": "2026-11-17T08:32:08.870278+00:00",
-      "relatedSources": [
-        "NVIDIA 개발자"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-a178a8c1364c56109649cd",
-      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217203",
-      "title": "트럼프 \"FBI, 젠슨 황 사건 조사 중\"…주요 AI 행사도 잇달아 불참",
-      "topic": "미정",
-      "region": "한국",
-      "date": "2026-11-10",
-      "summary": "도널드 트럼프 미국 대통령이 젠슨 황 엔비디아 CEO와 관련한 의혹을 연방수사국(FBI)이 조사하고 있다고 밝혔다. 황 CEO가 중국 정보기관과 연계된 것으로 의심받는 여성과 부적절한 관계를 맺었다는 논란이 불거진 가운데, 주요 AI 업계 행사에도 잇달아 불참하기로 했다.파이낸셜타임스(FT)에 따르면, 트럼프 대통령은 9일(현지시간) 백악관에서 기자들과 만나 \"FBI가 다른 사안과 관련해 이 문제를 살펴보고 있다는 것을 알고 있다\"고 말했다. 구체적인 조사 대상이나 범위는 설명하지 않았다.그는 앞서 황 CEO와 직접 통화해 해당 여",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://www.aitimes.com/news/articleView.html?idxno=217203"
-      ],
-      "importance": 3,
-      "reliability": 2,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "AI타임스 (보도)",
-      "sourceCheckedAt": "2026-11-10T03:08:03.602578+00:00",
-      "sourceType": "secondary",
-      "relatedSources": [
-        "AI타임스 (보도)"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-9d7ea0316a8ecdefcb7d8e",
-      "externalId": "https://www.aitimes.com/news/articleView.html?idxno=217206",
-      "title": "엔비디아·젠슨 황, 주주 집단소송 직면…스파이 의혹 관련 '허위 설명' 쟁점",
-      "topic": "반도체",
-      "region": "한국",
-      "date": "2026-11-10",
-      "summary": "엔비디아와 젠슨 황 CEO가 중국 스파이 의혹과 관련한 정보를 투자자들에게 제대로 공개하지 않았다는 이유로 주주 집단소송에 직면했다. 황 CEO와 중국 정보기관의 스파이로 의심받는 여성의 관계 자체보다 회사가 관련 의혹을 어떻게 설명했는지, 투자자들에게 오해를 불러일으키는 정보를 제공했는지가 핵심 쟁점이다.로이터 등에 따르면, 개인 투자자 마크 키스텐마허가 대표하는 주주들은 9일(현지시간) 미국 캘리포니아주 새너제이 연방법원에 엔비디아와 황 CEO를 상대로 집단소송을 제기했다.이들은 황 CEO와 싱가포르 기업 메가스피드의 전 임원",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://www.aitimes.com/news/articleView.html?idxno=217206"
-      ],
-      "importance": 3,
-      "reliability": 2,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "언론 보도 원문. 사실 및 수치의 공식 1차 출처 확인 필요.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "AI타임스 (보도)",
-      "sourceCheckedAt": "2026-11-10T03:08:03.602578+00:00",
-      "sourceType": "secondary",
-      "relatedSources": [
-        "AI타임스 (보도)"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-9d7e422b602d9ff03b2ccf",
-      "externalId": "arxiv:2611.14418",
-      "title": "Precision on Demand: Escalating Weight Bits at Uncertain Decoding Steps in a Small Local Model",
-      "topic": "연구·논문",
-      "region": "해외",
-      "date": "2026-11-10",
-      "summary": "Local decoding usually fixes one weight precision for the whole generation. We study a different allocation: store 8-bit weights, decode with their top 4 bits, and redo a step at 8 bits only when the low-precision output distribution looks uncertain (entropy above a threshold or a small top-two margin). Quantization is simulated, the model is Qwen3-0.6B, and the benchmark is GSM8K. Cost is counted in weight bytes read per token. On 36724 replayed steps the entropy of the low pass ranks argmax fl",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://arxiv.org/abs/2611.14418"
-      ],
-      "importance": 3,
-      "reliability": 3,
-      "pricing": "미정",
-      "status": "나중에 검토",
-      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-13T04:56:34.884334+00:00",
-      "relatedSources": [
-        "Hugging Face Daily Papers"
-      ],
-      "duplicateCount": 1
-    },
-    {
-      "id": "feed-9c594e46806fe024f28c21",
-      "externalId": "arxiv:2611.14516",
-      "title": "TorchCurves: Differentiable Parametric Curves",
-      "topic": "연구·논문",
-      "region": "해외",
-      "date": "2026-11-10",
-      "summary": "We present TorchCurves, a PyTorch library that treats vector-valued parametric curves as learnable primitives. Its central operation maps batches of scalar inputs to points on curves represented in B-spline or Legendre polynomial bases, with differentiation through both inputs and coefficients. Curve coefficients can be optimized jointly with the surrounding model or produced by another network. The library provides trainable modules, reusable basis modules, and a functional interface, supportin",
-      "difference": "",
-      "why": "",
-      "usage": "",
-      "cost": "",
-      "performance": "",
-      "urls": [
-        "https://arxiv.org/abs/2611.14516"
-      ],
-      "importance": 3,
-      "reliability": 3,
-      "pricing": "미정",
-      "status": "오늘 읽을 것",
-      "notes": "학술 초록/논문 메타데이터입니다. 동료평가·재현 검증은 미확인.",
-      "selected": false,
-      "groupKey": "",
-      "importedFrom": "public-api",
-      "sourceLabel": "Hugging Face Daily Papers",
-      "sourceCheckedAt": "2026-11-11T19:53:04.036329+00:00",
-      "relatedSources": [
-        "Hugging Face Daily Papers"
-      ],
-      "duplicateCount": 1
     }
   ],
   "quality": {
     "freshIntakeDays": 7,
     "archiveDays": 35,
     "nearDuplicateRule": "strict-title-and-number",
-    "incoming": 54,
+    "incoming": 58,
     "unique": 500,
     "previous": 500
   }
